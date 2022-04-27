@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from valorant_api.utils.init_options import InitOptions
+from valo_api.utils.init_options import InitOptions
 
 
 @dataclass

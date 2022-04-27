@@ -11,7 +11,7 @@ class InitOptions:
         then only pass the correct arguments to the class' __init__.
 
         Example:
-            >>> from valorant_api.utils.init_options import InitOptions
+            >>> from valo_api.utils.init_options import InitOptions
             >>> class SomeClass(InitOptions):
             ...
             ...     def __init__(self, arg1, arg2):

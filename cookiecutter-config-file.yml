@@ -1,7 +1,7 @@
 # This file contains values from Cookiecutter
 
 default_context:
-  project_name: "valorant_api"
+  project_name: "valo_api"
   project_description: "Valorant API Wrapper for https://github.com/Henrik-3/unofficial-valorant-api"
   organization: "Manuel Raimann"
   license: "MIT"

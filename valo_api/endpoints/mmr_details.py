@@ -1,9 +1,9 @@
 from typing import Optional, Union
 
-from valorant_api.endpoints_config import EndpointsConfig
-from valorant_api.responses.error_response import ErrorResponse
-from valorant_api.responses.mmr_details import MMRDetailsV1, MMRDetailsV2, SeasonDataV2
-from valorant_api.utils.fetch_endpoint import fetch_endpoint
+from valo_api.endpoints_config import EndpointsConfig
+from valo_api.responses.error_response import ErrorResponse
+from valo_api.responses.mmr_details import MMRDetailsV1, MMRDetailsV2, SeasonDataV2
+from valo_api.utils.fetch_endpoint import fetch_endpoint
 
 
 def get_mmr_details_by_puuid_v1(

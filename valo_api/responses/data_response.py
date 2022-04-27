@@ -1,8 +1,7 @@
+from dataclasses import dataclass
 from typing import Generic, Type, TypeVar
 
-from dataclasses import dataclass
-
-from valorant_api.utils.init_options import InitOptions
+from valo_api.utils.init_options import InitOptions
 
 T = TypeVar("T")
 

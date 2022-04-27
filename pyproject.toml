@@ -4,7 +4,7 @@ requires = ["poetry_core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "valorant_api"
+name = "valo_api"
 version = "0.1.0"
 description = "Valorant API Wrapper for https://github.com/Henrik-3/unofficial-valorant-api"
 readme = "README.md"
@@ -30,7 +30,7 @@ classifiers = [  #! Update me
 
 [tool.poetry.scripts]
 # Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
-"valorant_api" = "valorant_api.__main__:app"
+"valo_api" = "valo_api.__main__:app"
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -135,7 +135,7 @@ addopts = [
 source = ["tests"]
 
 [coverage.paths]
-source = "valorant_api"
+source = "valo_api"
 
 [coverage.run]
 branch = true

@@ -1,4 +1,4 @@
-# Docker for valorant_api
+# Docker for valo_api
 
 ## Installation
 
@@ -15,7 +15,7 @@ make docker-build VERSION=latest
 ```
 
 You may provide name and version for the image.
-Default name is `IMAGE := valorant_api`.
+Default name is `IMAGE := valo_api`.
 Default version is `VERSION := latest`.
 
 ```bash
@@ -27,7 +27,7 @@ make docker-build IMAGE=some_name VERSION=0.1.0
 ```bash
 docker run -it --rm \
    -v $(pwd):/workspace \
-   valorant_api bash
+   valo_api bash
 ```
 
 ## How to clean up

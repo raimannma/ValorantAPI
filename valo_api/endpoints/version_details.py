@@ -1,9 +1,9 @@
 from typing import Union
 
-from valorant_api.endpoints_config import EndpointsConfig
-from valorant_api.responses.error_response import ErrorResponse
-from valorant_api.responses.version_details import VersionDetailsV1
-from valorant_api.utils.fetch_endpoint import fetch_endpoint
+from valo_api.endpoints_config import EndpointsConfig
+from valo_api.responses.error_response import ErrorResponse
+from valo_api.responses.version_details import VersionDetailsV1
+from valo_api.utils.fetch_endpoint import fetch_endpoint
 
 
 def get_version_info_v1(

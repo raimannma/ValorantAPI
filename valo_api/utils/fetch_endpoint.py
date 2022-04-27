@@ -1,11 +1,10 @@
-from typing import Any, Dict
-
 import urllib.parse
+from typing import Any, Dict
 
 import requests
 from requests import Response
 
-from valorant_api.config import Config
+from valo_api.config import Config
 
 
 def encode_params(**kwargs):
