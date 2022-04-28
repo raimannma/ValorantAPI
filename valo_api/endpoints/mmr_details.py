@@ -40,7 +40,7 @@ def get_mmr_details_by_name(
 ) -> Union[MMRDetailsV1, MMRDetailsV2, SeasonDataV2, ErrorResponse]:
     response = fetch_endpoint(
         EndpointsConfig.MMR_DETAILS_BY_NAME,
-        {"filter": filter} if filter else {},
+        {"filter": str(filter).lower()} if filter is not None else {},
         region=region,
         name=name,
         tag=tag,
@@ -56,16 +56,17 @@ def get_mmr_details_by_name(
             raise Exception(response_data)
 
     if version == "v1":
-        cls = MMRDetailsV1
+        return MMRDetailsV1.from_dict(**response_data["data"])
     elif version == "v2":
-        if filter is None:
-            cls = MMRDetailsV2
-        else:
-            cls = SeasonDataV2
+        try:
+            if filter is None or filter == "":
+                return MMRDetailsV2.from_dict(**response_data["data"])
+            else:
+                return SeasonDataV2.from_dict(**response_data["data"])
+        except Exception:
+            return MMRDetailsV2.from_dict(**response_data["data"])
     else:
         raise ValueError("Invalid version")
-
-    return cls.from_dict(**response_data["data"])
 
 
 def get_mmr_details_by_puuid(
@@ -73,7 +74,7 @@ def get_mmr_details_by_puuid(
 ) -> Union[MMRDetailsV1, MMRDetailsV2, SeasonDataV2, ErrorResponse]:
     response = fetch_endpoint(
         EndpointsConfig.MMR_DETAILS_BY_PUUID,
-        {"filter": filter} if filter else {},
+        {"filter": str(filter).lower()} if filter is not None else {},
         region=region,
         puuid=puuid,
         version=version,
@@ -90,10 +91,13 @@ def get_mmr_details_by_puuid(
     if version == "v1":
         cls = MMRDetailsV1
     elif version == "v2":
-        if filter is None:
-            cls = MMRDetailsV2
-        else:
-            cls = SeasonDataV2
+        try:
+            if filter is None or filter == "":
+                return MMRDetailsV2.from_dict(**response_data["data"])
+            else:
+                return SeasonDataV2.from_dict(**response_data["data"])
+        except Exception:
+            return MMRDetailsV2.from_dict(**response_data["data"])
     else:
         raise ValueError("Invalid version")
 

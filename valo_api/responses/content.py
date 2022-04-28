@@ -8,10 +8,10 @@ from valo_api.utils.init_options import InitOptions
 @dataclass
 class Entity(InitOptions):
     name: str
-    localizedNames: Dict[str, str]
     id: str
     assetName: str
     assetPath: Optional[str] = None
+    localizedNames: Optional[Dict[str, str]] = None
 
 
 @dataclass
@@ -20,8 +20,8 @@ class Act(InitOptions):
     parentId: str
     type: str
     name: str
-    localizedNames: Dict[str, str]
     isActive: bool
+    localizedNames: Optional[Dict[str, str]] = None
 
 
 @dataclass
