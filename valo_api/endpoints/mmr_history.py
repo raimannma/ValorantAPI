@@ -15,7 +15,7 @@ def get_mmr_history_by_name_v1(
 def get_mmr_history_by_puuid_v1(
     region: str, puuid: str, **kwargs
 ) -> Union[List[MMRHistoryPointV1], ErrorResponse]:
-    return get_mmr_history_by_name("v1", region, puuid, **kwargs)
+    return get_mmr_history_by_puuid("v1", region, puuid, **kwargs)
 
 
 def get_mmr_history_by_name(

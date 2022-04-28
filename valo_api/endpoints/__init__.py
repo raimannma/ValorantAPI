@@ -2,7 +2,12 @@ from valo_api.endpoints.account_details import (
     get_account_details,
     get_account_details_v1,
 )
-from valo_api.endpoints.leaderboard import get_leaderboard, get_leaderboard_v1
+from valo_api.endpoints.content import get_content, get_content_v1
+from valo_api.endpoints.leaderboard import (
+    get_leaderboard,
+    get_leaderboard_v1,
+    get_leaderboard_v2,
+)
 from valo_api.endpoints.match_details import get_match_details, get_match_details_v2
 from valo_api.endpoints.match_history import (
     get_match_history_by_name,
@@ -33,6 +38,8 @@ from valo_api.endpoints.website import get_website, get_website_v1
 __all__ = [
     "get_account_details_v1",
     "get_account_details",
+    "get_content_v1",
+    "get_content",
     "get_website_v1",
     "get_website",
     "get_version_info_v1",
@@ -60,5 +67,6 @@ __all__ = [
     "get_match_details_v2",
     "get_match_details",
     "get_leaderboard_v1",
+    "get_leaderboard_v2",
     "get_leaderboard",
 ]

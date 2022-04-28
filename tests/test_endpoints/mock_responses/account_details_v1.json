@@ -1,0 +1,17 @@
+{
+   "status":200,
+   "data":{
+      "puuid":"930bb0d3-c914-5394-bcf6-0bc81f465bd7",
+      "region":"eu",
+      "account_level":113,
+      "name":"jasminaxrose",
+      "tag":"7024",
+      "card":{
+         "small":"https://media.valorant-api.com/playercards/fcceda12-4815-17d0-ffc1-698aac40777a/smallart.png",
+         "large":"https://media.valorant-api.com/playercards/fcceda12-4815-17d0-ffc1-698aac40777a/largeart.png",
+         "wide":"https://media.valorant-api.com/playercards/fcceda12-4815-17d0-ffc1-698aac40777a/wideart.png",
+         "id":"fcceda12-4815-17d0-ffc1-698aac40777a"
+      },
+      "last_update":"Now"
+   }
+}

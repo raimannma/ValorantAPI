@@ -40,7 +40,7 @@ formatting: codestyle
 #* Linting
 .PHONY: test
 test:
-	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml --cov-report=html --cov=valo_api tests/
+	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml -x --cov-report=html --cov=valo_api tests/
 	poetry run coverage-badge -o assets/images/coverage.svg -f
 
 .PHONY: check-codestyle
