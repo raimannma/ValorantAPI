@@ -1,5 +1,6 @@
-import urllib.parse
 from typing import Any, Dict
+
+import urllib.parse
 
 import requests
 from requests import Response
