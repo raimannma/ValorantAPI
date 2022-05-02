@@ -235,7 +235,7 @@ gitdb = ">=4.0.1,<5"
 
 [[package]]
 name = "hypothesis"
-version = "6.45.1"
+version = "6.46.1"
 description = "A library for property-based testing"
 category = "dev"
 optional = false
@@ -742,7 +742,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "da60763089d67c3311c076bd6f534382dc9f23f4ead3a8604dd5fd1cc225ae45"
+content-hash = "586053c0495298d01364e92df57374c47f5c5fd78178ad43d7e4032064e695dd"
 
 [metadata.files]
 astroid = [
@@ -886,8 +886,8 @@ gitpython = [
     {file = "GitPython-3.1.27.tar.gz", hash = "sha256:1c885ce809e8ba2d88a29befeb385fcea06338d3640712b59ca623c220bb5704"},
 ]
 hypothesis = [
-    {file = "hypothesis-6.45.1-py3-none-any.whl", hash = "sha256:a7bdd028edfb4c3b373a133f7cf5310348ef542e7e159ed274f6db66ab41bdf0"},
-    {file = "hypothesis-6.45.1.tar.gz", hash = "sha256:9b51fdbf69926d68d9146bcf6c58da9807d4d29cf65f588c0081f1d2bcc1b21e"},
+    {file = "hypothesis-6.46.1-py3-none-any.whl", hash = "sha256:42e1e86600f0910f1ead954c4e96ab3a1f3bd3225faef8ea1a96377368e10a62"},
+    {file = "hypothesis-6.46.1.tar.gz", hash = "sha256:2ef1753aeb8013e0c911601f445a3ea894bc19960043c505fe3313712093acf9"},
 ]
 identify = [
     {file = "identify-2.5.0-py2.py3-none-any.whl", hash = "sha256:3acfe15a96e4272b4ec5662ee3e231ceba976ef63fd9980ed2ce9cc415df393f"},
