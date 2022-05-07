@@ -245,14 +245,18 @@ class MatchRoundPlantEventV3(InitOptions):
 
 @dataclass
 class MatchRoundDefuseEventV3(InitOptions):
-    defuse_location: MatchRoundPlanterV3
+    defuse_location: Location
+    defused_by: MatchRoundPlanterV3
     defuse_time_in_round: int
     player_locations_on_defuse: List[MatchRoundPlayerLocationV3]
 
     def __post_init__(self):
         self.defuse_location = (
-            MatchRoundPlanterV3.from_dict(**self.defuse_location)
-            if self.defuse_location
+            Location.from_dict(**self.defuse_location) if self.defuse_location else None
+        )
+        self.defused_by = (
+            MatchRoundPlanterV3.from_dict(**self.defused_by)
+            if self.defused_by
             else None
         )
         self.player_locations_on_defuse = (
