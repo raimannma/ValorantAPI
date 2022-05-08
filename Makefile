@@ -49,6 +49,11 @@ check-codestyle:
 	poetry run black --diff --check --config pyproject.toml ./
 	poetry run darglint --verbosity 2 valo_api tests
 
+.PHONY: docs-build
+docs-build:
+	cd docs && make html
+
+
 .PHONY: mypy
 mypy:
 	poetry run mypy --config-file pyproject.toml ./
