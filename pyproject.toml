@@ -37,6 +37,10 @@ python = "^3.8"
 
 rich = "^10.14.0"
 responses = "^0.20.0"
+autodocsumm = "^0.2.8"
+Sphinx = "^4.5.0"
+sphinx-rtd-theme = "^1.0.0"
+hypothesis = "^6.46.2"
 
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.4"
@@ -91,32 +95,6 @@ profile = "black"
 multi_line_output = 3
 indent = 4
 color_output = true
-
-[tool.mypy]
-# https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
-python_version = 3.8
-pretty = true
-show_traceback = true
-color_output = true
-
-allow_redefinition = false
-check_untyped_defs = true
-disallow_any_generics = true
-disallow_incomplete_defs = true
-ignore_missing_imports = true
-implicit_reexport = false
-no_implicit_optional = true
-show_column_numbers = true
-show_error_codes = true
-show_error_context = true
-strict_equality = true
-strict_optional = true
-warn_no_return = true
-warn_redundant_casts = true
-warn_return_any = true
-warn_unreachable = true
-warn_unused_configs = true
-warn_unused_ignores = true
 
 
 [tool.pytest.ini_options]

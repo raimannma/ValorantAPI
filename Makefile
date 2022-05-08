@@ -21,7 +21,6 @@ poetry-remove:
 install:
 	poetry lock -n && poetry export --without-hashes > requirements.txt
 	poetry install -n
-	-poetry run mypy --install-types --non-interactive ./
 
 .PHONY: pre-commit-install
 pre-commit-install:
@@ -54,10 +53,6 @@ docs-build:
 	cd docs && make html
 
 
-.PHONY: mypy
-mypy:
-	poetry run mypy --config-file pyproject.toml ./
-
 .PHONY: check-safety
 check-safety:
 	poetry check
@@ -65,11 +60,11 @@ check-safety:
 	poetry run bandit -ll --recursive valo_api tests
 
 .PHONY: lint
-lint: test check-codestyle mypy check-safety
+lint: test check-codestyle check-safety
 
 .PHONY: update-dev-deps
 update-dev-deps:
-	poetry add -D bandit@latest darglint@latest "isort[colors]@latest" mypy@latest pre-commit@latest pydocstyle@latest pylint@latest pytest@latest pyupgrade@latest safety@latest coverage@latest coverage-badge@latest pytest-html@latest pytest-cov@latest
+	poetry add -D bandit@latest darglint@latest "isort[colors]@latest" pre-commit@latest pydocstyle@latest pylint@latest pytest@latest pyupgrade@latest safety@latest coverage@latest coverage-badge@latest pytest-html@latest pytest-cov@latest
 	poetry add -D --allow-prereleases black@latest
 
 #* Docker
@@ -98,10 +93,6 @@ pycache-remove:
 dsstore-remove:
 	find . | grep -E ".DS_Store" | xargs rm -rf
 
-.PHONY: mypycache-remove
-mypycache-remove:
-	find . | grep -E ".mypy_cache" | xargs rm -rf
-
 .PHONY: ipynbcheckpoints-remove
 ipynbcheckpoints-remove:
 	find . | grep -E ".ipynb_checkpoints" | xargs rm -rf
@@ -115,4 +106,4 @@ build-remove:
 	rm -rf build/
 
 .PHONY: cleanup
-cleanup: pycache-remove dsstore-remove mypycache-remove ipynbcheckpoints-remove pytestcache-remove
+cleanup: pycache-remove dsstore-remove ipynbcheckpoints-remove pytestcache-remove
