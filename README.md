@@ -16,3 +16,15 @@
 Valorant API Wrapper for https://github.com/Henrik-3/unofficial-valorant-api
 
 </div>
+
+## Installation
+
+    pip install valo-api
+
+## Documentation
+
+After installing the package dependencies `pip install -r requirements.txt`, you can use the following commands to get the documentation:
+
+    cd docs/ && make html
+
+Open the index.html file in the docs/_build/html/ directory.
