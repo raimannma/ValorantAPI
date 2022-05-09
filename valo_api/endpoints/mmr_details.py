@@ -14,7 +14,7 @@ def get_mmr_details_by_puuid_v1(
 
 def get_mmr_details_by_puuid_v2(
     region: str, puuid: str, filter: Optional[str] = None, **kwargs
-) -> Union[MMRDetailsV2, ErrorResponse]:
+) -> Union[MMRDetailsV2, SeasonDataV2, ErrorResponse]:
     return get_mmr_details_by_puuid("v2", region, puuid, filter, **kwargs)
 
 
@@ -26,7 +26,7 @@ def get_mmr_details_by_name_v1(
 
 def get_mmr_details_by_name_v2(
     region: str, name: str, tag: str, filter: Optional[str] = None, **kwargs
-) -> Union[MMRDetailsV2, ErrorResponse]:
+) -> Union[MMRDetailsV2, SeasonDataV2, ErrorResponse]:
     return get_mmr_details_by_name("v2", region, name, tag, filter, **kwargs)
 
 
