@@ -17,10 +17,10 @@ def get_account_details(
 ) -> Union[AccountDetailsV1, ErrorResponse]:
     response = fetch_endpoint(
         EndpointsConfig.ACCOUNT_BY_NAME,
-        {"force": str(force_update).lower()},
         version=version,
         name=name,
         tag=tag,
+        query_args={"force": str(force_update).lower()},
         **kwargs,
     )
     response_data = response.json()
