@@ -17,8 +17,8 @@ def get_content(
 ) -> Union[ContentV1, ErrorResponse]:
     response = fetch_endpoint(
         EndpointsConfig.CONTENT,
-        {"locale": str(locale).lower()} if locale else {},
         version=version,
+        query_args={"locale": str(locale).lower()} if locale else None,
         **kwargs,
     )
     response_data = response.json()

@@ -40,11 +40,11 @@ def get_mmr_details_by_name(
 ) -> Union[MMRDetailsV1, MMRDetailsV2, SeasonDataV2, ErrorResponse]:
     response = fetch_endpoint(
         EndpointsConfig.MMR_DETAILS_BY_NAME,
-        {"filter": str(filter).lower()} if filter is not None else {},
         region=region,
         name=name,
         tag=tag,
         version=version,
+        query_args={"filter": str(filter).lower()} if filter is not None else None,
         **kwargs,
     )
     response_data = response.json()
@@ -74,10 +74,10 @@ def get_mmr_details_by_puuid(
 ) -> Union[MMRDetailsV1, MMRDetailsV2, SeasonDataV2, ErrorResponse]:
     response = fetch_endpoint(
         EndpointsConfig.MMR_DETAILS_BY_PUUID,
-        {"filter": str(filter).lower()} if filter is not None else {},
         region=region,
         puuid=puuid,
         version=version,
+        query_args={"filter": str(filter).lower()} if filter is not None else None,
         **kwargs,
     )
     response_data = response.json()
