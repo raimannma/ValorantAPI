@@ -1,3 +1,5 @@
+from typing import Optional
+
 import urllib.parse
 from uuid import UUID
 
@@ -16,9 +18,12 @@ from valo_api.config import Config
     region=st.sampled_from(Config.ALL_REGIONS),
     name=st.text(),
     tag=st.text(),
+    size=st.one_of(st.none(), st.integers(min_value=1, max_value=5)),
 )
 @responses.activate
-def test_get_match_history_by_name(version: str, region: str, name: str, tag: str):
+def test_get_match_history_by_name(
+    version: str, region: str, name: str, tag: str, size: Optional[int]
+):
     print(f"Test get_match_history_by_name with: {locals()}")
 
     encoded_name = urllib.parse.quote_plus(name).lower()
@@ -34,12 +39,12 @@ def test_get_match_history_by_name(version: str, region: str, name: str, tag: st
     )
 
     getattr(valo_api, f"get_match_history_by_name_{version}")(
-        region=region, name=name, tag=tag
+        region=region, name=name, tag=tag, size=size
     )
     assert len(responses.calls) == 1
 
     getattr(valo_api, "get_match_history_by_name")(
-        version=version, region=region, name=name, tag=tag
+        version=version, region=region, name=name, tag=tag, size=size
     )
     assert len(responses.calls) == 2
 
@@ -49,9 +54,12 @@ def test_get_match_history_by_name(version: str, region: str, name: str, tag: st
     version=st.sampled_from(["v3"]),
     region=st.sampled_from(Config.ALL_REGIONS),
     puuid=st.uuids(),
+    size=st.one_of(st.none(), st.integers(min_value=1, max_value=5)),
 )
 @responses.activate
-def test_get_match_history_by_puuid(version: str, region: str, puuid: UUID):
+def test_get_match_history_by_puuid(
+    version: str, region: str, puuid: UUID, size: Optional[int]
+):
     print(f"Test get_match_history_by_puuid with: {locals()}")
 
     puuid = str(puuid).lower()
@@ -66,12 +74,12 @@ def test_get_match_history_by_puuid(version: str, region: str, puuid: UUID):
     )
 
     getattr(valo_api, f"get_match_history_by_puuid_{version}")(
-        region=region, puuid=puuid
+        region=region, puuid=puuid, size=size
     )
     assert len(responses.calls) == 1
 
     getattr(valo_api, "get_match_history_by_puuid")(
-        version=version, region=region, puuid=puuid
+        version=version, region=region, puuid=puuid, size=size
     )
     assert len(responses.calls) == 2
 

@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 import urllib.parse
 
@@ -21,7 +21,7 @@ def encode_params(**kwargs):
 
 
 def fetch_endpoint(
-    endpoint_definition, query_args: Dict[str, Any] = {}, **kwargs
+    endpoint_definition, query_args: Optional[Dict[str, Any]] = None, **kwargs
 ) -> Response:
     """
     Fetches an endpoint from the API.
@@ -37,7 +37,7 @@ def fetch_endpoint(
         )
 
     # Then add the query arguments
-    if len(query_args) > 0:
+    if query_args is not None and len(query_args) > 0:
         endpoint_definition = (
             f"{endpoint_definition}?{urllib.parse.urlencode(query_args)}"
         )
