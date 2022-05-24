@@ -1,1 +1,9 @@
-{"status":200,"data":{"version":"04.07.00.699063","clientVersion":"release-04.07-shipping-15-699063","branch":"release-04.07","region":"EU"}}
+{
+    "data": {
+        "branch": "release-04.07",
+        "clientVersion": "release-04.07-shipping-15-699063",
+        "region": "EU",
+        "version": "04.07.00.699063"
+    },
+    "status": 200
+}

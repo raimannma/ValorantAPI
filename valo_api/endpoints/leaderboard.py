@@ -1,6 +1,7 @@
 from typing import List, Union
 
 from valo_api.endpoints_config import EndpointsConfig
+from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
 from valo_api.responses.leaderboard import LeaderboardPlayerV1, LeaderboardV2
 from valo_api.utils.fetch_endpoint import fetch_endpoint
@@ -28,7 +29,7 @@ def get_leaderboard(
     response_data = response.json()
 
     if response.ok is False:
-        return ErrorResponse.from_dict(**response_data)
+        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
 
     if version == "v1":
         return [LeaderboardPlayerV1.from_dict(**player) for player in response_data]
