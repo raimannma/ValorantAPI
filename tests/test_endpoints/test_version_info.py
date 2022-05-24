@@ -37,7 +37,7 @@ def test_get_version_info(version: str, region: str):
 @given(
     version=st.sampled_from(["v1"]),
     region=st.sampled_from(Config.ALL_REGIONS),
-    error_response=st.sampled_from(get_error_responses("version_details")),
+    error_response=st.sampled_from(get_error_responses("version_info")),
 )
 @responses.activate
 def test_get_version_info_error(version: str, region: str, error_response: dict):
