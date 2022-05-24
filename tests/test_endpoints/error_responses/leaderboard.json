@@ -1,0 +1,17 @@
+[
+    {
+        "message": "string",
+        "status": 400
+    },
+    {
+        "message": "A needed fetch request timed out three times, request will be terminated, please try again",
+        "status": 408
+    },
+    {
+        "message": "string",
+        "status": 429
+    },
+    {
+        "error": "Something went wrong"
+    }
+]
