@@ -14,11 +14,6 @@ jobs:
         python-version: "3.8"
     - name: Install poetry
       run: make poetry-download
-    - name: Set up cache
-      uses: actions/cache@v2.1.6
-      with:
-        path: .venv
-        key: venv-3.8-${{ hashFiles('pyproject.toml') }}-${{ hashFiles('poetry.lock') }}
     - name: Install dependencies
       run: |
         poetry config virtualenvs.in-project true
