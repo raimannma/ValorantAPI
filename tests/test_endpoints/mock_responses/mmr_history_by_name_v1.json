@@ -1,1 +1,88 @@
-{"status":200,"name":"jasminaxrose","tag":"7024","data":[{"currenttier":9,"currenttierpatched":"Silver 1","ranking_in_tier":83,"mmr_change_to_last_game":-14,"elo":683,"date":"Saturday, April 16, 2022 3:04 PM","date_raw":1650114281},{"currenttier":9,"currenttierpatched":"Silver 1","ranking_in_tier":97,"mmr_change_to_last_game":16,"elo":697,"date":"Saturday, April 16, 2022 8:44 AM","date_raw":1650091465},{"currenttier":9,"currenttierpatched":"Silver 1","ranking_in_tier":81,"mmr_change_to_last_game":-19,"elo":681,"date":"Saturday, April 16, 2022 8:02 AM","date_raw":1650088962},{"currenttier":10,"currenttierpatched":"Silver 2","ranking_in_tier":0,"mmr_change_to_last_game":-19,"elo":700,"date":"Saturday, April 16, 2022 7:37 AM","date_raw":1650087421},{"currenttier":10,"currenttierpatched":"Silver 2","ranking_in_tier":13,"mmr_change_to_last_game":22,"elo":713,"date":"Friday, April 15, 2022 8:59 PM","date_raw":1650049163},{"currenttier":9,"currenttierpatched":"Silver 1","ranking_in_tier":91,"mmr_change_to_last_game":-9,"elo":691,"date":"Friday, April 15, 2022 8:08 PM","date_raw":1650046130},{"currenttier":10,"currenttierpatched":"Silver 2","ranking_in_tier":0,"mmr_change_to_last_game":-3,"elo":700,"date":"Friday, April 15, 2022 8:08 PM","date_raw":1650046119},{"currenttier":10,"currenttierpatched":"Silver 2","ranking_in_tier":0,"mmr_change_to_last_game":-22,"elo":700,"date":"Tuesday, April 12, 2022 11:22 PM","date_raw":1649798569},{"currenttier":10,"currenttierpatched":"Silver 2","ranking_in_tier":14,"mmr_change_to_last_game":-17,"elo":714,"date":"Sunday, April 10, 2022 1:04 AM","date_raw":1649545442}]}
+{
+    "data": [
+        {
+            "currenttier": 9,
+            "currenttierpatched": "Silver 1",
+            "date": "Saturday, April 16, 2022 3:04 PM",
+            "date_raw": 1650114281,
+            "elo": 683,
+            "mmr_change_to_last_game": -14,
+            "ranking_in_tier": 83
+        },
+        {
+            "currenttier": 9,
+            "currenttierpatched": "Silver 1",
+            "date": "Saturday, April 16, 2022 8:44 AM",
+            "date_raw": 1650091465,
+            "elo": 697,
+            "mmr_change_to_last_game": 16,
+            "ranking_in_tier": 97
+        },
+        {
+            "currenttier": 9,
+            "currenttierpatched": "Silver 1",
+            "date": "Saturday, April 16, 2022 8:02 AM",
+            "date_raw": 1650088962,
+            "elo": 681,
+            "mmr_change_to_last_game": -19,
+            "ranking_in_tier": 81
+        },
+        {
+            "currenttier": 10,
+            "currenttierpatched": "Silver 2",
+            "date": "Saturday, April 16, 2022 7:37 AM",
+            "date_raw": 1650087421,
+            "elo": 700,
+            "mmr_change_to_last_game": -19,
+            "ranking_in_tier": 0
+        },
+        {
+            "currenttier": 10,
+            "currenttierpatched": "Silver 2",
+            "date": "Friday, April 15, 2022 8:59 PM",
+            "date_raw": 1650049163,
+            "elo": 713,
+            "mmr_change_to_last_game": 22,
+            "ranking_in_tier": 13
+        },
+        {
+            "currenttier": 9,
+            "currenttierpatched": "Silver 1",
+            "date": "Friday, April 15, 2022 8:08 PM",
+            "date_raw": 1650046130,
+            "elo": 691,
+            "mmr_change_to_last_game": -9,
+            "ranking_in_tier": 91
+        },
+        {
+            "currenttier": 10,
+            "currenttierpatched": "Silver 2",
+            "date": "Friday, April 15, 2022 8:08 PM",
+            "date_raw": 1650046119,
+            "elo": 700,
+            "mmr_change_to_last_game": -3,
+            "ranking_in_tier": 0
+        },
+        {
+            "currenttier": 10,
+            "currenttierpatched": "Silver 2",
+            "date": "Tuesday, April 12, 2022 11:22 PM",
+            "date_raw": 1649798569,
+            "elo": 700,
+            "mmr_change_to_last_game": -22,
+            "ranking_in_tier": 0
+        },
+        {
+            "currenttier": 10,
+            "currenttierpatched": "Silver 2",
+            "date": "Sunday, April 10, 2022 1:04 AM",
+            "date_raw": 1649545442,
+            "elo": 714,
+            "mmr_change_to_last_game": -17,
+            "ranking_in_tier": 14
+        }
+    ],
+    "name": "jasminaxrose",
+    "status": 200,
+    "tag": "7024"
+}

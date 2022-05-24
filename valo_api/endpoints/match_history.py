@@ -1,6 +1,7 @@
 from typing import List, Optional, Union
 
 from valo_api.endpoints_config import EndpointsConfig
+from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
 from valo_api.responses.match_history import MatchHistoryPointV3
 from valo_api.utils.fetch_endpoint import fetch_endpoint
@@ -53,7 +54,7 @@ def get_match_history_by_name(
     response_data = response.json()
 
     if response.ok is False:
-        return ErrorResponse.from_dict(**response_data)
+        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
 
     return [MatchHistoryPointV3.from_dict(**match) for match in response_data["data"]]
 
@@ -82,6 +83,6 @@ def get_match_history_by_puuid(
     response_data = response.json()
 
     if response.ok is False:
-        return ErrorResponse.from_dict(**response_data)
+        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
 
     return [MatchHistoryPointV3.from_dict(**match) for match in response_data["data"]]

@@ -1,1 +1,10 @@
-{"status":200,"region":"eu","data":{"maintenances":[],"incidents":[]}}
+{
+    "data": {
+        "incidents": [
+        ],
+        "maintenances": [
+        ]
+    },
+    "region": "eu",
+    "status": 200
+}

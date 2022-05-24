@@ -1,6 +1,7 @@
 from typing import Optional, Union
 
 from valo_api.endpoints_config import EndpointsConfig
+from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
 from valo_api.responses.mmr_details import MMRDetailsV1, MMRDetailsV2, SeasonDataV2
 from valo_api.utils.fetch_endpoint import fetch_endpoint
@@ -50,10 +51,7 @@ def get_mmr_details_by_name(
     response_data = response.json()
 
     if response.ok is False:
-        try:
-            return ErrorResponse.from_dict(**response_data)
-        except Exception:
-            raise Exception(response_data)
+        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
 
     if version == "v1":
         return MMRDetailsV1.from_dict(**response_data["data"])
@@ -83,10 +81,7 @@ def get_mmr_details_by_puuid(
     response_data = response.json()
 
     if response.ok is False:
-        try:
-            return ErrorResponse.from_dict(**response_data)
-        except Exception:
-            raise Exception(response_data)
+        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
 
     if version == "v1":
         cls = MMRDetailsV1
