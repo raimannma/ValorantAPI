@@ -176,17 +176,6 @@ tomli = {version = "*", optional = true, markers = "python_version < \"3.11\" an
 toml = ["tomli"]
 
 [[package]]
-name = "coverage-badge"
-version = "1.1.0"
-description = "Generate coverage badges for Coverage.py."
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-coverage = "*"
-
-[[package]]
 name = "darglint"
 version = "1.8.1"
 description = "A utility for ensuring Google-style docstrings stay up to date with the source code."
@@ -273,7 +262,7 @@ gitdb = ">=4.0.1,<5"
 
 [[package]]
 name = "hypothesis"
-version = "6.46.2"
+version = "6.46.7"
 description = "A library for property-based testing"
 category = "main"
 optional = false
@@ -964,7 +953,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "ea92c29dc961dba3862e4dd7d7fb556ef4e94df53c76e48a1b294e82749caabc"
+content-hash = "0ac0926c75ab9cbc3992e090386b9d18c3542db462b270a36e8157f3b4d085da"
 
 [metadata.files]
 alabaster = [
@@ -1087,10 +1076,6 @@ coverage = [
     {file = "coverage-6.4-pp36.pp37.pp38-none-any.whl", hash = "sha256:e637ae0b7b481905358624ef2e81d7fb0b1af55f5ff99f9ba05442a444b11e45"},
     {file = "coverage-6.4.tar.gz", hash = "sha256:727dafd7f67a6e1cad808dc884bd9c5a2f6ef1f8f6d2f22b37b96cb0080d4f49"},
 ]
-coverage-badge = [
-    {file = "coverage-badge-1.1.0.tar.gz", hash = "sha256:c824a106503e981c02821e7d32f008fb3984b2338aa8c3800ec9357e33345b78"},
-    {file = "coverage_badge-1.1.0-py2.py3-none-any.whl", hash = "sha256:e365d56e5202e923d1b237f82defd628a02d1d645a147f867ac85c58c81d7997"},
-]
 darglint = [
     {file = "darglint-1.8.1-py3-none-any.whl", hash = "sha256:5ae11c259c17b0701618a20c3da343a3eb98b3bc4b5a83d31cdd94f5ebdced8d"},
     {file = "darglint-1.8.1.tar.gz", hash = "sha256:080d5106df149b199822e7ee7deb9c012b49891538f14a11be681044f0bb20da"},
@@ -1124,8 +1109,8 @@ gitpython = [
     {file = "GitPython-3.1.27.tar.gz", hash = "sha256:1c885ce809e8ba2d88a29befeb385fcea06338d3640712b59ca623c220bb5704"},
 ]
 hypothesis = [
-    {file = "hypothesis-6.46.2-py3-none-any.whl", hash = "sha256:37ca37f61939d0a92c18b5e17ab8088dccc5fc077c913d6619bbe1d233dfca1e"},
-    {file = "hypothesis-6.46.2.tar.gz", hash = "sha256:c671b3801527f3a8189314d9385418a67d4c7ab1b3330a3ff8b267d0d4599b3d"},
+    {file = "hypothesis-6.46.7-py3-none-any.whl", hash = "sha256:2696cdb9005946bf1d2b215cc91d3fc01625e3342eb8743ddd04b667b2f1882b"},
+    {file = "hypothesis-6.46.7.tar.gz", hash = "sha256:967009fa561b3a3f8363a73d71923357271c37dc7fa27b30c2d21a1b6092b240"},
 ]
 identify = [
     {file = "identify-2.5.1-py2.py3-none-any.whl", hash = "sha256:0dca2ea3e4381c435ef9c33ba100a78a9b40c0bab11189c7cf121f75815efeaa"},

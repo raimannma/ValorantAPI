@@ -11,7 +11,7 @@
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/raimannma/ValorantAPI/blob/master/.pre-commit-config.yaml)
 [![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/raimannma/ValorantAPI/releases)
 [![License](https://img.shields.io/github/license/raimannma/ValorantAPI)](https://github.com/raimannma/ValorantAPI/blob/master/LICENSE)
-![Coverage Report](assets/images/coverage.svg)
+[![Coverage Status](https://coveralls.io/repos/github/raimannma/ValorantAPI/badge.svg?branch=master)](https://coveralls.io/github/raimannma/ValorantAPI?branch=master)
 [![Downloads](https://pepy.tech/badge/valo-api)](https://pepy.tech/project/valo-api)
 
 Valorant API Wrapper for https://github.com/Henrik-3/unofficial-valorant-api
