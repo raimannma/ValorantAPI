@@ -36,13 +36,6 @@ classifiers = [  #! Update me
 [tool.poetry.dependencies]
 python = "^3.8"
 
-rich = ">=10.14,<13.0"
-responses = "^0.20.0"
-autodocsumm = "^0.2.8"
-Sphinx = "^4.5.0"
-sphinx-rtd-theme = "^1.0.0"
-hypothesis = "^6.46.2"
-
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.4"
 black = {version = "^22.3.0", allow-prereleases = true}
@@ -59,6 +52,17 @@ pyupgrade = "^2.32.1"
 safety = "^1.10.3"
 pytest-html = "^3.1.1"
 pytest-cov = "^3.0.0"
+Sphinx = "^4.5.0"
+sphinxcontrib-applehelp = "^1.0.2"
+sphinxcontrib-devhelp = "^1.0.2"
+sphinxcontrib-htmlhelp = "^2.0.0"
+sphinxcontrib-jsmath = "^1.0.1"
+sphinxcontrib-qthelp = "^1.0.3"
+sphinxcontrib-serializinghtml = "^1.1.5"
+sphinx-rtd-theme = "^1.0.0"
+autodocsumm = "^0.2.8"
+responses = "^0.20.0"
+
 
 [tool.black]
 # https://github.com/psf/black
