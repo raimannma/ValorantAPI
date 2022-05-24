@@ -1,12 +1,9 @@
-from typing import Optional
-
 import urllib.parse
 from uuid import UUID
 
 import responses
-from hypothesis import given, settings
+from hypothesis import given
 from hypothesis import strategies as st
-from responses import matchers
 
 import valo_api
 from tests.test_endpoints.utils import get_mock_response
