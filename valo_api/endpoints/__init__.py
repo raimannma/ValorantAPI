@@ -32,7 +32,7 @@ from valo_api.endpoints.mmr_history import (
 from valo_api.endpoints.status import get_status, get_status_v1
 from valo_api.endpoints.store_featured import get_store_featured, get_store_featured_v1
 from valo_api.endpoints.store_offers import get_store_offers, get_store_offers_v1
-from valo_api.endpoints.version_details import get_version_info, get_version_info_v1
+from valo_api.endpoints.version_info import get_version_info, get_version_info_v1
 from valo_api.endpoints.website import get_website, get_website_v1
 
 __all__ = [
