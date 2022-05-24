@@ -1,0 +1,13 @@
+[
+    {
+        "message": "string",
+        "status": 400
+    },
+    {
+        "message": "string",
+        "status": 429
+    },
+    {
+        "error": "Something went wrong"
+    }
+]

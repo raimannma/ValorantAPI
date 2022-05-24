@@ -1,0 +1,30 @@
+[
+    {
+        "message": "string",
+        "status": 400
+    },
+    {
+        "message": "string",
+        "status": 403
+    },
+    {
+        "message": "Not found",
+        "status": 404
+    },
+    {
+        "message": "A needed fetch request timed out three times, request will be terminated, please try again",
+        "status": 408
+    },
+    {
+        "message": "string",
+        "status": 429
+    },
+    {
+        "message": "API Version not implemented",
+        "status": 501
+    },
+    {
+        "message": "Riot Origin Server is not reachable",
+        "status": 503
+    }
+]
