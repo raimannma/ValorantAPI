@@ -62,6 +62,7 @@ sphinxcontrib-serializinghtml = "^1.1.5"
 sphinx-rtd-theme = "^1.0.0"
 autodocsumm = "^0.2.8"
 responses = "^0.21.0"
+pytest-parallel = "^0.1.1"
 
 
 [tool.black]
