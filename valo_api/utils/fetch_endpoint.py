@@ -21,7 +21,10 @@ def encode_params(**kwargs):
 
 
 def fetch_endpoint(
-    endpoint_definition, query_args: Optional[Dict[str, Any]] = None, **kwargs
+    endpoint_definition,
+    query_args: Optional[Dict[str, Any]] = None,
+    method: str = "GET",
+    **kwargs,
 ) -> Response:
     """
     Fetches an endpoint from the API.
@@ -36,12 +39,6 @@ def fetch_endpoint(
             f"{{{key.lower()}}}", value.lower()
         )
 
-    # Then add the query arguments
-    if query_args is not None and len(query_args) > 0:
-        endpoint_definition = (
-            f"{endpoint_definition}?{urllib.parse.urlencode(query_args)}"
-        )
-
     # Then add the base URL
     url = f"{Config.BASE_URL}{endpoint_definition}"
 
@@ -52,4 +49,6 @@ def fetch_endpoint(
     }
 
     # Make the request
-    return requests.get(url, headers=headers)
+    return requests.request(
+        method, url, params=query_args, json=query_args, headers=headers
+    )

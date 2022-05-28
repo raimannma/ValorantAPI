@@ -2,6 +2,7 @@ from abc import ABC
 
 
 class EndpointsConfig(ABC):
+    RAW = "/valorant/{version}/raw"
     CONTENT = "/valorant/{version}/content"
     STORE_FEATURED = "/valorant/{version}/store-featured"
     STORE_OFFERS = "/valorant/{version}/store-offers"
