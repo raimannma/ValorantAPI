@@ -10,7 +10,7 @@ import valo_api
 from tests.test_endpoints.utils import (
     get_error_responses,
     get_mock_response,
-    validateException,
+    validate_exception,
 )
 from valo_api.config import Config
 from valo_api.exceptions.valo_api_exception import ValoAPIException
@@ -79,14 +79,14 @@ def test_get_mmr_history_by_name_error(
             region=region, name=name, tag=tag, filter=filter
         )
     assert len(responses.calls) == 1
-    validateException(error_response, excinfo)
+    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_mmr_history_by_name")(
             version=version, region=region, name=name, tag=tag, filter=filter
         )
     assert len(responses.calls) == 2
-    validateException(error_response, excinfo)
+    validate_exception(error_response, excinfo)
 
 
 @given(
@@ -146,14 +146,14 @@ def test_get_mmr_history_by_puuid_error(
             region=region, puuid=puuid
         )
     assert len(responses.calls) == 1
-    validateException(error_response, excinfo)
+    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_mmr_history_by_puuid")(
             version=version, region=region, puuid=puuid
         )
     assert len(responses.calls) == 2
-    validateException(error_response, excinfo)
+    validate_exception(error_response, excinfo)
 
 
 if __name__ == "__main__":
