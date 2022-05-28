@@ -7,7 +7,7 @@ import valo_api
 from tests.test_endpoints.utils import (
     get_error_responses,
     get_mock_response,
-    validateException,
+    validate_exception,
 )
 from valo_api.config import Config
 from valo_api.exceptions.valo_api_exception import ValoAPIException
@@ -54,12 +54,12 @@ def test_get_store_featured_error(version: str, error_response: dict):
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, f"get_store_featured_{version}")()
     assert len(responses.calls) == 1
-    validateException(error_response, excinfo)
+    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_store_featured")(version=version)
     assert len(responses.calls) == 2
-    validateException(error_response, excinfo)
+    validate_exception(error_response, excinfo)
 
 
 if __name__ == "__main__":

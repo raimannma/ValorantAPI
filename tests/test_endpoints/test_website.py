@@ -7,7 +7,7 @@ import valo_api
 from tests.test_endpoints.utils import (
     get_error_responses,
     get_mock_response,
-    validateException,
+    validate_exception,
 )
 from valo_api.config import Config
 from valo_api.exceptions.valo_api_exception import ValoAPIException
@@ -58,12 +58,12 @@ def test_get_website_error(version: str, countrycode: str, error_response: dict)
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, f"get_website_{version}")(countrycode=countrycode)
     assert len(responses.calls) == 1
-    validateException(error_response, excinfo)
+    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_website")(version=version, countrycode=countrycode)
     assert len(responses.calls) == 2
-    validateException(error_response, excinfo)
+    validate_exception(error_response, excinfo)
 
 
 if __name__ == "__main__":

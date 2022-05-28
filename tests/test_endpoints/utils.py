@@ -19,7 +19,7 @@ def get_error_responses(endpoint: str):
         return json.load(f)
 
 
-def validateException(error_response, excinfo):
+def validate_exception(error_response, excinfo):
     assert isinstance(excinfo.value.args[0], ErrorResponse)
     assert isinstance(excinfo.value, ValoAPIException)
     if "status" in error_response:
