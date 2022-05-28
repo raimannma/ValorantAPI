@@ -5,7 +5,6 @@ from enum import Enum
 
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
-from valo_api.responses.account_details import AccountDetailsV1
 from valo_api.responses.competitive_updates_raw import CompetitiveUpdatesRawV1
 from valo_api.responses.error_response import ErrorResponse
 from valo_api.responses.match_details_raw import MatchDetailsRawV1
@@ -27,7 +26,7 @@ def get_raw_data_v1(
     region: Optional[str] = None,
     queries: Optional[dict] = None,
     **kwargs,
-) -> Union[AccountDetailsV1, ErrorResponse]:
+) -> Union[MMRRawV1, MatchHistoryRawV1, CompetitiveUpdatesRawV1, MatchDetailsRawV1]:
     return get_raw_data("v1", type, value, region, queries, **kwargs)
 
 
@@ -38,7 +37,7 @@ def get_raw_data(
     region: Optional[str] = None,
     queries: Optional[dict] = None,
     **kwargs,
-) -> Union[AccountDetailsV1, ErrorResponse]:
+) -> Union[MMRRawV1, MatchHistoryRawV1, CompetitiveUpdatesRawV1, MatchDetailsRawV1]:
     query_args = {
         "type": type.value,
     }
