@@ -39,7 +39,7 @@ formatting: codestyle
 #* Linting
 .PHONY: test
 test:
-	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml -x --cov-report=html --cov-report xml --cov=valo_api tests/
+	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml -x --workers auto --cov-report=html --cov-report xml --cov=valo_api tests/
 
 .PHONY: check-codestyle
 check-codestyle:
@@ -63,7 +63,7 @@ lint: test check-codestyle check-safety
 
 .PHONY: update-dev-deps
 update-dev-deps:
-	poetry add -D bandit@latest darglint@latest isort@latest pre-commit@latest pydocstyle@latest pylint@latest pytest@latest pyupgrade@latest safety@latest pytest-html@latest pytest-cov@latest
+	poetry add -D pytest-parallel@latest bandit@latest darglint@latest isort@latest pre-commit@latest pydocstyle@latest pylint@latest pytest@latest pyupgrade@latest safety@latest pytest-html@latest pytest-cov@latest
 	poetry add -D --allow-prereleases black@latest
 
 #* Docker
