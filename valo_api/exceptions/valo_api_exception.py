@@ -20,9 +20,9 @@ class ValoAPIException(Exception):
         return self.response.status
 
     @property
-    def message(self) -> Optional[int]:
+    def message(self) -> Optional[str]:
         return self.response.message
 
     @property
-    def error(self) -> Optional[int]:
+    def error(self) -> Optional[str]:
         return self.response.error
