@@ -13,7 +13,7 @@ class ValoAPIException(Exception):
         super().__init__(response)
 
     def __str__(self):
-        return self.response
+        return str(self.response)
 
     @property
     def status(self) -> Optional[int]:
