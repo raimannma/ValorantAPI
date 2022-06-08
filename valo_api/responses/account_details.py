@@ -1,3 +1,5 @@
+from typing import Optional
+
 from dataclasses import dataclass
 
 from valo_api.utils.init_options import InitOptions
@@ -18,8 +20,8 @@ class AccountDetailsV1(InitOptions):
     account_level: int
     name: str
     tag: str
-    card: AccountCardV1
-    last_update: str
+    card: Optional[AccountCardV1] = None
+    last_update: Optional[str] = None
 
     def __post_init__(self):
         self.card = AccountCardV1.from_dict(**self.card)
