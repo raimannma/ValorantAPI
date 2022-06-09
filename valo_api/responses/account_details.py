@@ -24,4 +24,4 @@ class AccountDetailsV1(InitOptions):
     last_update: Optional[str] = None
 
     def __post_init__(self):
-        self.card = AccountCardV1.from_dict(**self.card)
+        self.card = AccountCardV1.from_dict(**self.card) if self.card else None
