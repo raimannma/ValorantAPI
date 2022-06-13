@@ -216,6 +216,17 @@ toml = "*"
 pipenv = ["pipenv"]
 
 [[package]]
+name = "exceptiongroup"
+version = "1.0.0rc8"
+description = "Backport of PEP 654 (exception groups)"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+test = ["pytest (>=6)"]
+
+[[package]]
 name = "filelock"
 version = "3.7.1"
 description = "A platform independent file lock."
@@ -251,7 +262,7 @@ gitdb = ">=4.0.1,<5"
 
 [[package]]
 name = "hypothesis"
-version = "6.47.1"
+version = "6.47.2"
 description = "A library for property-based testing"
 category = "dev"
 optional = false
@@ -259,6 +270,7 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 attrs = ">=19.2.0"
+exceptiongroup = {version = ">=1.0.0rc8", markers = "python_version < \"3.11.0b1\""}
 sortedcontainers = ">=2.1.0,<3.0.0"
 
 [package.extras]
@@ -956,7 +968,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "97f9127d44ee7a4fba19213ae29d7746b9d69ab8a51b6d6f1f992f28c9dd1398"
+content-hash = "6d9ee73d13bcd840f60fa279e0d550bc3b3852662b3b2ca7876b24b353b810f5"
 
 [metadata.files]
 alabaster = [
@@ -1095,6 +1107,10 @@ dparse = [
     {file = "dparse-0.5.1-py3-none-any.whl", hash = "sha256:e953a25e44ebb60a5c6efc2add4420c177f1d8404509da88da9729202f306994"},
     {file = "dparse-0.5.1.tar.gz", hash = "sha256:a1b5f169102e1c894f9a7d5ccf6f9402a836a5d24be80a986c7ce9eaed78f367"},
 ]
+exceptiongroup = [
+    {file = "exceptiongroup-1.0.0rc8-py3-none-any.whl", hash = "sha256:ab0a968e1ef769e55d9a596f4a89f7be9ffedbc9fdefdb77cc68cf5c33ce1035"},
+    {file = "exceptiongroup-1.0.0rc8.tar.gz", hash = "sha256:6990c24f06b8d33c8065cfe43e5e8a4bfa384e0358be036af9cc60b6321bd11a"},
+]
 filelock = [
     {file = "filelock-3.7.1-py3-none-any.whl", hash = "sha256:37def7b658813cda163b56fc564cdc75e86d338246458c4c28ae84cabefa2404"},
     {file = "filelock-3.7.1.tar.gz", hash = "sha256:3a0fd85166ad9dbab54c9aec96737b744106dc5f15c0b09a6744a445299fcf04"},
@@ -1108,8 +1124,8 @@ gitpython = [
     {file = "GitPython-3.1.27.tar.gz", hash = "sha256:1c885ce809e8ba2d88a29befeb385fcea06338d3640712b59ca623c220bb5704"},
 ]
 hypothesis = [
-    {file = "hypothesis-6.47.1-py3-none-any.whl", hash = "sha256:69978811f1d9c19710c7d2bf8233dc43c80efa964251b72efbe8274044e073b4"},
-    {file = "hypothesis-6.47.1.tar.gz", hash = "sha256:4ad26c5d434171ffc02aba569dd52255573d615554c062bc30734dbe6f318c61"},
+    {file = "hypothesis-6.47.2-py3-none-any.whl", hash = "sha256:d6a7bb1b695edc57388b86960138d23aeddcb95192cff49755e280e3296558c9"},
+    {file = "hypothesis-6.47.2.tar.gz", hash = "sha256:9c01a225eada7d74d38430e3e91e659e3a892fbc2b15f7b051779ded6ab73ee7"},
 ]
 identify = [
     {file = "identify-2.5.1-py2.py3-none-any.whl", hash = "sha256:0dca2ea3e4381c435ef9c33ba100a78a9b40c0bab11189c7cf121f75815efeaa"},
