@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List, Optional, Union
 
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
@@ -8,9 +8,13 @@ from valo_api.utils.fetch_endpoint import fetch_endpoint
 
 
 def get_leaderboard_v1(
-    region: str, **kwargs
+    region: str,
+    puuid: Optional[str] = None,
+    name: Optional[str] = None,
+    tag: Optional[str] = None,
+    **kwargs,
 ) -> Union[List[LeaderboardPlayerV1], ErrorResponse]:
-    return get_leaderboard("v1", region, **kwargs)
+    return get_leaderboard("v1", region, puuid, name, tag, **kwargs)
 
 
 def get_leaderboard_v2(region: str, **kwargs) -> Union[LeaderboardV2, ErrorResponse]:
@@ -18,12 +22,31 @@ def get_leaderboard_v2(region: str, **kwargs) -> Union[LeaderboardV2, ErrorRespo
 
 
 def get_leaderboard(
-    version: str, region: str, **kwargs
+    version: str,
+    region: str,
+    puuid: Optional[str] = None,
+    name: Optional[str] = None,
+    tag: Optional[str] = None,
+    **kwargs,
 ) -> Union[LeaderboardV2, List[LeaderboardPlayerV1], ErrorResponse]:
+    if version == "v2":
+        assert (
+            puuid is None and name is None and tag is None
+        ), "puuid, name, and tag are not supported for v2"
+
+    query_args = dict()
+    if puuid is not None:
+        query_args["puuid"] = puuid
+    if name is not None:
+        query_args["name"] = name
+    if tag is not None:
+        query_args["tag"] = tag
+
     response = fetch_endpoint(
         EndpointsConfig.LEADERBOARD,
         region=region,
         version=version,
+        query_args=query_args,
         **kwargs,
     )
     response_data = response.json()
@@ -32,6 +55,8 @@ def get_leaderboard(
         raise ValoAPIException(ErrorResponse.from_dict(**response_data))
 
     if version == "v1":
+        if puuid is not None or name is not None or tag is not None:
+            response_data = response_data["data"]
         return [LeaderboardPlayerV1.from_dict(**player) for player in response_data]
     else:
         return LeaderboardV2.from_dict(**response_data)
