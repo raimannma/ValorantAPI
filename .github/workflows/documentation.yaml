@@ -1,4 +1,4 @@
-name: Docs
+name: Documentation
 on: [push, workflow_dispatch]
 jobs:
   docs:
@@ -9,14 +9,10 @@ jobs:
         uses: actions/setup-python@v4.0.0
         with:
           python-version: "3.8"
-      - name: Install poetry
-        run: make poetry-download
       - name: Install dependencies
-        run: |
-          poetry config virtualenvs.in-project true
-          poetry install
-      - name: Run style checks
-        run: make docs-build
+        run: pip install toml && python -c 'import toml; c = toml.load("pyproject.toml");print("\n".join(c["tool"]["poetry"]["dev-dependencies"]))' | pip install -r /dev/stdin
+      - name: Build Documentation
+        run: cd docs && make html && cd ..
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}

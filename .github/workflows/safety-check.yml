@@ -1,0 +1,22 @@
+name: Safety Check
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v4.0.0
+      with:
+        python-version: "3.8"
+    - name: Install poetry
+      run: make poetry-download
+    - name: Install dependencies
+      run: |
+        poetry config virtualenvs.in-project true
+        poetry install
+    - name: Run safety checks
+      run: make check-safety
