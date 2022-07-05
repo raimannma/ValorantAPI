@@ -25,6 +25,12 @@ Valorant API Wrapper for https://github.com/Henrik-3/unofficial-valorant-api
 
 ## Documentation
 
+### Hosted
+
+The documentation is hosted here: https://raimannma.github.io/ValorantAPI/
+
+### From Source
+
 After installing the package dependencies `pip install -r requirements.txt`, you can use the following commands to get the documentation:
 
     cd docs/ && make html
