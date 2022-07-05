@@ -1,4 +1,4 @@
-from typing import List, Optional, Union
+from typing import List, Optional
 
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
@@ -14,7 +14,25 @@ def get_match_history_by_name_v3(
     size: Optional[int] = None,
     game_mode: Optional[str] = None,
     **kwargs,
-) -> Union[List[MatchHistoryPointV3], ErrorResponse]:
+) -> List[MatchHistoryPointV3]:
+    """Get the match history for a player by name and tag using version 3 of the endpoint.
+
+    This is the same as :py:meth:`get_match_history_by_name(version="v3", region=region, name=name, tag=tag,
+    size=size, game_mode=game_mode, **kwargs) <get_match_history_by_name>`
+
+    Args:
+        region: The region of the player.
+            One of the following:
+            eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
+        name: The name of the player.
+        tag: The tag of the player.
+        size: The number of matches to return.
+        game_mode: The game mode to filter by.
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        A list of :class:`.MatchHistoryPointV3` objects.
+    """
     return get_match_history_by_name("v3", region, name, tag, size, game_mode, **kwargs)
 
 
@@ -24,7 +42,24 @@ def get_match_history_by_puuid_v3(
     size: Optional[int] = None,
     game_mode: Optional[str] = None,
     **kwargs,
-) -> Union[List[MatchHistoryPointV3], ErrorResponse]:
+) -> List[MatchHistoryPointV3]:
+    """Get the match history for a player by puuid using version 3 of the endpoint.
+
+    This is the same as :py:meth:`get_match_history_by_puuid(version="v3", region=region, puuid=puuid, size=size,
+    game_mode=game_mode, **kwargs) <get_match_history_by_puuid>`
+
+    Args:
+        region: The region of the player.
+            One of the following:
+            eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
+        puuid: The puuid of the player.
+        size: The number of matches to return.
+        game_mode: The game mode to filter by.
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        A list of :class:`.MatchHistoryPointV3` objects.
+    """
     return get_match_history_by_puuid("v3", region, puuid, size, game_mode, **kwargs)
 
 
@@ -36,7 +71,28 @@ def get_match_history_by_name(
     size: Optional[int] = None,
     game_mode: Optional[str] = None,
     **kwargs,
-) -> Union[List[MatchHistoryPointV3], ErrorResponse]:
+) -> List[MatchHistoryPointV3]:
+    """Get the match history for a player by name and tag using a specific version of the endpoint.
+
+    Args:
+        version: The version of the endpoint to use.
+            One of the following:
+            v3 (Version 3)
+        region: The region of the player.
+            One of the following:
+            eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
+        name: The name of the player.
+        tag: The tag of the player.
+        size: The number of matches to return.
+        game_mode: The game mode to filter by.
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        A list of :class:`.MatchHistoryPointV3` objects.
+
+    Raises:
+        ValoAPIException: If the request failed.
+    """
     query_args = dict()
     if size:
         query_args["size"] = str(size).lower()
@@ -66,7 +122,27 @@ def get_match_history_by_puuid(
     size: Optional[int] = None,
     game_mode: Optional[str] = None,
     **kwargs,
-) -> Union[List[MatchHistoryPointV3], ErrorResponse]:
+) -> List[MatchHistoryPointV3]:
+    """Get the match history for a player by puuid using a specific version of the endpoint.
+
+    Args:
+        version: The version of the endpoint to use.
+            One of the following:
+            v3 (Version 3)
+        region: The region of the player.
+            One of the following:
+            eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
+        puuid: The puuid of the player.
+        size: The number of matches to return.
+        game_mode: The game mode to filter by.
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        A list of :class:`.MatchHistoryPointV3` objects.
+
+    Raises:
+        ValoAPIException: If the request failed.
+    """
     query_args = dict()
     if size:
         query_args["size"] = str(size).lower()
