@@ -7,15 +7,40 @@ from valo_api.responses.website import WebsiteBannerV1
 from valo_api.utils.fetch_endpoint import fetch_endpoint
 
 
-def get_website_v1(
-    countrycode: str, **kwargs
-) -> Union[List[WebsiteBannerV1], ErrorResponse]:
+def get_website_v1(countrycode: str, **kwargs) -> List[WebsiteBannerV1]:
+    """
+    Get the website banners using version 1 of the endpoint.
+
+    This is the same as
+    :py:meth:`get_website(version="v1", countrycode=countrycode, **kwargs) <get_website>`
+
+    Args:
+        countrycode: The country code to get the website banners for.
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        A list of :class:`.WebsiteBannerV1` objects.
+    """
     return get_website("v1", countrycode, **kwargs)
 
 
-def get_website(
-    version: str, countrycode: str, **kwargs
-) -> Union[List[WebsiteBannerV1], ErrorResponse]:
+def get_website(version: str, countrycode: str, **kwargs) -> List[WebsiteBannerV1]:
+    """
+    Get the website banners using a specific version of the endpoint.
+
+    Args:
+        version: The version of the endpoint to use.
+            One of the following:
+            v1 (Version 1)
+        countrycode: The country code to get the website banners for.
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        A list of :class:`.WebsiteBannerV1` objects.
+
+    Raises:
+        ValoAPIException: If the request failed.
+    """
     response = fetch_endpoint(
         EndpointsConfig.WEBSITE,
         version=version,

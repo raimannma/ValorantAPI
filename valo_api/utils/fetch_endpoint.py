@@ -8,9 +8,15 @@ from requests import Response
 from valo_api.config import Config
 
 
-def encode_params(**kwargs):
+def encode_params(**kwargs) -> Dict[str, str]:
     """
     Returns a string of the parameters to be used in a URL.
+
+    Args:
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        A dictionary of the parameters to be used in a URL.
     """
     out = dict()
     for key, value in kwargs.items():
@@ -21,13 +27,22 @@ def encode_params(**kwargs):
 
 
 def fetch_endpoint(
-    endpoint_definition,
+    endpoint_definition: str,
     query_args: Optional[Dict[str, Any]] = None,
     method: str = "GET",
     **kwargs,
 ) -> Response:
     """
     Fetches an endpoint from the API.
+
+    Args:
+        endpoint_definition: The endpoint definition to use.
+        query_args: Any additional arguments to pass to the endpoint.
+        method: The method to use when fetching the endpoint.
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        A response from the API.
     """
     endpoint_definition = endpoint_definition.lower()
     encoded_params = encode_params(**kwargs)

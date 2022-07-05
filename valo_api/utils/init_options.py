@@ -2,6 +2,10 @@ from typing import Any, Dict
 
 
 class InitOptions:
+    """
+    A class to simplify the initialization of objects.
+    """
+
     @classmethod
     def from_dict(cls, **kwargs: Dict[str, Any]):
         """Create instance from relevant keywords in dictionary.

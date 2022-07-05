@@ -7,11 +7,38 @@ from valo_api.responses.store_featured import StoreFeaturedV1
 from valo_api.utils.fetch_endpoint import fetch_endpoint
 
 
-def get_store_featured_v1(**kwargs) -> Union[StoreFeaturedV1, ErrorResponse]:
+def get_store_featured_v1(**kwargs) -> StoreFeaturedV1:
+    """
+    Get the store featured using version 1 of the endpoint.
+
+    This is the same as
+    :py:meth:`get_store_featured(version="v1", **kwargs) <get_store_featured>`
+
+    Args:
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        A :class:`.StoreFeaturedV1` object.
+    """
     return get_store_featured("v1", **kwargs)
 
 
-def get_store_featured(version: str, **kwargs) -> Union[StoreFeaturedV1, ErrorResponse]:
+def get_store_featured(version: str, **kwargs) -> StoreFeaturedV1:
+    """
+    Get the store featured using a specific version of the endpoint.
+
+    Args:
+        version: The version of the endpoint to use.
+            One of the following:
+            v1 (Version 1)
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        A :class:`.StoreFeaturedV1` object.
+
+    Raises:
+        ValoAPIException: If the request failed.
+    """
     response = fetch_endpoint(
         EndpointsConfig.STORE_FEATURED,
         version=version,

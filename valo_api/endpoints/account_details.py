@@ -9,13 +9,46 @@ from valo_api.utils.fetch_endpoint import fetch_endpoint
 
 def get_account_details_v1(
     name: str, tag: str, force_update: bool = False, **kwargs
-) -> Union[AccountDetailsV1, ErrorResponse]:
+) -> AccountDetailsV1:
+    """
+    Get the account details for a player using version 1 of the endpoint.
+
+    This is the same as
+    :py:meth:`get_account_details(version="v1", name=name, tag=tag, force_update=force_update, **kwargs) <get_account_details>`
+
+    Args:
+        name: The name of the player to get the account details for.
+        tag: The tag of the player to get the account details for.
+        force_update: Whether to force an update of the account details.
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        An :class:`.AccountDetailsV1` object.
+    """
     return get_account_details("v1", name, tag, force_update, **kwargs)
 
 
 def get_account_details(
     version: str, name: str, tag: str, force_update: bool = False, **kwargs
-) -> Union[AccountDetailsV1, ErrorResponse]:
+) -> AccountDetailsV1:
+    """
+    Get the account details for a player using a specific version of the endpoint.
+
+    Args:
+        version: The version of the endpoint to use.
+            One of the following:
+            v1 (Version 1)
+        name: The name of the player to get the account details for.
+        tag: The tag of the player to get the account details for.
+        force_update: Whether to force an update of the account details.
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        An :class:`.AccountDetailsV1` object.
+
+    Raises:
+        ValoAPIException: If the request failed.
+    """
     response = fetch_endpoint(
         EndpointsConfig.ACCOUNT_BY_NAME,
         version=version,
