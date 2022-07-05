@@ -27,6 +27,24 @@ def get_raw_data_v1(
     queries: Optional[dict] = None,
     **kwargs,
 ) -> Union[MMRRawV1, MatchHistoryRawV1, CompetitiveUpdatesRawV1, MatchDetailsRawV1]:
+    """Get the raw data for a specific ingame endpoint for version 1.
+
+    This is the same as :py:meth:`get_raw_data(version="v1", type=type, value=value, region=region, queries=queries,
+    **kwargs) <get_raw_data>`
+
+    Args:
+        type: The type of endpoint to get the raw data for.
+        value: The value of the endpoint to get the raw data for.
+        region: The region to get the raw data for.
+        queries: Any additional queries to pass to the endpoint.
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        - An :class:`.MMRRawV1` object if the endpoint is of type :class:`.EndpointType.MMR`.
+        - An :class:`.MatchHistoryRawV1` object if the endpoint is of type :class:`.EndpointType.MATCH_HISTORY`.
+        - An :class:`.CompetitiveUpdatesRawV1` object if the endpoint is of type :class:`.EndpointType.COMPETITIVE_UPDATES`.
+        - An :class:`.MatchDetailsRawV1` object if the endpoint is of type :class:`.EndpointType.MATCH_DETAILS`.
+    """
     return get_raw_data("v1", type, value, region, queries, **kwargs)
 
 
@@ -38,6 +56,28 @@ def get_raw_data(
     queries: Optional[dict] = None,
     **kwargs,
 ) -> Union[MMRRawV1, MatchHistoryRawV1, CompetitiveUpdatesRawV1, MatchDetailsRawV1]:
+    """Get the raw data for a specific ingame endpoint for a specific version.
+
+    Args:
+        version: The version of the endpoint to use.
+            One of the following:
+            v1 (Version 1)
+        type: The type of endpoint to get the raw data for.
+        value: The value of the endpoint to get the raw data for.
+        region: The region to get the raw data for.
+        queries: Any additional queries to pass to the endpoint.
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        - An :class:`.MMRRawV1` object if the endpoint is of type :class:`.EndpointType.MMR`.
+        - An :class:`.MatchHistoryRawV1` object if the endpoint is of type :class:`.EndpointType.MATCH_HISTORY`.
+        - An :class:`.CompetitiveUpdatesRawV1` object if the endpoint is of type :class:`.EndpointType.COMPETITIVE_UPDATES`.
+        - An :class:`.MatchDetailsRawV1` object if the endpoint is of type :class:`.EndpointType.MATCH_DETAILS`.
+
+    Raises:
+        ValoAPIException: If the request failed.
+        ValueError: If the endpoint type is not one of the valid types.
+    """
     query_args = {
         "type": type.value,
     }
