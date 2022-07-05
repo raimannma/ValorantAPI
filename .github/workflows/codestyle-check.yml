@@ -1,4 +1,4 @@
-name: build
+name: Codestyle Check
 
 on: [push]
 
@@ -20,11 +20,3 @@ jobs:
         poetry install
     - name: Run style checks
       run: make check-codestyle
-    - name: Run tests
-      run: make test
-    - name: Run safety checks
-      run: make check-safety
-    - name: Report Coverage
-      run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Python --force-language -r coverage.xml
-      env:
-        CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
