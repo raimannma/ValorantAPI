@@ -1,5 +1,6 @@
 from typing import Any, Dict, Optional
 
+import os
 import urllib.parse
 
 import requests
@@ -60,6 +61,8 @@ def fetch_endpoint(
         "User-Agent": Config.USER_AGENT,
         "Accept": "application/json",
     }
+    if os.environ["VALO_API_KEY"] is not None:
+        headers["Authorization"] = os.environ["VALO_API_KEY"]
 
     # Make the request
     return requests.request(
