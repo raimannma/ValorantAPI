@@ -1,7 +1,4 @@
-from abc import ABC
-
-
-class EndpointsConfig(ABC):
+class EndpointsConfig:
     RAW = "/valorant/{version}/raw"
     CONTENT = "/valorant/{version}/content"
     STORE_FEATURED = "/valorant/{version}/store-featured"
