@@ -1,6 +1,19 @@
 from typing import Optional, Union
 
+from dataclasses import dataclass
+
 from valo_api.responses.error_response import ErrorResponse
+from valo_api.utils.init_options import InitOptions
+
+
+@dataclass
+class RateLimit(InitOptions):
+    limit: int
+    """The number of requests you did in the current period."""
+    remaining: int
+    """The number of requests you can make in the current period."""
+    reset: int
+    """The time in seconds until the current period ends."""
 
 
 class ValoAPIException(Exception):
@@ -54,3 +67,19 @@ class ValoAPIException(Exception):
         if not isinstance(self.response, ErrorResponse):
             return None
         return self.response.error
+
+    @property
+    def ratelimit(self) -> RateLimit:
+        """
+        Return the ratelimit of the response.
+
+        Returns:
+            RateLimit: The ratelimit of the response.
+        """
+        return RateLimit.from_dict(
+            **{
+                "limit": self.response.headers.get("x-ratelimit-limit", None),
+                "remaining": self.response.headers.get("x-ratelimit-remaining", None),
+                "reset": self.response.headers.get("x-ratelimit-reset", None),
+            }
+        )

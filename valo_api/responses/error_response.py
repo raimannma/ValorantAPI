@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Dict, Optional
 
 from dataclasses import dataclass
 
@@ -10,3 +10,4 @@ class ErrorResponse(InitOptions):
     status: Optional[int] = None
     message: Optional[str] = None
     error: Optional[str] = None
+    headers: Optional[Dict[str, str]] = None
