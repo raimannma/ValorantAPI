@@ -46,6 +46,9 @@ def get_version_info(version: str, region: str, **kwargs) -> VersionInfoV1:
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     return VersionInfoV1.from_dict(**response_data["data"])

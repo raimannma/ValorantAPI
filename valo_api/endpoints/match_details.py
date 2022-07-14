@@ -46,6 +46,9 @@ def get_match_details(version: str, matchId: str, **kwargs) -> MatchHistoryPoint
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     return MatchHistoryPointV3.from_dict(**response_data["data"])

@@ -43,6 +43,9 @@ def get_store_offers(version: str, **kwargs) -> StoreOffersV1:
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     return StoreOffersV1.from_dict(**response_data["data"])

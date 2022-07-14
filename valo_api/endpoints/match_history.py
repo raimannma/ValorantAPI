@@ -110,7 +110,10 @@ def get_match_history_by_name(
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     return [MatchHistoryPointV3.from_dict(**match) for match in response_data["data"]]
 
@@ -159,6 +162,9 @@ def get_match_history_by_puuid(
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     return [MatchHistoryPointV3.from_dict(**match) for match in response_data["data"]]
