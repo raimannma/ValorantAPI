@@ -1,5 +1,5 @@
 name: Documentation
-on: [push, workflow_dispatch]
+on: [ push, workflow_dispatch ]
 jobs:
   docs:
     runs-on: ubuntu-latest
@@ -13,6 +13,11 @@ jobs:
         run: pip install toml && python -c 'import toml; c = toml.load("pyproject.toml");print("\n".join(c["tool"]["poetry"]["dev-dependencies"]))' | pip install -r /dev/stdin
       - name: Build Documentation
         run: cd docs && make html && cd ..
+      - name: Upload Documentation to Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: documentation
+          path: docs/_build/html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
