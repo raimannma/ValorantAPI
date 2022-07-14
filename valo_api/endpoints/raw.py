@@ -98,7 +98,10 @@ def get_raw_data(
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     if type == EndpointType.MATCH_DETAILS:
         return MatchDetailsRawV1.from_dict(**response_data)

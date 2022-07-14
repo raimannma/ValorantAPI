@@ -83,7 +83,10 @@ def get_mmr_history_by_name(
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     return [MMRHistoryPointV1.from_dict(**point) for point in response_data["data"]]
 
@@ -119,6 +122,9 @@ def get_mmr_history_by_puuid(
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     return [MMRHistoryPointV1.from_dict(**point) for point in response_data["data"]]

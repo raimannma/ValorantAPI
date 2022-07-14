@@ -136,7 +136,10 @@ def get_mmr_details_by_name(
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     if version == "v1":
         return MMRDetailsV1.from_dict(**response_data["data"])
@@ -186,7 +189,10 @@ def get_mmr_details_by_puuid(
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     if version == "v1":
         cls = MMRDetailsV1

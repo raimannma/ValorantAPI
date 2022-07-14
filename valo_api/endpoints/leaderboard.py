@@ -105,7 +105,10 @@ def get_leaderboard(
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     if version == "v1":
         if puuid is not None or name is not None or tag is not None:

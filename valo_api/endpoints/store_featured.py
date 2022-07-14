@@ -43,6 +43,9 @@ def get_store_featured(version: str, **kwargs) -> StoreFeaturedV1:
     response_data = response.json()
 
     if response.ok is False:
-        raise ValoAPIException(ErrorResponse.from_dict(**response_data))
+        headers = dict(response.headers)
+        raise ValoAPIException(
+            ErrorResponse.from_dict(headers=headers, **response_data)
+        )
 
     return StoreFeaturedV1.from_dict(**response_data["data"])
