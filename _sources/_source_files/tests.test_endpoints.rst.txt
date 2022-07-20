@@ -1,0 +1,167 @@
+tests.test\_endpoints package
+=============================
+
+Submodules
+----------
+
+tests.test\_endpoints.test\_account\_details module
+---------------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_account_details
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_content module
+------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_content
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_leaderboard module
+----------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_leaderboard
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_match\_details module
+-------------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_match_details
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_match\_history module
+-------------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_match_history
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_mmr\_details module
+-----------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_mmr_details
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_mmr\_history module
+-----------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_mmr_history
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_raw\_competitiveupdates module
+----------------------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_raw_competitiveupdates
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_raw\_matchdetails module
+----------------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_raw_matchdetails
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_raw\_matchhistory module
+----------------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_raw_matchhistory
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_raw\_mmr module
+-------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_raw_mmr
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_status module
+-----------------------------------------
+
+.. automodule:: tests.test_endpoints.test_status
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_store\_featured module
+--------------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_store_featured
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_store\_offers module
+------------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_store_offers
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_version\_info module
+------------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_version_info
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.test\_website module
+------------------------------------------
+
+.. automodule:: tests.test_endpoints.test_website
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_endpoints.utils module
+----------------------------------
+
+.. automodule:: tests.test_endpoints.utils
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: tests.test_endpoints
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:

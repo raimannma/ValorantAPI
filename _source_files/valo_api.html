@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>valo_api package &mdash; Valorant API Wrapper 1.0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Valorant API Wrapper
+          </a>
+              <div class="version">
+                1.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Python Packages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.endpoints.html">valo_api.endpoints package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.exceptions.html">valo_api.exceptions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.responses.html">valo_api.responses package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.utils.html">valo_api.utils package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Valorant API Wrapper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>valo_api package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_source_files/valo_api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="valo-api-package">
+<h1>valo_api package<a class="headerlink" href="#valo-api-package" title="Permalink to this headline"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.endpoints.html">valo_api.endpoints package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.account_details">valo_api.endpoints.account_details module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.content">valo_api.endpoints.content module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.leaderboard">valo_api.endpoints.leaderboard module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.match_details">valo_api.endpoints.match_details module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.match_history">valo_api.endpoints.match_history module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.mmr_details">valo_api.endpoints.mmr_details module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.mmr_history">valo_api.endpoints.mmr_history module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.raw">valo_api.endpoints.raw module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.status">valo_api.endpoints.status module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.store_featured">valo_api.endpoints.store_featured module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.store_offers">valo_api.endpoints.store_offers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.version_info">valo_api.endpoints.version_info module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.website">valo_api.endpoints.website module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.exceptions.html">valo_api.exceptions package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.exceptions.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.exceptions.html#module-valo_api.exceptions.valo_api_exception">valo_api.exceptions.valo_api_exception module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.exceptions.html#module-valo_api.exceptions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.responses.html">valo_api.responses package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.account_details">valo_api.responses.account_details module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.competitive_updates_raw">valo_api.responses.competitive_updates_raw module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.content">valo_api.responses.content module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.error_response">valo_api.responses.error_response module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.leaderboard">valo_api.responses.leaderboard module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.match_details_raw">valo_api.responses.match_details_raw module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.match_history">valo_api.responses.match_history module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.match_history_raw">valo_api.responses.match_history_raw module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.mmr_details">valo_api.responses.mmr_details module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.mmr_history">valo_api.responses.mmr_history module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.mmr_raw">valo_api.responses.mmr_raw module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.status">valo_api.responses.status module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.store_featured">valo_api.responses.store_featured module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.store_offers">valo_api.responses.store_offers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.version_info">valo_api.responses.version_info module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.website">valo_api.responses.website module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.utils.html">valo_api.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.utils.html#module-valo_api.utils.fetch_endpoint">valo_api.utils.fetch_endpoint module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.utils.html#module-valo_api.utils.init_options">valo_api.utils.init_options module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.utils.html#module-valo_api.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-valo_api.config">
+<span id="valo-api-config-module"></span><h2>valo_api.config module<a class="headerlink" href="#module-valo_api.config" title="Permalink to this headline"></a></h2>
+<p><strong>Classes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.config.Config" title="valo_api.config.Config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Config</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="valo_api.config.Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Config</span></span><a class="headerlink" href="#valo_api.config.Config" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><strong>Attributes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.config.Config.USER_AGENT" title="valo_api.config.Config.USER_AGENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">USER_AGENT</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.config.Config.BASE_URL" title="valo_api.config.Config.BASE_URL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BASE_URL</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.config.Config.ALL_REGIONS" title="valo_api.config.Config.ALL_REGIONS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALL_REGIONS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.config.Config.ALL_COUNTRY_CODES" title="valo_api.config.Config.ALL_COUNTRY_CODES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALL_COUNTRY_CODES</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.config.Config.ALL_LOCALS" title="valo_api.config.Config.ALL_LOCALS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALL_LOCALS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.config.Config.USER_AGENT">
+<span class="sig-name descname"><span class="pre">USER_AGENT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Python</span> <span class="pre">Valorant</span> <span class="pre">API</span> <span class="pre">Wrapper'</span></em><a class="headerlink" href="#valo_api.config.Config.USER_AGENT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.config.Config.BASE_URL">
+<span class="sig-name descname"><span class="pre">BASE_URL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://api.henrikdev.xyz'</span></em><a class="headerlink" href="#valo_api.config.Config.BASE_URL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.config.Config.ALL_REGIONS">
+<span class="sig-name descname"><span class="pre">ALL_REGIONS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['eu',</span> <span class="pre">'na',</span> <span class="pre">'ap',</span> <span class="pre">'kr',</span> <span class="pre">'latam',</span> <span class="pre">'br']</span></em><a class="headerlink" href="#valo_api.config.Config.ALL_REGIONS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.config.Config.ALL_COUNTRY_CODES">
+<span class="sig-name descname"><span class="pre">ALL_COUNTRY_CODES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['en-us',</span> <span class="pre">'en-gb',</span> <span class="pre">'de-de',</span> <span class="pre">'es-es',</span> <span class="pre">'fr-fr',</span> <span class="pre">'it-it',</span> <span class="pre">'ru-ru',</span> <span class="pre">'tr-tr',</span> <span class="pre">'es-mx',</span> <span class="pre">'ja-jp',</span> <span class="pre">'ko-kr',</span> <span class="pre">'pt-br',</span> <span class="pre">'vi-vn']</span></em><a class="headerlink" href="#valo_api.config.Config.ALL_COUNTRY_CODES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.config.Config.ALL_LOCALS">
+<span class="sig-name descname"><span class="pre">ALL_LOCALS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['ar-AE',</span> <span class="pre">'de-DE',</span> <span class="pre">'en-US',</span> <span class="pre">'es-ES',</span> <span class="pre">'es-MX',</span> <span class="pre">'fr-FR',</span> <span class="pre">'id-ID',</span> <span class="pre">'it-IT',</span> <span class="pre">'ja-JP',</span> <span class="pre">'ko-KR',</span> <span class="pre">'pl-PL',</span> <span class="pre">'pt-BR',</span> <span class="pre">'ru-RU',</span> <span class="pre">'th-TH',</span> <span class="pre">'tr-TR',</span> <span class="pre">'vi-VN',</span> <span class="pre">'zh-CN',</span> <span class="pre">'zh-TW']</span></em><a class="headerlink" href="#valo_api.config.Config.ALL_LOCALS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-valo_api.endpoints_config">
+<span id="valo-api-endpoints-config-module"></span><h2>valo_api.endpoints_config module<a class="headerlink" href="#module-valo_api.endpoints_config" title="Permalink to this headline"></a></h2>
+<p><strong>Classes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig" title="valo_api.endpoints_config.EndpointsConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EndpointsConfig</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EndpointsConfig</span></span><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><strong>Attributes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.RAW" title="valo_api.endpoints_config.EndpointsConfig.RAW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RAW</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.CONTENT" title="valo_api.endpoints_config.EndpointsConfig.CONTENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CONTENT</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.STORE_FEATURED" title="valo_api.endpoints_config.EndpointsConfig.STORE_FEATURED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STORE_FEATURED</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.STORE_OFFERS" title="valo_api.endpoints_config.EndpointsConfig.STORE_OFFERS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STORE_OFFERS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.STATUS" title="valo_api.endpoints_config.EndpointsConfig.STATUS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STATUS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.VERSION_INFO" title="valo_api.endpoints_config.EndpointsConfig.VERSION_INFO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VERSION_INFO</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.WEBSITE" title="valo_api.endpoints_config.EndpointsConfig.WEBSITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WEBSITE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.LEADERBOARD" title="valo_api.endpoints_config.EndpointsConfig.LEADERBOARD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LEADERBOARD</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.ACCOUNT_BY_NAME" title="valo_api.endpoints_config.EndpointsConfig.ACCOUNT_BY_NAME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ACCOUNT_BY_NAME</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.MATCH_DETAILS" title="valo_api.endpoints_config.EndpointsConfig.MATCH_DETAILS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MATCH_DETAILS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.MMR_DETAILS_BY_PUUID" title="valo_api.endpoints_config.EndpointsConfig.MMR_DETAILS_BY_PUUID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MMR_DETAILS_BY_PUUID</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.MMR_DETAILS_BY_NAME" title="valo_api.endpoints_config.EndpointsConfig.MMR_DETAILS_BY_NAME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MMR_DETAILS_BY_NAME</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.MMR_HISTORY_BY_PUUID" title="valo_api.endpoints_config.EndpointsConfig.MMR_HISTORY_BY_PUUID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MMR_HISTORY_BY_PUUID</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.MMR_HISTORY_BY_NAME" title="valo_api.endpoints_config.EndpointsConfig.MMR_HISTORY_BY_NAME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MMR_HISTORY_BY_NAME</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.MATCH_HISTORY_BY_PUUID" title="valo_api.endpoints_config.EndpointsConfig.MATCH_HISTORY_BY_PUUID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MATCH_HISTORY_BY_PUUID</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.endpoints_config.EndpointsConfig.MATCH_HISTORY_BY_NAME" title="valo_api.endpoints_config.EndpointsConfig.MATCH_HISTORY_BY_NAME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MATCH_HISTORY_BY_NAME</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.RAW">
+<span class="sig-name descname"><span class="pre">RAW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/raw'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.RAW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.CONTENT">
+<span class="sig-name descname"><span class="pre">CONTENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/content'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.CONTENT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.STORE_FEATURED">
+<span class="sig-name descname"><span class="pre">STORE_FEATURED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/store-featured'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.STORE_FEATURED" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.STORE_OFFERS">
+<span class="sig-name descname"><span class="pre">STORE_OFFERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/store-offers'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.STORE_OFFERS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.STATUS">
+<span class="sig-name descname"><span class="pre">STATUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/status/{region}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.STATUS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.VERSION_INFO">
+<span class="sig-name descname"><span class="pre">VERSION_INFO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/version/{region}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.VERSION_INFO" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.WEBSITE">
+<span class="sig-name descname"><span class="pre">WEBSITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/website/{countrycode}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.WEBSITE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.LEADERBOARD">
+<span class="sig-name descname"><span class="pre">LEADERBOARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/leaderboard/{region}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.LEADERBOARD" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.ACCOUNT_BY_NAME">
+<span class="sig-name descname"><span class="pre">ACCOUNT_BY_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/account/{name}/{tag}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.ACCOUNT_BY_NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.MATCH_DETAILS">
+<span class="sig-name descname"><span class="pre">MATCH_DETAILS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/match/{matchId}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.MATCH_DETAILS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.MMR_DETAILS_BY_PUUID">
+<span class="sig-name descname"><span class="pre">MMR_DETAILS_BY_PUUID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/by-puuid/mmr/{region}/{puuid}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.MMR_DETAILS_BY_PUUID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.MMR_DETAILS_BY_NAME">
+<span class="sig-name descname"><span class="pre">MMR_DETAILS_BY_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/mmr/{region}/{name}/{tag}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.MMR_DETAILS_BY_NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.MMR_HISTORY_BY_PUUID">
+<span class="sig-name descname"><span class="pre">MMR_HISTORY_BY_PUUID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/by-puuid/mmr-history/{region}/{puuid}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.MMR_HISTORY_BY_PUUID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.MMR_HISTORY_BY_NAME">
+<span class="sig-name descname"><span class="pre">MMR_HISTORY_BY_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/mmr-history/{region}/{name}/{tag}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.MMR_HISTORY_BY_NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.MATCH_HISTORY_BY_PUUID">
+<span class="sig-name descname"><span class="pre">MATCH_HISTORY_BY_PUUID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/by-puuid/matches/{region}/{puuid}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.MATCH_HISTORY_BY_PUUID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valo_api.endpoints_config.EndpointsConfig.MATCH_HISTORY_BY_NAME">
+<span class="sig-name descname"><span class="pre">MATCH_HISTORY_BY_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/valorant/{version}/matches/{region}/{name}/{tag}'</span></em><a class="headerlink" href="#valo_api.endpoints_config.EndpointsConfig.MATCH_HISTORY_BY_NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-valo_api">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-valo_api" title="Permalink to this headline"></a></h2>
+<p>This is a Valorant API Wrapper for <a class="reference external" href="https://github.com/Henrik-3/unofficial-valorant-api">https://github.com/Henrik-3/unofficial-valorant-api</a></p>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.set_api_key" title="valo_api.set_api_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_api_key</span></code></a>(api_key)</p></td>
+<td><p>Sets the API key to use for all API requests.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="valo_api.set_api_key">
+<span class="sig-name descname"><span class="pre">set_api_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#valo_api.set_api_key" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the API key to use for all API requests.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>api_key</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The API key to use.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Valorant API Wrappr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

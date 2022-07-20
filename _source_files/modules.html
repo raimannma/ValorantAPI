@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ValorantAPI &mdash; Valorant API Wrapper 1.0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Valorant API Wrapper
+          </a>
+              <div class="version">
+                1.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Python Packages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.endpoints.html">valo_api.endpoints package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.exceptions.html">valo_api.exceptions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.responses.html">valo_api.responses package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.utils.html">valo_api.utils package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Valorant API Wrapper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>ValorantAPI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_source_files/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="valorantapi">
+<h1>ValorantAPI<a class="headerlink" href="#valorantapi" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_endpoints.html">tests.test_endpoints package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_account_details">tests.test_endpoints.test_account_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_content">tests.test_endpoints.test_content module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_leaderboard">tests.test_endpoints.test_leaderboard module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_match_details">tests.test_endpoints.test_match_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_match_history">tests.test_endpoints.test_match_history module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_mmr_details">tests.test_endpoints.test_mmr_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_mmr_history">tests.test_endpoints.test_mmr_history module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_raw_competitiveupdates">tests.test_endpoints.test_raw_competitiveupdates module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_raw_matchdetails">tests.test_endpoints.test_raw_matchdetails module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_raw_matchhistory">tests.test_endpoints.test_raw_matchhistory module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_raw_mmr">tests.test_endpoints.test_raw_mmr module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_status">tests.test_endpoints.test_status module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_store_featured">tests.test_endpoints.test_store_featured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_store_offers">tests.test_endpoints.test_store_offers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_version_info">tests.test_endpoints.test_version_info module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.test_website">tests.test_endpoints.test_website module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints.utils">tests.test_endpoints.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_endpoints.html#module-tests.test_endpoints">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.html">valo_api package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.endpoints.html">valo_api.endpoints package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.account_details">valo_api.endpoints.account_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.content">valo_api.endpoints.content module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.leaderboard">valo_api.endpoints.leaderboard module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.match_details">valo_api.endpoints.match_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.match_history">valo_api.endpoints.match_history module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.mmr_details">valo_api.endpoints.mmr_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.mmr_history">valo_api.endpoints.mmr_history module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.raw">valo_api.endpoints.raw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.status">valo_api.endpoints.status module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.store_featured">valo_api.endpoints.store_featured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.store_offers">valo_api.endpoints.store_offers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.version_info">valo_api.endpoints.version_info module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints.website">valo_api.endpoints.website module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.exceptions.html">valo_api.exceptions package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.exceptions.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.exceptions.html#module-valo_api.exceptions.valo_api_exception">valo_api.exceptions.valo_api_exception module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.exceptions.html#module-valo_api.exceptions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.responses.html">valo_api.responses package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.account_details">valo_api.responses.account_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.competitive_updates_raw">valo_api.responses.competitive_updates_raw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.content">valo_api.responses.content module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.error_response">valo_api.responses.error_response module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.leaderboard">valo_api.responses.leaderboard module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.match_details_raw">valo_api.responses.match_details_raw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.match_history">valo_api.responses.match_history module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.match_history_raw">valo_api.responses.match_history_raw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.mmr_details">valo_api.responses.mmr_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.mmr_history">valo_api.responses.mmr_history module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.mmr_raw">valo_api.responses.mmr_raw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.status">valo_api.responses.status module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.store_featured">valo_api.responses.store_featured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.store_offers">valo_api.responses.store_offers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.version_info">valo_api.responses.version_info module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.website">valo_api.responses.website module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.utils.html">valo_api.utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.utils.html#module-valo_api.utils.fetch_endpoint">valo_api.utils.fetch_endpoint module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.utils.html#module-valo_api.utils.init_options">valo_api.utils.init_options module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.utils.html#module-valo_api.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.html#module-valo_api.config">valo_api.config module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.html#module-valo_api.endpoints_config">valo_api.endpoints_config module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.html#module-valo_api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Valorant API Wrappr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
