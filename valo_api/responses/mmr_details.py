@@ -14,6 +14,7 @@ class MMRDetailsV1(InitOptions):
     ranking_in_tier: int
     mmr_change_to_last_game: int
     elo: int
+    old: bool
 
 
 @dataclass
@@ -24,6 +25,7 @@ class CurrentDataV2(InitOptions):
     mmr_change_to_last_game: int
     elo: int
     games_needed_for_rating: int
+    old: bool
 
 
 @dataclass
@@ -39,6 +41,7 @@ class SeasonDataV2(InitOptions):
     final_rank: int
     final_rank_patched: str
     act_rank_wins: List[ActRankWinV2]
+    old: bool
 
     def __post_init__(self):
         self.act_rank_wins = [ActRankWinV2.from_dict(**x) for x in self.act_rank_wins]

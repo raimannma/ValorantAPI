@@ -6,7 +6,8 @@
         "mmr_change_to_last_game": -14,
         "name": "jasminaxrose",
         "ranking_in_tier": 83,
-        "tag": "7024"
+        "tag": "7024",
+        "old": false
     },
     "status": 200
 }
