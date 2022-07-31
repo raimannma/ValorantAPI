@@ -12,6 +12,7 @@ def get_leaderboard_v1(
     puuid: Optional[str] = None,
     name: Optional[str] = None,
     tag: Optional[str] = None,
+    season_id: Optional[str] = None,
     **kwargs,
 ) -> List[LeaderboardPlayerV1]:
     """Get the leaderboard for a region using version 1 of the endpoint.
@@ -28,12 +29,13 @@ def get_leaderboard_v1(
         puuid: The puuid of the player to get the leaderboard for.
         name: The name of the player to get the leaderboard for.
         tag: The tag of the player to get the leaderboard for.
+        season_id: The season ID to get the leaderboard for.
         **kwargs: Any additional arguments to pass to the endpoint.
 
     Returns:
         A list of LeaderboardPlayerV1 objects.
     """
-    return get_leaderboard("v1", region, puuid, name, tag, **kwargs)
+    return get_leaderboard("v1", region, puuid, name, tag, season_id, **kwargs)
 
 
 def get_leaderboard_v2(region: str, **kwargs) -> LeaderboardV2:
@@ -59,6 +61,7 @@ def get_leaderboard(
     puuid: Optional[str] = None,
     name: Optional[str] = None,
     tag: Optional[str] = None,
+    season_id: Optional[str] = None,
     **kwargs,
 ) -> Union[LeaderboardV2, List[LeaderboardPlayerV1]]:
     """Get the leaderboard for a region using a specific version of the endpoint.
@@ -74,6 +77,7 @@ def get_leaderboard(
         puuid: The puuid of the player to get the leaderboard for.
         name: The name of the player to get the leaderboard for.
         tag: The tag of the player to get the leaderboard for.
+        season_id: The season ID to get the leaderboard for. Only works for leaderboard version 1.
         **kwargs: Any additional arguments to pass to the endpoint.
 
     Returns:
@@ -86,6 +90,8 @@ def get_leaderboard(
     if version == "v2":
         if puuid is not None or name is not None or tag is not None:
             raise ValoAPIException("puuid, name and tag are not allowed for version v2")
+        if season_id is not None:
+            raise ValoAPIException("season_id is not allowed for version v2")
 
     query_args = dict()
     if puuid is not None:
@@ -94,6 +100,8 @@ def get_leaderboard(
         query_args["name"] = name
     if tag is not None:
         query_args["tag"] = tag
+    if season_id is not None:
+        query_args["season_id"] = tag
 
     response = fetch_endpoint(
         EndpointsConfig.LEADERBOARD,
