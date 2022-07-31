@@ -1,13 +1,22 @@
 [
     {
-        "message": "string",
-        "status": 400
+        "status": 400,
+        "errors": [
+            {
+                "code": 400,
+                "message": "string",
+                "details": "string"
+            }
+        ]
     },
     {
-        "message": "string",
-        "status": 429
-    },
-    {
-        "error": "Something went wrong"
+        "status": 429,
+        "errors": [
+            {
+                "code": 429,
+                "message": "string",
+                "details": "string"
+            }
+        ]
     }
 ]

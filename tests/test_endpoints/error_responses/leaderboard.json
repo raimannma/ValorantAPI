@@ -1,17 +1,32 @@
 [
     {
-        "message": "string",
-        "status": 400
+        "status": 400,
+        "errors": [
+            {
+                "code": 400,
+                "message": "string",
+                "details": "string"
+            }
+        ]
     },
     {
-        "message": "A needed fetch request timed out three times, request will be terminated, please try again",
-        "status": 408
+        "status": 408,
+        "errors": [
+            {
+                "code": 408,
+                "message": "A needed fetch request timed out three times, request will be terminated, please try again",
+                "details": "A needed fetch request timed out three times, request will be terminated, please try again"
+            }
+        ]
     },
     {
-        "message": "string",
-        "status": 429
-    },
-    {
-        "error": "Something went wrong"
+        "status": 429,
+        "errors": [
+            {
+                "code": 429,
+                "message": "string",
+                "details": "string"
+            }
+        ]
     }
 ]

@@ -27,4 +27,10 @@ def validate_exception(error_response, excinfo):
     if "message" in error_response:
         assert excinfo.value.message == error_response["message"]
     if "errors" in error_response:
-        assert excinfo.value.error == error_response["error"]
+        assert len(excinfo.value.errors) == len(error_response["errors"])
+        for exc_error, response_error in zip(
+            excinfo.value.errors, error_response["errors"]
+        ):
+            assert exc_error.code == response_error["code"]
+            assert exc_error.message == response_error["message"]
+            assert exc_error.details == response_error["details"]

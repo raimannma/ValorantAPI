@@ -1,8 +1,8 @@
-from typing import Optional, Union
+from typing import List, Optional, Union
 
 from dataclasses import dataclass
 
-from valo_api.responses.error_response import ErrorResponse
+from valo_api.responses.error_response import Error, ErrorResponse
 from valo_api.utils.init_options import InitOptions
 
 
@@ -30,7 +30,10 @@ class ValoAPIException(Exception):
         Returns:
             The error message as string.
         """
-        return str(self.response)
+        if type(self.response) is str:
+            return self.response
+
+        return f"Errors: {', '.join([e.message for e in self.response.errors])}"
 
     @property
     def status(self) -> Optional[int]:
@@ -54,10 +57,22 @@ class ValoAPIException(Exception):
         """
         if not isinstance(self.response, ErrorResponse):
             return None
-        return self.response.message
+        return ", ".join([e.message for e in self.response.errors])
 
     @property
-    def error(self) -> Optional[str]:
+    def detail(self) -> Optional[str]:
+        """
+        Return the error message of the response.
+
+        Returns:
+            The error message of the response.
+        """
+        if not isinstance(self.response, ErrorResponse):
+            return None
+        return ", ".join([e.details for e in self.response.errors])
+
+    @property
+    def errors(self) -> Optional[List[Error]]:
         """
         Return the error code of the response.
 
@@ -66,7 +81,7 @@ class ValoAPIException(Exception):
         """
         if not isinstance(self.response, ErrorResponse):
             return None
-        return self.response.error
+        return self.response.errors
 
     @property
     def ratelimit(self) -> RateLimit:
