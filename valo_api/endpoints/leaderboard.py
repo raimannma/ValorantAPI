@@ -13,6 +13,7 @@ def get_leaderboard_v1(
     name: Optional[str] = None,
     tag: Optional[str] = None,
     season_id: Optional[str] = None,
+    start: Optional[int] = None,
     **kwargs,
 ) -> List[LeaderboardPlayerV1]:
     """Get the leaderboard for a region using version 1 of the endpoint.
@@ -30,12 +31,13 @@ def get_leaderboard_v1(
         name: The name of the player to get the leaderboard for.
         tag: The tag of the player to get the leaderboard for.
         season_id: The season ID to get the leaderboard for.
+        start: The start index of the leaderboard. Can be used for pagination.
         **kwargs: Any additional arguments to pass to the endpoint.
 
     Returns:
         A list of LeaderboardPlayerV1 objects.
     """
-    return get_leaderboard("v1", region, puuid, name, tag, season_id, **kwargs)
+    return get_leaderboard("v1", region, puuid, name, tag, season_id, start, **kwargs)
 
 
 def get_leaderboard_v2(region: str, **kwargs) -> LeaderboardV2:
@@ -62,6 +64,7 @@ def get_leaderboard(
     name: Optional[str] = None,
     tag: Optional[str] = None,
     season_id: Optional[str] = None,
+    start: Optional[int] = None,
     **kwargs,
 ) -> Union[LeaderboardV2, List[LeaderboardPlayerV1]]:
     """Get the leaderboard for a region using a specific version of the endpoint.
@@ -74,10 +77,11 @@ def get_leaderboard(
         region: The region to get the leaderboard for.
             One of the following:
             eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
-        puuid: The puuid of the player to get the leaderboard for.
-        name: The name of the player to get the leaderboard for.
-        tag: The tag of the player to get the leaderboard for.
+        puuid: The puuid of the player to get the leaderboard for. Only works for leaderboard version 1.
+        name: The name of the player to get the leaderboard for. Only works for leaderboard version 1.
+        tag: The tag of the player to get the leaderboard for. Only works for leaderboard version 1.
         season_id: The season ID to get the leaderboard for. Only works for leaderboard version 1.
+        start: The start index of the leaderboard. Can be used for pagination. Only works for leaderboard version 1.
         **kwargs: Any additional arguments to pass to the endpoint.
 
     Returns:
@@ -92,6 +96,8 @@ def get_leaderboard(
             raise ValoAPIException("puuid, name and tag are not allowed for version v2")
         if season_id is not None:
             raise ValoAPIException("season_id is not allowed for version v2")
+        if start is not None:
+            raise ValoAPIException("start is not allowed for version v2")
 
     query_args = dict()
     if puuid is not None:
@@ -102,6 +108,8 @@ def get_leaderboard(
         query_args["tag"] = tag
     if season_id is not None:
         query_args["season_id"] = tag
+    if start is not None:
+        query_args["start"] = start
 
     response = fetch_endpoint(
         EndpointsConfig.LEADERBOARD,

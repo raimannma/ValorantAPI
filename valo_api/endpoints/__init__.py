@@ -3,6 +3,7 @@ from valo_api.endpoints.account_details import (
     get_account_details_v1,
 )
 from valo_api.endpoints.content import get_content, get_content_v1
+from valo_api.endpoints.crosshair import get_crosshair, get_crosshair_v1
 from valo_api.endpoints.leaderboard import (
     get_leaderboard,
     get_leaderboard_v1,
@@ -72,4 +73,6 @@ __all__ = [
     "get_leaderboard",
     "get_raw_data_v1",
     "get_raw_data",
+    "get_crosshair_v1",
+    "get_crosshair",
 ]

@@ -18,3 +18,5 @@ class EndpointsConfig:
 
     MATCH_HISTORY_BY_PUUID = "/valorant/{version}/by-puuid/matches/{region}/{puuid}"
     MATCH_HISTORY_BY_NAME = "/valorant/{version}/matches/{region}/{name}/{tag}"
+
+    CROSSHAIR = "/valorant/{version}/crosshair/generate"
