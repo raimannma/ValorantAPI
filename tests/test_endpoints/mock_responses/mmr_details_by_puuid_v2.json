@@ -23,7 +23,8 @@
                 "final_rank": 3,
                 "final_rank_patched": "Iron 1",
                 "number_of_games": 19,
-                "wins": 2
+                "wins": 2,
+                "old": false
             },
             "e1a2": {
                 "act_rank_wins": [
@@ -383,7 +384,8 @@
                 "final_rank": 7,
                 "final_rank_patched": "Bronze 2",
                 "number_of_games": 167,
-                "wins": 87
+                "wins": 87,
+                "old": false
             },
             "e1a3": {
                 "act_rank_wins": [
@@ -471,7 +473,8 @@
                 "final_rank": 6,
                 "final_rank_patched": "Bronze 1",
                 "number_of_games": 42,
-                "wins": 18
+                "wins": 18,
+                "old": false
             },
             "e2a1": {
                 "act_rank_wins": [
@@ -499,7 +502,8 @@
                 "final_rank": 7,
                 "final_rank_patched": "Bronze 2",
                 "number_of_games": 11,
-                "wins": 3
+                "wins": 3,
+                "old": false
             },
             "e2a2": {
                 "act_rank_wins": [
@@ -779,7 +783,8 @@
                 "final_rank": 9,
                 "final_rank_patched": "Silver 1",
                 "number_of_games": 131,
-                "wins": 68
+                "wins": 68,
+                "old": false
             },
             "e2a3": {
                 "act_rank_wins": [
@@ -979,7 +984,8 @@
                 "final_rank": 10,
                 "final_rank_patched": "Silver 2",
                 "number_of_games": 96,
-                "wins": 48
+                "wins": 48,
+                "old": false
             },
             "e3a1": {
                 "act_rank_wins": [
@@ -1219,7 +1225,8 @@
                 "final_rank": 12,
                 "final_rank_patched": "Gold 1",
                 "number_of_games": 115,
-                "wins": 57
+                "wins": 57,
+                "old": false
             },
             "e3a2": {
                 "act_rank_wins": [
@@ -1275,7 +1282,8 @@
                 "final_rank": 12,
                 "final_rank_patched": "Gold 1",
                 "number_of_games": 24,
-                "wins": 12
+                "wins": 12,
+                "old": false
             },
             "e3a3": {
                 "act_rank_wins": [
@@ -1383,7 +1391,8 @@
                 "final_rank": 12,
                 "final_rank_patched": "Gold 1",
                 "number_of_games": 51,
-                "wins": 25
+                "wins": 25,
+                "old": false
             },
             "e4a1": {
                 "act_rank_wins": [
@@ -1471,7 +1480,8 @@
                 "final_rank": 9,
                 "final_rank_patched": "Silver 1",
                 "number_of_games": 39,
-                "wins": 19
+                "wins": 19,
+                "old": false
             },
             "e4a2": {
                 "act_rank_wins": [
@@ -1547,7 +1557,8 @@
                 "final_rank": 9,
                 "final_rank_patched": "Silver 1",
                 "number_of_games": 39,
-                "wins": 17
+                "wins": 17,
+                "old": false
             },
             "e4a3": {
                 "error": "No data Available"
@@ -1559,7 +1570,8 @@
             "elo": 683,
             "games_needed_for_rating": 1,
             "mmr_change_to_last_game": -14,
-            "ranking_in_tier": 83
+            "ranking_in_tier": 83,
+            "old": false
         },
         "name": "jasminaxrose",
         "puuid": "930bb0d3-c914-5394-bcf6-0bc81f465bd7",
