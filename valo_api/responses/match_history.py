@@ -19,6 +19,7 @@ class MatchMetadataV3(InitOptions):
     matchid: str
     region: str
     cluster: str
+    queue: str
 
 
 @dataclass
