@@ -1,26 +1,62 @@
 [
     {
-        "message": "string",
-        "status": 400
+        "status": 400,
+        "errors": [
+            {
+                "message": "string",
+                "code": 400,
+                "details": "string"
+            }
+        ]
     },
     {
-        "message": "string",
-        "status": 403
+        "status": 403,
+        "errors": [
+            {
+                "message": "string",
+                "code": 403,
+                "details": "string"
+            }
+        ]
     },
     {
-        "message": "Not found",
-        "status": 404
+        "status": 404,
+        "errors": [
+            {
+                "message": "Not found",
+                "code": 404,
+                "details": "Not found"
+            }
+        ]
     },
     {
-        "message": "A needed fetch request timed out three times, request will be terminated, please try again",
-        "status": 408
+        "status": 408,
+        "errors": [
+            {
+                "message": "A needed fetch request timed out three times, request will be terminated, please try again",
+                "code": 408,
+                "details": "A needed fetch request timed out three times, request will be terminated, please try again"
+            }
+        ]
     },
     {
-        "message": "string",
-        "status": 429
+        "status": 429,
+        "errors": [
+            {
+                "message": "string",
+                "code": 429,
+                "details": "string"
+            }
+        ]
     },
     {
-        "message": "Riot Origin Server is not reachable",
-        "status": 503
+        "status": 503,
+        "errors": [
+            {
+                "message": "Riot Origin Server is not reachable",
+                "code": 503,
+                "details": "Riot Origin Server is not reachable"
+            }
+        ]
     }
 ]
