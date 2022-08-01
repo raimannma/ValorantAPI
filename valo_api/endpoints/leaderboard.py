@@ -107,7 +107,7 @@ def get_leaderboard(
     if tag is not None:
         query_args["tag"] = tag
     if season_id is not None:
-        query_args["season_id"] = tag
+        query_args["season_id"] = season_id
     if start is not None:
         query_args["start"] = start
 
