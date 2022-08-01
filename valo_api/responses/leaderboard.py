@@ -47,4 +47,8 @@ class LeaderboardV2(InitOptions):
     players: List[LeaderboardPlayerV2]
 
     def __post_init__(self):
-        self.players = [LeaderboardPlayerV2(**player) for player in self.players]
+        self.players = [
+            LeaderboardPlayerV2(**player)
+            for player in self.players
+            if player is not None
+        ]
