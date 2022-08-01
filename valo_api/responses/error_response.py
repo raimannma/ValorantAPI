@@ -7,9 +7,9 @@ from valo_api.utils.init_options import InitOptions
 
 @dataclass
 class Error(InitOptions):
-    code: int
-    message: str
-    details: str
+    code: Optional[int] = None
+    message: Optional[str] = None
+    details: Optional[str] = None
 
 
 @dataclass

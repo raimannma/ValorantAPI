@@ -1,11 +1,13 @@
 from typing import Any, Dict, Optional
 
 import os
+import time
 import urllib.parse
 
 import requests
 from requests import Response
 
+from valo_api import RateLimit
 from valo_api.config import Config
 
 
@@ -65,6 +67,18 @@ def fetch_endpoint(
         headers["Authorization"] = os.environ["VALO_API_KEY"]
 
     # Make the request
-    return requests.request(
+    response = requests.request(
         method, url, params=query_args, json=query_args, headers=headers
     )
+    RateLimit.limit, RateLimit.remaining, RateLimit.reset_unix = (
+        int(response.headers.get("x-ratelimit-limit", -1)),
+        int(response.headers.get("x-ratelimit-remaining", -1)),
+        int(time.time())
+        + int(
+            response.headers.get(
+                "retry-after", response.headers.get("x-ratelimit-reset", -1)
+            )
+        ),
+    )
+
+    return response
