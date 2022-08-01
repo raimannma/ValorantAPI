@@ -38,7 +38,6 @@ class LeaderboardPlayerV2(InitOptions):
 @dataclass
 class LeaderboardV2(InitOptions):
     last_update: int
-    last_update_raw: int
     next_update: int
     total_players: int
     radiant_threshold: int
