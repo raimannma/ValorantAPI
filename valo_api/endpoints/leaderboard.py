@@ -40,7 +40,9 @@ def get_leaderboard_v1(
     return get_leaderboard("v1", region, puuid, name, tag, season_id, start, **kwargs)
 
 
-def get_leaderboard_v2(region: str, **kwargs) -> LeaderboardV2:
+def get_leaderboard_v2(
+    region: str, season_id: Optional[str] = None, **kwargs
+) -> LeaderboardV2:
     """Get the leaderboard for a region using version 2 of the endpoint.
 
     This is the same as :py:meth:`get_leaderboard(version="v2", region=region, **kwargs) <get_leaderboard>`
@@ -49,12 +51,13 @@ def get_leaderboard_v2(region: str, **kwargs) -> LeaderboardV2:
         region: The region to get the leaderboard for.
             One of the following:
             eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
+        season_id: The season ID to get the leaderboard for.
         **kwargs: Any additional arguments to pass to the endpoint.
 
     Returns:
         A LeaderboardV2 object.
     """
-    return get_leaderboard("v2", region, **kwargs)
+    return get_leaderboard("v2", region, season_id=season_id, **kwargs)
 
 
 def get_leaderboard(
@@ -94,8 +97,6 @@ def get_leaderboard(
     if version == "v2":
         if puuid is not None or name is not None or tag is not None:
             raise ValoAPIException("puuid, name and tag are not allowed for version v2")
-        if season_id is not None:
-            raise ValoAPIException("season_id is not allowed for version v2")
         if start is not None:
             raise ValoAPIException("start is not allowed for version v2")
 
