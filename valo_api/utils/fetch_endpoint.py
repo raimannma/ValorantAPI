@@ -45,6 +45,12 @@ def fetch_endpoint(
     Returns:
         A response from the API.
     """
+    fetch_endpoint.session = (
+        fetch_endpoint.session
+        if hasattr(fetch_endpoint, "session")
+        else requests.Session()
+    )
+
     endpoint_definition = endpoint_definition.lower()
     encoded_params = encode_params(**kwargs)
 
@@ -67,7 +73,7 @@ def fetch_endpoint(
         headers["Authorization"] = os.environ["VALO_API_KEY"]
 
     # Make the request
-    response = requests.request(
+    response = fetch_endpoint.session.request(
         method, url, params=query_args, json=query_args, headers=headers
     )
     RateLimit.limit, RateLimit.remaining, RateLimit.reset_unix = (
