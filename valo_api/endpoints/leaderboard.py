@@ -83,7 +83,7 @@ def get_leaderboard(
         puuid: The puuid of the player to get the leaderboard for. Only works for leaderboard version 1.
         name: The name of the player to get the leaderboard for. Only works for leaderboard version 1.
         tag: The tag of the player to get the leaderboard for. Only works for leaderboard version 1.
-        season_id: The season ID to get the leaderboard for. Only works for leaderboard version 1.
+        season_id: The season ID to get the leaderboard for.
         start: The start index of the leaderboard. Can be used for pagination. Only works for leaderboard version 1.
         **kwargs: Any additional arguments to pass to the endpoint.
 
