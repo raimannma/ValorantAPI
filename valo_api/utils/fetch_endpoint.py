@@ -10,6 +10,8 @@ from requests import Response
 from valo_api.config import Config
 from valo_api.exceptions.rate_limit import RateLimit
 
+session = requests.Session()
+
 
 def encode_params(**kwargs) -> Dict[str, str]:
     """Returns a string of the parameters to be used in a URL.
@@ -45,6 +47,8 @@ def fetch_endpoint(
     Returns:
         A response from the API.
     """
+    global session
+
     endpoint_definition = endpoint_definition.lower()
     encoded_params = encode_params(**kwargs)
 
@@ -67,7 +71,7 @@ def fetch_endpoint(
         headers["Authorization"] = os.environ["VALO_API_KEY"]
 
     # Make the request
-    response = requests.request(
+    response = session.request(
         method, url, params=query_args, json=query_args, headers=headers
     )
     RateLimit.limit, RateLimit.remaining, RateLimit.reset_unix = (
