@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from dataclasses import dataclass
 
@@ -37,14 +37,14 @@ class LeaderboardPlayerV2(InitOptions):
 
 @dataclass
 class LeaderboardV2(InitOptions):
-    last_update: int
-    next_update: int
     total_players: int
     radiant_threshold: int
     immortal_3_threshold: int
     immortal_2_threshold: int
     immortal_1_threshold: int
     players: List[LeaderboardPlayerV2]
+    last_update: Optional[int] = None
+    next_update: Optional[int] = None
 
     def __post_init__(self):
         self.players = [
