@@ -19,7 +19,6 @@ class ErrorResponse(InitOptions):
     headers: Optional[Dict[str, str]] = None
 
     def __post_init__(self):
-        print(self.errors)
         self.errors = (
             [Error.from_dict(**e) for e in self.errors]
             if self.errors is not None
