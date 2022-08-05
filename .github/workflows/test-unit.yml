@@ -1,9 +1,9 @@
-name: Tests
+name: Unit Tests
 
 on: [push]
 
 jobs:
-  build:
+  test-unit:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
         poetry config virtualenvs.in-project true
         poetry install
     - name: Run tests
-      run: make test
+      run: make test-unit
     - name: Report Coverage
       run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Python --force-language -r coverage.xml
       env:

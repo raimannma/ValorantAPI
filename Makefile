@@ -36,10 +36,19 @@ codestyle:
 .PHONY: formatting
 formatting: codestyle
 
-#* Linting
+#* Testing
 .PHONY: test
 test:
-	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml -x --workers auto --cov-report=html --cov-report xml --cov=valo_api tests/
+	make test-unit
+	make test-e2e
+
+.PHONY: test-unit
+test-unit:
+	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml -x --workers auto --cov-report=html --cov-report xml --cov=valo_api tests/unit
+
+.PHONY: test-e2e
+test-e2e:
+	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml -x --workers 1 --cov-report=html --cov-report xml --cov=valo_api tests/e2e
 
 .PHONY: check-codestyle
 check-codestyle:
