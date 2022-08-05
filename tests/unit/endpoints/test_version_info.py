@@ -4,7 +4,7 @@ from hypothesis import given
 from hypothesis import strategies as st
 
 import valo_api
-from tests.test_endpoints.utils import (
+from tests.unit.endpoints.utils import (
     get_error_responses,
     get_mock_response,
     validate_exception,
@@ -13,40 +13,37 @@ from valo_api.config import Config
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 
 
-@given(
-    version=st.sampled_from(["v1"]),
-    countrycode=st.sampled_from(Config.ALL_COUNTRY_CODES),
-)
+@given(version=st.sampled_from(["v1"]), region=st.sampled_from(Config.ALL_REGIONS))
 @responses.activate
-def test_get_website(version: str, countrycode: str):
-    print(f"Test get_website with: {locals()}")
+def test_get_version_info(version: str, region: str):
+    print(f"Test get_version_info with: {locals()}")
 
-    url = f"{Config.BASE_URL}/valorant/{version}/website/{countrycode}"
+    url = f"{Config.BASE_URL}/valorant/{version}/version/{region}"
 
     responses.add(
         responses.GET,
         url,
-        json=get_mock_response(f"website_{version}.json"),
+        json=get_mock_response(f"version_info_{version}.json"),
         status=200,
     )
 
-    getattr(valo_api, f"get_website_{version}")(countrycode=countrycode)
+    getattr(valo_api, f"get_version_info_{version}")(region=region)
     assert len(responses.calls) == 1
 
-    getattr(valo_api, "get_website")(version=version, countrycode=countrycode)
+    getattr(valo_api, "get_version_info")(version=version, region=region)
     assert len(responses.calls) == 2
 
 
 @given(
     version=st.sampled_from(["v1"]),
-    countrycode=st.sampled_from(Config.ALL_COUNTRY_CODES),
-    error_response=st.sampled_from(get_error_responses("website")),
+    region=st.sampled_from(Config.ALL_REGIONS),
+    error_response=st.sampled_from(get_error_responses("version_info")),
 )
 @responses.activate
-def test_get_website_error(version: str, countrycode: str, error_response: dict):
+def test_get_version_info_error(version: str, region: str, error_response: dict):
     print(f"Test test_get_version_info_error with: {locals()}")
 
-    url = f"{Config.BASE_URL}/valorant/{version}/website/{countrycode}"
+    url = f"{Config.BASE_URL}/valorant/{version}/version/{region}"
 
     responses.add(
         responses.GET,
@@ -56,16 +53,16 @@ def test_get_website_error(version: str, countrycode: str, error_response: dict)
     )
 
     with pytest.raises(ValoAPIException) as excinfo:
-        getattr(valo_api, f"get_website_{version}")(countrycode=countrycode)
+        getattr(valo_api, f"get_version_info_{version}")(region=region)
     assert len(responses.calls) == 1
     validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
-        getattr(valo_api, "get_website")(version=version, countrycode=countrycode)
+        getattr(valo_api, "get_version_info")(version=version, region=region)
     assert len(responses.calls) == 2
     validate_exception(error_response, excinfo)
 
 
 if __name__ == "__main__":
-    test_get_website()
-    test_get_website_error()
+    test_get_version_info()
+    test_get_version_info_error()

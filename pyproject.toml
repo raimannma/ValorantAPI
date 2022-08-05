@@ -66,6 +66,7 @@ sphinx-autodoc-typehints = "^1.19.0"
 autodocsumm = "^0.2.8"
 responses = "^0.21.0"
 pytest-parallel = "^0.1.1"
+pytest-split = "^0.8.0"
 
 
 [tool.black]

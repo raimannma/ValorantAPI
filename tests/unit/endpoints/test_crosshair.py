@@ -5,7 +5,7 @@ from hypothesis import strategies as st
 from responses import matchers
 
 import valo_api
-from tests.test_endpoints.utils import get_error_responses, validate_exception
+from tests.unit.endpoints.utils import get_error_responses, validate_exception
 from valo_api.config import Config
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 

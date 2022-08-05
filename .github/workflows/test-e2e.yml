@@ -1,0 +1,28 @@
+name: Integration Tests
+
+on:
+    push: null
+    schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  test-e2e:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        group: [ 1, 2, 3 ]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v4.2.0
+      with:
+        python-version: "3.8"
+    - name: Install poetry
+      run: make poetry-download
+    - name: Install dependencies
+      run: |
+        poetry config virtualenvs.in-project true
+        poetry install
+    - name: Run tests
+      continue-on-error: true
+      run: PYTHONPATH=$(pwd) poetry run pytest -c pyproject.toml -x --splits 3 --group ${{ matrix.group }} --cov-report=html --cov-report xml --cov=valo_api tests/e2e

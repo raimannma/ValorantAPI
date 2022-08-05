@@ -158,9 +158,9 @@ class MatchPlayersRaw(InitOptions):
     playerCard: str
     playerTitle: str
     accountLevel: int
-    sessionPlaytimeMinutes: int
     behaviorFactors: PlayerBehaviorFactorsRaw
     newPlayerExperienceDetails: PlayerExperienceDetailsRaw
+    sessionPlaytimeMinutes: Optional[int] = None
 
     def __post_init__(self):
         self.platformInfo = PlayerPlatformInfoRaw.from_dict(**self.platformInfo)

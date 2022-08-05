@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Optional
 
 from dataclasses import dataclass
 
@@ -27,33 +27,43 @@ class QueueSkill(InitOptions):
     TotalGamesNeededForRating: int
     TotalGamesNeededForLeaderboard: int
     CurrentSeasonGamesNeededForRating: int
-    SeasonalInfoBySeasonID: Dict[str, SeasonInfoRaw]
+    SeasonalInfoBySeasonID: Optional[Dict[str, SeasonInfoRaw]]
 
     def __post_init__(self):
-        self.SeasonalInfoBySeasonID = {
-            k: SeasonInfoRaw.from_dict(**v)
-            for k, v in self.SeasonalInfoBySeasonID.items()
-        }
+        self.SeasonalInfoBySeasonID = (
+            {
+                k: SeasonInfoRaw.from_dict(**v)
+                for k, v in self.SeasonalInfoBySeasonID.items()
+            }
+            if self.SeasonalInfoBySeasonID
+            else None
+        )
 
 
 @dataclass
 class QueueSkills(InitOptions):
-    competitive: QueueSkill
-    custom: QueueSkill
-    deathmatch: QueueSkill
-    onefa: QueueSkill
-    seeding: QueueSkill
-    spikerush: QueueSkill
-    unrated: QueueSkill
+    competitive: Optional[QueueSkill] = None
+    custom: Optional[QueueSkill] = None
+    deathmatch: Optional[QueueSkill] = None
+    onefa: Optional[QueueSkill] = None
+    seeding: Optional[QueueSkill] = None
+    spikerush: Optional[QueueSkill] = None
+    unrated: Optional[QueueSkill] = None
 
     def __post_init__(self):
-        self.competitive = QueueSkill.from_dict(**self.competitive)
-        self.custom = QueueSkill.from_dict(**self.custom)
-        self.deathmatch = QueueSkill.from_dict(**self.deathmatch)
-        self.onefa = QueueSkill.from_dict(**self.onefa)
-        self.seeding = QueueSkill.from_dict(**self.seeding)
-        self.spikerush = QueueSkill.from_dict(**self.spikerush)
-        self.unrated = QueueSkill.from_dict(**self.unrated)
+        self.competitive = (
+            QueueSkill.from_dict(**self.competitive) if self.competitive else None
+        )
+        self.custom = QueueSkill.from_dict(**self.custom) if self.custom else None
+        self.deathmatch = (
+            QueueSkill.from_dict(**self.deathmatch) if self.deathmatch else None
+        )
+        self.onefa = QueueSkill.from_dict(**self.onefa) if self.onefa else None
+        self.seeding = QueueSkill.from_dict(**self.seeding) if self.seeding else None
+        self.spikerush = (
+            QueueSkill.from_dict(**self.spikerush) if self.spikerush else None
+        )
+        self.unrated = QueueSkill.from_dict(**self.unrated) if self.unrated else None
 
 
 @dataclass
@@ -62,12 +72,14 @@ class MMRRawV1(InitOptions):
     Subject: str
     NewPlayerExperienceFinished: bool
     QueueSkills: QueueSkills
-    LatestCompetitiveUpdate: CompetitiveMatchRaw
+    LatestCompetitiveUpdate: Optional[CompetitiveMatchRaw]
     IsLeaderboardAnonymized: bool
     IsActRankBadgeHidden: bool
 
     def __post_init__(self):
         self.QueueSkills = QueueSkills.from_dict(**self.QueueSkills)
-        self.LatestCompetitiveUpdate = CompetitiveMatchRaw.from_dict(
-            **self.LatestCompetitiveUpdate
+        self.LatestCompetitiveUpdate = (
+            CompetitiveMatchRaw.from_dict(**self.LatestCompetitiveUpdate)
+            if self.LatestCompetitiveUpdate
+            else None
         )
