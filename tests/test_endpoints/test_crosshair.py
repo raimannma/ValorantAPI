@@ -43,5 +43,4 @@ def test_get_crosshair_error(version: str, crosshair_id: str, error_response: di
 
 
 if __name__ == "__main__":
-    test_get_crosshair()
     test_get_crosshair_error()
