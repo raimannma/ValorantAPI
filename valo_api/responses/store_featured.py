@@ -55,3 +55,33 @@ class StoreFeaturedV1(InitOptions):
 
     def __post_init__(self):
         self.FeaturedBundle = FeaturedBundleV1.from_dict(**self.FeaturedBundle)
+
+
+@dataclass
+class BundleItemV2(InitOptions):
+    uuid: str
+    name: str
+    image: str
+    type: str
+    amount: int
+    discount_percent: float
+    base_price: int
+    discounted_price: int
+    promo_item: bool
+
+
+@dataclass
+class BundleV2(InitOptions):
+    bundle_uuid: str
+    items: List[BundleItemV2]
+    seconds_remaining: int
+
+    def __post_init__(self):
+        self.items = [BundleItemV2.from_dict(**item) for item in self.items]
+
+@dataclass
+class StoreFeaturedV2(InitOptions):
+    Bundle: List[BundleV2]
+
+    def __post_init__(self):
+        self.Bundle = BundleV2.from_dict(**self.Bundle)
