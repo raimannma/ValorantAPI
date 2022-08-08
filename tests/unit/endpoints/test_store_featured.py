@@ -13,7 +13,7 @@ from valo_api.config import Config
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 
 
-@given(version=st.sampled_from(["v1"]))
+@given(version=st.sampled_from(["v1", "v2"]))
 @responses.activate
 def test_get_store_featured(version: str):
     print(f"Test get_store_featured with: {locals()}")
@@ -35,7 +35,7 @@ def test_get_store_featured(version: str):
 
 
 @given(
-    version=st.sampled_from(["v1"]),
+    version=st.sampled_from(["v1", "v2"]),
     error_response=st.sampled_from(get_error_responses("store_featured")),
 )
 @responses.activate
