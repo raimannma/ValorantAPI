@@ -1,0 +1,66 @@
+{
+    "status": 200,
+    "data": [
+        {
+            "bundle_uuid": "e143cba0-e6c4-4969-8596-0cfb63501d00",
+            "items": [
+                {
+                    "uuid": "81ddbfcd-4081-8341-ff76-ad8cdb26ce4c",
+                    "name": "Gravitational Uranium Neuroblaster Classic",
+                    "image": "https://media.valorant-api.com/weaponskins/81ddbfcd-4081-8341-ff76-ad8cdb26ce4c/displayicon.png",
+                    "type": "skin_level",
+                    "amount": 1,
+                    "discount_percent": 0.33,
+                    "base_price": 1775,
+                    "discounted_price": 1190,
+                    "promo_item": false
+                },
+                {
+                    "uuid": "e86bf7e4-4dd3-fbee-533b-fa875344bbaf",
+                    "name": "Ion Phantom",
+                    "image": "https://media.valorant-api.com/weaponskins/e86bf7e4-4dd3-fbee-533b-fa875344bbaf/displayicon.png",
+                    "type": "skin_level",
+                    "amount": 1,
+                    "discount_percent": 0.33,
+                    "base_price": 1775,
+                    "discounted_price": 1190,
+                    "promo_item": false
+                },
+                {
+                    "uuid": "8fe5ebbc-4ce7-a248-9766-288441706e0a",
+                    "name": "Ego Stinger",
+                    "image": "https://media.valorant-api.com/weaponskins/8fe5ebbc-4ce7-a248-9766-288441706e0a/displayicon.png",
+                    "type": "skin_level",
+                    "amount": 1,
+                    "discount_percent": 0.33,
+                    "base_price": 1775,
+                    "discounted_price": 1190,
+                    "promo_item": false
+                },
+                {
+                    "uuid": "31072cda-4041-b4f0-119a-3692ea598321",
+                    "name": "Radiant Crisis 001 Bucky",
+                    "image": "https://media.valorant-api.com/weaponskins/31072cda-4041-b4f0-119a-3692ea598321/displayicon.png",
+                    "type": "skin_level",
+                    "amount": 1,
+                    "discount_percent": 0.33,
+                    "base_price": 1775,
+                    "discounted_price": 1190,
+                    "promo_item": false
+                },
+                {
+                    "uuid": "7e831918-4580-5e2a-089a-84ad58fe1aae",
+                    "name": "Magepunk Operator",
+                    "image": "https://media.valorant-api.com/weaponskins/7e831918-4580-5e2a-089a-84ad58fe1aae/displayicon.png",
+                    "type": "skin_level",
+                    "amount": 1,
+                    "discount_percent": 0.33,
+                    "base_price": 1775,
+                    "discounted_price": 1190,
+                    "promo_item": false
+                }
+            ],
+            "seconds_remaining": 151199
+        }
+    ]
+}
