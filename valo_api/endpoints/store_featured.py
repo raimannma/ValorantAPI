@@ -3,7 +3,7 @@ from typing import Optional, Union
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
-from valo_api.responses.store_featured import StoreFeaturedV1, StoreFeaturedV2, BundleV2
+from valo_api.responses.store_featured import StoreFeaturedV1, BundleV2
 from valo_api.utils.fetch_endpoint import fetch_endpoint
 
 def get_store_featured_v1(**kwargs) -> StoreFeaturedV1:
@@ -20,7 +20,7 @@ def get_store_featured_v1(**kwargs) -> StoreFeaturedV1:
     """
     return get_store_featured("v1", **kwargs)
 
-def get_store_featured_v2(**kwargs) -> StoreFeaturedV2:
+def get_store_featured_v2(**kwargs) -> BundleV2:
     """Get the store featured using version 2 of the endpoint.
 
     This is the same as
@@ -30,11 +30,11 @@ def get_store_featured_v2(**kwargs) -> StoreFeaturedV2:
         **kwargs: Any additional arguments to pass to the endpoint.
 
     Returns:
-        StoreFeaturedV2: Store featured fetched from the API.
+        BundleV2: Bundles featured fetched from the API.
     """
     return get_store_featured("v2", **kwargs)
 
-def get_store_featured(version: str, **kwargs) -> Union[StoreFeaturedV1, StoreFeaturedV2]:
+def get_store_featured(version: str, **kwargs) -> Union[StoreFeaturedV1, BundleV2]:
     """Get the store featured using a specific version of the endpoint.
 
     Args:
@@ -46,7 +46,7 @@ def get_store_featured(version: str, **kwargs) -> Union[StoreFeaturedV1, StoreFe
 
     Returns:
         StoreFeaturedV1: Store featured fetched from the API.
-        StoreFeaturedV2: Store featured fetched from the API.
+        BundleV2: Bundles featured fetched from the API.
 
     Raises:
         ValoAPIException: If the request failed.
