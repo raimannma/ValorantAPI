@@ -78,10 +78,3 @@ class BundleV2(InitOptions):
 
     def __post_init__(self):
         self.items = [BundleItemV2.from_dict(**item) for item in self.items]
-
-@dataclass
-class StoreFeaturedV2(InitOptions):
-    Bundle: List[BundleV2]
-
-    def __post_init__(self):
-        self.Bundle = BundleV2.from_dict(**self.Bundle)
