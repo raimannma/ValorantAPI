@@ -61,7 +61,7 @@ autodocsumm = "^0.2.8"
 responses = "^0.21.0"
 pytest-parallel = "^0.1.1"
 pytest-split = "^0.8.0"
-tomlkit = "<0.11.4"
+tomlkit = "<0.11.5"
 colorama = "^0.4.5"
 
 
