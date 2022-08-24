@@ -75,10 +75,10 @@ class PlayerRoundDamageRaw(InitOptions):
 @dataclass
 class PlayerBehaviorFactorsRaw(InitOptions):
     afkRounds: int
-    friendlyFireIncoming: int
-    friendlyFireOutgoing: int
-    stayedInSpawnRounds: float
     damageParticipationOutgoing: Optional[int] = None
+    friendlyFireIncoming: Optional[int] = None
+    friendlyFireOutgoing: Optional[int] = None
+    stayedInSpawnRounds: Optional[float] = None
 
 
 @dataclass
