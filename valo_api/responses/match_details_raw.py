@@ -28,7 +28,7 @@ class MatchInfoRaw(InitOptions):
     completionState: str
     platformType: str
     partyRRPenalties: Dict[str, int]
-    shouldMatchDisablePenalties: bool
+    shouldMatchDisablePenalties: Optional[bool] = None
 
 
 @dataclass
@@ -55,10 +55,14 @@ class PlayerStatsRaw(InitOptions):
     deaths: int
     assists: int
     playtimeMillis: int
-    abilityCasts: PlayerAbilityCastsRaw
+    abilityCasts: Optional[PlayerAbilityCastsRaw] = None
 
     def __post_init__(self):
-        self.abilityCasts = PlayerAbilityCastsRaw.from_dict(**self.abilityCasts)
+        self.abilityCasts = (
+            PlayerAbilityCastsRaw.from_dict(**self.abilityCasts)
+            if self.abilityCasts is not None
+            else None
+        )
 
 
 @dataclass
@@ -71,10 +75,10 @@ class PlayerRoundDamageRaw(InitOptions):
 @dataclass
 class PlayerBehaviorFactorsRaw(InitOptions):
     afkRounds: int
-    damageParticipationOutgoing: int
     friendlyFireIncoming: int
     friendlyFireOutgoing: int
     stayedInSpawnRounds: float
+    damageParticipationOutgoing: Optional[int] = None
 
 
 @dataclass
@@ -165,9 +169,11 @@ class MatchPlayersRaw(InitOptions):
     def __post_init__(self):
         self.platformInfo = PlayerPlatformInfoRaw.from_dict(**self.platformInfo)
         self.stats = PlayerStatsRaw.from_dict(**self.stats)
-        self.roundDamage = [
-            PlayerRoundDamageRaw.from_dict(**x) for x in self.roundDamage
-        ]
+        self.roundDamage = (
+            [PlayerRoundDamageRaw.from_dict(**x) for x in self.roundDamage]
+            if self.roundDamage is not None
+            else None
+        )
         self.behaviorFactors = PlayerBehaviorFactorsRaw.from_dict(
             **self.behaviorFactors
         )
@@ -302,10 +308,16 @@ class MatchRoundResultsRaw(InitOptions):
         self.playerStats = [
             RoundPlayerStatsRaw.from_dict(**x) for x in self.playerStats
         ]
-        self.playerEconomies = [
-            PlayerEconomyRaw.from_dict(**x) for x in self.playerEconomies
-        ]
-        self.playerScores = [PlayerScoreRaw.from_dict(**x) for x in self.playerScores]
+        self.playerEconomies = (
+            [PlayerEconomyRaw.from_dict(**x) for x in self.playerEconomies]
+            if self.playerEconomies is not None
+            else None
+        )
+        self.playerScores = (
+            [PlayerScoreRaw.from_dict(**x) for x in self.playerScores]
+            if self.playerScores is not None
+            else None
+        )
 
 
 @dataclass
@@ -315,14 +327,16 @@ class MatchDetailsRawV1(InitOptions):
     bots: List[dict]
     coaches: List[dict]
     teams: List[MatchTeamRaw]
-    roundResults: List[MatchRoundResultsRaw]
+    roundResults: Optional[List[MatchRoundResultsRaw]]
     kills: List[PlayerKillsRaw]
 
     def __post_init__(self):
         self.matchInfo = MatchInfoRaw.from_dict(**self.matchInfo)
         self.players = [MatchPlayersRaw.from_dict(**p) for p in self.players]
         self.teams = [MatchTeamRaw.from_dict(**t) for t in self.teams]
-        self.roundResults = [
-            MatchRoundResultsRaw.from_dict(**r) for r in self.roundResults
-        ]
+        self.roundResults = (
+            [MatchRoundResultsRaw.from_dict(**r) for r in self.roundResults]
+            if self.roundResults is not None
+            else None
+        )
         self.kills = [PlayerKillsRaw.from_dict(**k) for k in self.kills]
