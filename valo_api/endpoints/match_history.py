@@ -1,5 +1,7 @@
 from typing import List, Optional
 
+import warnings
+
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
@@ -26,7 +28,7 @@ def get_match_history_by_name_v3(
             eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
         name: The name of the player.
         tag: The tag of the player.
-        size: The number of matches to return.
+        size: The number of matches to return. Maximum is 10.
         game_mode: The game mode to filter by.
         **kwargs: Any additional arguments to pass to the endpoint.
 
@@ -53,7 +55,7 @@ def get_match_history_by_puuid_v3(
             One of the following:
             eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
         puuid: The puuid of the player.
-        size: The number of matches to return.
+        size: The number of matches to return. Maximum is 10.
         game_mode: The game mode to filter by.
         **kwargs: Any additional arguments to pass to the endpoint.
 
@@ -83,7 +85,7 @@ def get_match_history_by_name(
             eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
         name: The name of the player.
         tag: The tag of the player.
-        size: The number of matches to return.
+        size: The number of matches to return. Maximum is 10.
         game_mode: The game mode to filter by.
         **kwargs: Any additional arguments to pass to the endpoint.
 
@@ -95,6 +97,12 @@ def get_match_history_by_name(
     """
     query_args = dict()
     if size:
+        if size > 10:
+            warnings.warn(
+                "You cannot fetch more then 10 matches with this endpoint. "
+                "Size will be reduced to 10. "
+                "See https://github.com/raimannma/ValorantAPI/issues/181 for a workaround."
+            )
         query_args["size"] = str(size).lower()
     if game_mode:
         query_args["filter"] = game_mode.lower()
@@ -136,7 +144,7 @@ def get_match_history_by_puuid(
             One of the following:
             eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
         puuid: The puuid of the player.
-        size: The number of matches to return.
+        size: The number of matches to return. Maximum is 10.
         game_mode: The game mode to filter by.
         **kwargs: Any additional arguments to pass to the endpoint.
 
@@ -148,6 +156,13 @@ def get_match_history_by_puuid(
     """
     query_args = dict()
     if size:
+        if size > 10:
+            warnings.warn(
+                "You cannot fetch more then 10 matches with this endpoint. "
+                "Size will be reduced to 10. "
+                "See https://github.com/raimannma/ValorantAPI/issues/181 for a workaround."
+            )
+            size = 10
         query_args["size"] = str(size).lower()
     if game_mode:
         query_args["filter"] = game_mode.lower()
