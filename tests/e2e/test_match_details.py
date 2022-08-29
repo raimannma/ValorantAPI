@@ -24,7 +24,7 @@ def test_get_match_details(version: str, match_id: str):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_match_details with: {locals()}")
 
-    getattr(valo_api, f"get_match_details_{version}")(matchId=match_id)
+    getattr(valo_api, f"get_match_details_{version}")(match_id=match_id)
 
 
 if __name__ == "__main__":

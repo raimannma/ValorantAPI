@@ -8,7 +8,7 @@ class EndpointsConfig:
     WEBSITE = "/valorant/{version}/website/{countrycode}"
     LEADERBOARD = "/valorant/{version}/leaderboard/{region}"
     ACCOUNT_BY_NAME = "/valorant/{version}/account/{name}/{tag}"
-    MATCH_DETAILS = "/valorant/{version}/match/{matchId}"
+    MATCH_DETAILS = "/valorant/{version}/match/{match_id}"
 
     MMR_DETAILS_BY_PUUID = "/valorant/{version}/by-puuid/mmr/{region}/{puuid}"
     MMR_DETAILS_BY_NAME = "/valorant/{version}/mmr/{region}/{name}/{tag}"

@@ -36,10 +36,10 @@ def test_get_match_details(version: str, match_id: UUID):
         status=200,
     )
 
-    getattr(valo_api, f"get_match_details_{version}")(matchId=match_id)
+    getattr(valo_api, f"get_match_details_{version}")(match_id=match_id)
     assert len(responses.calls) == 1
 
-    getattr(valo_api, "get_match_details")(version=version, matchId=match_id)
+    getattr(valo_api, "get_match_details")(version=version, match_id=match_id)
     assert len(responses.calls) == 2
 
 
@@ -65,12 +65,12 @@ def test_get_match_details_error(version: str, match_id: UUID, error_response: d
     )
 
     with pytest.raises(ValoAPIException) as excinfo:
-        getattr(valo_api, f"get_match_details_{version}")(matchId=match_id)
+        getattr(valo_api, f"get_match_details_{version}")(match_id=match_id)
     assert len(responses.calls) == 1
     validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
-        getattr(valo_api, "get_match_details")(version=version, matchId=match_id)
+        getattr(valo_api, "get_match_details")(version=version, match_id=match_id)
     assert len(responses.calls) == 2
     validate_exception(error_response, excinfo)
 
