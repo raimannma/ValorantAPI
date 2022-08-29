@@ -1,10 +1,7 @@
-from dataclasses import dataclass
-
-from valo_api.utils.init_options import InitOptions
+from msgspec import Struct
 
 
-@dataclass
-class MMRHistoryPointV1(InitOptions):
+class MMRHistoryPointV1(Struct):
     currenttier: int
     currenttierpatched: str
     ranking_in_tier: int

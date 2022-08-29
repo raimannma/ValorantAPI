@@ -3,6 +3,8 @@ from typing import Optional, Union
 import urllib
 from enum import Enum
 
+import msgspec.json
+
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.competitive_updates_raw import CompetitiveUpdatesRawV1
@@ -95,21 +97,19 @@ def get_raw_data(
         query_args=query_args,
         **kwargs,
     )
-    response_data = response.json()
 
     if response.ok is False:
-        headers = dict(response.headers)
-        raise ValoAPIException(
-            ErrorResponse.from_dict(headers=headers, **response_data)
-        )
+        error = msgspec.json.decode(response.content, type=ErrorResponse)
+        error.headers = dict(response.headers)
+        raise ValoAPIException(error)
 
     if type == EndpointType.MATCH_DETAILS:
-        return MatchDetailsRawV1.from_dict(**response_data)
+        return msgspec.json.decode(response.content, type=MatchDetailsRawV1)
     elif type == EndpointType.COMPETITIVE_UPDATES:
-        return CompetitiveUpdatesRawV1.from_dict(**response_data)
+        return msgspec.json.decode(response.content, type=CompetitiveUpdatesRawV1)
     elif type == EndpointType.MMR:
-        return MMRRawV1.from_dict(**response_data)
+        return msgspec.json.decode(response.content, type=MMRRawV1)
     elif type == EndpointType.MATCH_HISTORY:
-        return MatchHistoryRawV1.from_dict(**response_data)
+        return msgspec.json.decode(response.content, type=MatchHistoryRawV1)
 
     raise ValueError(f"Unknown endpoint type: {type}")

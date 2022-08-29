@@ -1,13 +1,12 @@
-from dataclasses import dataclass
+from typing import Optional
 
-from valo_api.utils.init_options import InitOptions
+from msgspec import Struct
 
 
-@dataclass
-class WebsiteBannerV1(InitOptions):
+class WebsiteBannerV1(Struct):
     banner_url: str
     category: str
     date: str
-    external_link: str
     title: str
     url: str
+    external_link: Optional[str] = None

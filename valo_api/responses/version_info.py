@@ -1,10 +1,7 @@
-from dataclasses import dataclass
-
-from valo_api.utils.init_options import InitOptions
+from msgspec import Struct
 
 
-@dataclass
-class VersionInfoV1(InitOptions):
+class VersionInfoV1(Struct):
     version: str
     clientVersion: str
     branch: str
