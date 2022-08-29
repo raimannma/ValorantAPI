@@ -1,8 +1,10 @@
+import msgspec.json
+
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
 from valo_api.responses.match_history import MatchHistoryPointV3
-from valo_api.utils.fetch_endpoint import fetch_endpoint
+from valo_api.utils.fetch_endpoint import fetch_endpoint, response_type
 
 
 def get_match_details_v2(match_id: str, **kwargs) -> MatchHistoryPointV3:
@@ -43,12 +45,12 @@ def get_match_details(version: str, match_id: str, **kwargs) -> MatchHistoryPoin
         match_id=match_id,
         **kwargs,
     )
-    response_data = response.json()
 
     if response.ok is False:
-        headers = dict(response.headers)
-        raise ValoAPIException(
-            ErrorResponse.from_dict(headers=headers, **response_data)
-        )
+        error = msgspec.json.decode(response.content, type=ErrorResponse)
+        error.headers = dict(response.headers)
+        raise ValoAPIException(error)
 
-    return MatchHistoryPointV3.from_dict(**response_data["data"])
+    return msgspec.json.decode(
+        response.content, type=response_type(MatchHistoryPointV3)
+    ).data

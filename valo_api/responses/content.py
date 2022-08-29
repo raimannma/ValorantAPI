@@ -1,12 +1,9 @@
 from typing import Dict, List, Optional
 
-from dataclasses import dataclass
-
-from valo_api.utils.init_options import InitOptions
+from msgspec import Struct
 
 
-@dataclass
-class Entity(InitOptions):
+class Entity(Struct):
     name: str
     id: str
     assetName: str
@@ -14,8 +11,7 @@ class Entity(InitOptions):
     localizedNames: Optional[Dict[str, str]] = None
 
 
-@dataclass
-class Act(InitOptions):
+class Act(Struct):
     id: str
     parentId: str
     type: str
@@ -24,8 +20,7 @@ class Act(InitOptions):
     localizedNames: Optional[Dict[str, str]] = None
 
 
-@dataclass
-class ContentV1(InitOptions):
+class ContentV1(Struct):
     version: str
     characters: List[Entity]
     maps: List[Entity]
@@ -42,20 +37,3 @@ class ContentV1(InitOptions):
     playerTitles: List[Entity]
     acts: List[Act]
     ceremonies: List[Entity]
-
-    def __post_init__(self):
-        self.characters = [Entity.from_dict(**c) for c in self.characters]
-        self.maps = [Entity.from_dict(**m) for m in self.maps]
-        self.chromas = [Entity.from_dict(**c) for c in self.chromas]
-        self.skins = [Entity.from_dict(**s) for s in self.skins]
-        self.skinLevels = [Entity.from_dict(**sl) for sl in self.skinLevels]
-        self.equips = [Entity.from_dict(**e) for e in self.equips]
-        self.gameModes = [Entity.from_dict(**gm) for gm in self.gameModes]
-        self.sprays = [Entity.from_dict(**s) for s in self.sprays]
-        self.sprayLevels = [Entity.from_dict(**sl) for sl in self.sprayLevels]
-        self.charms = [Entity.from_dict(**c) for c in self.charms]
-        self.charmLevels = [Entity.from_dict(**cl) for cl in self.charmLevels]
-        self.playerCards = [Entity.from_dict(**pc) for pc in self.playerCards]
-        self.playerTitles = [Entity.from_dict(**pt) for pt in self.playerTitles]
-        self.acts = [Act.from_dict(**a) for a in self.acts]
-        self.ceremonies = [Entity.from_dict(**c) for c in self.ceremonies]

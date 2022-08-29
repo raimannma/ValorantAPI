@@ -2,11 +2,13 @@ from typing import List, Optional
 
 import warnings
 
+import msgspec.json
+
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
 from valo_api.responses.match_history import MatchHistoryPointV3
-from valo_api.utils.fetch_endpoint import fetch_endpoint
+from valo_api.utils.fetch_endpoint import fetch_endpoint, response_type
 
 
 def get_match_history_by_name_v3(
@@ -115,15 +117,15 @@ def get_match_history_by_name(
         query_args=query_args,
         **kwargs,
     )
-    response_data = response.json()
 
     if response.ok is False:
-        headers = dict(response.headers)
-        raise ValoAPIException(
-            ErrorResponse.from_dict(headers=headers, **response_data)
-        )
+        error = msgspec.json.decode(response.content, type=ErrorResponse)
+        error.headers = dict(response.headers)
+        raise ValoAPIException(error)
 
-    return [MatchHistoryPointV3.from_dict(**match) for match in response_data["data"]]
+    return msgspec.json.decode(
+        response.content, type=response_type(List[MatchHistoryPointV3])
+    ).data
 
 
 def get_match_history_by_puuid(
@@ -174,12 +176,12 @@ def get_match_history_by_puuid(
         query_args=query_args,
         **kwargs,
     )
-    response_data = response.json()
 
     if response.ok is False:
-        headers = dict(response.headers)
-        raise ValoAPIException(
-            ErrorResponse.from_dict(headers=headers, **response_data)
-        )
+        error = msgspec.json.decode(response.content, type=ErrorResponse)
+        error.headers = dict(response.headers)
+        raise ValoAPIException(error)
 
-    return [MatchHistoryPointV3.from_dict(**match) for match in response_data["data"]]
+    return msgspec.json.decode(
+        response.content, type=response_type(List[MatchHistoryPointV3])
+    ).data

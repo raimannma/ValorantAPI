@@ -1,10 +1,11 @@
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Type, TypeVar
 
 import os
 import time
 import urllib.parse
 
 import requests
+from msgspec import Struct
 from requests import Response
 
 from valo_api.config import Config
@@ -26,6 +27,17 @@ def encode_params(**kwargs) -> Dict[str, str]:
         encoded_value = urllib.parse.quote_plus(str(value))
         out[encoded_key] = encoded_value
     return out
+
+
+T = TypeVar("T")
+
+
+def response_type(api_type: Type[T]):
+    class APIResponse(Struct):
+        status: int
+        data: api_type
+
+    return APIResponse
 
 
 def fetch_endpoint(

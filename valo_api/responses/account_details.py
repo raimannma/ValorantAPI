@@ -1,20 +1,16 @@
 from typing import Optional
 
-from dataclasses import dataclass
-
-from valo_api.utils.init_options import InitOptions
+from msgspec import Struct
 
 
-@dataclass
-class AccountCardV1(InitOptions):
+class AccountCardV1(Struct):
     id: str
     small: str
     large: str
     wide: str
 
 
-@dataclass
-class AccountDetailsV1(InitOptions):
+class AccountDetailsV1(Struct):
     puuid: str
     region: str
     account_level: int
@@ -22,6 +18,4 @@ class AccountDetailsV1(InitOptions):
     tag: str
     card: Optional[AccountCardV1] = None
     last_update: Optional[str] = None
-
-    def __post_init__(self):
-        self.card = AccountCardV1.from_dict(**self.card) if self.card else None
+    last_update_raw: Optional[int] = None

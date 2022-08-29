@@ -1,12 +1,9 @@
 from typing import List, Optional
 
-from dataclasses import dataclass
-
-from valo_api.utils.init_options import InitOptions
+from msgspec import Struct
 
 
-@dataclass
-class LeaderboardPlayerV1(InitOptions):
+class LeaderboardPlayerV1(Struct):
     PlayerCardID: str
     TitleID: str
     IsBanned: bool
@@ -20,8 +17,7 @@ class LeaderboardPlayerV1(InitOptions):
     competitiveTier: int
 
 
-@dataclass
-class LeaderboardPlayerV2(InitOptions):
+class LeaderboardPlayerV2(Struct):
     PlayerCardID: str
     TitleID: str
     IsBanned: bool
@@ -35,20 +31,12 @@ class LeaderboardPlayerV2(InitOptions):
     competitiveTier: int
 
 
-@dataclass
-class LeaderboardV2(InitOptions):
+class LeaderboardV2(Struct):
     total_players: int
     radiant_threshold: int
     immortal_3_threshold: int
     immortal_2_threshold: int
     immortal_1_threshold: int
-    players: List[LeaderboardPlayerV2]
+    players: List[Optional[LeaderboardPlayerV2]]
     last_update: Optional[int] = None
     next_update: Optional[int] = None
-
-    def __post_init__(self):
-        self.players = [
-            LeaderboardPlayerV2(**player)
-            for player in self.players
-            if player is not None
-        ]
