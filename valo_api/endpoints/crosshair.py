@@ -8,7 +8,7 @@ from valo_api.responses.error_response import ErrorResponse
 from valo_api.utils.fetch_endpoint import fetch_endpoint
 
 
-def get_crosshair_v1(crosshair_id: str, **kwargs) -> Image:
+def get_crosshair_v1(crosshair_id: str, **kwargs) -> Image.Image:
     """Get an image of the crosshair using the v1 endpoint.
 
     This is the same as
@@ -24,7 +24,7 @@ def get_crosshair_v1(crosshair_id: str, **kwargs) -> Image:
     return get_crosshair("v1", crosshair_id, **kwargs)
 
 
-def get_crosshair(version: str, crosshair_id: str, **kwargs) -> Image:
+def get_crosshair(version: str, crosshair_id: str, **kwargs) -> Image.Image:
     """Get an image of the crosshair using the specified endpoint.
 
     Args:
