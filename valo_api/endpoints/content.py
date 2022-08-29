@@ -1,5 +1,7 @@
 from typing import Optional
 
+import msgspec.json
+
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.content import ContentV1
@@ -45,12 +47,9 @@ def get_content(version: str, locale: Optional[str] = None, **kwargs) -> Content
         query_args={"locale": str(locale).lower()} if locale else None,
         **kwargs,
     )
-    response_data = response.json()
-
     if response.ok is False:
-        headers = dict(response.headers)
-        raise ValoAPIException(
-            ErrorResponse.from_dict(headers=headers, **response_data)
-        )
+        error = msgspec.json.decode(response.content, type=ErrorResponse)
+        error.headers = dict(response.headers)
+        raise ValoAPIException(error)
 
-    return ContentV1.from_dict(**response_data)
+    return msgspec.json.decode(response.content, type=ContentV1)

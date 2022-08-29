@@ -1,10 +1,12 @@
-from typing import List, Optional, Union
+from typing import List, Union
+
+import msgspec.json
 
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
 from valo_api.responses.store_featured import BundleV2, StoreFeaturedV1
-from valo_api.utils.fetch_endpoint import fetch_endpoint
+from valo_api.utils.fetch_endpoint import fetch_endpoint, response_type
 
 
 def get_store_featured_v1(**kwargs) -> StoreFeaturedV1:
@@ -61,15 +63,17 @@ def get_store_featured(
         version=version,
         **kwargs,
     )
-    response_data = response.json()
 
     if response.ok is False:
-        headers = dict(response.headers)
-        raise ValoAPIException(
-            ErrorResponse.from_dict(headers=headers, **response_data)
-        )
+        error = msgspec.json.decode(response.content, type=ErrorResponse)
+        error.headers = dict(response.headers)
+        raise ValoAPIException(error)
 
     if version == "v1":
-        return StoreFeaturedV1.from_dict(**response_data["data"])
+        return msgspec.json.decode(
+            response.content, type=response_type(StoreFeaturedV1)
+        ).data
     else:
-        return [BundleV2.from_dict(**Bundles) for Bundles in response_data["data"]]
+        return msgspec.json.decode(
+            response.content, type=response_type(List[BundleV2])
+        ).data

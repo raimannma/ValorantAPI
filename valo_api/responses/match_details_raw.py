@@ -1,13 +1,11 @@
 from typing import Dict, List, Optional
 
-from dataclasses import dataclass
+from msgspec import Struct
 
 from valo_api.responses.match_history import Location
-from valo_api.utils.init_options import InitOptions
 
 
-@dataclass
-class MatchInfoRaw(InitOptions):
+class MatchInfoRaw(Struct):
     matchId: str
     mapId: str
     gamePodId: str
@@ -27,28 +25,25 @@ class MatchInfoRaw(InitOptions):
     seasonId: str
     completionState: str
     platformType: str
-    partyRRPenalties: Dict[str, int]
+    partyRRPenalties: Dict[str, float]
     shouldMatchDisablePenalties: Optional[bool] = None
 
 
-@dataclass
-class PlayerPlatformInfoRaw(InitOptions):
+class PlayerPlatformInfoRaw(Struct):
     platformType: str
     platformOS: str
     platformOSVersion: str
     platformChipset: str
 
 
-@dataclass
-class PlayerAbilityCastsRaw(InitOptions):
+class PlayerAbilityCastsRaw(Struct):
     grenadeCasts: int
     ability1Casts: int
     ability2Casts: int
     ultimateCasts: int
 
 
-@dataclass
-class PlayerStatsRaw(InitOptions):
+class PlayerStatsRaw(Struct):
     score: int
     roundsPlayed: int
     kills: int
@@ -57,44 +52,32 @@ class PlayerStatsRaw(InitOptions):
     playtimeMillis: int
     abilityCasts: Optional[PlayerAbilityCastsRaw] = None
 
-    def __post_init__(self):
-        self.abilityCasts = (
-            PlayerAbilityCastsRaw.from_dict(**self.abilityCasts)
-            if self.abilityCasts is not None
-            else None
-        )
 
-
-@dataclass
-class PlayerRoundDamageRaw(InitOptions):
+class PlayerRoundDamageRaw(Struct):
     round: int
     receiver: str
     damage: int
 
 
-@dataclass
-class PlayerBehaviorFactorsRaw(InitOptions):
-    afkRounds: int
+class PlayerBehaviorFactorsRaw(Struct):
+    afkRounds: float
     damageParticipationOutgoing: Optional[int] = None
     friendlyFireIncoming: Optional[int] = None
-    friendlyFireOutgoing: Optional[int] = None
+    friendlyFireOutgoing: Optional[float] = None
     stayedInSpawnRounds: Optional[float] = None
 
 
-@dataclass
-class PlayerBasicMovementRaw(InitOptions):
+class PlayerBasicMovementRaw(Struct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
 
 
-@dataclass
-class PlayerBasicGunSkillRaw(InitOptions):
+class PlayerBasicGunSkillRaw(Struct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
 
 
-@dataclass
-class PlayerAdaptiveBotsRaw(InitOptions):
+class PlayerAdaptiveBotsRaw(Struct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
     adaptiveBotAverageDurationMillisAllAttempts: int
@@ -102,33 +85,28 @@ class PlayerAdaptiveBotsRaw(InitOptions):
     killDetailsFirstAttempt: Optional[dict]
 
 
-@dataclass
-class PlayerAbilityRaw(InitOptions):
+class PlayerAbilityRaw(Struct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
 
 
-@dataclass
-class PlayerBombPlantRaw(InitOptions):
+class PlayerBombPlantRaw(Struct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
 
 
-@dataclass
-class PlayerDefendBombSiteRaw(InitOptions):
+class PlayerDefendBombSiteRaw(Struct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
     success: bool
 
 
-@dataclass
-class PlayerSettingStatusRaw(InitOptions):
+class PlayerSettingStatusRaw(Struct):
     isMouseSensitivityDefault: bool
     isCrosshairDefault: bool
 
 
-@dataclass
-class PlayerExperienceDetailsRaw(InitOptions):
+class PlayerExperienceDetailsRaw(Struct):
     basicMovement: PlayerBasicMovementRaw
     basicGunSkill: PlayerBasicGunSkillRaw
     adaptiveBots: PlayerAdaptiveBotsRaw
@@ -137,18 +115,8 @@ class PlayerExperienceDetailsRaw(InitOptions):
     defendBombSite: PlayerDefendBombSiteRaw
     settingStatus: PlayerSettingStatusRaw
 
-    def __post_init__(self):
-        self.basicMovement = PlayerBasicMovementRaw.from_dict(**self.basicMovement)
-        self.basicGunSkill = PlayerBasicGunSkillRaw.from_dict(**self.basicGunSkill)
-        self.adaptiveBots = PlayerAdaptiveBotsRaw.from_dict(**self.adaptiveBots)
-        self.ability = PlayerAbilityRaw.from_dict(**self.ability)
-        self.bombPlant = PlayerBombPlantRaw.from_dict(**self.bombPlant)
-        self.defendBombSite = PlayerDefendBombSiteRaw.from_dict(**self.defendBombSite)
-        self.settingStatus = PlayerSettingStatusRaw.from_dict(**self.settingStatus)
 
-
-@dataclass
-class MatchPlayersRaw(InitOptions):
+class MatchPlayersRaw(Struct):
     subject: str
     gameName: str
     tagLine: str
@@ -157,58 +125,36 @@ class MatchPlayersRaw(InitOptions):
     partyId: str
     characterId: str
     stats: PlayerStatsRaw
-    roundDamage: List[PlayerRoundDamageRaw]
     competitiveTier: int
     playerCard: str
     playerTitle: str
     accountLevel: int
     behaviorFactors: PlayerBehaviorFactorsRaw
     newPlayerExperienceDetails: PlayerExperienceDetailsRaw
+    roundDamage: Optional[List[PlayerRoundDamageRaw]] = None
     sessionPlaytimeMinutes: Optional[int] = None
 
-    def __post_init__(self):
-        self.platformInfo = PlayerPlatformInfoRaw.from_dict(**self.platformInfo)
-        self.stats = PlayerStatsRaw.from_dict(**self.stats)
-        self.roundDamage = (
-            [PlayerRoundDamageRaw.from_dict(**x) for x in self.roundDamage]
-            if self.roundDamage is not None
-            else None
-        )
-        self.behaviorFactors = PlayerBehaviorFactorsRaw.from_dict(
-            **self.behaviorFactors
-        )
-        self.newPlayerExperienceDetails = PlayerExperienceDetailsRaw.from_dict(
-            **self.newPlayerExperienceDetails
-        )
 
-
-@dataclass
-class MatchTeamRaw(InitOptions):
+class MatchTeamRaw(Struct):
     teamId: str
     won: bool
     roundsPlayed: int
     numPoints: int
 
 
-@dataclass
-class PlayerLocationsRaw(InitOptions):
+class PlayerLocationsRaw(Struct):
     subject: str
     viewRadians: float
     location: Location
 
-    def __post_init__(self):
-        self.location = Location.from_dict(**self.location)
 
-
-@dataclass
-class KillFinishingDamageRaw(InitOptions):
+class KillFinishingDamageRaw(Struct):
     damageType: str
     damageItem: str
     isSecondaryFireMode: bool
 
 
-@dataclass
-class PlayerKillsRaw(InitOptions):
+class PlayerKillsRaw(Struct):
     gameTime: int
     roundTime: int
     killer: str
@@ -218,16 +164,8 @@ class PlayerKillsRaw(InitOptions):
     playerLocations: List[PlayerLocationsRaw]
     finishingDamage: KillFinishingDamageRaw
 
-    def __post_init__(self):
-        self.victimLocation = Location.from_dict(**self.victimLocation)
-        self.playerLocations = [
-            PlayerLocationsRaw.from_dict(**x) for x in self.playerLocations
-        ]
-        self.finishingDamage = KillFinishingDamageRaw.from_dict(**self.finishingDamage)
 
-
-@dataclass
-class PlayerDamageRaw(InitOptions):
+class PlayerDamageRaw(Struct):
     receiver: str
     damage: int
     legshots: int
@@ -235,8 +173,7 @@ class PlayerDamageRaw(InitOptions):
     headshots: int
 
 
-@dataclass
-class PlayerEconomyRaw(InitOptions):
+class PlayerEconomyRaw(Struct):
     loadoutValue: int
     weapon: str
     armor: str
@@ -245,16 +182,14 @@ class PlayerEconomyRaw(InitOptions):
     subject: Optional[str] = None
 
 
-@dataclass
-class PlayerAbilityEffectsRaw(InitOptions):
+class PlayerAbilityEffectsRaw(Struct):
     grenadeEffects: Optional[dict]
     ability1Effects: Optional[dict]
     ability2Effects: Optional[dict]
     ultimateEffects: Optional[dict]
 
 
-@dataclass
-class RoundPlayerStatsRaw(InitOptions):
+class RoundPlayerStatsRaw(Struct):
     subject: str
     kills: List[PlayerKillsRaw]
     damage: List[PlayerDamageRaw]
@@ -265,63 +200,31 @@ class RoundPlayerStatsRaw(InitOptions):
     wasPenalized: bool
     stayedInSpawn: bool
 
-    def __post_init__(self):
-        self.kills = [PlayerKillsRaw.from_dict(**x) for x in self.kills]
-        self.damage = [PlayerDamageRaw.from_dict(**x) for x in self.damage]
-        self.economy = PlayerEconomyRaw.from_dict(**self.economy)
-        self.ability = PlayerAbilityEffectsRaw.from_dict(**self.ability)
 
-
-@dataclass
-class PlayerScoreRaw(InitOptions):
+class PlayerScoreRaw(Struct):
     subject: str
     score: int
 
 
-@dataclass
-class MatchRoundResultsRaw(InitOptions):
+class MatchRoundResultsRaw(Struct):
     roundNum: int
     roundResult: str
     roundCeremony: str
     winningTeam: str
     plantRoundTime: int
-    plantPlayerLocations: List[PlayerLocationsRaw]
     plantLocation: Location
     plantSite: str
     defuseRoundTime: int
-    defusePlayerLocations: List[PlayerLocationsRaw]
     defuseLocation: Location
     playerStats: List[RoundPlayerStatsRaw]
     roundResultCode: str
-    playerEconomies: List[PlayerEconomyRaw]
-    playerScores: List[PlayerScoreRaw]
-
-    def __post_init__(self):
-        self.plantPlayerLocations = [
-            PlayerLocationsRaw.from_dict(**x) for x in self.plantPlayerLocations or []
-        ]
-        self.plantLocation = Location.from_dict(**self.plantLocation)
-        self.defusePlayerLocations = [
-            PlayerLocationsRaw.from_dict(**x) for x in self.defusePlayerLocations or []
-        ]
-        self.defuseLocation = Location.from_dict(**self.defuseLocation)
-        self.playerStats = [
-            RoundPlayerStatsRaw.from_dict(**x) for x in self.playerStats
-        ]
-        self.playerEconomies = (
-            [PlayerEconomyRaw.from_dict(**x) for x in self.playerEconomies]
-            if self.playerEconomies is not None
-            else None
-        )
-        self.playerScores = (
-            [PlayerScoreRaw.from_dict(**x) for x in self.playerScores]
-            if self.playerScores is not None
-            else None
-        )
+    playerEconomies: Optional[List[PlayerEconomyRaw]] = None
+    playerScores: Optional[List[PlayerScoreRaw]] = None
+    plantPlayerLocations: Optional[List[PlayerLocationsRaw]] = None
+    defusePlayerLocations: Optional[List[PlayerLocationsRaw]] = None
 
 
-@dataclass
-class MatchDetailsRawV1(InitOptions):
+class MatchDetailsRawV1(Struct):
     matchInfo: MatchInfoRaw
     players: List[MatchPlayersRaw]
     bots: List[dict]
@@ -329,14 +232,3 @@ class MatchDetailsRawV1(InitOptions):
     teams: List[MatchTeamRaw]
     roundResults: Optional[List[MatchRoundResultsRaw]]
     kills: List[PlayerKillsRaw]
-
-    def __post_init__(self):
-        self.matchInfo = MatchInfoRaw.from_dict(**self.matchInfo)
-        self.players = [MatchPlayersRaw.from_dict(**p) for p in self.players]
-        self.teams = [MatchTeamRaw.from_dict(**t) for t in self.teams]
-        self.roundResults = (
-            [MatchRoundResultsRaw.from_dict(**r) for r in self.roundResults]
-            if self.roundResults is not None
-            else None
-        )
-        self.kills = [PlayerKillsRaw.from_dict(**k) for k in self.kills]

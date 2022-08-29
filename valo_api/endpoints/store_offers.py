@@ -1,8 +1,10 @@
+import msgspec.json
+
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
 from valo_api.responses.store_offers import StoreOffersV1
-from valo_api.utils.fetch_endpoint import fetch_endpoint
+from valo_api.utils.fetch_endpoint import fetch_endpoint, response_type
 
 
 def get_store_offers_v1(**kwargs) -> StoreOffersV1:
@@ -40,12 +42,10 @@ def get_store_offers(version: str, **kwargs) -> StoreOffersV1:
         version=version,
         **kwargs,
     )
-    response_data = response.json()
 
     if response.ok is False:
-        headers = dict(response.headers)
-        raise ValoAPIException(
-            ErrorResponse.from_dict(headers=headers, **response_data)
-        )
+        error = msgspec.json.decode(response.content, type=ErrorResponse)
+        error.headers = dict(response.headers)
+        raise ValoAPIException(error)
 
-    return StoreOffersV1.from_dict(**response_data["data"])
+    return msgspec.json.decode(response.content, type=response_type(StoreOffersV1)).data

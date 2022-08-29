@@ -1,10 +1,12 @@
 from typing import Optional, Union
 
+import msgspec.json
+
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
 from valo_api.responses.mmr_details import MMRDetailsV1, MMRDetailsV2, SeasonDataV2
-from valo_api.utils.fetch_endpoint import fetch_endpoint
+from valo_api.utils.fetch_endpoint import fetch_endpoint, response_type
 
 
 def get_mmr_details_by_puuid_v1(region: str, puuid: str, **kwargs) -> MMRDetailsV1:
@@ -133,24 +135,30 @@ def get_mmr_details_by_name(
         query_args={"filter": str(filter).lower()} if filter is not None else None,
         **kwargs,
     )
-    response_data = response.json()
 
     if response.ok is False:
-        headers = dict(response.headers)
-        raise ValoAPIException(
-            ErrorResponse.from_dict(headers=headers, **response_data)
-        )
+        error = msgspec.json.decode(response.content, type=ErrorResponse)
+        error.headers = dict(response.headers)
+        raise ValoAPIException(error)
 
     if version == "v1":
-        return MMRDetailsV1.from_dict(**response_data["data"])
+        return msgspec.json.decode(
+            response.content, type=response_type(MMRDetailsV1)
+        ).data
     elif version == "v2":
         try:
             if filter is None or filter == "":
-                return MMRDetailsV2.from_dict(**response_data["data"])
+                return msgspec.json.decode(
+                    response.content, type=response_type(MMRDetailsV2)
+                ).data
             else:
-                return SeasonDataV2.from_dict(**response_data["data"])
+                return msgspec.json.decode(
+                    response.content, type=response_type(SeasonDataV2)
+                ).data
         except Exception:
-            return MMRDetailsV2.from_dict(**response_data["data"])
+            return msgspec.json.decode(
+                response.content, type=response_type(MMRDetailsV2)
+            ).data
     else:
         raise ValueError("Invalid version")
 
@@ -186,25 +194,29 @@ def get_mmr_details_by_puuid(
         query_args={"filter": str(filter).lower()} if filter is not None else None,
         **kwargs,
     )
-    response_data = response.json()
 
     if response.ok is False:
-        headers = dict(response.headers)
-        raise ValoAPIException(
-            ErrorResponse.from_dict(headers=headers, **response_data)
-        )
+        error = msgspec.json.decode(response.content, type=ErrorResponse)
+        error.headers = dict(response.headers)
+        raise ValoAPIException(error)
 
     if version == "v1":
-        cls = MMRDetailsV1
+        return msgspec.json.decode(
+            response.content, type=response_type(MMRDetailsV1)
+        ).data
     elif version == "v2":
         try:
             if filter is None or filter == "":
-                return MMRDetailsV2.from_dict(**response_data["data"])
+                return msgspec.json.decode(
+                    response.content, type=response_type(MMRDetailsV2)
+                ).data
             else:
-                return SeasonDataV2.from_dict(**response_data["data"])
+                return msgspec.json.decode(
+                    response.content, type=response_type(SeasonDataV2)
+                ).data
         except Exception:
-            return MMRDetailsV2.from_dict(**response_data["data"])
+            return msgspec.json.decode(
+                response.content, type=response_type(MMRDetailsV2)
+            ).data
     else:
         raise ValueError("Invalid version")
-
-    return cls.from_dict(**response_data["data"])

@@ -1,8 +1,10 @@
+import msgspec.json
+
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
 from valo_api.responses.status import StatusV1
-from valo_api.utils.fetch_endpoint import fetch_endpoint
+from valo_api.utils.fetch_endpoint import fetch_endpoint, response_type
 
 
 def get_status_v1(region: str, **kwargs) -> StatusV1:
@@ -47,12 +49,10 @@ def get_status(version: str, region: str, **kwargs) -> StatusV1:
         region=region,
         **kwargs,
     )
-    response_data = response.json()
 
     if response.ok is False:
-        headers = dict(response.headers)
-        raise ValoAPIException(
-            ErrorResponse.from_dict(headers=headers, **response_data)
-        )
+        error = msgspec.json.decode(response.content, type=ErrorResponse)
+        error.headers = dict(response.headers)
+        raise ValoAPIException(error)
 
-    return StatusV1.from_dict(**response_data["data"])
+    return msgspec.json.decode(response.content, type=response_type(StatusV1)).data

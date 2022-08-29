@@ -1,5 +1,6 @@
 import io
 
+import msgspec.json
 from PIL import Image
 
 from valo_api.endpoints_config import EndpointsConfig
@@ -48,11 +49,8 @@ def get_crosshair(version: str, crosshair_id: str, **kwargs) -> Image.Image:
     )
 
     if response.ok is False:
-        response_data = response.json()
-        headers = dict(response.headers)
-        raise ValoAPIException(
-            ErrorResponse.from_dict(headers=headers, **response_data)
-        )
+        error = msgspec.json.decode(response.content, type=ErrorResponse)
+        error.headers = dict(response.headers)
+        raise ValoAPIException(error)
 
-    response_data = response.content
-    return Image.open(io.BytesIO(response_data))
+    return Image.open(io.BytesIO(response.content))

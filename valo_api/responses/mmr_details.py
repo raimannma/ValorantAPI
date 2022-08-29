@@ -1,12 +1,9 @@
-from typing import Dict, List, Union
+from typing import Dict, List, Optional
 
-from dataclasses import dataclass
-
-from valo_api.utils.init_options import InitOptions
+from msgspec import Struct
 
 
-@dataclass
-class MMRDetailsV1(InitOptions):
+class MMRDetailsV1(Struct):
     name: str
     tag: str
     currenttier: int
@@ -17,8 +14,7 @@ class MMRDetailsV1(InitOptions):
     old: bool
 
 
-@dataclass
-class CurrentDataV2(InitOptions):
+class CurrentDataV2(Struct):
     currenttier: int
     currenttierpatched: str
     ranking_in_tier: int
@@ -28,42 +24,23 @@ class CurrentDataV2(InitOptions):
     old: bool
 
 
-@dataclass
-class ActRankWinV2(InitOptions):
+class ActRankWinV2(Struct):
     patched_tier: str
     tier: int
 
 
-@dataclass
-class SeasonDataV2(InitOptions):
-    wins: int
-    number_of_games: int
-    final_rank: int
-    final_rank_patched: str
-    act_rank_wins: List[ActRankWinV2]
-    old: bool
-
-    def __post_init__(self):
-        self.act_rank_wins = [ActRankWinV2.from_dict(**x) for x in self.act_rank_wins]
+class SeasonDataV2(Struct):
+    wins: Optional[int] = None
+    number_of_games: Optional[int] = None
+    final_rank: Optional[int] = None
+    final_rank_patched: Optional[str] = None
+    act_rank_wins: Optional[List[ActRankWinV2]] = None
+    old: Optional[bool] = None
+    error: Optional[str] = None
 
 
-@dataclass
-class SeasonDataV2Error(InitOptions):
-    error: str
-
-
-@dataclass
-class MMRDetailsV2(InitOptions):
+class MMRDetailsV2(Struct):
     name: str
     tag: str
     current_data: CurrentDataV2
-    by_season: Dict[str, Union[SeasonDataV2, SeasonDataV2Error]]
-
-    def __post_init__(self):
-        self.current_data = CurrentDataV2.from_dict(**self.current_data)
-        self.by_season = {
-            k: SeasonDataV2.from_dict(**v)
-            if "error" not in v
-            else SeasonDataV2Error.from_dict(**v)
-            for k, v in self.by_season.items()
-        }
+    by_season: Dict[str, SeasonDataV2]

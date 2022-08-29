@@ -1,19 +1,15 @@
 from typing import List
 
-from dataclasses import dataclass
-
-from valo_api.utils.init_options import InitOptions
+from msgspec import Struct
 
 
-@dataclass
-class BundleItemInfoV1(InitOptions):
+class BundleItemInfoV1(Struct):
     ItemTypeID: str
     ItemID: str
     Amount: int
 
 
-@dataclass
-class BundleItemV1(InitOptions):
+class BundleItemV1(Struct):
     Item: BundleItemInfoV1
     BasePrice: int
     CurrencyID: str
@@ -21,12 +17,8 @@ class BundleItemV1(InitOptions):
     DiscountedPrice: int
     IsPromoItem: bool
 
-    def __post_init__(self):
-        self.Item = BundleItemInfoV1.from_dict(**self.Item)
 
-
-@dataclass
-class BundleItemV2(InitOptions):
+class BundleItemV2(Struct):
     uuid: str
     name: str
     image: str
@@ -38,8 +30,7 @@ class BundleItemV2(InitOptions):
     promo_item: bool
 
 
-@dataclass
-class BundleV1(InitOptions):
+class BundleV1(Struct):
     ID: str
     DataAssetID: str
     CurrencyID: str
@@ -47,34 +38,18 @@ class BundleV1(InitOptions):
     DurationRemainingInSeconds: int
     WholesaleOnly: bool
 
-    def __post_init__(self):
-        self.Items = [BundleItemV1.from_dict(**item) for item in self.Items]
 
-
-@dataclass
-class BundleV2(InitOptions):
+class BundleV2(Struct):
     bundle_uuid: str
     items: List[BundleItemV2]
     seconds_remaining: int
 
-    def __post_init__(self):
-        self.items = [BundleItemV2.from_dict(**item) for item in self.items]
 
-
-@dataclass
-class FeaturedBundleV1(InitOptions):
+class FeaturedBundleV1(Struct):
     Bundle: BundleV1
     Bundles: List[BundleV1]
     BundleRemainingDurationInSeconds: int
 
-    def __post_init__(self):
-        self.Bundle = BundleV1.from_dict(**self.Bundle)
-        self.Bundles = [BundleV1.from_dict(**bundle) for bundle in self.Bundles]
 
-
-@dataclass
-class StoreFeaturedV1(InitOptions):
+class StoreFeaturedV1(Struct):
     FeaturedBundle: FeaturedBundleV1
-
-    def __post_init__(self):
-        self.FeaturedBundle = FeaturedBundleV1.from_dict(**self.FeaturedBundle)
