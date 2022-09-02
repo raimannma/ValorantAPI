@@ -83,7 +83,7 @@ stevedore = ">=1.20.0"
 [package.extras]
 test = ["beautifulsoup4 (>=4.8.0)", "coverage (>=4.5.4)", "fixtures (>=3.0.0)", "flake8 (>=4.0.0)", "pylint (==1.9.4)", "stestr (>=2.5.0)", "testscenarios (>=0.5.0)", "testtools (>=2.3.0)", "toml"]
 toml = ["toml"]
-yaml = ["pyyaml"]
+yaml = ["PyYAML"]
 
 [[package]]
 name = "black"
@@ -440,6 +440,9 @@ category = "dev"
 optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*"
 
+[package.dependencies]
+setuptools = "*"
+
 [[package]]
 name = "packaging"
 version = "21.3"
@@ -453,11 +456,11 @@ pyparsing = ">=2.0.2,<3.0.5 || >3.0.5"
 
 [[package]]
 name = "pathspec"
-version = "0.9.0"
+version = "0.10.1"
 description = "Utility library for gitignore style pattern matching of file paths."
 category = "dev"
 optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
+python-versions = ">=3.7"
 
 [[package]]
 name = "pbr"
@@ -765,6 +768,20 @@ dparse = ">=0.5.1"
 packaging = ">=21.0"
 requests = "*"
 "ruamel.yaml" = ">=0.17.21"
+setuptools = ">=19.3"
+
+[[package]]
+name = "setuptools"
+version = "65.3.0"
+description = "Easily download, build, install, upgrade, and uninstall Python packages"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["furo", "jaraco.packaging (>=9)", "jaraco.tidelift (>=1.4)", "pygments-github-lexers (==0.0.5)", "rst.linker (>=1.9)", "sphinx", "sphinx-favicon", "sphinx-hoverxref (<2)", "sphinx-inline-tabs", "sphinx-notfound-page (==0.8.3)", "sphinx-reredirects", "sphinxcontrib-towncrier"]
+testing = ["build[virtualenv]", "filelock (>=3.4.0)", "flake8 (<5)", "flake8-2020", "ini2toml[lite] (>=0.9)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "mock", "pip (>=19.1)", "pip-run (>=8.8)", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=1.3)", "pytest-flake8", "pytest-mypy (>=0.9.1)", "pytest-perf", "pytest-xdist", "tomli-w (>=1.0.0)", "virtualenv (>=13.0.0)", "wheel"]
+testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "pytest", "pytest-enabler", "pytest-xdist", "tomli", "virtualenv (>=13.0.0)", "wheel"]
 
 [[package]]
 name = "smmap"
@@ -1377,8 +1394,8 @@ packaging = [
     {file = "packaging-21.3.tar.gz", hash = "sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"},
 ]
 pathspec = [
-    {file = "pathspec-0.9.0-py2.py3-none-any.whl", hash = "sha256:7d15c4ddb0b5c802d161efc417ec1a2558ea2653c2e8ad9c19098201dc1c993a"},
-    {file = "pathspec-0.9.0.tar.gz", hash = "sha256:e564499435a2673d586f6b2130bb5b95f04a3ba06f81b8f895b651a3c76aabb1"},
+    {file = "pathspec-0.10.1-py3-none-any.whl", hash = "sha256:46846318467efc4556ccfd27816e004270a9eeeeb4d062ce5e6fc7a87c573f93"},
+    {file = "pathspec-0.10.1.tar.gz", hash = "sha256:7ace6161b621d31e7902eb6b5ae148d12cfd23f4a249b9ffb6b9fee12084323d"},
 ]
 pbr = [
     {file = "pbr-5.10.0-py2.py3-none-any.whl", hash = "sha256:da3e18aac0a3c003e9eea1a81bd23e5a3a75d745670dcf736317b7d966887fdf"},
@@ -1395,8 +1412,8 @@ pillow = [
     {file = "Pillow-9.2.0-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:37ff6b522a26d0538b753f0b4e8e164fdada12db6c6f00f62145d732d8a3152e"},
     {file = "Pillow-9.2.0-cp310-cp310-win32.whl", hash = "sha256:c79698d4cd9318d9481d89a77e2d3fcaeff5486be641e60a4b49f3d2ecca4e28"},
     {file = "Pillow-9.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:254164c57bab4b459f14c64e93df11eff5ded575192c294a0c49270f22c5d93d"},
-    {file = "Pillow-9.2.0-cp311-cp311-macosx_10_10_universal2.whl", hash = "sha256:408673ed75594933714482501fe97e055a42996087eeca7e5d06e33218d05aa8"},
-    {file = "Pillow-9.2.0-cp311-cp311-macosx_11_0_universal2.whl", hash = "sha256:727dd1389bc5cb9827cbd1f9d40d2c2a1a0c9b32dd2261db522d22a604a6eec9"},
+    {file = "Pillow-9.2.0-cp311-cp311-macosx_10_10_x86_64.whl", hash = "sha256:adabc0bce035467fb537ef3e5e74f2847c8af217ee0be0455d4fec8adc0462fc"},
+    {file = "Pillow-9.2.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:336b9036127eab855beec9662ac3ea13a4544a523ae273cbf108b228ecac8437"},
     {file = "Pillow-9.2.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:50dff9cc21826d2977ef2d2a205504034e3a4563ca6f5db739b0d1026658e004"},
     {file = "Pillow-9.2.0-cp311-cp311-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:cb6259196a589123d755380b65127ddc60f4c64b21fc3bb46ce3a6ea663659b0"},
     {file = "Pillow-9.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7b0554af24df2bf96618dac71ddada02420f946be943b181108cac55a7a2dcd4"},
@@ -1590,6 +1607,10 @@ responses = [
 safety = [
     {file = "safety-2.1.1-py3-none-any.whl", hash = "sha256:05ba551fb61ef24c864835d21089f75bc8b37292680047b9f29693a6552e2fc7"},
     {file = "safety-2.1.1.tar.gz", hash = "sha256:dbc5dffa2e47da76cc43dfe8cbbbfca99d29118d0c6c54dfcfa11c2bd349dff6"},
+]
+setuptools = [
+    {file = "setuptools-65.3.0-py3-none-any.whl", hash = "sha256:2e24e0bec025f035a2e72cdd1961119f557d78ad331bb00ff82efb2ab8da8e82"},
+    {file = "setuptools-65.3.0.tar.gz", hash = "sha256:7732871f4f7fa58fb6bdcaeadb0161b2bd046c85905dbaa066bdcbcc81953b57"},
 ]
 smmap = [
     {file = "smmap-5.0.0-py3-none-any.whl", hash = "sha256:2aba19d6a040e78d8b09de5c57e96207b09ed71d8e55ce0959eeee6c8e190d94"},
