@@ -1,6 +1,8 @@
 from valo_api.endpoints.account_details import (
-    get_account_details,
-    get_account_details_v1,
+    get_account_details_by_name,
+    get_account_details_by_name_v1,
+    get_account_details_by_puuid,
+    get_account_details_by_puuid_v1,
 )
 from valo_api.endpoints.content import get_content, get_content_v1
 from valo_api.endpoints.crosshair import get_crosshair, get_crosshair_v1
@@ -42,8 +44,10 @@ from valo_api.endpoints.version_info import get_version_info, get_version_info_v
 from valo_api.endpoints.website import get_website, get_website_v1
 
 __all__ = [
-    "get_account_details_v1",
-    "get_account_details",
+    "get_account_details_by_name_v1",
+    "get_account_details_by_name",
+    "get_account_details_by_puuid_v1",
+    "get_account_details_by_puuid",
     "get_content_v1",
     "get_content",
     "get_website_v1",
