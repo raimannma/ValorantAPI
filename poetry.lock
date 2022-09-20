@@ -257,7 +257,7 @@ gitdb = ">=4.0.1,<5"
 
 [[package]]
 name = "hypothesis"
-version = "6.54.5"
+version = "6.54.6"
 description = "A library for property-based testing"
 category = "dev"
 optional = false
@@ -1043,7 +1043,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "03c613299c01c0c37a006c425039d9440ad4b48c00a8c55ab6a7542042c7559e"
+content-hash = "e5c0589875c8cc216b26d7dc53ba59955c09a9a7c1cdaeacc6ee3ab6b6a31514"
 
 [metadata.files]
 alabaster = [
@@ -1204,8 +1204,8 @@ gitpython = [
     {file = "GitPython-3.1.27.tar.gz", hash = "sha256:1c885ce809e8ba2d88a29befeb385fcea06338d3640712b59ca623c220bb5704"},
 ]
 hypothesis = [
-    {file = "hypothesis-6.54.5-py3-none-any.whl", hash = "sha256:d8d2e18139be18e5c95593f1e2d87dbcd21534a32022a1db6e8ac2d458ee1d1a"},
-    {file = "hypothesis-6.54.5.tar.gz", hash = "sha256:8a9056825695f415bfad4e808ae719fc01383a9ab659775319724365afcc7ec7"},
+    {file = "hypothesis-6.54.6-py3-none-any.whl", hash = "sha256:e44833325f9a55f795596ceefd7ede7d626cfe45836025d2647cccaff7070e10"},
+    {file = "hypothesis-6.54.6.tar.gz", hash = "sha256:2d5e2d5ccd0efce4e0968a6164f4e4853f808e33f4d91490c975c98beec0c7c3"},
 ]
 identify = [
     {file = "identify-2.5.5-py2.py3-none-any.whl", hash = "sha256:ef78c0d96098a3b5fe7720be4a97e73f439af7cf088ebf47b620aeaa10fadf97"},
