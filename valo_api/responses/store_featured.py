@@ -40,8 +40,8 @@ class BundleV1(Struct):
 
 
 class BundleV2(Struct):
-    bundle_price: int
     bundle_uuid: str
+    bundle_price: int
     items: List[BundleItemV2]
     seconds_remaining: int
 
