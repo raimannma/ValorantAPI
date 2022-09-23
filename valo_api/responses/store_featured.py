@@ -44,6 +44,7 @@ class BundleV2(Struct):
     bundle_price: int
     items: List[BundleItemV2]
     seconds_remaining: int
+    whole_sale_only: bool
 
 
 class FeaturedBundleV1(Struct):
