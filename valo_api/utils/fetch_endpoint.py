@@ -5,11 +5,11 @@ import time
 import urllib.parse
 
 import requests
-from msgspec import Struct
 from requests import Response
 
 from valo_api.config import Config
 from valo_api.exceptions.rate_limit import RateLimit
+from valo_api.utils.dict_struct import DictStruct
 
 
 def encode_params(**kwargs) -> Dict[str, str]:
@@ -33,7 +33,7 @@ T = TypeVar("T")
 
 
 def response_type(api_type: Type[T]):
-    class APIResponse(Struct):
+    class APIResponse(DictStruct):
         status: int
         data: api_type
 

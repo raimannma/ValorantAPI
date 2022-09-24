@@ -1,9 +1,9 @@
 from typing import List
 
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class CompetitiveMatchRaw(Struct):
+class CompetitiveMatchRaw(DictStruct):
     MatchID: str
     MapID: str
     SeasonID: str
@@ -18,7 +18,7 @@ class CompetitiveMatchRaw(Struct):
     AFKPenalty: int
 
 
-class CompetitiveUpdatesRawV1(Struct):
+class CompetitiveUpdatesRawV1(DictStruct):
     Version: int
     Subject: str
     Matches: List[CompetitiveMatchRaw]

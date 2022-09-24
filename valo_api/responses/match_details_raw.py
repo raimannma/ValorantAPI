@@ -1,11 +1,10 @@
 from typing import Dict, List, Optional
 
-from msgspec import Struct
-
 from valo_api.responses.match_history import Location
+from valo_api.utils.dict_struct import DictStruct
 
 
-class MatchInfoRaw(Struct):
+class MatchInfoRaw(DictStruct):
     matchId: str
     mapId: str
     gamePodId: str
@@ -29,21 +28,21 @@ class MatchInfoRaw(Struct):
     shouldMatchDisablePenalties: Optional[bool] = None
 
 
-class PlayerPlatformInfoRaw(Struct):
+class PlayerPlatformInfoRaw(DictStruct):
     platformType: str
     platformOS: str
     platformOSVersion: str
     platformChipset: str
 
 
-class PlayerAbilityCastsRaw(Struct):
+class PlayerAbilityCastsRaw(DictStruct):
     grenadeCasts: int
     ability1Casts: int
     ability2Casts: int
     ultimateCasts: int
 
 
-class PlayerStatsRaw(Struct):
+class PlayerStatsRaw(DictStruct):
     score: int
     roundsPlayed: int
     kills: int
@@ -53,13 +52,13 @@ class PlayerStatsRaw(Struct):
     abilityCasts: Optional[PlayerAbilityCastsRaw] = None
 
 
-class PlayerRoundDamageRaw(Struct):
+class PlayerRoundDamageRaw(DictStruct):
     round: int
     receiver: str
     damage: int
 
 
-class PlayerBehaviorFactorsRaw(Struct):
+class PlayerBehaviorFactorsRaw(DictStruct):
     afkRounds: float
     damageParticipationOutgoing: Optional[int] = None
     friendlyFireIncoming: Optional[int] = None
@@ -67,17 +66,17 @@ class PlayerBehaviorFactorsRaw(Struct):
     stayedInSpawnRounds: Optional[float] = None
 
 
-class PlayerBasicMovementRaw(Struct):
+class PlayerBasicMovementRaw(DictStruct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
 
 
-class PlayerBasicGunSkillRaw(Struct):
+class PlayerBasicGunSkillRaw(DictStruct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
 
 
-class PlayerAdaptiveBotsRaw(Struct):
+class PlayerAdaptiveBotsRaw(DictStruct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
     adaptiveBotAverageDurationMillisAllAttempts: int
@@ -85,28 +84,28 @@ class PlayerAdaptiveBotsRaw(Struct):
     killDetailsFirstAttempt: Optional[dict]
 
 
-class PlayerAbilityRaw(Struct):
+class PlayerAbilityRaw(DictStruct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
 
 
-class PlayerBombPlantRaw(Struct):
+class PlayerBombPlantRaw(DictStruct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
 
 
-class PlayerDefendBombSiteRaw(Struct):
+class PlayerDefendBombSiteRaw(DictStruct):
     idleTimeMillis: int
     objectiveCompleteTimeMillis: int
     success: bool
 
 
-class PlayerSettingStatusRaw(Struct):
+class PlayerSettingStatusRaw(DictStruct):
     isMouseSensitivityDefault: bool
     isCrosshairDefault: bool
 
 
-class PlayerExperienceDetailsRaw(Struct):
+class PlayerExperienceDetailsRaw(DictStruct):
     basicMovement: PlayerBasicMovementRaw
     basicGunSkill: PlayerBasicGunSkillRaw
     adaptiveBots: PlayerAdaptiveBotsRaw
@@ -116,7 +115,7 @@ class PlayerExperienceDetailsRaw(Struct):
     settingStatus: PlayerSettingStatusRaw
 
 
-class MatchPlayersRaw(Struct):
+class MatchPlayersRaw(DictStruct):
     subject: str
     gameName: str
     tagLine: str
@@ -135,26 +134,26 @@ class MatchPlayersRaw(Struct):
     sessionPlaytimeMinutes: Optional[int] = None
 
 
-class MatchTeamRaw(Struct):
+class MatchTeamRaw(DictStruct):
     teamId: str
     won: bool
     roundsPlayed: int
     numPoints: int
 
 
-class PlayerLocationsRaw(Struct):
+class PlayerLocationsRaw(DictStruct):
     subject: str
     viewRadians: float
     location: Location
 
 
-class KillFinishingDamageRaw(Struct):
+class KillFinishingDamageRaw(DictStruct):
     damageType: str
     damageItem: str
     isSecondaryFireMode: bool
 
 
-class PlayerKillsRaw(Struct):
+class PlayerKillsRaw(DictStruct):
     gameTime: int
     roundTime: int
     killer: str
@@ -165,7 +164,7 @@ class PlayerKillsRaw(Struct):
     finishingDamage: KillFinishingDamageRaw
 
 
-class PlayerDamageRaw(Struct):
+class PlayerDamageRaw(DictStruct):
     receiver: str
     damage: int
     legshots: int
@@ -173,7 +172,7 @@ class PlayerDamageRaw(Struct):
     headshots: int
 
 
-class PlayerEconomyRaw(Struct):
+class PlayerEconomyRaw(DictStruct):
     loadoutValue: int
     weapon: str
     armor: str
@@ -182,14 +181,14 @@ class PlayerEconomyRaw(Struct):
     subject: Optional[str] = None
 
 
-class PlayerAbilityEffectsRaw(Struct):
+class PlayerAbilityEffectsRaw(DictStruct):
     grenadeEffects: Optional[dict]
     ability1Effects: Optional[dict]
     ability2Effects: Optional[dict]
     ultimateEffects: Optional[dict]
 
 
-class RoundPlayerStatsRaw(Struct):
+class RoundPlayerStatsRaw(DictStruct):
     subject: str
     kills: List[PlayerKillsRaw]
     damage: List[PlayerDamageRaw]
@@ -201,12 +200,12 @@ class RoundPlayerStatsRaw(Struct):
     stayedInSpawn: bool
 
 
-class PlayerScoreRaw(Struct):
+class PlayerScoreRaw(DictStruct):
     subject: str
     score: int
 
 
-class MatchRoundResultsRaw(Struct):
+class MatchRoundResultsRaw(DictStruct):
     roundNum: int
     roundResult: str
     roundCeremony: str
@@ -224,7 +223,7 @@ class MatchRoundResultsRaw(Struct):
     defusePlayerLocations: Optional[List[PlayerLocationsRaw]] = None
 
 
-class MatchDetailsRawV1(Struct):
+class MatchDetailsRawV1(DictStruct):
     matchInfo: MatchInfoRaw
     players: List[MatchPlayersRaw]
     bots: List[dict]

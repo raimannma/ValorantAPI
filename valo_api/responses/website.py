@@ -1,9 +1,9 @@
 from typing import Optional
 
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class WebsiteBannerV1(Struct):
+class WebsiteBannerV1(DictStruct):
     banner_url: str
     category: str
     date: str

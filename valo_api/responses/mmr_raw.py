@@ -1,11 +1,10 @@
 from typing import Dict, Optional
 
-from msgspec import Struct
-
 from valo_api.responses.competitive_updates_raw import CompetitiveMatchRaw
+from valo_api.utils.dict_struct import DictStruct
 
 
-class SeasonInfoRaw(Struct):
+class SeasonInfoRaw(DictStruct):
     SeasonID: str
     NumberOfWins: int
     NumberOfWinsWithPlacements: int
@@ -20,14 +19,14 @@ class SeasonInfoRaw(Struct):
     WinsByTier: Optional[Dict[str, int]] = None
 
 
-class QueueSkill(Struct):
+class QueueSkill(DictStruct):
     TotalGamesNeededForRating: int
     TotalGamesNeededForLeaderboard: int
     CurrentSeasonGamesNeededForRating: int
     SeasonalInfoBySeasonID: Optional[Dict[str, SeasonInfoRaw]]
 
 
-class QueueSkills(Struct):
+class QueueSkills(DictStruct):
     competitive: Optional[QueueSkill] = None
     custom: Optional[QueueSkill] = None
     deathmatch: Optional[QueueSkill] = None
@@ -37,7 +36,7 @@ class QueueSkills(Struct):
     unrated: Optional[QueueSkill] = None
 
 
-class MMRRawV1(Struct):
+class MMRRawV1(DictStruct):
     Version: int
     Subject: str
     NewPlayerExperienceFinished: bool

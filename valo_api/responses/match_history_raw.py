@@ -1,15 +1,15 @@
 from typing import List
 
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class MatchRaw(Struct):
+class MatchRaw(DictStruct):
     MatchID: str
     GameStartTime: int
     QueueID: str
 
 
-class MatchHistoryRawV1(Struct):
+class MatchHistoryRawV1(DictStruct):
     Subject: str
     BeginIndex: int
     EndIndex: int

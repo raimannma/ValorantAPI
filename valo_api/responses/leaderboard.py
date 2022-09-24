@@ -1,9 +1,9 @@
 from typing import List, Optional
 
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class LeaderboardPlayerV1(Struct):
+class LeaderboardPlayerV1(DictStruct):
     PlayerCardID: str
     TitleID: str
     IsBanned: bool
@@ -17,7 +17,7 @@ class LeaderboardPlayerV1(Struct):
     competitiveTier: int
 
 
-class LeaderboardPlayerV2(Struct):
+class LeaderboardPlayerV2(DictStruct):
     PlayerCardID: str
     TitleID: str
     IsBanned: bool
@@ -31,7 +31,7 @@ class LeaderboardPlayerV2(Struct):
     competitiveTier: int
 
 
-class LeaderboardV2(Struct):
+class LeaderboardV2(DictStruct):
     total_players: int
     radiant_threshold: int
     immortal_3_threshold: int

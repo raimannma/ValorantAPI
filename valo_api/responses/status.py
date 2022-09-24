@@ -1,14 +1,14 @@
 from typing import List, Optional
 
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class MaintenanceStatusTitleV1(Struct):
+class MaintenanceStatusTitleV1(DictStruct):
     locale: str
     content: str
 
 
-class MaintenanceUpdateV1(Struct):
+class MaintenanceUpdateV1(DictStruct):
     publish_locations: List[str]
     updated_at: str
     created_at: str
@@ -18,7 +18,7 @@ class MaintenanceUpdateV1(Struct):
     author: Optional[str] = None
 
 
-class MaintenancePointV1(Struct):
+class MaintenancePointV1(DictStruct):
     updated_at: Optional[str]
     created_at: Optional[str]
     archive_at: Optional[str]
@@ -30,6 +30,6 @@ class MaintenancePointV1(Struct):
     platforms: List[str]
 
 
-class StatusV1(Struct):
+class StatusV1(DictStruct):
     maintenances: List[MaintenancePointV1]
     incidents: List[MaintenancePointV1]

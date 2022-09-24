@@ -1,15 +1,15 @@
 from typing import List
 
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class BundleItemInfoV1(Struct):
+class BundleItemInfoV1(DictStruct):
     ItemTypeID: str
     ItemID: str
     Amount: int
 
 
-class BundleItemV1(Struct):
+class BundleItemV1(DictStruct):
     Item: BundleItemInfoV1
     BasePrice: int
     CurrencyID: str
@@ -18,7 +18,7 @@ class BundleItemV1(Struct):
     IsPromoItem: bool
 
 
-class BundleItemV2(Struct):
+class BundleItemV2(DictStruct):
     uuid: str
     name: str
     image: str
@@ -30,7 +30,7 @@ class BundleItemV2(Struct):
     promo_item: bool
 
 
-class BundleV1(Struct):
+class BundleV1(DictStruct):
     ID: str
     DataAssetID: str
     CurrencyID: str
@@ -39,7 +39,7 @@ class BundleV1(Struct):
     WholesaleOnly: bool
 
 
-class BundleV2(Struct):
+class BundleV2(DictStruct):
     bundle_uuid: str
     bundle_price: int
     items: List[BundleItemV2]
@@ -47,11 +47,11 @@ class BundleV2(Struct):
     whole_sale_only: bool
 
 
-class FeaturedBundleV1(Struct):
+class FeaturedBundleV1(DictStruct):
     Bundle: BundleV1
     Bundles: List[BundleV1]
     BundleRemainingDurationInSeconds: int
 
 
-class StoreFeaturedV1(Struct):
+class StoreFeaturedV1(DictStruct):
     FeaturedBundle: FeaturedBundleV1

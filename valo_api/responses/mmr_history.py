@@ -1,7 +1,7 @@
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class MMRHistoryPointV1(Struct):
+class MMRHistoryPointV1(DictStruct):
     currenttier: int
     currenttierpatched: str
     ranking_in_tier: int

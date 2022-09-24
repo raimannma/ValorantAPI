@@ -1,16 +1,16 @@
 from typing import Optional
 
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class AccountCardV1(Struct):
+class AccountCardV1(DictStruct):
     id: str
     small: str
     large: str
     wide: str
 
 
-class AccountDetailsV1(Struct):
+class AccountDetailsV1(DictStruct):
     puuid: str
     region: str
     account_level: int
