@@ -1,9 +1,9 @@
 from typing import Dict, List, Optional
 
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class MMRDetailsV1(Struct):
+class MMRDetailsV1(DictStruct):
     name: str
     tag: str
     currenttier: int
@@ -14,7 +14,7 @@ class MMRDetailsV1(Struct):
     old: bool
 
 
-class CurrentDataV2(Struct):
+class CurrentDataV2(DictStruct):
     currenttier: int
     currenttierpatched: str
     ranking_in_tier: int
@@ -24,12 +24,12 @@ class CurrentDataV2(Struct):
     old: bool
 
 
-class ActRankWinV2(Struct):
+class ActRankWinV2(DictStruct):
     patched_tier: str
     tier: int
 
 
-class SeasonDataV2(Struct):
+class SeasonDataV2(DictStruct):
     wins: Optional[int] = None
     number_of_games: Optional[int] = None
     final_rank: Optional[int] = None
@@ -39,7 +39,7 @@ class SeasonDataV2(Struct):
     error: Optional[str] = None
 
 
-class MMRDetailsV2(Struct):
+class MMRDetailsV2(DictStruct):
     name: str
     tag: str
     current_data: CurrentDataV2

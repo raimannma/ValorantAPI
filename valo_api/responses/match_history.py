@@ -1,9 +1,9 @@
 from typing import List, Optional
 
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class MatchMetadataV3(Struct):
+class MatchMetadataV3(DictStruct):
     map: str
     game_version: str
     game_length: int
@@ -19,66 +19,66 @@ class MatchMetadataV3(Struct):
     queue: str
 
 
-class MatchPlayerSessionPlaytimeV3(Struct):
+class MatchPlayerSessionPlaytimeV3(DictStruct):
     minutes: Optional[int] = None
     seconds: Optional[int] = None
     milliseconds: Optional[int] = None
 
 
-class MatchFriendlyFireV3(Struct):
+class MatchFriendlyFireV3(DictStruct):
     incoming: Optional[int] = None
     outgoing: Optional[int] = None
 
 
-class MatchPlayerBehaviorV3(Struct):
+class MatchPlayerBehaviorV3(DictStruct):
     afk_rounds: float
     friendly_fire: MatchFriendlyFireV3
     rounds_in_spawn: Optional[float] = None
 
 
-class MatchPlayerOSV3(Struct):
+class MatchPlayerOSV3(DictStruct):
     name: str
     version: str
 
 
-class MatchPlayerPlatformV3(Struct):
+class MatchPlayerPlatformV3(DictStruct):
     type: str
     os: MatchPlayerOSV3
 
 
-class MatchPlayerAbilityCastsV3(Struct):
+class MatchPlayerAbilityCastsV3(DictStruct):
     c_cast: Optional[int] = None
     q_cast: Optional[int] = None
     e_cast: Optional[int] = None
     x_cast: Optional[int] = None
 
 
-class MatchPlayerAbilityCasts2V3(Struct):
+class MatchPlayerAbilityCasts2V3(DictStruct):
     c_casts: Optional[int] = None
     q_casts: Optional[int] = None
     e_cast: Optional[int] = None
     x_cast: Optional[int] = None
 
 
-class MatchPlayerAssetsCardV3(Struct):
+class MatchPlayerAssetsCardV3(DictStruct):
     small: str
     large: str
     wide: str
 
 
-class MatchPlayerAssetsAgentV3(Struct):
+class MatchPlayerAssetsAgentV3(DictStruct):
     small: str
     bust: str
     full: str
     killfeed: str
 
 
-class MatchPlayerAssetsV3(Struct):
+class MatchPlayerAssetsV3(DictStruct):
     card: MatchPlayerAssetsCardV3
     agent: MatchPlayerAssetsAgentV3
 
 
-class MatchPlayerStatsV3(Struct):
+class MatchPlayerStatsV3(DictStruct):
     score: int
     kills: int
     deaths: int
@@ -88,17 +88,17 @@ class MatchPlayerStatsV3(Struct):
     legshots: Optional[int] = None
 
 
-class MatchPlayerEconomyReportV3(Struct):
+class MatchPlayerEconomyReportV3(DictStruct):
     overall: int
     average: int
 
 
-class MatchPlayerEconomyV3(Struct):
+class MatchPlayerEconomyV3(DictStruct):
     spent: MatchPlayerEconomyReportV3
     loadout_value: MatchPlayerEconomyReportV3
 
 
-class MatchPlayerV3(Struct):
+class MatchPlayerV3(DictStruct):
     puuid: str
     name: str
     tag: str
@@ -119,35 +119,35 @@ class MatchPlayerV3(Struct):
     economy: MatchPlayerEconomyV3
 
 
-class MatchPlayersV3(Struct):
+class MatchPlayersV3(DictStruct):
     all_players: List[MatchPlayerV3]
     red: List[MatchPlayerV3]
     blue: List[MatchPlayerV3]
 
 
-class MatchTeamV3(Struct):
+class MatchTeamV3(DictStruct):
     has_won: Optional[bool] = None
     rounds_won: Optional[int] = None
     rounds_lost: Optional[int] = None
 
 
-class MatchTeamsV3(Struct):
+class MatchTeamsV3(DictStruct):
     red: MatchTeamV3
     blue: MatchTeamV3
 
 
-class Location(Struct):
+class Location(DictStruct):
     x: int
     y: int
 
 
-class MatchRoundPlanterV3(Struct):
+class MatchRoundPlanterV3(DictStruct):
     puuid: str
     display_name: str
     team: str
 
 
-class MatchRoundPlayerLocationV3(Struct):
+class MatchRoundPlayerLocationV3(DictStruct):
     player_puuid: str
     player_display_name: str
     player_team: str
@@ -155,7 +155,7 @@ class MatchRoundPlayerLocationV3(Struct):
     view_radians: float
 
 
-class MatchRoundPlantEventV3(Struct):
+class MatchRoundPlantEventV3(DictStruct):
     plant_location: Optional[Location] = None
     planted_by: Optional[MatchRoundPlanterV3] = None
     plant_site: Optional[str] = None
@@ -163,14 +163,14 @@ class MatchRoundPlantEventV3(Struct):
     player_locations_on_plant: Optional[List[MatchRoundPlayerLocationV3]] = None
 
 
-class MatchRoundDefuseEventV3(Struct):
+class MatchRoundDefuseEventV3(DictStruct):
     defuse_location: Optional[Location] = None
     defused_by: Optional[MatchRoundPlanterV3] = None
     defuse_time_in_round: Optional[int] = None
     player_locations_on_defuse: Optional[List[MatchRoundPlayerLocationV3]] = None
 
 
-class MatchRoundDamageEventV3(Struct):
+class MatchRoundDamageEventV3(DictStruct):
     receiver_puuid: str
     receiver_display_name: str
     receiver_team: str
@@ -180,18 +180,18 @@ class MatchRoundDamageEventV3(Struct):
     legshots: int
 
 
-class WeaponAssets(Struct):
+class WeaponAssets(DictStruct):
     display_icon: Optional[str] = None
     killfeed_icon: Optional[str] = None
 
 
-class MatchRoundAssistantV3(Struct):
+class MatchRoundAssistantV3(DictStruct):
     assistant_puuid: str
     assistant_display_name: str
     assistant_team: str
 
 
-class MatchRoundKillEventV3(Struct):
+class MatchRoundKillEventV3(DictStruct):
     kill_time_in_round: int
     kill_time_in_match: int
     killer_puuid: str
@@ -209,7 +209,7 @@ class MatchRoundKillEventV3(Struct):
     damage_weapon_name: Optional[str] = None
 
 
-class Weapon(Struct):
+class Weapon(DictStruct):
     id: Optional[str] = None
     name: Optional[str] = None
     assets: WeaponAssets
@@ -219,7 +219,7 @@ class Armor(Weapon):
     pass
 
 
-class MatchPlayerEconomyFullV3(Struct):
+class MatchPlayerEconomyFullV3(DictStruct):
     loadout_value: int
     weapon: Weapon
     armor: Armor
@@ -227,7 +227,7 @@ class MatchPlayerEconomyFullV3(Struct):
     spent: int
 
 
-class MatchRoundPlayerStatsV3(Struct):
+class MatchRoundPlayerStatsV3(DictStruct):
     ability_casts: MatchPlayerAbilityCasts2V3
     player_puuid: str
     player_display_name: str
@@ -246,7 +246,7 @@ class MatchRoundPlayerStatsV3(Struct):
     stayed_in_spawn: bool
 
 
-class MatchRoundV3(Struct):
+class MatchRoundV3(DictStruct):
     winning_team: str
     end_type: str
     bomb_planted: bool
@@ -256,7 +256,7 @@ class MatchRoundV3(Struct):
     player_stats: List[MatchRoundPlayerStatsV3]
 
 
-class MatchHistoryPointV3(Struct):
+class MatchHistoryPointV3(DictStruct):
     metadata: MatchMetadataV3
     players: MatchPlayersV3
     teams: MatchTeamsV3

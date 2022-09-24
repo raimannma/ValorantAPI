@@ -1,15 +1,15 @@
 from typing import Dict, List
 
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class RewardInfoV1(Struct):
+class RewardInfoV1(DictStruct):
     ItemTypeID: str
     ItemID: str
     Quantity: int
 
 
-class OfferV1(Struct):
+class OfferV1(DictStruct):
     OfferID: str
     IsDirectPurchase: bool
     StartDate: str
@@ -17,11 +17,11 @@ class OfferV1(Struct):
     Rewards: List[RewardInfoV1]
 
 
-class OfferIDsV1(Struct):
+class OfferIDsV1(DictStruct):
     OfferID: str
     StorefrontItemID: str
 
 
-class StoreOffersV1(Struct):
+class StoreOffersV1(DictStruct):
     Offers: List[OfferV1]
     UpgradeCurrencyOffers: List[OfferIDsV1]

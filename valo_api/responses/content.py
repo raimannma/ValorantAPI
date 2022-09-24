@@ -1,9 +1,9 @@
 from typing import Dict, List, Optional
 
-from msgspec import Struct
+from valo_api.utils.dict_struct import DictStruct
 
 
-class Entity(Struct):
+class Entity(DictStruct):
     name: str
     id: str
     assetName: str
@@ -11,7 +11,7 @@ class Entity(Struct):
     localizedNames: Optional[Dict[str, str]] = None
 
 
-class Act(Struct):
+class Act(DictStruct):
     id: str
     parentId: str
     type: str
@@ -20,7 +20,7 @@ class Act(Struct):
     localizedNames: Optional[Dict[str, str]] = None
 
 
-class ContentV1(Struct):
+class ContentV1(DictStruct):
     version: str
     characters: List[Entity]
     maps: List[Entity]
