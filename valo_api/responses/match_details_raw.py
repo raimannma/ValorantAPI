@@ -217,6 +217,8 @@ class MatchRoundResultsRaw(DictStruct):
     defuseLocation: Location
     playerStats: List[RoundPlayerStatsRaw]
     roundResultCode: str
+    bombPlanter: Optional[str] = None
+    bombDefuser: Optional[str] = None
     playerEconomies: Optional[List[PlayerEconomyRaw]] = None
     playerScores: Optional[List[PlayerScoreRaw]] = None
     plantPlayerLocations: Optional[List[PlayerLocationsRaw]] = None
