@@ -6,22 +6,22 @@ from valo_api.utils.dict_struct import DictStruct
 class MMRDetailsV1(DictStruct):
     name: str
     tag: str
-    currenttier: int
-    currenttierpatched: str
-    ranking_in_tier: int
-    mmr_change_to_last_game: int
     elo: int
     old: bool
+    currenttier: Optional[int] = None
+    currenttierpatched: Optional[str] = None
+    ranking_in_tier: Optional[int] = None
+    mmr_change_to_last_game: Optional[int] = None
 
 
 class CurrentDataV2(DictStruct):
-    currenttier: int
-    currenttierpatched: str
-    ranking_in_tier: int
-    mmr_change_to_last_game: int
-    elo: int
-    games_needed_for_rating: int
     old: bool
+    currenttier: Optional[int] = None
+    currenttierpatched: Optional[str] = None
+    ranking_in_tier: Optional[int] = None
+    mmr_change_to_last_game: Optional[int] = None
+    elo: Optional[int] = None
+    games_needed_for_rating: Optional[int] = None
 
 
 class ActRankWinV2(DictStruct):
