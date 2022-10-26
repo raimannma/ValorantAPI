@@ -63,7 +63,7 @@ responses = "^0.22.0"
 pytest-parallel = "^0.1.1"
 pytest-split = "^0.8.0"
 tomlkit = "<0.11.6"
-colorama = "^0.4.5"
+colorama = "^0.4.6"
 
 
 [tool.black]
