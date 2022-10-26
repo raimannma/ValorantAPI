@@ -631,7 +631,7 @@ pytest-metadata = "*"
 
 [[package]]
 name = "pytest-metadata"
-version = "2.0.2"
+version = "2.0.3"
 description = "pytest plugin for test session metadata"
 category = "dev"
 optional = false
@@ -1509,8 +1509,8 @@ pytest-html = [
     {file = "pytest_html-3.2.0-py3-none-any.whl", hash = "sha256:868c08564a68d8b2c26866f1e33178419bb35b1e127c33784a28622eb827f3f3"},
 ]
 pytest-metadata = [
-    {file = "pytest-metadata-2.0.2.tar.gz", hash = "sha256:fcd2f416f15be295943527b3c8ba16a44ae5a7141939c90c3dc5ce9d167cf2a5"},
-    {file = "pytest_metadata-2.0.2-py3-none-any.whl", hash = "sha256:39261ee0086f17649b180baf2a8633e1922a4c4b6fcc28a2de7d8127a82541bf"},
+    {file = "pytest_metadata-2.0.3-py3-none-any.whl", hash = "sha256:7fbb5a09110a7f62060ecad77110c6481e4e3a85e46556605b323fc97c072c7f"},
+    {file = "pytest_metadata-2.0.3.tar.gz", hash = "sha256:4a09b7582a4b8307be7c604bc392d33b9cc03831a5ed62f9bc3d08e4bc721250"},
 ]
 pytest-parallel = [
     {file = "pytest-parallel-0.1.1.tar.gz", hash = "sha256:9aac3fc199a168c0a8559b60249d9eb254de7af58c12cee0310b54d4affdbfab"},
