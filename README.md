@@ -23,6 +23,10 @@ Valorant API Wrapper for https://github.com/Henrik-3/unofficial-valorant-api
 
     pip install valo-api
 
+If you want to use the async functions, you need to install the `aiohttp` package.
+
+    pip install valo-api[async]
+
 ## Documentation
 
 ### Hosted
