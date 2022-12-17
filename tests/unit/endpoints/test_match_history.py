@@ -5,6 +5,7 @@ from uuid import UUID
 
 import pytest
 import responses
+from aioresponses import aioresponses
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
@@ -27,7 +28,8 @@ from valo_api.exceptions.valo_api_exception import ValoAPIException
     size=st.one_of(st.none(), st.integers(min_value=1, max_value=5)),
 )
 @responses.activate
-def test_get_match_history_by_name(
+@pytest.mark.asyncio
+async def test_get_match_history_by_name(
     version: str, region: str, name: str, tag: str, size: Optional[int]
 ):
     print(f"Test get_match_history_by_name with: {locals()}")
@@ -54,6 +56,28 @@ def test_get_match_history_by_name(
     )
     assert len(responses.calls) == 2
 
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"match_history_by_name_{version}.json"))
+        m.get(
+            f"{url}?size={size}",
+            payload=get_mock_response(f"match_history_by_name_{version}.json"),
+        )
+        await getattr(valo_api, f"get_match_history_by_name_{version}_async")(
+            region=region, name=name, tag=tag, size=size
+        )
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"match_history_by_name_{version}.json"))
+        m.get(
+            f"{url}?size={size}",
+            payload=get_mock_response(f"match_history_by_name_{version}.json"),
+        )
+        await getattr(valo_api, "get_match_history_by_name_async")(
+            version=version, region=region, name=name, tag=tag, size=size
+        )
+        m.assert_called_once()
+
 
 @given(
     version=st.sampled_from(["v3"]),
@@ -64,7 +88,8 @@ def test_get_match_history_by_name(
     error_response=st.sampled_from(get_error_responses("match_history")),
 )
 @responses.activate
-def test_get_match_history_by_name_error(
+@pytest.mark.asyncio
+async def test_get_match_history_by_name_error(
     version: str,
     region: str,
     name: str,
@@ -90,15 +115,43 @@ def test_get_match_history_by_name_error(
         getattr(valo_api, f"get_match_history_by_name_{version}")(
             region=region, name=name, tag=tag, size=size
         )
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 1
-    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_match_history_by_name")(
             version=version, region=region, name=name, tag=tag, size=size
         )
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 2
-    validate_exception(error_response, excinfo)
+
+    with aioresponses() as m:
+        m.get(url, payload=error_response, exception=ValoAPIException(error_response))
+        m.get(
+            f"{url}?size={size}",
+            payload=error_response,
+            exception=ValoAPIException(error_response),
+        )
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, f"get_match_history_by_name_{version}_async")(
+                region=region, name=name, tag=tag, size=size
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, payload=error_response, exception=ValoAPIException(error_response))
+        m.get(
+            f"{url}?size={size}",
+            payload=error_response,
+            exception=ValoAPIException(error_response),
+        )
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, "get_match_history_by_name_async")(
+                version=version, region=region, name=name, tag=tag, size=size
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
 
 
 @settings(deadline=None)
@@ -109,7 +162,8 @@ def test_get_match_history_by_name_error(
     size=st.one_of(st.none(), st.integers(min_value=1, max_value=5)),
 )
 @responses.activate
-def test_get_match_history_by_puuid(
+@pytest.mark.asyncio
+async def test_get_match_history_by_puuid(
     version: str, region: str, puuid: UUID, size: Optional[int]
 ):
     print(f"Test get_match_history_by_puuid with: {locals()}")
@@ -135,6 +189,28 @@ def test_get_match_history_by_puuid(
     )
     assert len(responses.calls) == 2
 
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"match_history_by_puuid_{version}.json"))
+        m.get(
+            f"{url}?size={size}",
+            payload=get_mock_response(f"match_history_by_puuid_{version}.json"),
+        )
+        await getattr(valo_api, f"get_match_history_by_puuid_{version}_async")(
+            region=region, puuid=puuid, size=size
+        )
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"match_history_by_puuid_{version}.json"))
+        m.get(
+            f"{url}?size={size}",
+            payload=get_mock_response(f"match_history_by_puuid_{version}.json"),
+        )
+        await getattr(valo_api, "get_match_history_by_puuid_async")(
+            version=version, region=region, puuid=puuid, size=size
+        )
+        m.assert_called_once()
+
 
 @given(
     version=st.sampled_from(["v3"]),
@@ -144,7 +220,8 @@ def test_get_match_history_by_puuid(
     error_response=st.sampled_from(get_error_responses("match_history")),
 )
 @responses.activate
-def test_get_match_history_by_puuid_error(
+@pytest.mark.asyncio
+async def test_get_match_history_by_puuid_error(
     version: str, region: str, puuid: UUID, size: Optional[int], error_response: dict
 ):
     print(f"Test get_match_history_by_puuid_error with: {locals()}")
@@ -173,6 +250,34 @@ def test_get_match_history_by_puuid_error(
         )
     assert len(responses.calls) == 2
     validate_exception(error_response, excinfo)
+
+    with aioresponses() as m:
+        m.get(url, payload=error_response, exception=ValoAPIException(error_response))
+        m.get(
+            f"{url}?size={size}",
+            payload=error_response,
+            exception=ValoAPIException(error_response),
+        )
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, f"get_match_history_by_puuid_{version}_async")(
+                region=region, puuid=puuid, size=size
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, payload=error_response, exception=ValoAPIException(error_response))
+        m.get(
+            f"{url}?size={size}",
+            payload=error_response,
+            exception=ValoAPIException(error_response),
+        )
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, "get_match_history_by_puuid_async")(
+                version=version, region=region, puuid=puuid, size=size
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
 
 
 if __name__ == "__main__":

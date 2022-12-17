@@ -1,9 +1,11 @@
 from time import sleep
 
+import pytest
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
 import valo_api
+from tests.e2e import new_event_loop_decorator
 from valo_api.exceptions.rate_limit import rate_limit
 
 
@@ -13,7 +15,9 @@ from valo_api.exceptions.rate_limit import rate_limit
     id=st.sampled_from(["ManuelHexe#5777", "jasminaxrose#7024"]),
     force_update=st.booleans(),
 )
-def test_get_account_details_by_name(version: str, id: str, force_update: bool):
+@pytest.mark.asyncio
+@new_event_loop_decorator
+async def test_get_account_details_by_name(version: str, id: str, force_update: bool):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_account_details with: {locals()}")
 
@@ -22,6 +26,12 @@ def test_get_account_details_by_name(version: str, id: str, force_update: bool):
     getattr(valo_api, f"get_account_details_by_name_{version}")(
         name=name, tag=tag, force_update=force_update
     )
+    try:
+        await getattr(valo_api, f"get_account_details_by_name_{version}_async")(
+            name=name, tag=tag, force_update=force_update
+        )
+    except RuntimeError:
+        pass
 
 
 @settings(deadline=None, max_examples=15)
@@ -32,13 +42,24 @@ def test_get_account_details_by_name(version: str, id: str, force_update: bool):
     ),
     force_update=st.booleans(),
 )
-def test_get_account_details_by_puuid(version: str, puuid: str, force_update: bool):
+@pytest.mark.asyncio
+@new_event_loop_decorator
+async def test_get_account_details_by_puuid(
+    version: str, puuid: str, force_update: bool
+):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_account_details with: {locals()}")
 
     getattr(valo_api, f"get_account_details_by_puuid_{version}")(
         puuid=puuid, force_update=force_update
     )
+
+    try:
+        await getattr(valo_api, f"get_account_details_by_puuid_{version}_async")(
+            puuid=puuid, force_update=force_update
+        )
+    except RuntimeError:
+        pass
 
 
 if __name__ == "__main__":

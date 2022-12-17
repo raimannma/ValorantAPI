@@ -1,5 +1,6 @@
 import pytest
 import responses
+from aioresponses import aioresponses
 from hypothesis import given
 from hypothesis import strategies as st
 from responses import matchers
@@ -16,7 +17,10 @@ from valo_api.exceptions.valo_api_exception import ValoAPIException
     error_response=st.sampled_from(get_error_responses("crosshair")),
 )
 @responses.activate
-def test_get_crosshair_error(version: str, crosshair_id: str, error_response: dict):
+@pytest.mark.asyncio
+async def test_get_crosshair_error(
+    version: str, crosshair_id: str, error_response: dict
+):
     print(f"Test get_crosshair with: {locals()}")
 
     url = f"{Config.BASE_URL}/valorant/{version}/crosshair/generate"
@@ -33,13 +37,39 @@ def test_get_crosshair_error(version: str, crosshair_id: str, error_response: di
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, f"get_crosshair_{version}")(crosshair_id=crosshair_id)
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 1
-    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_crosshair")(version=version, crosshair_id=crosshair_id)
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 2
-    validate_exception(error_response, excinfo)
+
+    with aioresponses() as m:
+        m.get(
+            f"{url}?id={crosshair_id}",
+            payload=error_response,
+            exception=ValoAPIException(error_response),
+        )
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, f"get_crosshair_{version}_async")(
+                crosshair_id=crosshair_id
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(
+            f"{url}?id={crosshair_id}",
+            payload=error_response,
+            exception=ValoAPIException(error_response),
+        )
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, "get_crosshair_async")(
+                version=version, crosshair_id=crosshair_id
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
 
 
 if __name__ == "__main__":

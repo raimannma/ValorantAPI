@@ -26,3 +26,12 @@ def rate_limit() -> RateLimit:
         RateLimit: A :class:`.RateLimit` object.
     """
     return RateLimit()
+
+
+def set_rate_limit(headers):
+    RateLimit.limit, RateLimit.remaining, RateLimit.reset_unix = (
+        int(headers.get("x-ratelimit-limit", -1)),
+        int(headers.get("x-ratelimit-remaining", -1)),
+        int(time.time())
+        + int(headers.get("retry-after", headers.get("x-ratelimit-reset", -1))),
+    )

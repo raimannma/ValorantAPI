@@ -5,6 +5,7 @@ from uuid import UUID
 
 import pytest
 import responses
+from aioresponses import aioresponses
 from hypothesis import given
 from hypothesis import strategies as st
 from responses import matchers
@@ -24,10 +25,11 @@ from valo_api.exceptions.valo_api_exception import ValoAPIException
     region=st.sampled_from(Config.ALL_REGIONS),
     name=st.text(),
     tag=st.text(),
-    filter=st.one_of(st.none(), st.text(min_size=5, max_size=5)),
+    filter=st.one_of(st.none(), st.sampled_from(["competitive", "unrated"])),
 )
 @responses.activate
-def test_get_mmr_details_by_name(
+@pytest.mark.asyncio
+async def test_get_mmr_details_by_name(
     version: str, region: str, name: str, tag: str, filter: Optional[str]
 ):
     print(f"Test get_mmr_details_by_name with: {locals()}")
@@ -57,17 +59,40 @@ def test_get_mmr_details_by_name(
     )
     assert len(responses.calls) == 2
 
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"mmr_details_by_name_{version}.json"))
+        m.get(
+            f"{url}?filter={filter}",
+            payload=get_mock_response(f"mmr_details_by_name_{version}.json"),
+        )
+        await getattr(valo_api, f"get_mmr_details_by_name_{version}_async")(
+            region=region, name=name, tag=tag, filter=filter
+        )
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"mmr_details_by_name_{version}.json"))
+        m.get(
+            f"{url}?filter={filter}",
+            payload=get_mock_response(f"mmr_details_by_name_{version}.json"),
+        )
+        await getattr(valo_api, "get_mmr_details_by_name_async")(
+            version=version, region=region, name=name, tag=tag, filter=filter
+        )
+        m.assert_called_once()
+
 
 @given(
     version=st.sampled_from(["v1", "v2"]),
     region=st.sampled_from(Config.ALL_REGIONS),
     name=st.text(),
     tag=st.text(),
-    filter=st.one_of(st.none(), st.text(min_size=5, max_size=5)),
+    filter=st.one_of(st.none(), st.sampled_from(["competitive", "unrated"])),
     error_response=st.sampled_from(get_error_responses("mmr_details")),
 )
 @responses.activate
-def test_get_mmr_details_by_name_error(
+@pytest.mark.asyncio
+async def test_get_mmr_details_by_name_error(
     version: str,
     region: str,
     name: str,
@@ -96,25 +121,46 @@ def test_get_mmr_details_by_name_error(
         getattr(valo_api, f"get_mmr_details_by_name_{version}")(
             region=region, name=name, tag=tag, filter=filter
         )
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 1
-    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_mmr_details_by_name")(
             version=version, region=region, name=name, tag=tag, filter=filter
         )
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 2
-    validate_exception(error_response, excinfo)
+
+    with aioresponses() as m:
+        m.get(url, exception=ValoAPIException(error_response))
+        m.get(f"{url}?filter={filter}", exception=ValoAPIException(error_response))
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, f"get_mmr_details_by_name_{version}_async")(
+                region=region, name=name, tag=tag, filter=filter
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, exception=ValoAPIException(error_response))
+        m.get(f"{url}?filter={filter}", exception=ValoAPIException(error_response))
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, "get_mmr_details_by_name_async")(
+                version=version, region=region, name=name, tag=tag, filter=filter
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
 
 
 @given(
     version=st.sampled_from(["v1", "v2"]),
     region=st.sampled_from(Config.ALL_REGIONS),
     puuid=st.uuids(),
-    filter=st.one_of(st.none(), st.text(min_size=5, max_size=5)),
+    filter=st.one_of(st.none(), st.sampled_from(["competitive", "unrated"])),
 )
 @responses.activate
-def test_get_mmr_details_by_puuid(
+@pytest.mark.asyncio
+async def test_get_mmr_details_by_puuid(
     version: str, region: str, puuid: UUID, filter: Optional[str]
 ):
     print(f"Test get_mmr_details_by_puuid with: {locals()}")
@@ -143,16 +189,39 @@ def test_get_mmr_details_by_puuid(
     )
     assert len(responses.calls) == 2
 
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"mmr_details_by_puuid_{version}.json"))
+        m.get(
+            f"{url}?filter={filter}",
+            payload=get_mock_response(f"mmr_details_by_puuid_{version}.json"),
+        )
+        await getattr(valo_api, f"get_mmr_details_by_puuid_{version}_async")(
+            region=region, puuid=puuid, filter=filter
+        )
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"mmr_details_by_puuid_{version}.json"))
+        m.get(
+            f"{url}?filter={filter}",
+            payload=get_mock_response(f"mmr_details_by_puuid_{version}.json"),
+        )
+        await getattr(valo_api, "get_mmr_details_by_puuid_async")(
+            version=version, region=region, puuid=puuid, filter=filter
+        )
+        m.assert_called_once()
+
 
 @given(
     version=st.sampled_from(["v1", "v2"]),
     region=st.sampled_from(Config.ALL_REGIONS),
     puuid=st.uuids(),
-    filter=st.one_of(st.none(), st.text(min_size=5, max_size=5)),
+    filter=st.one_of(st.none(), st.sampled_from(["competitive", "unrated"])),
     error_response=st.sampled_from(get_error_responses("mmr_details")),
 )
 @responses.activate
-def test_get_mmr_details_by_puuid_error(
+@pytest.mark.asyncio
+async def test_get_mmr_details_by_puuid_error(
     version: str,
     region: str,
     puuid: UUID,
@@ -178,15 +247,35 @@ def test_get_mmr_details_by_puuid_error(
         getattr(valo_api, f"get_mmr_details_by_puuid_{version}")(
             region=region, puuid=puuid, filter=filter
         )
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 1
-    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_mmr_details_by_puuid")(
             version=version, region=region, puuid=puuid, filter=filter
         )
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 2
-    validate_exception(error_response, excinfo)
+
+    with aioresponses() as m:
+        m.get(url, exception=ValoAPIException(error_response))
+        m.get(f"{url}?filter={filter}", exception=ValoAPIException(error_response))
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, f"get_mmr_details_by_puuid_{version}_async")(
+                region=region, puuid=puuid, filter=filter
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, exception=ValoAPIException(error_response))
+        m.get(f"{url}?filter={filter}", exception=ValoAPIException(error_response))
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, "get_mmr_details_by_puuid_async")(
+                version=version, region=region, puuid=puuid, filter=filter
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
 
 
 if __name__ == "__main__":

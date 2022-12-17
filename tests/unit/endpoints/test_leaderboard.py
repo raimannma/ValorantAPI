@@ -2,6 +2,7 @@ import urllib.parse
 
 import pytest
 import responses
+from aioresponses import aioresponses
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
@@ -20,7 +21,8 @@ from valo_api.exceptions.valo_api_exception import ValoAPIException
     version=st.sampled_from(["v1", "v2"]), region=st.sampled_from(Config.ALL_REGIONS)
 )
 @responses.activate
-def test_get_leaderboard(version: str, region: str):
+@pytest.mark.asyncio
+async def test_get_leaderboard(version: str, region: str):
     print(f"Test get_leaderboard with: {locals()}")
 
     encoded_region = urllib.parse.quote_plus(region).lower()
@@ -40,6 +42,24 @@ def test_get_leaderboard(version: str, region: str):
     getattr(valo_api, "get_leaderboard")(version=version, region=region)
     assert len(responses.calls) == 2
 
+    with aioresponses() as m:
+        m.get(
+            f"{url}",
+            payload=get_mock_response(f"leaderboard_{version}.json"),
+        )
+        await getattr(valo_api, f"get_leaderboard_{version}_async")(region=region)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(
+            f"{url}",
+            payload=get_mock_response(f"leaderboard_{version}.json"),
+        )
+        await getattr(valo_api, f"get_leaderboard_async")(
+            version=version, region=region
+        )
+        m.assert_called_once()
+
 
 @given(
     version=st.sampled_from(["v1", "v2"]),
@@ -47,7 +67,8 @@ def test_get_leaderboard(version: str, region: str):
     error_response=st.sampled_from(get_error_responses("leaderboard")),
 )
 @responses.activate
-def test_get_leaderboard_error(version: str, region: str, error_response: dict):
+@pytest.mark.asyncio
+async def test_get_leaderboard_error(version: str, region: str, error_response: dict):
     print(f"Test test_get_leaderboard_error with: {locals()}")
 
     encoded_region = urllib.parse.quote_plus(region).lower()
@@ -63,13 +84,37 @@ def test_get_leaderboard_error(version: str, region: str, error_response: dict):
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, f"get_leaderboard_{version}")(region=region)
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 1
-    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_leaderboard")(version=version, region=region)
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 2
-    validate_exception(error_response, excinfo)
+
+    with aioresponses() as m:
+        m.get(
+            f"{url}",
+            payload=error_response,
+            exception=ValoAPIException(error_response),
+        )
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, f"get_leaderboard_{version}_async")(region=region)
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(
+            f"{url}",
+            payload=error_response,
+            exception=ValoAPIException(error_response),
+        )
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, f"get_leaderboard_async")(
+                version=version, region=region
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
 
 
 if __name__ == "__main__":

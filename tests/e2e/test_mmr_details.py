@@ -2,10 +2,12 @@ from typing import Optional
 
 from time import sleep
 
+import pytest
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
 import valo_api
+from tests.e2e import new_event_loop_decorator
 from valo_api.exceptions.rate_limit import rate_limit
 
 
@@ -22,7 +24,9 @@ from valo_api.exceptions.rate_limit import rate_limit
         st.integers(min_value=1, max_value=3),
     ),
 )
-def test_get_mmr_details_by_name(
+@pytest.mark.asyncio
+@new_event_loop_decorator
+async def test_get_mmr_details_by_name(
     version: str, id: str, episode: Optional[int], act: Optional[int]
 ):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
@@ -34,6 +38,13 @@ def test_get_mmr_details_by_name(
     getattr(valo_api, f"get_mmr_details_by_name_{version}")(
         region="eu", name=name, tag=tag, filter=filter
     )
+
+    try:
+        await getattr(valo_api, f"get_mmr_details_by_name_{version}_async")(
+            region="eu", name=name, tag=tag, filter=filter
+        )
+    except RuntimeError:
+        pass
 
 
 @settings(deadline=None, max_examples=15)
@@ -51,7 +62,9 @@ def test_get_mmr_details_by_name(
         st.integers(min_value=1, max_value=3),
     ),
 )
-def test_get_mmr_details_by_puuid(
+@pytest.mark.asyncio
+@new_event_loop_decorator
+async def test_get_mmr_details_by_puuid(
     version: str, puuid: str, episode: Optional[int], act: Optional[int]
 ):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
@@ -62,6 +75,13 @@ def test_get_mmr_details_by_puuid(
     getattr(valo_api, f"get_mmr_details_by_puuid_{version}")(
         region="eu", puuid=puuid, filter=filter
     )
+
+    try:
+        getattr(valo_api, f"get_mmr_details_by_puuid_{version}_async")(
+            region="eu", puuid=puuid, filter=filter
+        )
+    except RuntimeError:
+        pass
 
 
 if __name__ == "__main__":

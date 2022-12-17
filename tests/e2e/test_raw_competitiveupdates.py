@@ -1,9 +1,11 @@
 from time import sleep
 
+import pytest
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
 import valo_api
+from tests.e2e import new_event_loop_decorator
 from valo_api.config import Config
 from valo_api.endpoints.raw import EndpointType
 from valo_api.exceptions.rate_limit import rate_limit
@@ -17,13 +19,22 @@ from valo_api.exceptions.rate_limit import rate_limit
     ),
     region=st.sampled_from(Config.ALL_REGIONS),
 )
-def test_get_raw_competitiveupdates(version: str, puuid: str, region: str):
+@pytest.mark.asyncio
+@new_event_loop_decorator
+async def test_get_raw_competitiveupdates(version: str, puuid: str, region: str):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_raw_competitiveupdates with: {locals()}")
 
     getattr(valo_api, f"get_raw_data_{version}")(
         type=EndpointType.COMPETITIVE_UPDATES, region=region, value=puuid
     )
+
+    try:
+        await getattr(valo_api, f"get_raw_data_{version}_async")(
+            type=EndpointType.COMPETITIVE_UPDATES, region=region, value=puuid
+        )
+    except RuntimeError:
+        pass
 
 
 if __name__ == "__main__":

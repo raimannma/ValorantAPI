@@ -77,3 +77,76 @@ def get_store_featured(
         return msgspec.json.decode(
             response.content, type=response_type(List[BundleV2])
         ).data
+
+
+try:
+
+    from valo_api.utils.fetch_endpoint import fetch_endpoint_async
+
+    async def get_store_featured_v1_async(**kwargs) -> StoreFeaturedV1:
+        """Get the store featured using version 1 of the endpoint.
+
+        This is the same as
+        :py:meth:`get_store_featured_async(version="v1", **kwargs) <get_store_featured_async>`
+
+        Args:
+            **kwargs: Any additional arguments to pass to the endpoint.
+
+        Returns:
+            StoreFeaturedV1: Store featured fetched from the API.
+        """
+        return await get_store_featured_async("v1", **kwargs)
+
+    async def get_store_featured_v2_async(**kwargs) -> List[BundleV2]:
+        """Get the store featured using version 2 of the endpoint.
+
+        This is the same as
+        :py:meth:`get_store_featured_async(version="v2", **kwargs) <get_store_featured_async>`
+
+        Args:
+            **kwargs: Any additional arguments to pass to the endpoint.
+
+        Returns:
+            List[BundleV2]: Bundles featured fetched from the API.
+        """
+        return await get_store_featured_async("v2", **kwargs)
+
+    async def get_store_featured_async(
+        version: str, **kwargs
+    ) -> Union[StoreFeaturedV1, List[BundleV2]]:
+        """Get the store featured using a specific version of the endpoint.
+
+        Args:
+            version: The version of the endpoint to use.
+                One of the following:
+                v1 (Version 1)
+                v2 (Version 2)
+            **kwargs: Any additional arguments to pass to the endpoint.
+
+        Returns:
+            StoreFeaturedV1: Store featured fetched from the API.
+            List[BundleV2]: Bundles featured fetched from the API.
+
+        Raises:
+            ValoAPIException: If the request failed.
+        """
+        response, content = await fetch_endpoint_async(
+            EndpointsConfig.STORE_FEATURED,
+            version=version,
+            **kwargs,
+        )
+
+        if response.ok is False:
+            error = msgspec.json.decode(content, type=ErrorResponse)
+            error.headers = dict(response.headers)
+            raise ValoAPIException(error)
+
+        if version == "v1":
+            return msgspec.json.decode(
+                content, type=response_type(StoreFeaturedV1)
+            ).data
+        else:
+            return msgspec.json.decode(content, type=response_type(List[BundleV2])).data
+
+except ImportError:
+    pass

@@ -3,6 +3,7 @@ from uuid import UUID
 
 import pytest
 import responses
+from aioresponses import aioresponses
 from hypothesis import given
 from hypothesis import strategies as st
 
@@ -23,7 +24,8 @@ from valo_api.exceptions.valo_api_exception import ValoAPIException
     tag=st.text(),
 )
 @responses.activate
-def test_get_mmr_history_by_name(version: str, region: str, name: str, tag: str):
+@pytest.mark.asyncio
+async def test_get_mmr_history_by_name(version: str, region: str, name: str, tag: str):
     print(f"Test get_mmr_history_by_name with: {locals()}")
 
     encoded_name = urllib.parse.quote_plus(name).lower()
@@ -48,6 +50,20 @@ def test_get_mmr_history_by_name(version: str, region: str, name: str, tag: str)
     )
     assert len(responses.calls) == 2
 
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"mmr_history_by_name_{version}.json"))
+        await getattr(valo_api, f"get_mmr_history_by_name_{version}_async")(
+            region=region, name=name, tag=tag
+        )
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"mmr_history_by_name_{version}.json"))
+        await getattr(valo_api, "get_mmr_history_by_name_async")(
+            version=version, region=region, name=name, tag=tag
+        )
+        m.assert_called_once()
+
 
 @given(
     version=st.sampled_from(["v1"]),
@@ -57,7 +73,8 @@ def test_get_mmr_history_by_name(version: str, region: str, name: str, tag: str)
     error_response=st.sampled_from(get_error_responses("mmr_history")),
 )
 @responses.activate
-def test_get_mmr_history_by_name_error(
+@pytest.mark.asyncio
+async def test_get_mmr_history_by_name_error(
     version: str, region: str, name: str, tag: str, error_response: dict
 ):
     print(f"Test get_mmr_history_by_name_error with: {locals()}")
@@ -78,15 +95,33 @@ def test_get_mmr_history_by_name_error(
         getattr(valo_api, f"get_mmr_history_by_name_{version}")(
             region=region, name=name, tag=tag, filter=filter
         )
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 1
-    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_mmr_history_by_name")(
             version=version, region=region, name=name, tag=tag, filter=filter
         )
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 2
-    validate_exception(error_response, excinfo)
+
+    with aioresponses() as m:
+        m.get(url, payload=error_response, exception=ValoAPIException(error_response))
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, f"get_mmr_history_by_name_{version}_async")(
+                region=region, name=name, tag=tag, filter=filter
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, payload=error_response, exception=ValoAPIException(error_response))
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, "get_mmr_history_by_name_async")(
+                version=version, region=region, name=name, tag=tag, filter=filter
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
 
 
 @given(
@@ -95,7 +130,8 @@ def test_get_mmr_history_by_name_error(
     puuid=st.uuids(),
 )
 @responses.activate
-def test_get_mmr_history_by_puuid(version: str, region: str, puuid: UUID):
+@pytest.mark.asyncio
+async def test_get_mmr_history_by_puuid(version: str, region: str, puuid: UUID):
     print(f"Test get_mmr_history_by_puuid with: {locals()}")
 
     puuid = str(puuid).lower()
@@ -117,6 +153,20 @@ def test_get_mmr_history_by_puuid(version: str, region: str, puuid: UUID):
     )
     assert len(responses.calls) == 2
 
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"mmr_history_by_puuid_{version}.json"))
+        await getattr(valo_api, f"get_mmr_history_by_puuid_{version}_async")(
+            region=region, puuid=puuid
+        )
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, payload=get_mock_response(f"mmr_history_by_puuid_{version}.json"))
+        await getattr(valo_api, "get_mmr_history_by_puuid_async")(
+            version=version, region=region, puuid=puuid
+        )
+        m.assert_called_once()
+
 
 @given(
     version=st.sampled_from(["v1"]),
@@ -125,7 +175,8 @@ def test_get_mmr_history_by_puuid(version: str, region: str, puuid: UUID):
     error_response=st.sampled_from(get_error_responses("mmr_history")),
 )
 @responses.activate
-def test_get_mmr_history_by_puuid_error(
+@pytest.mark.asyncio
+async def test_get_mmr_history_by_puuid_error(
     version: str, region: str, puuid: UUID, error_response: dict
 ):
     print(f"Test get_mmr_history_by_puuid_error with: {locals()}")
@@ -145,15 +196,33 @@ def test_get_mmr_history_by_puuid_error(
         getattr(valo_api, f"get_mmr_history_by_puuid_{version}")(
             region=region, puuid=puuid
         )
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 1
-    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_mmr_history_by_puuid")(
             version=version, region=region, puuid=puuid
         )
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 2
-    validate_exception(error_response, excinfo)
+
+    with aioresponses() as m:
+        m.get(url, payload=error_response, exception=ValoAPIException(error_response))
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, f"get_mmr_history_by_puuid_{version}_async")(
+                region=region, puuid=puuid
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, payload=error_response, exception=ValoAPIException(error_response))
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, "get_mmr_history_by_puuid_async")(
+                version=version, region=region, puuid=puuid
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
 
 
 if __name__ == "__main__":

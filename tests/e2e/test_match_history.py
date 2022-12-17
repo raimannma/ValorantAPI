@@ -3,10 +3,12 @@ from typing import Optional
 from time import sleep
 from uuid import UUID
 
+import pytest
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
 import valo_api
+from tests.e2e import new_event_loop_decorator
 from valo_api.exceptions.rate_limit import rate_limit
 
 
@@ -16,7 +18,9 @@ from valo_api.exceptions.rate_limit import rate_limit
     id=st.sampled_from(["ManuelHexe#5777", "jasminaxrose#7024"]),
     size=st.one_of(st.none(), st.integers(min_value=1, max_value=5)),
 )
-def test_get_match_history_by_name(version: str, id: str, size: Optional[int]):
+@pytest.mark.asyncio
+@new_event_loop_decorator
+async def test_get_match_history_by_name(version: str, id: str, size: Optional[int]):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_match_history_by_name with: {locals()}")
 
@@ -25,6 +29,13 @@ def test_get_match_history_by_name(version: str, id: str, size: Optional[int]):
     getattr(valo_api, f"get_match_history_by_name_{version}")(
         region="eu", name=name, tag=tag, size=size
     )
+
+    try:
+        await getattr(valo_api, f"get_match_history_by_name_{version}_async")(
+            region="eu", name=name, tag=tag, size=size
+        )
+    except RuntimeError:
+        pass
 
 
 @settings(deadline=None, max_examples=15)
@@ -35,13 +46,24 @@ def test_get_match_history_by_name(version: str, id: str, size: Optional[int]):
     ),
     size=st.one_of(st.none(), st.integers(min_value=1, max_value=5)),
 )
-def test_get_match_history_by_puuid(version: str, puuid: UUID, size: Optional[int]):
+@pytest.mark.asyncio
+@new_event_loop_decorator
+async def test_get_match_history_by_puuid(
+    version: str, puuid: UUID, size: Optional[int]
+):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_match_history_by_puuid with: {locals()}")
 
     getattr(valo_api, f"get_match_history_by_puuid_{version}")(
         region="eu", puuid=puuid, size=size
     )
+
+    try:
+        await getattr(valo_api, f"get_match_history_by_puuid_{version}_async")(
+            region="eu", puuid=puuid, size=size
+        )
+    except RuntimeError:
+        pass
 
 
 if __name__ == "__main__":

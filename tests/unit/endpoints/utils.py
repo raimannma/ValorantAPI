@@ -1,16 +1,19 @@
 import json
 import os
+from functools import lru_cache
 
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
 
 
+@lru_cache
 def get_mock_response(filename: str):
     path = os.path.join(os.path.dirname(__file__), "mock_responses", filename)
     with open(path) as f:
         return json.load(f)
 
 
+@lru_cache
 def get_error_responses(endpoint: str):
     path = os.path.join(
         os.path.dirname(__file__), "error_responses", f"{endpoint}.json"
