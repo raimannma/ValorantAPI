@@ -17,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: |
         poetry config virtualenvs.in-project true
-        poetry install
+        poetry install --all-extras
     - name: Run tests
       run: make test-unit
     - name: Report Coverage

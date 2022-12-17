@@ -1,5 +1,6 @@
 import pytest
 import responses
+from aioresponses import aioresponses
 from hypothesis import given
 from hypothesis import strategies as st
 
@@ -15,7 +16,8 @@ from valo_api.exceptions.valo_api_exception import ValoAPIException
 
 @given(version=st.sampled_from(["v1", "v2"]))
 @responses.activate
-def test_get_store_featured(version: str):
+@pytest.mark.asyncio
+async def test_get_store_featured(version: str):
     print(f"Test get_store_featured with: {locals()}")
 
     url = f"{Config.BASE_URL}/valorant/{version}/store-featured"
@@ -33,13 +35,30 @@ def test_get_store_featured(version: str):
     getattr(valo_api, "get_store_featured")(version=version)
     assert len(responses.calls) == 2
 
+    with aioresponses() as m:
+        m.get(
+            url,
+            payload=get_mock_response(f"store_featured_{version}.json"),
+        )
+        await getattr(valo_api, f"get_store_featured_{version}_async")()
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(
+            url,
+            payload=get_mock_response(f"store_featured_{version}.json"),
+        )
+        await getattr(valo_api, "get_store_featured_async")(version=version)
+        m.assert_called_once()
+
 
 @given(
     version=st.sampled_from(["v1", "v2"]),
     error_response=st.sampled_from(get_error_responses("store_featured")),
 )
 @responses.activate
-def test_get_store_featured_error(version: str, error_response: dict):
+@pytest.mark.asyncio
+async def test_get_store_featured_error(version: str, error_response: dict):
     print(f"Test get_store_featured_error with: {locals()}")
 
     url = f"{Config.BASE_URL}/valorant/{version}/store-featured"
@@ -53,13 +72,27 @@ def test_get_store_featured_error(version: str, error_response: dict):
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, f"get_store_featured_{version}")()
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 1
-    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_store_featured")(version=version)
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 2
-    validate_exception(error_response, excinfo)
+
+    with aioresponses() as m:
+        m.get(url, exception=ValoAPIException(error_response))
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, f"get_store_featured_{version}_async")()
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(url, exception=ValoAPIException(error_response))
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, "get_store_featured_async")(version=version)
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
 
 
 if __name__ == "__main__":

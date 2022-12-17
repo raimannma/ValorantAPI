@@ -1,5 +1,6 @@
 import pytest
 import responses
+from aioresponses import aioresponses
 from hypothesis import given
 from hypothesis import strategies as st
 
@@ -18,7 +19,8 @@ from valo_api.exceptions.valo_api_exception import ValoAPIException
     countrycode=st.sampled_from(Config.ALL_COUNTRY_CODES),
 )
 @responses.activate
-def test_get_website(version: str, countrycode: str):
+@pytest.mark.asyncio
+async def test_get_website(version: str, countrycode: str):
     print(f"Test get_website with: {locals()}")
 
     url = f"{Config.BASE_URL}/valorant/{version}/website/{countrycode}"
@@ -36,6 +38,24 @@ def test_get_website(version: str, countrycode: str):
     getattr(valo_api, "get_website")(version=version, countrycode=countrycode)
     assert len(responses.calls) == 2
 
+    with aioresponses() as m:
+        m.get(
+            f"{url}",
+            payload=get_mock_response(f"website_{version}.json"),
+        )
+        await getattr(valo_api, f"get_website_{version}_async")(countrycode=countrycode)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(
+            f"{url}",
+            payload=get_mock_response(f"website_{version}.json"),
+        )
+        await getattr(valo_api, "get_website_async")(
+            version=version, countrycode=countrycode
+        )
+        m.assert_called_once()
+
 
 @given(
     version=st.sampled_from(["v1"]),
@@ -43,7 +63,8 @@ def test_get_website(version: str, countrycode: str):
     error_response=st.sampled_from(get_error_responses("website")),
 )
 @responses.activate
-def test_get_website_error(version: str, countrycode: str, error_response: dict):
+@pytest.mark.asyncio
+async def test_get_website_error(version: str, countrycode: str, error_response: dict):
     print(f"Test test_get_version_info_error with: {locals()}")
 
     url = f"{Config.BASE_URL}/valorant/{version}/website/{countrycode}"
@@ -57,13 +78,39 @@ def test_get_website_error(version: str, countrycode: str, error_response: dict)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, f"get_website_{version}")(countrycode=countrycode)
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 1
-    validate_exception(error_response, excinfo)
 
     with pytest.raises(ValoAPIException) as excinfo:
         getattr(valo_api, "get_website")(version=version, countrycode=countrycode)
+        validate_exception(error_response, excinfo)
     assert len(responses.calls) == 2
-    validate_exception(error_response, excinfo)
+
+    with aioresponses() as m:
+        m.get(
+            f"{url}",
+            payload=error_response,
+            exception=ValoAPIException(error_response),
+        )
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, f"get_website_{version}_async")(
+                countrycode=countrycode
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.get(
+            f"{url}",
+            payload=error_response,
+            exception=ValoAPIException(error_response),
+        )
+        with pytest.raises(ValoAPIException) as excinfo:
+            await getattr(valo_api, "get_website_async")(
+                version=version, countrycode=countrycode
+            )
+            validate_exception(error_response, excinfo)
+        m.assert_called_once()
 
 
 if __name__ == "__main__":

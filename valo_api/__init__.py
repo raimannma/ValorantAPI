@@ -3,9 +3,12 @@
 This is a Valorant API Wrapper for https://github.com/Henrik-3/unofficial-valorant-api
 
 """
+import logging
 import os
 
 from .endpoints import *
+
+logging.getLogger("asyncio").setLevel(logging.CRITICAL)
 
 
 def set_api_key(api_key: str):

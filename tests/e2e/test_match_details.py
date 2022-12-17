@@ -1,9 +1,11 @@
 from time import sleep
 
+import pytest
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
 import valo_api
+from tests.e2e import new_event_loop_decorator
 from valo_api.exceptions.rate_limit import rate_limit
 
 
@@ -20,11 +22,18 @@ from valo_api.exceptions.rate_limit import rate_limit
         ]
     ),
 )
-def test_get_match_details(version: str, match_id: str):
+@pytest.mark.asyncio
+@new_event_loop_decorator
+async def test_get_match_details(version: str, match_id: str):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_match_details with: {locals()}")
 
     getattr(valo_api, f"get_match_details_{version}")(match_id=match_id)
+
+    try:
+        await getattr(valo_api, f"get_match_details_{version}_async")(match_id=match_id)
+    except RuntimeError:
+        pass
 
 
 if __name__ == "__main__":

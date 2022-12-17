@@ -1,6 +1,8 @@
 from uuid import UUID
 
+import pytest
 import responses
+from aioresponses import aioresponses
 from hypothesis import given
 from hypothesis import strategies as st
 
@@ -15,8 +17,9 @@ from valo_api.endpoints.raw import EndpointType
     puuid=st.uuids(),
     region=st.sampled_from(Config.ALL_REGIONS),
 )
-@responses.activate
-def test_get_raw_mmr(version: str, puuid: UUID, region: str):
+@responses.activate  #
+@pytest.mark.asyncio
+async def test_get_raw_mmr(version: str, puuid: UUID, region: str):
     print(f"Test get_raw_mmr with: {locals()}")
 
     url = f"{Config.BASE_URL}/valorant/{version}/raw"
@@ -42,6 +45,29 @@ def test_get_raw_mmr(version: str, puuid: UUID, region: str):
         value=puuid,
     )
     assert len(responses.calls) == 2
+
+    with aioresponses() as m:
+        m.post(
+            f"{url}?region={region}&type=mmr&value={puuid}",
+            payload=get_mock_response(f"raw_mmr_{version}.json"),
+        )
+        await getattr(valo_api, f"get_raw_data_{version}_async")(
+            type=EndpointType.MMR, region=region, value=puuid
+        )
+        m.assert_called_once()
+
+    with aioresponses() as m:
+        m.post(
+            f"{url}?region={region}&type=mmr&value={puuid}",
+            payload=get_mock_response(f"raw_mmr_{version}.json"),
+        )
+        await getattr(valo_api, "get_raw_data_async")(
+            version=version,
+            type=EndpointType.MMR,
+            region=region,
+            value=puuid,
+        )
+        m.assert_called_once()
 
 
 if __name__ == "__main__":
