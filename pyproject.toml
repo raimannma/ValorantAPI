@@ -32,8 +32,10 @@ python = "^3.8"
 requests = "^2.28.1"
 Pillow = "^9.2.0"
 msgspec = ">=0.8,<0.10"
+asyncio = {version = "^3.4.3", optional = true, extras = ["speedups"]}
+aiohttp = {version = "^3.8.3", optional = true}
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 bandit = "^1.7.4"
 black = {version = "^22.12.0", allow-prereleases = true}
 darglint = "^1.8.1"
@@ -64,7 +66,14 @@ pytest-parallel = "^0.1.1"
 pytest-split = "^0.8.0"
 tomlkit = "<0.11.7"
 colorama = "^0.4.6"
+aioresponses = "^0.7.4"
+pytest-asyncio = "^0.20.3"
 
+[tool.poetry.extras]
+async = [
+    "aiohttp",
+    "asyncio",
+]
 
 [tool.black]
 target-version = ["py38"]
