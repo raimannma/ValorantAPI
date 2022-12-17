@@ -12,7 +12,9 @@ jobs:
       - name: Install dependencies
         run: pip3 install -r requirements.txt
       - name: Install dev-dependencies
-        run: pip install toml && python -c 'import toml; c = toml.load("pyproject.toml");print("\n".join(c["tool"]["poetry"]["dev-dependencies"]))' | pip install -r /dev/stdin
+        run: pip install toml && python -c 'import toml; c = toml.load("pyproject.toml");print("\n".join(c["tool"]["poetry"]["group"]["dev"]["dependencies"]))' | pip install -r /dev/stdin
+      - name: Install async dependencies
+        run: pip install toml && python -c 'import toml; c = toml.load("pyproject.toml");print("\n".join(c["tool"]["poetry"]["extras"]["async"]))' | pip install -r /dev/stdin
       - name: Build Documentation
         run: cd docs && make html && cd ..
       - name: Upload Documentation to Artifacts
