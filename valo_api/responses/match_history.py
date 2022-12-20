@@ -210,9 +210,9 @@ class MatchRoundKillEventV3(DictStruct):
 
 
 class Weapon(DictStruct):
+    assets: WeaponAssets
     id: Optional[str] = None
     name: Optional[str] = None
-    assets: WeaponAssets
 
 
 class Armor(Weapon):
