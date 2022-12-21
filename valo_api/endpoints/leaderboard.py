@@ -15,7 +15,6 @@ def get_leaderboard_v1(
     name: Optional[str] = None,
     tag: Optional[str] = None,
     season_id: Optional[str] = None,
-    start: Optional[int] = None,
     **kwargs,
 ) -> List[LeaderboardPlayerV1]:
     """Get the leaderboard for a region using version 1 of the endpoint.
@@ -33,17 +32,16 @@ def get_leaderboard_v1(
         name: The name of the player to get the leaderboard for.
         tag: The tag of the player to get the leaderboard for.
         season_id: The season ID to get the leaderboard for.
-        start: The start index of the leaderboard. Can be used for pagination.
         **kwargs: Any additional arguments to pass to the endpoint.
 
     Returns:
         A list of LeaderboardPlayerV1 objects.
     """
-    return get_leaderboard("v1", region, puuid, name, tag, season_id, start, **kwargs)
+    return get_leaderboard("v1", region, puuid, name, tag, season_id, **kwargs)
 
 
 def get_leaderboard_v2(
-    region: str, season_id: Optional[str] = None, **kwargs
+    region: str, season_id: Optional[str] = None, start: Optional[int] = None, **kwargs
 ) -> LeaderboardV2:
     """Get the leaderboard for a region using version 2 of the endpoint.
 
@@ -54,12 +52,13 @@ def get_leaderboard_v2(
             One of the following:
             eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
         season_id: The season ID to get the leaderboard for.
+        start: The start index of the leaderboard. Can be used for pagination.
         **kwargs: Any additional arguments to pass to the endpoint.
 
     Returns:
         A LeaderboardV2 object.
     """
-    return get_leaderboard("v2", region, season_id=season_id, **kwargs)
+    return get_leaderboard("v2", region, season_id=season_id, start=start, **kwargs)
 
 
 def get_leaderboard(
@@ -96,11 +95,11 @@ def get_leaderboard(
     Raises:
         ValoAPIException: If the request failed.
     """
+    if version == "v1" and start is not None:
+        raise ValoAPIException("start is not allowed for version v1")
     if version == "v2":
         if puuid is not None or name is not None or tag is not None:
             raise ValoAPIException("puuid, name and tag are not allowed for version v2")
-        if start is not None:
-            raise ValoAPIException("start is not allowed for version v2")
 
     query_args = dict()
     if puuid is not None:
