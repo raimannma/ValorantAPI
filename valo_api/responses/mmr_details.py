@@ -24,6 +24,13 @@ class CurrentDataV2(DictStruct):
     games_needed_for_rating: Optional[int] = None
 
 
+class HighestRankV2(DictStruct):
+    old: bool
+    tier: int
+    patched_tier: str
+    season: str
+
+
 class ActRankWinV2(DictStruct):
     patched_tier: str
     tier: int
@@ -43,4 +50,5 @@ class MMRDetailsV2(DictStruct):
     name: str
     tag: str
     current_data: CurrentDataV2
+    highest_rank: HighestRankV2
     by_season: Dict[str, SeasonDataV2]
