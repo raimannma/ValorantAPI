@@ -1,9 +1,11 @@
+from typing import Union
+
 import msgspec.json
 
 from valo_api.endpoints_config import EndpointsConfig
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
-from valo_api.responses.store_offers import StoreOffersV1
+from valo_api.responses.store_offers import StoreOffersV1, StoreOffersV2
 from valo_api.utils.fetch_endpoint import fetch_endpoint, response_type
 
 
@@ -22,17 +24,33 @@ def get_store_offers_v1(**kwargs) -> StoreOffersV1:
     return get_store_offers("v1", **kwargs)
 
 
-def get_store_offers(version: str, **kwargs) -> StoreOffersV1:
+def get_store_offers_v2(**kwargs) -> StoreOffersV2:
+    """Get the store offers using version 2 of the endpoint.
+
+    This is the same as
+    :py:meth:`get_store_offers(version="v2", **kwargs) <get_store_offers>`
+
+    Args:
+        **kwargs: Any additional arguments to pass to the endpoint.
+
+    Returns:
+        StoreOffersV2: Store Offers fetched from the API.
+    """
+    return get_store_offers("v2", **kwargs)
+
+
+def get_store_offers(version: str, **kwargs) -> Union[StoreOffersV1, StoreOffersV2]:
     """Get the store offers using a specific version of the endpoint.
 
     Args:
         version: The version of the endpoint to use.
             One of the following:
-            v1 (Version 1)
+            v1 (Version 1), v2 (Version 2)
         **kwargs: Any additional arguments to pass to the endpoint.
 
     Returns:
-        StoreOffersV1: Store Offers fetched from the API.
+        - StoreOffersV1: Store Offers Version 1 fetched from the API.
+        - StoreOffersV2: Store Offers Version 2 fetched from the API.
 
     Raises:
         ValoAPIException: If the request failed.
@@ -48,7 +66,16 @@ def get_store_offers(version: str, **kwargs) -> StoreOffersV1:
         error.headers = dict(response.headers)
         raise ValoAPIException(error)
 
-    return msgspec.json.decode(response.content, type=response_type(StoreOffersV1)).data
+    if version == "v1":
+        return msgspec.json.decode(
+            response.content, type=response_type(StoreOffersV1)
+        ).data
+    elif version == "v2":
+        return msgspec.json.decode(
+            response.content, type=response_type(StoreOffersV2)
+        ).data
+    else:
+        raise NotImplementedError(f"Version {version} is not implemented.")
 
 
 try:
@@ -69,17 +96,34 @@ try:
         """
         return await get_store_offers_async("v1", **kwargs)
 
-    async def get_store_offers_async(version: str, **kwargs) -> StoreOffersV1:
+    async def get_store_offers_v2_async(**kwargs) -> StoreOffersV2:
+        """Get the store offers using version 1 of the endpoint.
+
+        This is the same as
+        :py:meth:`get_store_offers(version="v2", **kwargs) <get_store_offers>`
+
+        Args:
+            **kwargs: Any additional arguments to pass to the endpoint.
+
+        Returns:
+            StoreOffersV2: Store Offers fetched from the API.
+        """
+        return await get_store_offers_async("v2", **kwargs)
+
+    async def get_store_offers_async(
+        version: str, **kwargs
+    ) -> Union[StoreOffersV1, StoreOffersV2]:
         """Get the store offers using a specific version of the endpoint.
 
         Args:
             version: The version of the endpoint to use.
                 One of the following:
-                v1 (Version 1)
+                v1 (Version 1), v2 (Version 2)
             **kwargs: Any additional arguments to pass to the endpoint.
 
         Returns:
-            StoreOffersV1: Store Offers fetched from the API.
+            - StoreOffersV1: Store Offers fetched from the API.
+            - StoreOffersV2: Store Offers fetched from the API.
 
         Raises:
             ValoAPIException: If the request failed.
@@ -95,7 +139,12 @@ try:
             error.headers = dict(response.headers)
             raise ValoAPIException(error)
 
-        return msgspec.json.decode(content, type=response_type(StoreOffersV1)).data
+        if version == "v1":
+            return msgspec.json.decode(content, type=response_type(StoreOffersV1)).data
+        elif version == "v2":
+            return msgspec.json.decode(content, type=response_type(StoreOffersV2)).data
+        else:
+            raise NotImplementedError(f"Version {version} is not implemented.")
 
 except ImportError:
     pass
