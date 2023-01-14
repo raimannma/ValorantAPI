@@ -10,7 +10,7 @@ from valo_api.exceptions.rate_limit import rate_limit
 
 
 @settings(deadline=None, max_examples=15)
-@given(version=st.sampled_from(["v1"]))
+@given(version=st.sampled_from(["v1", "v2"]))
 @pytest.mark.asyncio
 @new_event_loop_decorator
 async def test_get_store_offers(version: str):
