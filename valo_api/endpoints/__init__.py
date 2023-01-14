@@ -39,7 +39,11 @@ from valo_api.endpoints.store_featured import (
     get_store_featured_v1,
     get_store_featured_v2,
 )
-from valo_api.endpoints.store_offers import get_store_offers, get_store_offers_v1
+from valo_api.endpoints.store_offers import (
+    get_store_offers,
+    get_store_offers_v1,
+    get_store_offers_v2,
+)
 from valo_api.endpoints.version_info import get_version_info, get_version_info_v1
 from valo_api.endpoints.website import get_website, get_website_v1
 
@@ -55,6 +59,7 @@ __all__ = [
     "get_version_info_v1",
     "get_version_info",
     "get_store_offers_v1",
+    "get_store_offers_v2",
     "get_store_offers",
     "get_store_featured_v1",
     "get_store_featured_v2",
@@ -134,6 +139,7 @@ try:
     from valo_api.endpoints.store_offers import (
         get_store_offers_async,
         get_store_offers_v1_async,
+        get_store_offers_v2_async,
     )
     from valo_api.endpoints.version_info import (
         get_version_info_async,
@@ -154,6 +160,7 @@ try:
             "get_version_info_v1_async",
             "get_version_info_async",
             "get_store_offers_v1_async",
+            "get_store_offers_v2_async",
             "get_store_offers_async",
             "get_store_featured_v1_async",
             "get_store_featured_v2_async",
