@@ -28,7 +28,7 @@ class HighestRankV2(DictStruct):
     old: bool
     tier: int
     patched_tier: str
-    season: str
+    season: Optional[str] = None
 
 
 class ActRankWinV2(DictStruct):
