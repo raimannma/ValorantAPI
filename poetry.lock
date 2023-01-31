@@ -153,14 +153,14 @@ files = [
 
 [[package]]
 name = "astroid"
-version = "2.13.3"
+version = "2.13.4"
 description = "An abstract syntax tree for Python with inference support."
 category = "dev"
 optional = false
 python-versions = ">=3.7.2"
 files = [
-    {file = "astroid-2.13.3-py3-none-any.whl", hash = "sha256:14c1603c41cc61aae731cad1884a073c4645e26f126d13ac8346113c95577f3b"},
-    {file = "astroid-2.13.3.tar.gz", hash = "sha256:6afc22718a48a689ca24a97981ad377ba7fb78c133f40335dfd16772f29bcfb1"},
+    {file = "astroid-2.13.4-py3-none-any.whl", hash = "sha256:fe430a1dcc6af3abbccd29ba9f2544dcafc0610d37018b5102c232ff917e4bbf"},
+    {file = "astroid-2.13.4.tar.gz", hash = "sha256:805d47d685a490f4024e3744064e919998b0eef6619e6ea6d2052deec5333fd5"},
 ]
 
 [package.dependencies]
