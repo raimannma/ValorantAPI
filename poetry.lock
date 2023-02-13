@@ -689,14 +689,14 @@ zoneinfo = ["backports.zoneinfo (>=0.2.1)", "tzdata (>=2022.7)"]
 
 [[package]]
 name = "identify"
-version = "2.5.17"
+version = "2.5.18"
 description = "File identification library for Python"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "identify-2.5.17-py2.py3-none-any.whl", hash = "sha256:7d526dd1283555aafcc91539acc061d8f6f59adb0a7bba462735b0a318bff7ed"},
-    {file = "identify-2.5.17.tar.gz", hash = "sha256:93cc61a861052de9d4c541a7acb7e3dcc9c11b398a2144f6e52ae5285f5f4f06"},
+    {file = "identify-2.5.18-py2.py3-none-any.whl", hash = "sha256:93aac7ecf2f6abf879b8f29a8002d3c6de7086b8c28d88e1ad15045a15ab63f9"},
+    {file = "identify-2.5.18.tar.gz", hash = "sha256:89e144fa560cc4cffb6ef2ab5e9fb18ed9f9b3cb054384bab4b95c12f6c309fe"},
 ]
 
 [package.extras]
@@ -1900,21 +1900,6 @@ files = [
 [package.extras]
 lint = ["docutils-stubs", "flake8", "mypy"]
 test = ["html5lib", "pytest"]
-
-[[package]]
-name = "sphinxcontrib-jquery"
-version = "3.0.0"
-description = "Extension to include jQuery on newer Sphinx releases"
-category = "dev"
-optional = false
-python-versions = ">=2.7"
-files = [
-    {file = "sphinxcontrib.jquery-3.0.0-py2.py3-none-any.whl", hash = "sha256:f3f8af2f1d344a2525f8a29d7a88ff2ee47ae25192a8de35748348ad3104ffd2"},
-    {file = "sphinxcontrib.jquery-3.0.0.tar.gz", hash = "sha256:72f201e55d8430bc3aaec7718a6c0d82a7b7c63d750428525e3d1c10d20aa437"},
-]
-
-[package.dependencies]
-setuptools = "*"
 
 [[package]]
 name = "sphinxcontrib-jsmath"
