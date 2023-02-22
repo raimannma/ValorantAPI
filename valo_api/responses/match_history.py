@@ -26,8 +26,8 @@ class MatchPlayerSessionPlaytimeV3(DictStruct):
 
 
 class MatchFriendlyFireV3(DictStruct):
-    incoming: Optional[int] = None
-    outgoing: Optional[int] = None
+    incoming: Optional[float] = None
+    outgoing: Optional[float] = None
 
 
 class MatchPlayerBehaviorV3(DictStruct):
