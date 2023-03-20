@@ -77,7 +77,6 @@ def get_store_offers(version: str, **kwargs) -> Union[StoreOffersV1, StoreOffers
 
 
 try:
-
     from valo_api.utils.fetch_endpoint import fetch_endpoint_async
 
     async def get_store_offers_v1_async(**kwargs) -> StoreOffersV1:

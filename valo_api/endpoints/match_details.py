@@ -57,7 +57,6 @@ def get_match_details(version: str, match_id: str, **kwargs) -> MatchHistoryPoin
 
 
 try:
-
     from valo_api.utils.fetch_endpoint import fetch_endpoint_async
 
     async def get_match_details_v2_async(

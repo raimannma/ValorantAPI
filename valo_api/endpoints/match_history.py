@@ -188,7 +188,6 @@ def get_match_history_by_puuid(
 
 
 try:
-
     from valo_api.utils.fetch_endpoint import fetch_endpoint_async
 
     async def get_match_history_by_name_v3_async(

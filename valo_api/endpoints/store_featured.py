@@ -80,7 +80,6 @@ def get_store_featured(
 
 
 try:
-
     from valo_api.utils.fetch_endpoint import fetch_endpoint_async
 
     async def get_store_featured_v1_async(**kwargs) -> StoreFeaturedV1:
