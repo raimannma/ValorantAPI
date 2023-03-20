@@ -59,7 +59,6 @@ def get_status(version: str, region: str, **kwargs) -> StatusV1:
 
 
 try:
-
     from valo_api.utils.fetch_endpoint import fetch_endpoint_async
 
     async def get_status_v1_async(region: str, **kwargs) -> StatusV1:

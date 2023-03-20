@@ -56,7 +56,6 @@ def get_content(version: str, locale: Optional[str] = None, **kwargs) -> Content
 
 
 try:
-
     from valo_api.utils.fetch_endpoint import fetch_endpoint_async
 
     async def get_content_v1_async(locale: Optional[str] = None, **kwargs) -> ContentV1:

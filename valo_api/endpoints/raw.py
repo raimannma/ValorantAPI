@@ -116,7 +116,6 @@ def get_raw_data(
 
 
 try:
-
     from valo_api.utils.fetch_endpoint import fetch_endpoint_async
 
     async def get_raw_data_v1_async(

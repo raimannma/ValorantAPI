@@ -223,7 +223,6 @@ def get_mmr_details_by_puuid(
 
 
 try:
-
     from valo_api.utils.fetch_endpoint import fetch_endpoint_async
 
     async def get_mmr_details_by_name_v1_async(

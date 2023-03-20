@@ -138,7 +138,6 @@ def get_leaderboard(
 
 
 try:
-
     from valo_api.utils.fetch_endpoint import fetch_endpoint_async
 
     async def get_leaderboard_v1_async(

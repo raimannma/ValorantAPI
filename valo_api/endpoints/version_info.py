@@ -55,7 +55,6 @@ def get_version_info(version: str, region: str, **kwargs) -> VersionInfoV1:
 
 
 try:
-
     from valo_api.utils.fetch_endpoint import fetch_endpoint_async
 
     async def get_version_info_v1_async(region: str, **kwargs) -> VersionInfoV1:

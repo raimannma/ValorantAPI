@@ -59,7 +59,6 @@ def get_website(version: str, countrycode: str, **kwargs) -> List[WebsiteBannerV
 
 
 try:
-
     from valo_api.utils.fetch_endpoint import fetch_endpoint_async
 
     async def get_website_v1_async(countrycode: str, **kwargs) -> List[WebsiteBannerV1]:
