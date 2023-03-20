@@ -44,6 +44,7 @@ class BundleV2(DictStruct):
     bundle_price: int
     items: List[BundleItemV2]
     seconds_remaining: int
+    expires_at: str
     whole_sale_only: bool
 
 
