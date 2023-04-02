@@ -117,6 +117,8 @@ class MatchPlayerV3(DictStruct):
     assets: MatchPlayerAssetsV3
     stats: MatchPlayerStatsV3
     economy: MatchPlayerEconomyV3
+    damage_made: Optional[int] = None
+    damage_received: Optional[int] = None
 
 
 class MatchPlayersV3(DictStruct):
