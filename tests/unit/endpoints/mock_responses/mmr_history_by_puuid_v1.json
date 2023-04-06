@@ -1,88 +1,427 @@
 {
+    "status": 200,
+    "name": "ManuelHexe",
+    "tag": "5777",
     "data": [
         {
-            "currenttier": 9,
-            "currenttierpatched": "Silver 1",
-            "date": "Saturday, April 16, 2022 3:04 PM",
-            "date_raw": 1650114281,
-            "elo": 683,
-            "mmr_change_to_last_game": -14,
-            "ranking_in_tier": 83
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "512811b9-1edf-4aed-8ad7-1630172ed72c",
+            "map": {
+                "name": "Ascent",
+                "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 23,
+            "mmr_change_to_last_game": -18,
+            "elo": 1123,
+            "date": "Friday, March 24, 2023 8:53 PM",
+            "date_raw": 1679687611
         },
         {
-            "currenttier": 9,
-            "currenttierpatched": "Silver 1",
-            "date": "Saturday, April 16, 2022 8:44 AM",
-            "date_raw": 1650091465,
-            "elo": 697,
-            "mmr_change_to_last_game": 16,
-            "ranking_in_tier": 97
-        },
-        {
-            "currenttier": 9,
-            "currenttierpatched": "Silver 1",
-            "date": "Saturday, April 16, 2022 8:02 AM",
-            "date_raw": 1650088962,
-            "elo": 681,
-            "mmr_change_to_last_game": -19,
-            "ranking_in_tier": 81
-        },
-        {
-            "currenttier": 10,
-            "currenttierpatched": "Silver 2",
-            "date": "Saturday, April 16, 2022 7:37 AM",
-            "date_raw": 1650087421,
-            "elo": 700,
-            "mmr_change_to_last_game": -19,
-            "ranking_in_tier": 0
-        },
-        {
-            "currenttier": 10,
-            "currenttierpatched": "Silver 2",
-            "date": "Friday, April 15, 2022 8:59 PM",
-            "date_raw": 1650049163,
-            "elo": 713,
-            "mmr_change_to_last_game": 22,
-            "ranking_in_tier": 13
-        },
-        {
-            "currenttier": 9,
-            "currenttierpatched": "Silver 1",
-            "date": "Friday, April 15, 2022 8:08 PM",
-            "date_raw": 1650046130,
-            "elo": 691,
-            "mmr_change_to_last_game": -9,
-            "ranking_in_tier": 91
-        },
-        {
-            "currenttier": 10,
-            "currenttierpatched": "Silver 2",
-            "date": "Friday, April 15, 2022 8:08 PM",
-            "date_raw": 1650046119,
-            "elo": 700,
-            "mmr_change_to_last_game": -3,
-            "ranking_in_tier": 0
-        },
-        {
-            "currenttier": 10,
-            "currenttierpatched": "Silver 2",
-            "date": "Tuesday, April 12, 2022 11:22 PM",
-            "date_raw": 1649798569,
-            "elo": 700,
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "c73f9344-6a05-4225-8627-a11abb9198aa",
+            "map": {
+                "name": "Lotus",
+                "id": "2fe4ed3a-450a-948b-6d6b-e89a78e680a9"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 41,
             "mmr_change_to_last_game": -22,
-            "ranking_in_tier": 0
+            "elo": 1141,
+            "date": "Friday, March 24, 2023 8:10 PM",
+            "date_raw": 1679685036
         },
         {
-            "currenttier": 10,
-            "currenttierpatched": "Silver 2",
-            "date": "Sunday, April 10, 2022 1:04 AM",
-            "date_raw": 1649545442,
-            "elo": 714,
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "401d689b-8bee-45aa-b7ae-d65cf087d13e",
+            "map": {
+                "name": "Haven",
+                "id": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 63,
+            "mmr_change_to_last_game": -18,
+            "elo": 1163,
+            "date": "Friday, March 24, 2023 6:41 PM",
+            "date_raw": 1679679714
+        },
+        {
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "9c733d9d-7b6c-47ee-8a24-d349dbd9c887",
+            "map": {
+                "name": "Icebox",
+                "id": "e2ad5c54-4114-a870-9641-8ea21279579a"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 81,
+            "mmr_change_to_last_game": -18,
+            "elo": 1181,
+            "date": "Friday, March 24, 2023 5:51 PM",
+            "date_raw": 1679676670
+        },
+        {
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "2340e59c-e06b-4bde-99f4-cdcc498b46f2",
+            "map": {
+                "name": "Split",
+                "id": "d960549e-485c-e861-8d71-aa9d1aed12a2"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 99,
+            "mmr_change_to_last_game": 16,
+            "elo": 1199,
+            "date": "Thursday, March 23, 2023 10:17 PM",
+            "date_raw": 1679606248
+        },
+        {
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "532c2e40-91e9-4f21-a6f3-f76feec2fd94",
+            "map": {
+                "name": "Split",
+                "id": "d960549e-485c-e861-8d71-aa9d1aed12a2"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 83,
             "mmr_change_to_last_game": -17,
-            "ranking_in_tier": 14
+            "elo": 1183,
+            "date": "Thursday, March 23, 2023 9:35 PM",
+            "date_raw": 1679603742
+        },
+        {
+            "currenttier": 15,
+            "currenttierpatched": "Platinum 1",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/15/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/15/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/15/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/15/ranktriangleupicon.png"
+            },
+            "match_id": "0e7b8c0a-c6b4-4187-80a9-c973bedc6262",
+            "map": {
+                "name": "Pearl",
+                "id": "fd267378-4d1d-484f-ff52-77821ed10dc2"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 0,
+            "mmr_change_to_last_game": -10,
+            "elo": 1200,
+            "date": "Thursday, March 23, 2023 8:57 PM",
+            "date_raw": 1679601455
+        },
+        {
+            "currenttier": 15,
+            "currenttierpatched": "Platinum 1",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/15/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/15/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/15/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/15/ranktriangleupicon.png"
+            },
+            "match_id": "973e3daa-24a6-4848-bf18-8dbdbbc534bd",
+            "map": {
+                "name": "Pearl",
+                "id": "fd267378-4d1d-484f-ff52-77821ed10dc2"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 10,
+            "mmr_change_to_last_game": 18,
+            "elo": 1210,
+            "date": "Wednesday, March 22, 2023 10:33 PM",
+            "date_raw": 1679520817
+        },
+        {
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "46ca46f7-1ab3-4d99-a75e-571120ff9651",
+            "map": {
+                "name": "Haven",
+                "id": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 84,
+            "mmr_change_to_last_game": 23,
+            "elo": 1184,
+            "date": "Wednesday, March 22, 2023 9:52 PM",
+            "date_raw": 1679518362
+        },
+        {
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "4e118fe7-0a83-4730-a0ea-ab6eb53cb4b0",
+            "map": {
+                "name": "Fracture",
+                "id": "b529448b-4d60-346e-e89e-00a4c527a405"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 61,
+            "mmr_change_to_last_game": 21,
+            "elo": 1161,
+            "date": "Wednesday, March 22, 2023 9:41 PM",
+            "date_raw": 1679517689
+        },
+        {
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "80c9ec37-fcf9-4f48-a762-b5b3cf76eead",
+            "map": {
+                "name": "Haven",
+                "id": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 40,
+            "mmr_change_to_last_game": -15,
+            "elo": 1140,
+            "date": "Wednesday, March 22, 2023 9:03 PM",
+            "date_raw": 1679515426
+        },
+        {
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "8cd5bb79-e704-403a-bfe7-58082756ec10",
+            "map": {
+                "name": "Lotus",
+                "id": "2fe4ed3a-450a-948b-6d6b-e89a78e680a9"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 55,
+            "mmr_change_to_last_game": 21,
+            "elo": 1155,
+            "date": "Wednesday, March 22, 2023 8:40 PM",
+            "date_raw": 1679514040
+        },
+        {
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "30d8826d-edf3-4211-ae89-b64f07b9567b",
+            "map": {
+                "name": "Icebox",
+                "id": "e2ad5c54-4114-a870-9641-8ea21279579a"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 34,
+            "mmr_change_to_last_game": 0,
+            "elo": 1134,
+            "date": "Wednesday, March 22, 2023 7:44 PM",
+            "date_raw": 1679510698
+        },
+        {
+            "currenttier": 14,
+            "currenttierpatched": "Gold 3",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/14/ranktriangleupicon.png"
+            },
+            "match_id": "54ff52a9-ea12-468b-a33b-ed07639af588",
+            "map": {
+                "name": "Ascent",
+                "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319"
+            },
+            "season_id": "34093c29-4306-43de-452f-3f944bde22be",
+            "ranking_in_tier": 34,
+            "mmr_change_to_last_game": 38,
+            "elo": 1134,
+            "date": "Wednesday, March 22, 2023 7:10 PM",
+            "date_raw": 1679508650
+        },
+        {
+            "currenttier": 12,
+            "currenttierpatched": "Gold 1",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangleupicon.png"
+            },
+            "match_id": "94cc6a25-a3df-4f24-ae99-498e8b4e4ee8",
+            "map": {
+                "name": "Ascent",
+                "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319"
+            },
+            "season_id": "9c91a445-4f78-1baa-a3ea-8f8aadf4914d",
+            "ranking_in_tier": 96,
+            "mmr_change_to_last_game": 21,
+            "elo": 996,
+            "date": "Tuesday, February 21, 2023 10:52 PM",
+            "date_raw": 1677016347
+        },
+        {
+            "currenttier": 12,
+            "currenttierpatched": "Gold 1",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangleupicon.png"
+            },
+            "match_id": "b5c8db9f-2714-43af-9abb-69fde8d355a3",
+            "map": {
+                "name": "Split",
+                "id": "d960549e-485c-e861-8d71-aa9d1aed12a2"
+            },
+            "season_id": "9c91a445-4f78-1baa-a3ea-8f8aadf4914d",
+            "ranking_in_tier": 75,
+            "mmr_change_to_last_game": 28,
+            "elo": 975,
+            "date": "Tuesday, February 21, 2023 10:16 PM",
+            "date_raw": 1677014214
+        },
+        {
+            "currenttier": 12,
+            "currenttierpatched": "Gold 1",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangleupicon.png"
+            },
+            "match_id": "0f36d51d-f02e-4eb9-baa1-8a8c83a8266e",
+            "map": {
+                "name": "Haven",
+                "id": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047"
+            },
+            "season_id": "9c91a445-4f78-1baa-a3ea-8f8aadf4914d",
+            "ranking_in_tier": 47,
+            "mmr_change_to_last_game": -13,
+            "elo": 947,
+            "date": "Tuesday, February 21, 2023 9:44 PM",
+            "date_raw": 1677012252
+        },
+        {
+            "currenttier": 12,
+            "currenttierpatched": "Gold 1",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangleupicon.png"
+            },
+            "match_id": "c7745550-ee03-4a2f-8e87-bfc4bb0fe817",
+            "map": {
+                "name": "Fracture",
+                "id": "b529448b-4d60-346e-e89e-00a4c527a405"
+            },
+            "season_id": "9c91a445-4f78-1baa-a3ea-8f8aadf4914d",
+            "ranking_in_tier": 60,
+            "mmr_change_to_last_game": 24,
+            "elo": 960,
+            "date": "Tuesday, February 21, 2023 9:31 PM",
+            "date_raw": 1677011486
+        },
+        {
+            "currenttier": 12,
+            "currenttierpatched": "Gold 1",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangleupicon.png"
+            },
+            "match_id": "f30b812e-7c54-41e0-ac4a-c207ea7db383",
+            "map": {
+                "name": "Pearl",
+                "id": "fd267378-4d1d-484f-ff52-77821ed10dc2"
+            },
+            "season_id": "9c91a445-4f78-1baa-a3ea-8f8aadf4914d",
+            "ranking_in_tier": 36,
+            "mmr_change_to_last_game": -15,
+            "elo": 936,
+            "date": "Sunday, February 19, 2023 1:15 AM",
+            "date_raw": 1676765738
+        },
+        {
+            "currenttier": 12,
+            "currenttierpatched": "Gold 1",
+            "images": {
+                "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/smallicon.png",
+                "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/largeicon.png",
+                "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangledownicon.png",
+                "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/12/ranktriangleupicon.png"
+            },
+            "match_id": "526ad2e1-515d-4433-b652-d4e682a68003",
+            "map": {
+                "name": "Icebox",
+                "id": "e2ad5c54-4114-a870-9641-8ea21279579a"
+            },
+            "season_id": "9c91a445-4f78-1baa-a3ea-8f8aadf4914d",
+            "ranking_in_tier": 51,
+            "mmr_change_to_last_game": 12,
+            "elo": 951,
+            "date": "Sunday, February 19, 2023 12:31 AM",
+            "date_raw": 1676763074
         }
-    ],
-    "name": "jasminaxrose",
-    "status": 200,
-    "tag": "7024"
+    ]
 }

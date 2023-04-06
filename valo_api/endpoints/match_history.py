@@ -16,6 +16,7 @@ def get_match_history_by_name_v3(
     name: str,
     tag: str,
     size: Optional[int] = None,
+    map: Optional[str] = None,
     game_mode: Optional[str] = None,
     **kwargs,
 ) -> List[MatchHistoryPointV3]:
@@ -31,19 +32,23 @@ def get_match_history_by_name_v3(
         name: The name of the player.
         tag: The tag of the player.
         size: The number of matches to return. Maximum is 10.
+        map: The map to filter by.
         game_mode: The game mode to filter by.
         **kwargs: Any additional arguments to pass to the endpoint.
 
     Returns:
         A list of :class:`.MatchHistoryPointV3` objects.
     """
-    return get_match_history_by_name("v3", region, name, tag, size, game_mode, **kwargs)
+    return get_match_history_by_name(
+        "v3", region, name, tag, size, map, game_mode, **kwargs
+    )
 
 
 def get_match_history_by_puuid_v3(
     region: str,
     puuid: str,
     size: Optional[int] = None,
+    map: Optional[str] = None,
     game_mode: Optional[str] = None,
     **kwargs,
 ) -> List[MatchHistoryPointV3]:
@@ -58,13 +63,16 @@ def get_match_history_by_puuid_v3(
             eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
         puuid: The puuid of the player.
         size: The number of matches to return. Maximum is 10.
+        map: The map to filter by.
         game_mode: The game mode to filter by.
         **kwargs: Any additional arguments to pass to the endpoint.
 
     Returns:
         A list of :class:`.MatchHistoryPointV3` objects.
     """
-    return get_match_history_by_puuid("v3", region, puuid, size, game_mode, **kwargs)
+    return get_match_history_by_puuid(
+        "v3", region, puuid, size, map, game_mode, **kwargs
+    )
 
 
 def get_match_history_by_name(
@@ -73,6 +81,7 @@ def get_match_history_by_name(
     name: str,
     tag: str,
     size: Optional[int] = None,
+    map: Optional[str] = None,
     game_mode: Optional[str] = None,
     **kwargs,
 ) -> List[MatchHistoryPointV3]:
@@ -88,6 +97,7 @@ def get_match_history_by_name(
         name: The name of the player.
         tag: The tag of the player.
         size: The number of matches to return. Maximum is 10.
+        map: The map to filter by.
         game_mode: The game mode to filter by.
         **kwargs: Any additional arguments to pass to the endpoint.
 
@@ -108,6 +118,8 @@ def get_match_history_by_name(
         query_args["size"] = str(size).lower()
     if game_mode:
         query_args["filter"] = game_mode.lower()
+    if map:
+        query_args["map"] = map.capitalize()
     response = fetch_endpoint(
         EndpointsConfig.MATCH_HISTORY_BY_NAME,
         version=version,
@@ -133,6 +145,7 @@ def get_match_history_by_puuid(
     region: str,
     puuid: str,
     size: Optional[int] = None,
+    map: Optional[str] = None,
     game_mode: Optional[str] = None,
     **kwargs,
 ) -> List[MatchHistoryPointV3]:
@@ -147,6 +160,7 @@ def get_match_history_by_puuid(
             eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
         puuid: The puuid of the player.
         size: The number of matches to return. Maximum is 10.
+        map: The map to filter by.
         game_mode: The game mode to filter by.
         **kwargs: Any additional arguments to pass to the endpoint.
 
@@ -168,6 +182,8 @@ def get_match_history_by_puuid(
         query_args["size"] = str(size).lower()
     if game_mode:
         query_args["filter"] = game_mode.lower()
+    if map:
+        query_args["map"] = map.capitalize()
     response = fetch_endpoint(
         EndpointsConfig.MATCH_HISTORY_BY_PUUID,
         version=version,
@@ -195,6 +211,7 @@ try:
         name: str,
         tag: str,
         size: Optional[int] = None,
+        map: Optional[str] = None,
         game_mode: Optional[str] = None,
         **kwargs,
     ) -> List[MatchHistoryPointV3]:
@@ -210,6 +227,7 @@ try:
             name: The name of the player.
             tag: The tag of the player.
             size: The number of matches to return. Maximum is 10.
+            map: The map to filter by.
             game_mode: The game mode to filter by.
             **kwargs: Any additional arguments to pass to the endpoint.
 
@@ -217,13 +235,14 @@ try:
             A list of :class:`.MatchHistoryPointV3` objects.
         """
         return await get_match_history_by_name_async(
-            "v3", region, name, tag, size, game_mode, **kwargs
+            "v3", region, name, tag, size, map, game_mode, **kwargs
         )
 
     async def get_match_history_by_puuid_v3_async(
         region: str,
         puuid: str,
         size: Optional[int] = None,
+        map: Optional[str] = None,
         game_mode: Optional[str] = None,
         **kwargs,
     ) -> List[MatchHistoryPointV3]:
@@ -238,6 +257,7 @@ try:
                 eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
             puuid: The puuid of the player.
             size: The number of matches to return. Maximum is 10.
+            map: The map to filter by.
             game_mode: The game mode to filter by.
             **kwargs: Any additional arguments to pass to the endpoint.
 
@@ -245,7 +265,7 @@ try:
             A list of :class:`.MatchHistoryPointV3` objects.
         """
         return await get_match_history_by_puuid_async(
-            "v3", region, puuid, size, game_mode, **kwargs
+            "v3", region, puuid, size, map, game_mode, **kwargs
         )
 
     async def get_match_history_by_name_async(
@@ -254,6 +274,7 @@ try:
         name: str,
         tag: str,
         size: Optional[int] = None,
+        map: Optional[str] = None,
         game_mode: Optional[str] = None,
         **kwargs,
     ) -> List[MatchHistoryPointV3]:
@@ -269,6 +290,7 @@ try:
             name: The name of the player.
             tag: The tag of the player.
             size: The number of matches to return. Maximum is 10.
+            map: The map to filter by.
             game_mode: The game mode to filter by.
             **kwargs: Any additional arguments to pass to the endpoint.
 
@@ -290,6 +312,8 @@ try:
             query_args["size"] = str(size).lower()
         if game_mode:
             query_args["filter"] = game_mode.lower()
+        if map:
+            query_args["map"] = map.lower()
         response, content = await fetch_endpoint_async(
             EndpointsConfig.MATCH_HISTORY_BY_NAME,
             version=version,
@@ -314,6 +338,7 @@ try:
         region: str,
         puuid: str,
         size: Optional[int] = None,
+        map: Optional[str] = None,
         game_mode: Optional[str] = None,
         **kwargs,
     ) -> List[MatchHistoryPointV3]:
@@ -328,6 +353,7 @@ try:
                 eu (Europe), na (North America), ap (Asia Pacific), kr (Korea), latam (Latin America), br (Brazil)
             puuid: The puuid of the player.
             size: The number of matches to return. Maximum is 10.
+            map: The game mode to filter by.
             game_mode: The game mode to filter by.
             **kwargs: Any additional arguments to pass to the endpoint.
 
@@ -349,6 +375,8 @@ try:
             query_args["size"] = str(size).lower()
         if game_mode:
             query_args["filter"] = game_mode.lower()
+        if map:
+            query_args["map"] = map.lower()
         response, content = await fetch_endpoint_async(
             EndpointsConfig.MATCH_HISTORY_BY_PUUID,
             version=version,
