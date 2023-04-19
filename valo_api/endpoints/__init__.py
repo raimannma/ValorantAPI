@@ -11,6 +11,12 @@ from valo_api.endpoints.leaderboard import (
     get_leaderboard_v1,
     get_leaderboard_v2,
 )
+from valo_api.endpoints.lifetime_matches import (
+    get_lifetime_matches_by_name,
+    get_lifetime_matches_by_name_v1,
+    get_lifetime_matches_by_puuid,
+    get_lifetime_matches_by_puuid_v1,
+)
 from valo_api.endpoints.match_details import get_match_details, get_match_details_v2
 from valo_api.endpoints.match_history import (
     get_match_history_by_name,
@@ -89,6 +95,10 @@ __all__ = [
     "get_raw_data",
     "get_crosshair_v1",
     "get_crosshair",
+    "get_lifetime_matches_by_name_v1",
+    "get_lifetime_matches_by_name",
+    "get_lifetime_matches_by_puuid_v1",
+    "get_lifetime_matches_by_puuid",
 ]
 
 try:
@@ -104,6 +114,12 @@ try:
         get_leaderboard_async,
         get_leaderboard_v1_async,
         get_leaderboard_v2_async,
+    )
+    from valo_api.endpoints.lifetime_matches import (
+        get_lifetime_matches_by_name_async,
+        get_lifetime_matches_by_name_v1_async,
+        get_lifetime_matches_by_puuid_async,
+        get_lifetime_matches_by_puuid_v1_async,
     )
     from valo_api.endpoints.match_details import (
         get_match_details_async,
@@ -190,6 +206,10 @@ try:
             "get_raw_data_async",
             "get_crosshair_v1_async",
             "get_crosshair_async",
+            "get_lifetime_matches_by_name_v1_async",
+            "get_lifetime_matches_by_name_async",
+            "get_lifetime_matches_by_puuid_v1_async",
+            "get_lifetime_matches_by_puuid_async",
         ]
     )
 except ImportError:
