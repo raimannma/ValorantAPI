@@ -54,7 +54,6 @@ test-e2e:
 check-codestyle:
 	poetry run isort --diff --check-only --settings-path pyproject.toml ./
 	poetry run black --diff --check --config pyproject.toml ./
-	poetry run darglint --verbosity 2 valo_api tests
 
 .PHONY: docs-build
 docs-build:
@@ -72,7 +71,7 @@ lint: test check-codestyle check-safety
 
 .PHONY: update-dev-deps
 update-dev-deps:
-	poetry add -D pytest-parallel@latest bandit@latest darglint@latest isort@latest pre-commit@latest pydocstyle@latest pylint@latest pytest@latest pyupgrade@latest safety@latest pytest-html@latest pytest-cov@latest
+	poetry add -D pytest-parallel@latest bandit@latest isort@latest pre-commit@latest pydocstyle@latest pylint@latest pytest@latest pyupgrade@latest safety@latest pytest-html@latest pytest-cov@latest
 	poetry add -D --allow-prereleases black@latest
 
 #* Docker
