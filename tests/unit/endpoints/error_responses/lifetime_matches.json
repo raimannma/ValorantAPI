@@ -1,0 +1,12 @@
+[
+    {
+        "status": 500,
+        "errors": [
+            {
+                "message": "Internal Server Error",
+                "code": 0,
+                "details": "null"
+            }
+        ]
+    }
+]
