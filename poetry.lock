@@ -218,18 +218,18 @@ tests-no-zope = ["cloudpickle", "hypothesis", "mypy (>=1.1.1)", "pympler", "pyte
 
 [[package]]
 name = "autodocsumm"
-version = "0.2.10"
+version = "0.2.11"
 description = "Extended sphinx autodoc including automatic autosummaries"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "autodocsumm-0.2.10-py3-none-any.whl", hash = "sha256:cac15a879e7cf2ebac00fe05ec691ae48d7c5b8e75eceae2f61f98905ac0c2d8"},
-    {file = "autodocsumm-0.2.10.tar.gz", hash = "sha256:6c28527687e9b5496c586115baadb91d99c30bb637010f4d5f497e51b1acabd8"},
+    {file = "autodocsumm-0.2.11-py3-none-any.whl", hash = "sha256:f1d0a623bf1ad64d979a9e23fd360d1fb1b8f869beaf3197f711552cddc174e2"},
+    {file = "autodocsumm-0.2.11.tar.gz", hash = "sha256:183212bd9e9f3b58a96bb21b7958ee4e06224107aa45b2fd894b61b83581b9a9"},
 ]
 
 [package.dependencies]
-Sphinx = ">=2.2,<7.0"
+Sphinx = ">=2.2,<8.0"
 
 [[package]]
 name = "babel"
