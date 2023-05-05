@@ -9,6 +9,7 @@ from typing import (
     Type,
     TypeVar,
     Union,
+    get_args,
 )
 
 import io
@@ -75,7 +76,29 @@ class Endpoint(Generic[R]):
                     kwargs[k] = kwargs.get(k, "")
                 return self._get_endpoint(**kwargs)
 
+        doc_title = f"{self.f_name} ({version})" if version else self.f_name
+        doc_title = doc_title.replace("_", " ").title() + " from the API."
+        doc_args = "\n\nArgs:\n"
+        if self.kwargs:
+            for k, v in self.kwargs.items():
+                args = ", ".join(
+                    [a.__name__ for a in get_args(v) if a.__name__ != "NoneType"]
+                )
+                if len(args) > 0:
+                    args = f"[{args}]"
+                doc_args += f"    {k}: {v.__name__}{args}\n"
+        returns = self.recursive_typing_get_args(self.return_type)
+        doc_return = f"\n\nReturns:\n    {returns}: API Fetch Result\n"
+        doc_raise = "\n\nRaises:\n    ValoAPIException: If the API returns an error."
+        wrapper.__doc__ = doc_title + doc_args + doc_return + doc_raise
+
         return wrapper
+
+    def recursive_typing_get_args(self, type_: Type) -> str:
+        args = get_args(type_)
+        if not args or len(args) == 0:
+            return f"{type_.__name__}"
+        return ", ".join({self.recursive_typing_get_args(arg) for arg in args})
 
     def build_query_args(self, **kwargs):
         formatted_query_args = (
