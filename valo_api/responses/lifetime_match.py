@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import Optional
 
 from valo_api.utils.dict_struct import DictStruct
 
