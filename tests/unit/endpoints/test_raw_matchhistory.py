@@ -9,7 +9,6 @@ from hypothesis import strategies as st
 import valo_api
 from tests.unit.endpoints.utils import get_mock_response
 from valo_api.config import Config
-from valo_api.endpoints.raw import EndpointType
 
 
 @given(
@@ -33,14 +32,13 @@ async def test_get_raw_matchhistory(version: str, match_id: UUID, region: str):
         status=200,
     )
 
-    getattr(valo_api, f"get_raw_data_{version}")(
-        type=EndpointType.MATCH_HISTORY, region=region, value=match_id
+    getattr(valo_api, f"get_raw_match_history_data_{version}")(
+        region=region, value=match_id
     )
     assert len(responses.calls) == 1
 
-    getattr(valo_api, "get_raw_data")(
+    getattr(valo_api, "get_raw_match_history_data")(
         version=version,
-        type=EndpointType.MATCH_HISTORY,
         region=region,
         value=match_id,
     )
@@ -51,8 +49,8 @@ async def test_get_raw_matchhistory(version: str, match_id: UUID, region: str):
             f"{url}?region={region}&type=matchhistory&value={match_id}",
             payload=get_mock_response(f"raw_matchhistory_{version}.json"),
         )
-        await getattr(valo_api, f"get_raw_data_{version}_async")(
-            type=EndpointType.MATCH_HISTORY, region=region, value=match_id
+        await getattr(valo_api, f"get_raw_match_history_data_{version}_async")(
+            region=region, value=match_id
         )
         m.assert_called_once()
 
@@ -61,9 +59,8 @@ async def test_get_raw_matchhistory(version: str, match_id: UUID, region: str):
             f"{url}?region={region}&type=matchhistory&value={match_id}",
             payload=get_mock_response(f"raw_matchhistory_{version}.json"),
         )
-        await getattr(valo_api, "get_raw_data_async")(
+        await getattr(valo_api, "get_raw_match_history_data_async")(
             version=version,
-            type=EndpointType.MATCH_HISTORY,
             region=region,
             value=match_id,
         )

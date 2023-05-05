@@ -8,7 +8,6 @@ from hypothesis import strategies as st
 
 import valo_api
 from tests.e2e import new_event_loop_decorator
-from valo_api.config import Config
 from valo_api.exceptions.rate_limit import rate_limit
 
 

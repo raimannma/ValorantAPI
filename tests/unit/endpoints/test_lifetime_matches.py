@@ -5,7 +5,6 @@ from uuid import UUID
 
 import pytest
 import responses
-from aioresponses import aioresponses
 from hypothesis import given
 from hypothesis import strategies as st
 from responses import matchers
