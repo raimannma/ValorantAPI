@@ -25,6 +25,7 @@ async def test_get_crosshair_error(
 
     url = f"{Config.BASE_URL}/valorant/{version}/crosshair/generate"
 
+    crosshair_id = crosshair_id.lower()
     params = {"id": crosshair_id}
 
     responses.add(

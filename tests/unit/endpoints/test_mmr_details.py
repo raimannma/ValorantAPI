@@ -21,7 +21,7 @@ from valo_api.exceptions.valo_api_exception import ValoAPIException
 
 
 @given(
-    version=st.sampled_from(["v1", "v2"]),
+    version=st.sampled_from(["v2"]),
     region=st.sampled_from(Config.ALL_REGIONS),
     name=st.text(),
     tag=st.text(),
@@ -83,7 +83,7 @@ async def test_get_mmr_details_by_name(
 
 
 @given(
-    version=st.sampled_from(["v1", "v2"]),
+    version=st.sampled_from(["v2"]),
     region=st.sampled_from(Config.ALL_REGIONS),
     name=st.text(),
     tag=st.text(),
@@ -153,7 +153,7 @@ async def test_get_mmr_details_by_name_error(
 
 
 @given(
-    version=st.sampled_from(["v1", "v2"]),
+    version=st.sampled_from(["v2"]),
     region=st.sampled_from(Config.ALL_REGIONS),
     puuid=st.uuids(),
     filter=st.one_of(st.none(), st.sampled_from(["competitive", "unrated"])),

@@ -33,12 +33,12 @@ async def test_get_raw_mmr(version: str, puuid: UUID, region: str):
         status=200,
     )
 
-    getattr(valo_api, f"get_raw_data_{version}")(
+    getattr(valo_api, f"get_raw_mmr_data_{version}")(
         type=EndpointType.MMR, region=region, value=puuid
     )
     assert len(responses.calls) == 1
 
-    getattr(valo_api, "get_raw_data")(
+    getattr(valo_api, "get_raw_mmr_data")(
         version=version,
         type=EndpointType.MMR,
         region=region,
@@ -51,7 +51,7 @@ async def test_get_raw_mmr(version: str, puuid: UUID, region: str):
             f"{url}?region={region}&type=mmr&value={puuid}",
             payload=get_mock_response(f"raw_mmr_{version}.json"),
         )
-        await getattr(valo_api, f"get_raw_data_{version}_async")(
+        await getattr(valo_api, f"get_raw_mmr_data_{version}_async")(
             type=EndpointType.MMR, region=region, value=puuid
         )
         m.assert_called_once()
@@ -61,7 +61,7 @@ async def test_get_raw_mmr(version: str, puuid: UUID, region: str):
             f"{url}?region={region}&type=mmr&value={puuid}",
             payload=get_mock_response(f"raw_mmr_{version}.json"),
         )
-        await getattr(valo_api, "get_raw_data_async")(
+        await getattr(valo_api, "get_raw_mmr_data_async")(
             version=version,
             type=EndpointType.MMR,
             region=region,

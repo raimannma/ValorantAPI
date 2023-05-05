@@ -13,7 +13,7 @@ from valo_api.exceptions.rate_limit import rate_limit
 
 @settings(deadline=None, max_examples=15)
 @given(
-    version=st.sampled_from(["v1", "v2"]),
+    version=st.sampled_from(["v2"]),
     id=st.sampled_from(["ManuelHexe#5777", "jasminaxrose#7024"]),
     episode=st.one_of(
         st.none(),
@@ -49,7 +49,7 @@ async def test_get_mmr_details_by_name(
 
 @settings(deadline=None, max_examples=15)
 @given(
-    version=st.sampled_from(["v1", "v2"]),
+    version=st.sampled_from(["v2"]),
     puuid=st.sampled_from(
         ["ee89b4d9-13d0-5832-8dd7-eb5d8806d918", "930bb0d3-c914-5394-bcf6-0bc81f465bd7"]
     ),

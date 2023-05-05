@@ -34,12 +34,12 @@ async def test_get_raw_matchdetails(version: str, puuid: UUID, region: str):
         status=200,
     )
 
-    getattr(valo_api, f"get_raw_data_{version}")(
+    getattr(valo_api, f"get_raw_match_details_data_{version}")(
         type=EndpointType.MATCH_DETAILS, region=region, value=puuid
     )
     assert len(responses.calls) == 1
 
-    getattr(valo_api, "get_raw_data")(
+    getattr(valo_api, "get_raw_match_details_data")(
         version=version,
         type=EndpointType.MATCH_DETAILS,
         region=region,
@@ -52,7 +52,7 @@ async def test_get_raw_matchdetails(version: str, puuid: UUID, region: str):
             f"{url}?region={region}&type=matchdetails&value={puuid}",
             payload=get_mock_response(f"raw_matchdetails_{version}.json"),
         )
-        await getattr(valo_api, f"get_raw_data_{version}_async")(
+        await getattr(valo_api, f"get_raw_match_details_data_{version}_async")(
             type=EndpointType.MATCH_DETAILS, region=region, value=puuid
         )
         m.assert_called_once()
@@ -62,7 +62,7 @@ async def test_get_raw_matchdetails(version: str, puuid: UUID, region: str):
             f"{url}?region={region}&type=matchdetails&value={puuid}",
             payload=get_mock_response(f"raw_matchdetails_{version}.json"),
         )
-        await getattr(valo_api, "get_raw_data_async")(
+        await getattr(valo_api, "get_raw_match_details_data_async")(
             version=version,
             type=EndpointType.MATCH_DETAILS,
             region=region,
