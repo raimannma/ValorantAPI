@@ -3,6 +3,11 @@ from typing import List, Optional
 from valo_api.utils.dict_struct import DictStruct
 
 
+class PremierInfoV3(DictStruct):
+    tournament_id: Optional[str] = None
+    matchup_id: Optional[str] = None
+
+
 class MatchMetadataV3(DictStruct):
     map: str
     game_version: str
@@ -17,6 +22,8 @@ class MatchMetadataV3(DictStruct):
     region: str
     cluster: str
     queue: str
+    mode_id: Optional[str] = None
+    premier_info: Optional[PremierInfoV3] = None
 
 
 class MatchPlayerSessionPlaytimeV3(DictStruct):
@@ -127,10 +134,26 @@ class MatchPlayersV3(DictStruct):
     blue: List[MatchPlayerV3]
 
 
+class MatchTeamRoasterCustomizationV3(DictStruct):
+    icon: str
+    image: str
+    primary_color: str
+    secondary_color: str
+    tertiary_color: str
+
+
+class MatchTeamRoasterV3(DictStruct):
+    members: List[str]
+    name: str
+    tag: str
+    customization: MatchTeamRoasterCustomizationV3
+
+
 class MatchTeamV3(DictStruct):
     has_won: Optional[bool] = None
     rounds_won: Optional[int] = None
     rounds_lost: Optional[int] = None
+    roaster: Optional[MatchTeamRoasterV3] = None
 
 
 class MatchTeamsV3(DictStruct):
@@ -258,9 +281,45 @@ class MatchRoundV3(DictStruct):
     player_stats: List[MatchRoundPlayerStatsV3]
 
 
+class MatchObserverPlatformOSV3(DictStruct):
+    name: str
+    version: str
+
+
+class MatchObserverPlatformV3(DictStruct):
+    type: str
+    os: MatchObserverPlatformOSV3
+
+
+class MatchObserverSessionPlaytimeV3(DictStruct):
+    minutes: int
+    seconds: int
+    milliseconds: int
+
+
+class MatchObserverV3(DictStruct):
+    puuid: str
+    name: str
+    tag: str
+    platform: MatchObserverPlatformV3
+    session_playtime: MatchObserverSessionPlaytimeV3
+    team: str
+    level: int
+    player_card: str
+    player_title: str
+    party_id: str
+
+
+class MatchCoachesV3(DictStruct):
+    puuid: str
+    team: str
+
+
 class MatchHistoryPointV3(DictStruct):
     metadata: MatchMetadataV3
     players: MatchPlayersV3
     teams: MatchTeamsV3
     rounds: List[MatchRoundV3]
     kills: List[MatchRoundKillEventV3]
+    observers: Optional[List[MatchObserverV3]] = None
+    coaches: Optional[List[MatchCoachesV3]] = None

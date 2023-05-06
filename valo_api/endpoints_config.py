@@ -140,10 +140,10 @@ class EndpointsConfig(Enum):
         kwargs={"version": str, "region": str},
     )
     WEBSITE = Endpoint(
-        path="/valorant/{version}/website/{countrycode}",
+        path="/valorant/{version}/website/{category}",
         f_name="get_website",
         return_type=List[WebsiteBannerV1],
-        kwargs={"version": str, "countrycode": str},
+        kwargs={"version": str, "category": str},
     )
     LEADERBOARD = Endpoint(
         path="/valorant/{version}/leaderboard/{region}",
@@ -194,16 +194,16 @@ class EndpointsConfig(Enum):
         f_name="get_mmr_details_by_puuid",
         versions=["v1", "v2"],
         return_type=MMRDetailsV2,
-        kwargs={"version": str, "region": str, "puuid": str, "filter": str},
-        query_args={"filter": "{filter}"},
+        kwargs={"version": str, "region": str, "puuid": str, "season": str},
+        query_args={"season": "{season}"},
     )
     MMR_DETAILS_BY_NAME = Endpoint(
         path="/valorant/{version}/mmr/{region}/{name}/{tag}",
         f_name="get_mmr_details_by_name",
         versions=["v2"],
         return_type=MMRDetailsV2,
-        kwargs={"version": str, "region": str, "name": str, "tag": str, "filter": str},
-        query_args={"filter": "{filter}"},
+        kwargs={"version": str, "region": str, "name": str, "tag": str, "season": str},
+        query_args={"season": "{season}"},
     )
     MMR_HISTORY_BY_PUUID = Endpoint(
         path="/valorant/{version}/by-puuid/mmr-history/{region}/{puuid}",
@@ -233,7 +233,7 @@ class EndpointsConfig(Enum):
         query_args={
             "size": "{size}",
             "map": "{map}",
-            "filter": "{game_mode}",
+            "mode": "{game_mode}",
         },
     )
     MATCH_HISTORY_BY_NAME = Endpoint(
@@ -253,7 +253,7 @@ class EndpointsConfig(Enum):
         query_args={
             "size": "{size}",
             "map": "{map}",
-            "filter": "{game_mode}",
+            "mode": "{game_mode}",
         },
     )
     LIFETIME_MATCHES_BY_PUUID = Endpoint(
