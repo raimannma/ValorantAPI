@@ -16,6 +16,11 @@ from valo_api.responses.match_history_raw import MatchHistoryRawV1
 from valo_api.responses.mmr_details import MMRDetailsV2
 from valo_api.responses.mmr_history import MMRHistoryPointV1
 from valo_api.responses.mmr_raw import MMRRawV1
+from valo_api.responses.premier_conferences import PremierConferencesV1
+from valo_api.responses.premier_leaderboard import PremierLeaderboardV1
+from valo_api.responses.premier_seasons import PremierSeasonV1
+from valo_api.responses.premier_team import PremierTeamV1
+from valo_api.responses.premier_team_history import PremierTeamHistoryV1
 from valo_api.responses.status import StatusV1
 from valo_api.responses.store_featured import BundleV2, StoreFeaturedV1
 from valo_api.responses.store_offers import StoreOffersV2
@@ -308,4 +313,76 @@ class EndpointsConfig(Enum):
         query_args={
             "id": "{crosshair_id}",
         },
+    )
+    PREMIER_TEAM_BY_NAME = Endpoint(
+        path="/valorant/{version}/premier/{name}/{tag}",
+        f_name="get_premier_team_by_name",
+        return_type=PremierTeamV1,
+        kwargs={"version": str, "name": str, "tag": str},
+    )
+    PREMIER_TEAM_BY_ID = Endpoint(
+        path="/valorant/{version}/premier/{id}",
+        f_name="get_premier_team_by_id",
+        return_type=PremierTeamV1,
+        kwargs={"version": str, "id": str},
+    )
+    PREMIER_TEAM_HISTORY_BY_NAME = Endpoint(
+        path="/valorant/{version}/premier/{name}/{tag}/history",
+        f_name="get_premier_team_history_by_name",
+        return_type=PremierTeamHistoryV1,
+        kwargs={"version": str, "name": str, "tag": str},
+    )
+    PREMIER_TEAM_HISTORY_BY_ID = Endpoint(
+        path="/valorant/{version}/premier/{id}/history",
+        f_name="get_premier_team_history_by_id",
+        return_type=PremierTeamHistoryV1,
+        kwargs={"version": str, "id": str},
+    )
+    PREMIER_SEARCH = Endpoint(
+        path="/valorant/{version}/premier/search",
+        f_name="get_premier_search",
+        return_type=List[PremierLeaderboardV1],
+        kwargs={
+            "version": str,
+            "name": str,
+            "tag": str,
+            "division": str,
+            "conference": str,
+        },
+        query_args={
+            "name": "{name}",
+            "tag": "{tag}",
+            "division": "{division}",
+            "conference": "{conference}",
+        },
+    )
+    PREMIER_SEASONS = Endpoint(
+        path="/valorant/{version}/premier/seasons",
+        f_name="get_premier_seasons",
+        return_type=List[PremierSeasonV1],
+        kwargs={"version": str},
+    )
+    PREMIER_CONFERENCES = Endpoint(
+        path="/valorant/{version}/premier/conferences",
+        f_name="get_premier_conferences",
+        return_type=List[PremierConferencesV1],
+        kwargs={"version": str},
+    )
+    PREMIER_LEADERBOARD_AFFINITY = Endpoint(
+        path="/valorant/{version}/premier/leaderboard/{affinity}",
+        f_name="get_premier_leaderboard_by_affinity",
+        return_type=List[PremierLeaderboardV1],
+        kwargs={"version": str, "affinity": str},
+    )
+    PREMIER_LEADERBOARD_CONFERENCE = Endpoint(
+        path="/valorant/{version}/premier/leaderboard/{affinity}/{conference}",
+        f_name="get_premier_leaderboard_by_conference",
+        return_type=List[PremierLeaderboardV1],
+        kwargs={"version": str, "affinity": str, "conference": str},
+    )
+    PREMIER_LEADERBOARD_DIVISION = Endpoint(
+        path="/valorant/{version}/premier/leaderboard/{affinity}/{conference}/{division}",
+        f_name="get_premier_leaderboard_by_division",
+        return_type=List[PremierLeaderboardV1],
+        kwargs={"version": str, "affinity": str, "conference": str, "division": str},
     )

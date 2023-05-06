@@ -1,0 +1,53 @@
+{
+    "status": 200,
+    "data": {
+        "id": "fb93c90a-9ec2-40d8-a570-1dafb919db9b",
+        "name": "MANDEM",
+        "tag": "M5Ms",
+        "enrolled": true,
+        "stats": {
+            "wins": 2,
+            "matches": 2,
+            "losses": 0
+        },
+        "placement": {
+            "points": 200,
+            "conference": "EU_CENTRAL_EAST",
+            "division": 20
+        },
+        "customization": {
+            "icon": "f006eb26-433f-3204-8313-e98293f51f42",
+            "image": "https://cdn.henrikdev.xyz/valorant/v1/premier/team-icon/f006eb26-433f-3204-8313-e98293f51f42?primary=e20d0d&secondary=d6cec0&tertiary=ff798d",
+            "primary": "#e20d0d",
+            "secondary": "#d6cec0",
+            "tertiary": "#ff798d"
+        },
+        "member": [
+            {
+                "puuid": "08b7cc66-4079-55a8-83c0-e687b1132d1c",
+                "name": "KZN Sirius",
+                "tag": "0000"
+            },
+            {
+                "puuid": "1a271ac3-84ca-5ab6-a4a3-e3db7455821f",
+                "name": "KZN notab0",
+                "tag": "Ofel"
+            },
+            {
+                "puuid": "1f39df09-11fa-5a77-b3b1-110fd8f5ba13",
+                "name": "DoeS z7eus",
+                "tag": "1322"
+            },
+            {
+                "puuid": "2070d3c7-37c5-5853-867b-a07f0c6a3dca",
+                "name": "KOD LA VINTOS",
+                "tag": "crnch"
+            },
+            {
+                "puuid": "f6542798-b709-5bc4-af8d-c4d8a0e78468",
+                "name": "KZN Shuffle",
+                "tag": "kaii"
+            }
+        ]
+    }
+}

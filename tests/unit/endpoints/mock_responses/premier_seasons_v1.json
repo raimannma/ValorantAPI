@@ -1,0 +1,406 @@
+{
+    "status": 200,
+    "data": [
+        {
+            "id": "ff00cdfb-49b7-89af-dbd0-30ada0913426",
+            "championship_event_id": "e841f5c8-417c-1aa4-6e8a-da9381a79624",
+            "championship_points_required": 375,
+            "starts_at": "2023-04-25T00:00:00Z",
+            "ends_at": "2023-05-23T00:00:00Z",
+            "enrollment_starts_at": "2023-04-25T00:00:00Z",
+            "enrollment_ends_at": "2023-04-29T00:00:00Z",
+            "events": [
+                {
+                    "id": "30cb5ba3-48fd-07b0-54a8-4cbf4ac8a073",
+                    "type": "LEAGUE",
+                    "starts_at": "2023-04-29T20:00:00Z",
+                    "ends_at": "2023-04-29T21:00:00Z",
+                    "conference_schedules": [
+                        {
+                            "conference": "EU_CENTRAL_EAST",
+                            "starts_at": "2023-04-29T18:00:00Z",
+                            "ends_at": "2023-04-29T19:00:00Z"
+                        },
+                        {
+                            "conference": "EU_MIDDLE_EAST",
+                            "starts_at": "2023-04-29T17:00:00Z",
+                            "ends_at": "2023-04-29T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_TURKEY",
+                            "starts_at": "2023-04-29T17:00:00Z",
+                            "ends_at": "2023-04-29T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_WEST",
+                            "starts_at": "2023-04-29T16:00:00Z",
+                            "ends_at": "2023-04-29T17:00:00Z"
+                        }
+                    ],
+                    "map_selection": {
+                        "type": "RANDOM",
+                        "maps": [
+                            {
+                                "name": "Ascent",
+                                "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319"
+                            }
+                        ]
+                    },
+                    "points_required_to_participate": 0
+                },
+                {
+                    "id": "59deb7c8-49ae-2f81-866c-b9bc27bb63f5",
+                    "type": "LEAGUE",
+                    "starts_at": "2023-05-01T19:00:00Z",
+                    "ends_at": "2023-05-01T20:00:00Z",
+                    "conference_schedules": [
+                        {
+                            "conference": "EU_CENTRAL_EAST",
+                            "starts_at": "2023-05-01T17:00:00Z",
+                            "ends_at": "2023-05-01T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_MIDDLE_EAST",
+                            "starts_at": "2023-05-01T16:00:00Z",
+                            "ends_at": "2023-05-01T17:00:00Z"
+                        },
+                        {
+                            "conference": "EU_TURKEY",
+                            "starts_at": "2023-05-01T16:00:00Z",
+                            "ends_at": "2023-05-01T17:00:00Z"
+                        },
+                        {
+                            "conference": "EU_WEST",
+                            "starts_at": "2023-05-01T14:00:00Z",
+                            "ends_at": "2023-05-01T15:00:00Z"
+                        }
+                    ],
+                    "map_selection": {
+                        "type": "RANDOM",
+                        "maps": [
+                            {
+                                "name": "Ascent",
+                                "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319"
+                            }
+                        ]
+                    },
+                    "points_required_to_participate": 0
+                },
+                {
+                    "id": "2dac7f1c-4b9a-da90-8420-52aba3ca221c",
+                    "type": "TOURNAMENT",
+                    "starts_at": "2023-05-03T19:00:00Z",
+                    "ends_at": "2023-05-03T20:00:00Z",
+                    "conference_schedules": [
+                        {
+                            "conference": "EU_CENTRAL_EAST",
+                            "starts_at": "2023-05-03T17:00:00Z",
+                            "ends_at": "2023-05-03T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_MIDDLE_EAST",
+                            "starts_at": "2023-05-03T16:00:00Z",
+                            "ends_at": "2023-05-03T17:00:00Z"
+                        },
+                        {
+                            "conference": "EU_TURKEY",
+                            "starts_at": "2023-05-03T16:00:00Z",
+                            "ends_at": "2023-05-03T17:00:00Z"
+                        },
+                        {
+                            "conference": "EU_WEST",
+                            "starts_at": "2023-05-03T15:00:00Z",
+                            "ends_at": "2023-05-03T16:00:00Z"
+                        }
+                    ],
+                    "map_selection": {
+                        "type": "PICKBAN",
+                        "maps": [
+                            {
+                                "name": "Bind",
+                                "id": "2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba"
+                            },
+                            {
+                                "name": "Haven",
+                                "id": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047"
+                            },
+                            {
+                                "name": "Split",
+                                "id": "d960549e-485c-e861-8d71-aa9d1aed12a2"
+                            },
+                            {
+                                "name": "Ascent",
+                                "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319"
+                            },
+                            {
+                                "name": "Fracture",
+                                "id": "b529448b-4d60-346e-e89e-00a4c527a405"
+                            },
+                            {
+                                "name": "Pearl",
+                                "id": "fd267378-4d1d-484f-ff52-77821ed10dc2"
+                            },
+                            {
+                                "name": "Lotus",
+                                "id": "2fe4ed3a-450a-948b-6d6b-e89a78e680a9"
+                            }
+                        ]
+                    },
+                    "points_required_to_participate": 0
+                },
+                {
+                    "id": "006e3863-4ebc-4a70-b2ab-7e83aece16da",
+                    "type": "LEAGUE",
+                    "starts_at": "2023-05-06T20:00:00Z",
+                    "ends_at": "2023-05-06T21:00:00Z",
+                    "conference_schedules": [
+                        {
+                            "conference": "EU_CENTRAL_EAST",
+                            "starts_at": "2023-05-06T18:00:00Z",
+                            "ends_at": "2023-05-06T19:00:00Z"
+                        },
+                        {
+                            "conference": "EU_MIDDLE_EAST",
+                            "starts_at": "2023-05-06T17:00:00Z",
+                            "ends_at": "2023-05-06T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_TURKEY",
+                            "starts_at": "2023-05-06T17:00:00Z",
+                            "ends_at": "2023-05-06T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_WEST",
+                            "starts_at": "2023-05-06T16:00:00Z",
+                            "ends_at": "2023-05-06T17:00:00Z"
+                        }
+                    ],
+                    "map_selection": {
+                        "type": "RANDOM",
+                        "maps": [
+                            {
+                                "name": "Pearl",
+                                "id": "fd267378-4d1d-484f-ff52-77821ed10dc2"
+                            }
+                        ]
+                    },
+                    "points_required_to_participate": 0
+                },
+                {
+                    "id": "39287275-4c72-4ac5-552a-50b78e9bf908",
+                    "type": "LEAGUE",
+                    "starts_at": "2023-05-08T19:00:00Z",
+                    "ends_at": "2023-05-08T20:00:00Z",
+                    "conference_schedules": [
+                        {
+                            "conference": "EU_CENTRAL_EAST",
+                            "starts_at": "2023-05-08T17:00:00Z",
+                            "ends_at": "2023-05-08T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_MIDDLE_EAST",
+                            "starts_at": "2023-05-08T16:00:00Z",
+                            "ends_at": "2023-05-08T17:00:00Z"
+                        },
+                        {
+                            "conference": "EU_TURKEY",
+                            "starts_at": "2023-05-08T16:00:00Z",
+                            "ends_at": "2023-05-08T17:00:00Z"
+                        },
+                        {
+                            "conference": "EU_WEST",
+                            "starts_at": "2023-05-08T14:00:00Z",
+                            "ends_at": "2023-05-08T15:00:00Z"
+                        }
+                    ],
+                    "map_selection": {
+                        "type": "RANDOM",
+                        "maps": [
+                            {
+                                "name": "Pearl",
+                                "id": "fd267378-4d1d-484f-ff52-77821ed10dc2"
+                            }
+                        ]
+                    },
+                    "points_required_to_participate": 0
+                },
+                {
+                    "id": "b339d5bb-4349-697e-6540-e99f8d5bc4be",
+                    "type": "LEAGUE",
+                    "starts_at": "2023-05-13T20:00:00Z",
+                    "ends_at": "2023-05-13T21:00:00Z",
+                    "conference_schedules": [
+                        {
+                            "conference": "EU_CENTRAL_EAST",
+                            "starts_at": "2023-05-13T18:00:00Z",
+                            "ends_at": "2023-05-13T19:00:00Z"
+                        },
+                        {
+                            "conference": "EU_MIDDLE_EAST",
+                            "starts_at": "2023-05-13T17:00:00Z",
+                            "ends_at": "2023-05-13T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_TURKEY",
+                            "starts_at": "2023-05-13T17:00:00Z",
+                            "ends_at": "2023-05-13T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_WEST",
+                            "starts_at": "2023-05-13T16:00:00Z",
+                            "ends_at": "2023-05-13T17:00:00Z"
+                        }
+                    ],
+                    "map_selection": {
+                        "type": "RANDOM",
+                        "maps": [
+                            {
+                                "name": "Bind",
+                                "id": "2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba"
+                            }
+                        ]
+                    },
+                    "points_required_to_participate": 0
+                },
+                {
+                    "id": "322b7987-4bce-0d9b-17ec-5fb48fc23668",
+                    "type": "LEAGUE",
+                    "starts_at": "2023-05-15T19:00:00Z",
+                    "ends_at": "2023-05-15T20:00:00Z",
+                    "conference_schedules": [
+                        {
+                            "conference": "EU_CENTRAL_EAST",
+                            "starts_at": "2023-05-15T17:00:00Z",
+                            "ends_at": "2023-05-15T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_MIDDLE_EAST",
+                            "starts_at": "2023-05-15T16:00:00Z",
+                            "ends_at": "2023-05-15T17:00:00Z"
+                        },
+                        {
+                            "conference": "EU_TURKEY",
+                            "starts_at": "2023-05-15T16:00:00Z",
+                            "ends_at": "2023-05-15T17:00:00Z"
+                        },
+                        {
+                            "conference": "EU_WEST",
+                            "starts_at": "2023-05-15T14:00:00Z",
+                            "ends_at": "2023-05-15T15:00:00Z"
+                        }
+                    ],
+                    "map_selection": {
+                        "type": "RANDOM",
+                        "maps": [
+                            {
+                                "name": "Bind",
+                                "id": "2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba"
+                            }
+                        ]
+                    },
+                    "points_required_to_participate": 0
+                },
+                {
+                    "id": "2a781af1-4dcc-39ae-2a15-b1b513c9f501",
+                    "type": "LEAGUE",
+                    "starts_at": "2023-05-20T20:00:00Z",
+                    "ends_at": "2023-05-20T21:00:00Z",
+                    "conference_schedules": [
+                        {
+                            "conference": "EU_CENTRAL_EAST",
+                            "starts_at": "2023-05-20T18:00:00Z",
+                            "ends_at": "2023-05-20T19:00:00Z"
+                        },
+                        {
+                            "conference": "EU_MIDDLE_EAST",
+                            "starts_at": "2023-05-20T17:00:00Z",
+                            "ends_at": "2023-05-20T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_TURKEY",
+                            "starts_at": "2023-05-20T17:00:00Z",
+                            "ends_at": "2023-05-20T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_WEST",
+                            "starts_at": "2023-05-20T16:00:00Z",
+                            "ends_at": "2023-05-20T17:00:00Z"
+                        }
+                    ],
+                    "map_selection": {
+                        "type": "RANDOM",
+                        "maps": [
+                            {
+                                "name": "Haven",
+                                "id": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047"
+                            }
+                        ]
+                    },
+                    "points_required_to_participate": 0
+                },
+                {
+                    "id": "e841f5c8-417c-1aa4-6e8a-da9381a79624",
+                    "type": "TOURNAMENT",
+                    "starts_at": "2023-05-21T19:00:00Z",
+                    "ends_at": "2023-05-21T20:00:00Z",
+                    "conference_schedules": [
+                        {
+                            "conference": "EU_CENTRAL_EAST",
+                            "starts_at": "2023-05-21T17:00:00Z",
+                            "ends_at": "2023-05-21T18:00:00Z"
+                        },
+                        {
+                            "conference": "EU_MIDDLE_EAST",
+                            "starts_at": "2023-05-21T16:00:00Z",
+                            "ends_at": "2023-05-21T17:00:00Z"
+                        },
+                        {
+                            "conference": "EU_TURKEY",
+                            "starts_at": "2023-05-21T16:00:00Z",
+                            "ends_at": "2023-05-21T17:00:00Z"
+                        },
+                        {
+                            "conference": "EU_WEST",
+                            "starts_at": "2023-05-21T15:00:00Z",
+                            "ends_at": "2023-05-21T16:00:00Z"
+                        }
+                    ],
+                    "map_selection": {
+                        "type": "PICKBAN",
+                        "maps": [
+                            {
+                                "name": "Bind",
+                                "id": "2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba"
+                            },
+                            {
+                                "name": "Haven",
+                                "id": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047"
+                            },
+                            {
+                                "name": "Split",
+                                "id": "d960549e-485c-e861-8d71-aa9d1aed12a2"
+                            },
+                            {
+                                "name": "Ascent",
+                                "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319"
+                            },
+                            {
+                                "name": "Fracture",
+                                "id": "b529448b-4d60-346e-e89e-00a4c527a405"
+                            },
+                            {
+                                "name": "Pearl",
+                                "id": "fd267378-4d1d-484f-ff52-77821ed10dc2"
+                            },
+                            {
+                                "name": "Lotus",
+                                "id": "2fe4ed3a-450a-948b-6d6b-e89a78e680a9"
+                            }
+                        ]
+                    },
+                    "points_required_to_participate": 375
+                }
+            ]
+        }
+    ]
+}

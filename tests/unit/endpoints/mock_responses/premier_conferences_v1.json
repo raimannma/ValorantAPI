@@ -1,0 +1,261 @@
+{
+    "status": 200,
+    "data": [
+        {
+            "id": "c60e9a8f-4a74-4e25-c805-e9a6663b5a89",
+            "affinity": "eu",
+            "pods": [
+                {
+                    "pod": "aresriot.aws-euc1-prod.eu-gp-frankfurt-1",
+                    "name": "Frankfurt"
+                },
+                {
+                    "pod": "aresriot.aws-rclusterprod-waw1-1.eu-gp-warsaw-1",
+                    "name": "Warsaw"
+                }
+            ],
+            "region": "eu",
+            "timezone": "Europe/Berlin",
+            "name": "EU_CENTRAL_EAST",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/c60e9a8f-4a74-4e25-c805-e9a6663b5a89"
+        },
+        {
+            "id": "e83dd66a-457f-13e3-b369-0f94d4410e72",
+            "affinity": "eu",
+            "pods": [
+                {
+                    "pod": "aresriot.aws-euw3-prod.eu-gp-paris-1",
+                    "name": "Paris"
+                },
+                {
+                    "pod": "aresriot.aws-euw2-prod.eu-gp-london-1",
+                    "name": "London"
+                },
+                {
+                    "pod": "aresriot.aws-rclusterprod-mad1-1.eu-gp-madrid-1",
+                    "name": "Madrid"
+                },
+                {
+                    "pod": "aresriot.aws-eun1-prod.eu-gp-stockholm-1",
+                    "name": "Stockholm"
+                }
+            ],
+            "region": "eu",
+            "timezone": "Europe/Paris",
+            "name": "EU_WEST",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/e83dd66a-457f-13e3-b369-0f94d4410e72"
+        },
+        {
+            "id": "32714261-49ac-c87a-e2b5-318942730a50",
+            "affinity": "eu",
+            "pods": [
+                {
+                    "pod": "aresriot.aws-mes1-prod.eu-gp-bahrain-1",
+                    "name": "Bahrain"
+                }
+            ],
+            "region": "eu",
+            "timezone": "Asia/Bahrain",
+            "name": "EU_MIDDLE_EAST",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/32714261-49ac-c87a-e2b5-318942730a50"
+        },
+        {
+            "id": "90689ca1-4e22-b0cc-1dac-5da200865f7e",
+            "affinity": "eu",
+            "pods": [
+                {
+                    "pod": "aresriot.mtl-riot-ist1-2.eu-gp-istanbul-1",
+                    "name": "Istanbul"
+                }
+            ],
+            "region": "eu",
+            "timezone": "Asia/Istanbul",
+            "name": "EU_TURKEY",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/90689ca1-4e22-b0cc-1dac-5da200865f7e"
+        },
+        {
+            "id": "dfa40f5a-4adf-010b-2e5f-438b00067395",
+            "affinity": "na",
+            "pods": [
+                {
+                    "pod": "aresriot.aws-use1-prod.na-gp-ashburn-1",
+                    "name": "US East (N. Virginia)"
+                },
+                {
+                    "pod": "aresriot.aws-rclusterprod-dfw1-1.na-gp-dallas-1",
+                    "name": "US Central (Texas)"
+                },
+                {
+                    "pod": "aresriot.aws-chi1-prod.na-gp-chicago-1",
+                    "name": "US Central (Illinois)"
+                },
+                {
+                    "pod": "aresriot.aws-rclusterprod-atl1-1.na-gp-atlanta-1",
+                    "name": "US Central (Georgia 2)"
+                },
+                {
+                    "pod": "aresriot.aws-atl1-prod.na-gp-atlanta-1",
+                    "name": "US Central (Georgia 1)"
+                }
+            ],
+            "region": "na",
+            "timezone": "America/New_York",
+            "name": "NA_US_EAST",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/dfa40f5a-4adf-010b-2e5f-438b00067395"
+        },
+        {
+            "id": "1f9564e0-4e68-1550-dac4-ccad075c7abc",
+            "affinity": "na",
+            "pods": [
+                {
+                    "pod": "aresriot.aws-usw2-prod.na-gp-oregon-1",
+                    "name": "US West (Oregon)"
+                },
+                {
+                    "pod": "aresriot.aws-usw1-prod.na-gp-norcal-1",
+                    "name": "US West (N. California)"
+                },
+                {
+                    "pod": "aresriot.aws-rclusterprod-dfw1-1.na-gp-dallas-1",
+                    "name": "US Central (Texas)"
+                },
+                {
+                    "pod": "aresriot.aws-chi1-prod.na-gp-chicago-1",
+                    "name": "US Central (Illinois)"
+                }
+            ],
+            "region": "na",
+            "timezone": "America/Los_Angeles",
+            "name": "NA_US_WEST",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/1f9564e0-4e68-1550-dac4-ccad075c7abc"
+        },
+        {
+            "id": "b6080b92-4ba7-2137-2a7a-3995832e2ae1",
+            "affinity": "latam",
+            "pods": [
+                {
+                    "pod": "aresriot.mtl-tmx-mex1-1.latam-gp-mexicocity-1",
+                    "name": "Mexico City"
+                },
+                {
+                    "pod": "aresriot.aws-mia1-prod.latam-gp-miami-1",
+                    "name": "Miami"
+                },
+                {
+                    "pod": "aresriot.aws-chi1-prod.latam-gp-chicago-1",
+                    "name": "Chicago"
+                }
+            ],
+            "region": "na",
+            "timezone": "America/Mexico_City",
+            "name": "LATAM_NORTH",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/b6080b92-4ba7-2137-2a7a-3995832e2ae1"
+        },
+        {
+            "id": "0278aec8-426b-1618-fc83-698b1e4a3400",
+            "affinity": "latam",
+            "pods": [
+                {
+                    "pod": "aresriot.mtl-ctl-scl2-2.latam-gp-santiago-1",
+                    "name": "Santiago"
+                },
+                {
+                    "pod": "aresriot.aws-rclusterprod-bog1-1.latam-gp-bogota-1",
+                    "name": "Bogotá"
+                }
+            ],
+            "region": "na",
+            "timezone": "America/Santiago",
+            "name": "LATAM_SOUTH",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/0278aec8-426b-1618-fc83-698b1e4a3400"
+        },
+        {
+            "id": "e88a9565-4bb5-07b1-ad33-4e86238cf81d",
+            "affinity": "br",
+            "pods": [
+                {
+                    "pod": "aresriot.aws-sae1-prod.br-gp-saopaulo-1",
+                    "name": "Sao Paulo"
+                }
+            ],
+            "region": "na",
+            "timezone": "America/Sao_Paulo",
+            "name": "BR_BRAZIL",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/e88a9565-4bb5-07b1-ad33-4e86238cf81d"
+        },
+        {
+            "id": "30c4fc63-48a2-99ce-632c-659b0fe09eef",
+            "affinity": "kr",
+            "pods": [
+                {
+                    "pod": "aresriot.aws-apne2-prod.kr-gp-seoul-1",
+                    "name": "Seoul"
+                }
+            ],
+            "region": "kr",
+            "timezone": "Asia/Seoul",
+            "name": "KR_KOREA",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/30c4fc63-48a2-99ce-632c-659b0fe09eef"
+        },
+        {
+            "id": "80c51365-4168-b05a-59ad-bcb63d3693f3",
+            "affinity": "ap",
+            "pods": [
+                {
+                    "pod": "aresriot.aws-ape1-prod.ap-gp-hongkong-1",
+                    "name": "Hong Kong"
+                },
+                {
+                    "pod": "aresriot.aws-apse1-prod.ap-gp-singapore-1",
+                    "name": "Singapore"
+                }
+            ],
+            "region": "ap",
+            "timezone": "Asia/Singapore",
+            "name": "AP_ASIA",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/80c51365-4168-b05a-59ad-bcb63d3693f3"
+        },
+        {
+            "id": "ffb10073-4ace-a978-a559-03b6b319dc7b",
+            "affinity": "ap",
+            "pods": [
+                {
+                    "pod": "aresriot.aws-apne1-prod.ap-gp-tokyo-1",
+                    "name": "Tokyo"
+                }
+            ],
+            "region": "ap",
+            "timezone": "Asia/Tokyo",
+            "name": "AP_JAPAN",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/ffb10073-4ace-a978-a559-03b6b319dc7b"
+        },
+        {
+            "id": "1fccd236-405d-076d-8ba3-9da597e0c6d1",
+            "affinity": "ap",
+            "pods": [
+                {
+                    "pod": "aresriot.aws-apse2-prod.ap-gp-sydney-1",
+                    "name": "Sydney"
+                }
+            ],
+            "region": "ap",
+            "timezone": "Australia/Sydney",
+            "name": "AP_OCEANIA",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/1fccd236-405d-076d-8ba3-9da597e0c6d1"
+        },
+        {
+            "id": "cfd56563-4225-9b6f-568b-bc859def6742",
+            "affinity": "ap",
+            "pods": [
+                {
+                    "pod": "aresriot.aws-aps1-prod.ap-gp-mumbai-1",
+                    "name": "Mumbai"
+                }
+            ],
+            "region": "ap",
+            "timezone": "Asia/Kolkata",
+            "name": "AP_SOUTH_ASIA",
+            "icon": "https://cdn.henrikdev.xyz/valorant/v1/premier/conference/cfd56563-4225-9b6f-568b-bc859def6742"
+        }
+    ]
+}
