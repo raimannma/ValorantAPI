@@ -22,7 +22,12 @@ from requests import Response
 from valo_api.exceptions.valo_api_exception import ValoAPIException
 from valo_api.responses.error_response import ErrorResponse
 from valo_api.utils.dict_struct import DictStruct
-from valo_api.utils.fetch_endpoint import fetch_endpoint, fetch_endpoint_async
+from valo_api.utils.fetch_endpoint import fetch_endpoint
+
+try:
+    from valo_api.utils.fetch_endpoint import fetch_endpoint_async
+except ImportError:
+    pass
 
 R = TypeVar("R")
 
@@ -51,11 +56,16 @@ class Endpoint(Generic[R]):
     ) -> Iterable[Tuple[str, Callable[..., Union[R, Awaitable[R]]]]]:
         for version in self.versions:
             yield f"{self.f_name}_{version}", self._get_endpoint_wrapper(version)
-            yield f"{self.f_name}_{version}_async", self._get_endpoint_wrapper(
-                version, True
-            )
+            if "fetch_endpoint_async" in globals():
+                yield f"{self.f_name}_{version}_async", self._get_endpoint_wrapper(
+                    version, True
+                )
         yield self.f_name, self._get_endpoint_wrapper()
-        yield f"{self.f_name}_async", self._get_endpoint_wrapper(async_function=True)
+
+        if "fetch_endpoint_async" in globals():
+            yield f"{self.f_name}_async", self._get_endpoint_wrapper(
+                async_function=True
+            )
 
     def _get_endpoint_wrapper(
         self, version: Optional[str] = None, async_function: bool = False
