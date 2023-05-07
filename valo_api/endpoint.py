@@ -1,10 +1,10 @@
 from typing import (
     Awaitable,
     Callable,
-    Dict,
     Generic,
     Iterable,
     Optional,
+    OrderedDict,
     Tuple,
     Type,
     TypeVar,
@@ -47,8 +47,8 @@ class Endpoint(Generic[R]):
     return_type: R
     versions: Iterable[str] = ("v1",)
     method: str = "GET"
-    kwargs: Optional[Dict[str, Type]] = None
-    query_args: Optional[Dict[str, str]] = None
+    kwargs: Optional[OrderedDict[str, Type]] = None
+    query_args: Optional[OrderedDict[str, str]] = None
     data_response: bool = True
 
     def endpoint_wrappers(
@@ -72,19 +72,19 @@ class Endpoint(Generic[R]):
     ) -> Union[Callable[..., Union[R, Awaitable[R]]]]:
         if async_function:
 
-            async def wrapper(**kwargs) -> R:
+            async def wrapper(*args, **kwargs) -> R:
                 kwargs["version"] = kwargs.get("version", version)
                 for k in self.kwargs.keys():
                     kwargs[k] = kwargs.get(k, "")
-                return await self._get_endpoint_async(**kwargs)
+                return await self._get_endpoint_async(*args, **kwargs)
 
         else:
 
-            def wrapper(**kwargs) -> R:
+            def wrapper(*args, **kwargs) -> R:
                 kwargs["version"] = kwargs.get("version", version)
                 for k in self.kwargs.keys():
                     kwargs[k] = kwargs.get(k, "")
-                return self._get_endpoint(**kwargs)
+                return self._get_endpoint(*args, **kwargs)
 
         doc_title = f"{self.f_name} ({version})" if version else self.f_name
         doc_title = doc_title.replace("_", " ").title() + " from the API."
@@ -128,7 +128,11 @@ class Endpoint(Generic[R]):
         }
         return filtered_query_args
 
-    def _get_endpoint(self, **kwargs) -> R:
+    def _get_endpoint(self, *args, **kwargs) -> R:
+        args_insert = [a for a in args]
+        for k in self.kwargs.keys():
+            if k not in kwargs or kwargs[k] is None or kwargs[k] == "":
+                kwargs[k] = args_insert.pop(0) if len(args_insert) > 0 else ""
         response = fetch_endpoint(
             self.path,
             method=self.method,
@@ -137,7 +141,11 @@ class Endpoint(Generic[R]):
         )
         return self.parse_response(response, response.content)
 
-    async def _get_endpoint_async(self, **kwargs) -> R:
+    async def _get_endpoint_async(self, *args, **kwargs) -> R:
+        args_insert = [a for a in args]
+        for k in self.kwargs.keys():
+            if k not in kwargs or kwargs[k] is None or kwargs[k] == "":
+                kwargs[k] = args_insert.pop(0) if len(args_insert) > 0 else ""
         response, content = await fetch_endpoint_async(
             self.path,
             method=self.method,
