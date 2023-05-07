@@ -96,7 +96,10 @@ class Endpoint(Generic[R]):
                 )
                 if len(args) > 0:
                     args = f"[{args}]"
-                doc_args += f"    {k}: {v.__name__}{args}\n"
+                try:
+                    doc_args += f"    {k}: {v.__name__}{args}\n"
+                except AttributeError:
+                    pass
         returns = self.recursive_typing_get_args(self.return_type)
         doc_return = f"\n\nReturns:\n    {returns}: API Fetch Result\n"
         doc_raise = "\n\nRaises:\n    ValoAPIException: If the API returns an error."
