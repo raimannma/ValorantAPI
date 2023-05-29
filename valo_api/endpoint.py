@@ -13,6 +13,7 @@ from typing import (
 )
 
 import io
+import json
 from dataclasses import dataclass
 
 import msgspec
@@ -133,6 +134,9 @@ class Endpoint(Generic[R]):
         for k in self.kwargs.keys():
             if k not in kwargs or kwargs[k] is None or kwargs[k] == "":
                 kwargs[k] = args_insert.pop(0) if len(args_insert) > 0 else ""
+        kwargs = {
+            k: json.dumps(v) if isinstance(v, dict) else v for k, v in kwargs.items()
+        }
         response = fetch_endpoint(
             self.path,
             method=self.method,
