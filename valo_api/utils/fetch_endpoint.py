@@ -1,5 +1,6 @@
 from typing import Any, Dict, Optional, Type, TypeVar
 
+import json
 import os
 import urllib.parse
 
@@ -86,6 +87,9 @@ def fetch_endpoint(
     )
     url = parse_endpoint(endpoint_definition, **kwargs)
     headers = get_headers()
+    if "queries" in query_args and query_args["queries"] is not None:
+        queries = json.loads(query_args["queries"])
+        query_args["queries"] = f"?{urllib.parse.urlencode(queries)}"
     response = fetch_endpoint.session.request(
         method, url, params=query_args, json=query_args, headers=headers
     )
@@ -120,6 +124,8 @@ try:
         )
         url = parse_endpoint(endpoint_definition, **kwargs)
         headers = get_headers()
+        if "queries" in query_args:
+            query_args["queries"] = f"?{urllib.parse.urlencode(query_args['queries'])}"
         async with fetch_endpoint_async.session.request(
             method, url, params=query_args, json=query_args, headers=headers
         ) as response:
