@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from valo_api.utils.dict_struct import DictStruct
 
@@ -21,13 +21,13 @@ class BundleItemV1(DictStruct):
 class BundleItemV2(DictStruct):
     uuid: str
     name: str
-    image: str
     type: str
     amount: int
     discount_percent: float
     base_price: int
     discounted_price: int
     promo_item: bool
+    image: Optional[str] = None
 
 
 class BundleV1(DictStruct):
