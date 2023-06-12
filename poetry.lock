@@ -2004,13 +2004,13 @@ files = [
 
 [[package]]
 name = "tokenize-rt"
-version = "5.0.0"
+version = "5.1.0"
 description = "A wrapper around the stdlib `tokenize` which roundtrips."
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "tokenize_rt-5.0.0-py2.py3-none-any.whl", hash = "sha256:c67772c662c6b3dc65edf66808577968fb10badfc2042e3027196bed4daf9e5a"},
-    {file = "tokenize_rt-5.0.0.tar.gz", hash = "sha256:3160bc0c3e8491312d0485171dea861fc160a240f5f5766b72a1165408d10740"},
+    {file = "tokenize_rt-5.1.0-py2.py3-none-any.whl", hash = "sha256:9b7bb843e77dd6ed0be5564bfaaba200083911e0497841cd3e9235a6a9794d74"},
+    {file = "tokenize_rt-5.1.0.tar.gz", hash = "sha256:08f0c2daa94c4052e53c2fcaa8e32585e6ae9bdfc800974092d031401694e002"},
 ]
 
 [[package]]
