@@ -127,6 +127,14 @@ class Endpoint(Generic[R]):
             for k, v in formatted_query_args.items()
             if len(v) > 0 and v.lower() != "none"
         }
+        if "queries" in formatted_query_args:
+            filtered_query_args["queries"] = str(formatted_query_args["queries"])
+            if (
+                len(formatted_query_args["queries"]) == 0
+                or formatted_query_args["queries"].lower() is None
+            ):
+                del filtered_query_args["queries"]
+
         return filtered_query_args
 
     def _get_endpoint(self, *args, **kwargs) -> R:
