@@ -87,7 +87,11 @@ def fetch_endpoint(
     )
     url = parse_endpoint(endpoint_definition, **kwargs)
     headers = get_headers()
-    if "queries" in query_args and query_args["queries"] is not None:
+    if (
+        "queries" in query_args
+        and query_args["queries"] is not None
+        and len(query_args["queries"]) > 0
+    ):
         queries = json.loads(query_args["queries"])
         query_args["queries"] = f"?{urllib.parse.urlencode(queries)}"
     response = fetch_endpoint.session.request(
