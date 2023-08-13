@@ -123,7 +123,7 @@ class Endpoint(Generic[R]):
         if formatted_query_args is None:
             return {}
         filtered_query_args = {
-            k: str(v).lower()
+            k: str(v)
             for k, v in formatted_query_args.items()
             if len(v) > 0 and v.lower() != "none"
         }
