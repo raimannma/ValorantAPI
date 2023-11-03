@@ -31,7 +31,7 @@ classifiers = [
 python = "^3.8"
 requests = "^2.28.1"
 Pillow = ">=9.2,<11.0"
-msgspec = ">=0.12,<0.18"
+msgspec = ">=0.12,<0.19"
 asyncio = {version = "^3.4.3", optional = true, extras = ["speedups"]}
 aiohttp = {version = "^3.8.3", optional = true}
 
