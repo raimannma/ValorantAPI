@@ -196,9 +196,6 @@ class MatchRoundAssistantV3(DictStruct):
 class MatchRoundKillEventV3(DictStruct):
     kill_time_in_round: int
     kill_time_in_match: int
-    killer_puuid: str
-    killer_display_name: str
-    killer_team: str
     victim_puuid: str
     victim_display_name: str
     victim_team: str
@@ -208,6 +205,9 @@ class MatchRoundKillEventV3(DictStruct):
     secondary_fire_mode: bool
     player_locations_on_kill: List[MatchRoundPlayerLocationV3]
     assistants: List[MatchRoundAssistantV3]
+    killer_puuid: Optional[str] = None
+    killer_display_name: Optional[str] = None
+    killer_team: Optional[str] = None
     damage_weapon_name: Optional[str] = None
 
 
