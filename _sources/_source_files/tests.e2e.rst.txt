@@ -1,0 +1,140 @@
+tests.e2e package
+=================
+
+Submodules
+----------
+
+tests.e2e.test\_account\_details module
+---------------------------------------
+
+.. automodule:: tests.e2e.test_account_details
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_content module
+------------------------------
+
+.. automodule:: tests.e2e.test_content
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_crosshair module
+--------------------------------
+
+.. automodule:: tests.e2e.test_crosshair
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_leaderboard module
+----------------------------------
+
+.. automodule:: tests.e2e.test_leaderboard
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_lifetime\_matches module
+----------------------------------------
+
+.. automodule:: tests.e2e.test_lifetime_matches
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_match\_details module
+-------------------------------------
+
+.. automodule:: tests.e2e.test_match_details
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_match\_history module
+-------------------------------------
+
+.. automodule:: tests.e2e.test_match_history
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_mmr\_details module
+-----------------------------------
+
+.. automodule:: tests.e2e.test_mmr_details
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_mmr\_history module
+-----------------------------------
+
+.. automodule:: tests.e2e.test_mmr_history
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_status module
+-----------------------------
+
+.. automodule:: tests.e2e.test_status
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_store\_featured module
+--------------------------------------
+
+.. automodule:: tests.e2e.test_store_featured
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_store\_offers module
+------------------------------------
+
+.. automodule:: tests.e2e.test_store_offers
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_version\_info module
+------------------------------------
+
+.. automodule:: tests.e2e.test_version_info
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.e2e.test\_website module
+------------------------------
+
+.. automodule:: tests.e2e.test_website
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: tests.e2e
+   :autosummary:
+   :members:
+   :undoc-members:
+   :show-inheritance:
