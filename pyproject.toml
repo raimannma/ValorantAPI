@@ -39,7 +39,7 @@ aiohttp = {version = "^3.8.3", optional = true}
 bandit = "^1.7.5"
 black = {version = ">=23.3,<25.0", allow-prereleases = true}
 isort = "^5.12.0"
-mypy = ">=0.991,<1.9"
+mypy = ">=0.991,<1.10"
 mypy-extensions = ">=0.4.3,<1.1.0"
 pre-commit = "^3.2.2"
 pydocstyle = "^6.3.0"
