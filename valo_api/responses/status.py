@@ -23,7 +23,7 @@ class MaintenancePointV1(DictStruct):
     created_at: Optional[str]
     archive_at: Optional[str]
     titles: List[MaintenanceStatusTitleV1]
-    maintenance_status: str
+    maintenance_status: Optional[str]
     id: int
     incident_severity: Optional[str]
     updates: List[MaintenanceUpdateV1]

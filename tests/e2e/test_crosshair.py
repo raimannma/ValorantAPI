@@ -5,7 +5,6 @@ from hypothesis import given, settings
 from hypothesis import strategies as st
 
 import valo_api
-from tests.e2e import new_event_loop_decorator
 from valo_api.exceptions.rate_limit import rate_limit
 
 
@@ -15,7 +14,6 @@ from valo_api.exceptions.rate_limit import rate_limit
     crosshair_id=st.sampled_from(["0;P;h;0;f;0;0l;4;0o;0;0a;1;0f;0;1b;0"]),
 )
 @pytest.mark.asyncio
-@new_event_loop_decorator
 async def test_get_crosshair(version: str, crosshair_id: str):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_crosshair with: {locals()}")

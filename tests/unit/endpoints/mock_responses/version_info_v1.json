@@ -1,9 +1,12 @@
 {
+    "status": 200,
     "data": {
-        "branch": "release-04.07",
-        "clientVersion": "release-04.07-shipping-15-699063",
-        "region": "EU",
-        "version": "04.07.00.699063"
-    },
-    "status": 200
+        "region": "eu",
+        "branch": "release-08.05",
+        "build_date": "Apr  9 2024",
+        "build_ver": "08.05.00.2431885",
+        "last_checked": "2024-04-16T20:24:45.537Z",
+        "version": 20,
+        "version_for_api": "release-08.05-shipping-20-2431885"
+    }
 }
