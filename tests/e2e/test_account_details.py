@@ -5,7 +5,6 @@ from hypothesis import given, settings
 from hypothesis import strategies as st
 
 import valo_api
-from tests.e2e import new_event_loop_decorator
 from valo_api.exceptions.rate_limit import rate_limit
 
 
@@ -16,7 +15,6 @@ from valo_api.exceptions.rate_limit import rate_limit
     force_update=st.booleans(),
 )
 @pytest.mark.asyncio
-@new_event_loop_decorator
 async def test_get_account_details_by_name(version: str, id: str, force_update: bool):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_account_details with: {locals()}")
@@ -43,7 +41,6 @@ async def test_get_account_details_by_name(version: str, id: str, force_update: 
     force_update=st.booleans(),
 )
 @pytest.mark.asyncio
-@new_event_loop_decorator
 async def test_get_account_details_by_puuid(
     version: str, puuid: str, force_update: bool
 ):

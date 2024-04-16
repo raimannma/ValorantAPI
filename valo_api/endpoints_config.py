@@ -212,10 +212,7 @@ class EndpointsConfig(Enum):
         f_name="get_mmr_details_by_puuid",
         versions=["v1", "v2"],
         return_type=MMRDetailsV2,
-        kwargs=OrderedDict(
-            [("version", str), ("region", str), ("puuid", str), ("filter", str)]
-        ),
-        query_args=OrderedDict([("filter", "{filter}")]),
+        kwargs=OrderedDict([("version", str), ("region", str), ("puuid", str)]),
     )
     MMR_DETAILS_BY_NAME = Endpoint(
         path="/valorant/{version}/mmr/{region}/{name}/{tag}",
@@ -228,10 +225,8 @@ class EndpointsConfig(Enum):
                 ("region", str),
                 ("name", str),
                 ("tag", str),
-                ("filter", str),
             ]
         ),
-        query_args=OrderedDict([("filter", "{filter}")]),
     )
     MMR_HISTORY_BY_PUUID = Endpoint(
         path="/valorant/{version}/by-puuid/mmr-history/{region}/{puuid}",

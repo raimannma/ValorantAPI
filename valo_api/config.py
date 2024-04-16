@@ -16,7 +16,6 @@ class Config:
         "tr-tr",
         "es-mx",
         "ja-jp",
-        "ko-kr",
         "pt-br",
         "vi-vn",
     ]

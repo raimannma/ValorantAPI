@@ -7,7 +7,6 @@ from hypothesis import given, settings
 from hypothesis import strategies as st
 
 import valo_api
-from tests.e2e import new_event_loop_decorator
 from valo_api.exceptions.rate_limit import rate_limit
 
 
@@ -21,7 +20,6 @@ from valo_api.exceptions.rate_limit import rate_limit
     size=st.one_of(st.none(), st.integers(min_value=1, max_value=100)),
 )
 @pytest.mark.asyncio
-@new_event_loop_decorator
 async def test_get_lifetime_matches_by_name(
     version: str,
     id: str,
@@ -73,7 +71,6 @@ async def test_get_lifetime_matches_by_name(
     size=st.one_of(st.none(), st.integers(min_value=1, max_value=100)),
 )
 @pytest.mark.asyncio
-@new_event_loop_decorator
 async def test_get_lifetime_matches_by_puuid(
     version: str,
     puuid: str,

@@ -8,7 +8,6 @@ from hypothesis import given, settings
 from hypothesis import strategies as st
 
 import valo_api
-from tests.e2e import new_event_loop_decorator
 from valo_api.exceptions.rate_limit import rate_limit
 
 
@@ -19,7 +18,6 @@ from valo_api.exceptions.rate_limit import rate_limit
     size=st.one_of(st.none(), st.integers(min_value=1, max_value=5)),
 )
 @pytest.mark.asyncio
-@new_event_loop_decorator
 async def test_get_match_history_by_name(version: str, id: str, size: Optional[int]):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_match_history_by_name with: {locals()}")
@@ -47,7 +45,6 @@ async def test_get_match_history_by_name(version: str, id: str, size: Optional[i
     size=st.one_of(st.none(), st.integers(min_value=1, max_value=5)),
 )
 @pytest.mark.asyncio
-@new_event_loop_decorator
 async def test_get_match_history_by_puuid(
     version: str, puuid: UUID, size: Optional[int]
 ):

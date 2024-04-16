@@ -5,7 +5,6 @@ from hypothesis import given, settings
 from hypothesis import strategies as st
 
 import valo_api
-from tests.e2e import new_event_loop_decorator
 from valo_api.config import Config
 from valo_api.exceptions.rate_limit import rate_limit
 
@@ -17,7 +16,6 @@ from valo_api.exceptions.rate_limit import rate_limit
     id=st.sampled_from(["ManuelHexe#5777", "jasminaxrose#7024"]),
 )
 @pytest.mark.asyncio
-@new_event_loop_decorator
 async def test_get_mmr_history_by_name(version: str, region: str, id: str):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_mmr_history_by_name with: {locals()}")
@@ -45,7 +43,6 @@ async def test_get_mmr_history_by_name(version: str, region: str, id: str):
     ),
 )
 @pytest.mark.asyncio
-@new_event_loop_decorator
 async def test_get_mmr_history_by_puuid(version: str, region: str, puuid: str):
     sleep(rate_limit().reset + 1 if rate_limit().remaining <= 2 else 0)
     print(f"Test get_mmr_history_by_puuid with: {locals()}")
