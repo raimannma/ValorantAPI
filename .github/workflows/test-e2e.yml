@@ -12,7 +12,7 @@ jobs:
       matrix:
         group: [ 1, 2, 3 ]
     steps:
-    - uses: actions/checkout@v4.1.2
+    - uses: actions/checkout@v4.1.7
     - name: Set up Python 3.10
       uses: actions/setup-python@v5.1.0
       with:
