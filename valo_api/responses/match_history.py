@@ -90,7 +90,7 @@ class MatchPlayerStatsV3(DictStruct):
 
 class MatchPlayerEconomyReportV3(DictStruct):
     overall: int
-    average: int
+    average: float
 
 
 class MatchPlayerEconomyV3(DictStruct):
