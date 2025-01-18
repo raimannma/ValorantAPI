@@ -21,3 +21,7 @@ class AccountDetails(DictStruct):
     updated_at: Optional[str] = None
     last_update: Optional[str] = None
     last_update_raw: Optional[int] = None
+
+
+AccountDetailsV1 = AccountDetails
+AccountDetailsV2 = AccountDetails
