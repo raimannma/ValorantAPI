@@ -6,7 +6,7 @@ from enum import Enum
 from PIL import Image
 
 from valo_api.endpoint import Endpoint
-from valo_api.responses.account_details import AccountDetailsV1
+from valo_api.responses.account_details import AccountDetails
 from valo_api.responses.competitive_updates_raw import CompetitiveUpdatesRawV1
 from valo_api.responses.content import ContentV1
 from valo_api.responses.leaderboard import LeaderboardPlayerV1, LeaderboardV2
@@ -187,7 +187,8 @@ class EndpointsConfig(Enum):
     ACCOUNT_BY_NAME = Endpoint(
         path="/valorant/{version}/account/{name}/{tag}",
         f_name="get_account_details_by_name",
-        return_type=AccountDetailsV1,
+        versions=["v1", "v2"],
+        return_type=AccountDetails,
         kwargs=OrderedDict(
             [("version", str), ("name", str), ("tag", str), ("force_update", bool)]
         ),
@@ -196,7 +197,8 @@ class EndpointsConfig(Enum):
     ACCOUNT_BY_PUUID = Endpoint(
         path="/valorant/{version}/by-puuid/account/{puuid}",
         f_name="get_account_details_by_puuid",
-        return_type=AccountDetailsV1,
+        versions=["v1", "v2"],
+        return_type=AccountDetails,
         kwargs=OrderedDict([("version", str), ("puuid", str), ("force_update", bool)]),
         query_args=OrderedDict([("force", "{force_update}")]),
     )

@@ -10,12 +10,14 @@ class AccountCardV1(DictStruct):
     wide: str
 
 
-class AccountDetailsV1(DictStruct):
+class AccountDetails(DictStruct):
     puuid: str
     region: str
     account_level: int
     name: str
     tag: str
-    card: Optional[AccountCardV1] = None
+    card: Optional[AccountCardV1 | str] = None
+    title: Optional[str] = None
+    updated_at: Optional[str] = None
     last_update: Optional[str] = None
     last_update_raw: Optional[int] = None

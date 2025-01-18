@@ -1,0 +1,16 @@
+{
+    "status": 200,
+    "data": {
+        "puuid": "ee89b4d9-13d0-5832-8dd7-eb5d8806d918",
+        "region": "eu",
+        "account_level": 137,
+        "name": "ManuelHexe",
+        "tag": "5777",
+        "card": "6f39b789-4318-f79e-14e9-0a872f6ba6a2",
+        "title": "bc6a30d8-4d83-82aa-dfe9-7389c776f312",
+        "platforms": [
+            "PC"
+        ],
+        "updated_at": "2024-07-13T15:39:34.015Z"
+    }
+}
