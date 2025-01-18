@@ -2,6 +2,7 @@ from typing import Optional
 
 from valo_api.utils.dict_struct import DictStruct
 
+
 class AccountDetailsV1(DictStruct):
     puuid: str
     region: str
