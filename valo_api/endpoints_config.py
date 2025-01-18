@@ -9,7 +9,7 @@ from valo_api.endpoint import Endpoint
 from valo_api.responses.account_details import AccountDetailsV1
 from valo_api.responses.competitive_updates_raw import CompetitiveUpdatesRawV1
 from valo_api.responses.content import ContentV1
-from valo_api.responses.leaderboard import LeaderboardPlayerV1, LeaderboardV2
+from valo_api.responses.leaderboard import LeaderboardV3
 from valo_api.responses.lifetime_match import LifetimeMatchV1
 from valo_api.responses.match_details_raw import MatchDetailsRawV1
 from valo_api.responses.match_history import MatchHistoryPointV3
@@ -158,29 +158,35 @@ class EndpointsConfig(Enum):
         kwargs=OrderedDict([("version", str), ("countrycode", str)]),
     )
     LEADERBOARD = Endpoint(
-        path="/valorant/{version}/leaderboard/{region}",
+        path="/valorant/{version}/leaderboard/{region}/{platform}",
         f_name="get_leaderboard",
-        versions=["v1", "v2"],
-        return_type=Union[LeaderboardV2, List[LeaderboardPlayerV1]],
+        versions=["v3"],
+        return_type=LeaderboardV3,
         data_response=False,
         kwargs=OrderedDict(
             [
                 ("version", str),
                 ("region", str),
+                ("platform", str),
                 ("puuid", Optional[str]),
                 ("name", Optional[str]),
                 ("tag", Optional[str]),
+                ("season_short", Optional[str]),
                 ("season_id", Optional[str]),
-                ("start", Optional[int]),
+                ("size", Optional[int]),
+                ("start_index", Optional[int]),
             ]
         ),
         query_args=OrderedDict(
             [
+                
                 ("puuid", "{puuid}"),
                 ("name", "{name}"),
                 ("tag", "{tag}"),
+                ("season_short", "{season_short}"),
                 ("season_id", "{season_id}"),
-                ("start", "{start}"),
+                ("size", "{size}"),
+                ("start_index", "{start_index}"),
             ]
         ),
     )
