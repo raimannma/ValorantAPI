@@ -18,7 +18,7 @@ from valo_api.exceptions.valo_api_exception import ValoAPIException
 
 
 @given(
-    version=st.sampled_from(["v1"]),
+    version=st.sampled_from(["v1", "v2"]),
     name=st.text(),
     tag=st.text(),
     force_update=st.booleans(),
@@ -78,7 +78,7 @@ async def test_get_account_details_by_name(
 
 
 @given(
-    version=st.sampled_from(["v1"]),
+    version=st.sampled_from(["v1", "v2"]),
     name=st.text(),
     tag=st.text(),
     force_update=st.booleans(),
@@ -149,7 +149,7 @@ async def test_get_account_details_by_name_error(
 
 
 @given(
-    version=st.sampled_from(["v1"]),
+    version=st.sampled_from(["v1", "v2"]),
     puuid=st.uuids(),
     force_update=st.booleans(),
 )
@@ -208,7 +208,7 @@ async def test_get_account_details_by_puuid(
 
 
 @given(
-    version=st.sampled_from(["v1"]),
+    version=st.sampled_from(["v1", "v2"]),
     puuid=st.uuids(),
     force_update=st.booleans(),
     error_response=st.sampled_from(get_error_responses("account_details")),
