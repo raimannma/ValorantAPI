@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>valo_api.utils package &mdash; Valorant API Wrapper 1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=292eb321"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="valo_api.responses package" href="valo_api.responses.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Valorant API Wrapper
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Python Packages</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="valo_api.endpoints.html">valo_api.endpoints package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.exceptions.html">valo_api.exceptions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.responses.html">valo_api.responses package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">valo_api.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-valo_api.utils.dict_struct">valo_api.utils.dict_struct module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#valo_api.utils.dict_struct.DictStruct"><code class="docutils literal notranslate"><span class="pre">DictStruct</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#valo_api.utils.dict_struct.DictStruct.to_dict"><code class="docutils literal notranslate"><span class="pre">DictStruct.to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-valo_api.utils.fetch_endpoint">valo_api.utils.fetch_endpoint module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#valo_api.utils.fetch_endpoint.parse_endpoint"><code class="docutils literal notranslate"><span class="pre">parse_endpoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valo_api.utils.fetch_endpoint.get_headers"><code class="docutils literal notranslate"><span class="pre">get_headers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valo_api.utils.fetch_endpoint.encode_params"><code class="docutils literal notranslate"><span class="pre">encode_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valo_api.utils.fetch_endpoint.response_type"><code class="docutils literal notranslate"><span class="pre">response_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valo_api.utils.fetch_endpoint.fetch_endpoint"><code class="docutils literal notranslate"><span class="pre">fetch_endpoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valo_api.utils.fetch_endpoint.fetch_endpoint_async"><code class="docutils literal notranslate"><span class="pre">fetch_endpoint_async()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-valo_api.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Valorant API Wrapper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">valo_api.utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_source_files/valo_api.utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="valo-api-utils-package">
+<h1>valo_api.utils package<a class="headerlink" href="#valo-api-utils-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-valo_api.utils.dict_struct">
+<span id="valo-api-utils-dict-struct-module"></span><h2>valo_api.utils.dict_struct module<a class="headerlink" href="#module-valo_api.utils.dict_struct" title="Link to this heading"></a></h2>
+<p><strong>Classes:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.utils.dict_struct.DictStruct" title="valo_api.utils.dict_struct.DictStruct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DictStruct</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="valo_api.utils.dict_struct.DictStruct">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DictStruct</span></span><a class="headerlink" href="#valo_api.utils.dict_struct.DictStruct" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Struct</span></code></p>
+<p><strong>Methods:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.utils.dict_struct.DictStruct.to_dict" title="valo_api.utils.dict_struct.DictStruct.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="valo_api.utils.dict_struct.DictStruct.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#valo_api.utils.dict_struct.DictStruct.to_dict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-valo_api.utils.fetch_endpoint">
+<span id="valo-api-utils-fetch-endpoint-module"></span><h2>valo_api.utils.fetch_endpoint module<a class="headerlink" href="#module-valo_api.utils.fetch_endpoint" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.utils.fetch_endpoint.parse_endpoint" title="valo_api.utils.fetch_endpoint.parse_endpoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_endpoint</span></code></a>(endpoint_definition, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.utils.fetch_endpoint.get_headers" title="valo_api.utils.fetch_endpoint.get_headers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_headers</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.utils.fetch_endpoint.encode_params" title="valo_api.utils.fetch_endpoint.encode_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode_params</span></code></a>(**kwargs)</p></td>
+<td><p>Returns a string of the parameters to be used in a URL.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.utils.fetch_endpoint.response_type" title="valo_api.utils.fetch_endpoint.response_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">response_type</span></code></a>(api_type)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#valo_api.utils.fetch_endpoint.fetch_endpoint" title="valo_api.utils.fetch_endpoint.fetch_endpoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_endpoint</span></code></a>(endpoint_definition[, ...])</p></td>
+<td><p>Fetches an endpoint from the API.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#valo_api.utils.fetch_endpoint.fetch_endpoint_async" title="valo_api.utils.fetch_endpoint.fetch_endpoint_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_endpoint_async</span></code></a>(endpoint_definition[, ...])</p></td>
+<td><p>Fetches an endpoint from the API asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="valo_api.utils.fetch_endpoint.parse_endpoint">
+<span class="sig-name descname"><span class="pre">parse_endpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint_definition</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#valo_api.utils.fetch_endpoint.parse_endpoint" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valo_api.utils.fetch_endpoint.get_headers">
+<span class="sig-name descname"><span class="pre">get_headers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#valo_api.utils.fetch_endpoint.get_headers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valo_api.utils.fetch_endpoint.encode_params">
+<span class="sig-name descname"><span class="pre">encode_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#valo_api.utils.fetch_endpoint.encode_params" title="Link to this definition"></a></dt>
+<dd><p>Returns a string of the parameters to be used in a URL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Any additional arguments to pass to the endpoint.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of the parameters to be used in a URL.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valo_api.utils.fetch_endpoint.response_type">
+<span class="sig-name descname"><span class="pre">response_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#valo_api.utils.fetch_endpoint.response_type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valo_api.utils.fetch_endpoint.fetch_endpoint">
+<span class="sig-name descname"><span class="pre">fetch_endpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint_definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GET'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#valo_api.utils.fetch_endpoint.fetch_endpoint" title="Link to this definition"></a></dt>
+<dd><p>Fetches an endpoint from the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint_definition</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The endpoint definition to use.</p></li>
+<li><p><strong>query_args</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]</span>) – Any additional arguments to pass to the endpoint.</p></li>
+<li><p><strong>method</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The method to use when fetching the endpoint.</p></li>
+<li><p><strong>**kwargs</strong> – Any additional arguments to pass to the endpoint.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A response from the API.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valo_api.utils.fetch_endpoint.fetch_endpoint_async">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fetch_endpoint_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint_definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GET'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#valo_api.utils.fetch_endpoint.fetch_endpoint_async" title="Link to this definition"></a></dt>
+<dd><p>Fetches an endpoint from the API asynchronously.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint_definition</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The endpoint definition to use.</p></li>
+<li><p><strong>query_args</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]</span>) – Any additional arguments to pass to the endpoint.</p></li>
+<li><p><strong>method</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The method to use when fetching the endpoint.</p></li>
+<li><p><strong>**kwargs</strong> – Any additional arguments to pass to the endpoint.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A response from the API.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-valo_api.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-valo_api.utils" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="valo_api.responses.html" class="btn btn-neutral float-left" title="valo_api.responses package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Valorant API Wrappr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

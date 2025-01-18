@@ -1,0 +1,822 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tests.unit.endpoints package &mdash; Valorant API Wrapper 1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=292eb321"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Valorant API Wrapper
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Python Packages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.endpoints.html">valo_api.endpoints package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.exceptions.html">valo_api.exceptions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.responses.html">valo_api.responses package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.utils.html">valo_api.utils package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Valorant API Wrapper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">tests.unit.endpoints package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_source_files/tests.unit.endpoints.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tests-unit-endpoints-package">
+<h1>tests.unit.endpoints package<a class="headerlink" href="#tests-unit-endpoints-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-tests.unit.endpoints.test_account_details">
+<span id="tests-unit-endpoints-test-account-details-module"></span><h2>tests.unit.endpoints.test_account_details module<a class="headerlink" href="#module-tests.unit.endpoints.test_account_details" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_account_details.test_get_account_details_by_name" title="tests.unit.endpoints.test_account_details.test_get_account_details_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_account_details_by_name</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_account_details.test_get_account_details_by_name_error" title="tests.unit.endpoints.test_account_details.test_get_account_details_by_name_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_account_details_by_name_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_account_details.test_get_account_details_by_puuid" title="tests.unit.endpoints.test_account_details.test_get_account_details_by_puuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_account_details_by_puuid</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_account_details.test_get_account_details_by_puuid_error" title="tests.unit.endpoints.test_account_details.test_get_account_details_by_puuid_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_account_details_by_puuid_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_account_details.test_get_account_details_by_name">
+<span class="sig-name descname"><span class="pre">test_get_account_details_by_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_account_details.test_get_account_details_by_name" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_account_details.test_get_account_details_by_name_error">
+<span class="sig-name descname"><span class="pre">test_get_account_details_by_name_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_account_details.test_get_account_details_by_name_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_account_details.test_get_account_details_by_puuid">
+<span class="sig-name descname"><span class="pre">test_get_account_details_by_puuid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_account_details.test_get_account_details_by_puuid" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_account_details.test_get_account_details_by_puuid_error">
+<span class="sig-name descname"><span class="pre">test_get_account_details_by_puuid_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_account_details.test_get_account_details_by_puuid_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_content">
+<span id="tests-unit-endpoints-test-content-module"></span><h2>tests.unit.endpoints.test_content module<a class="headerlink" href="#module-tests.unit.endpoints.test_content" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_content.test_get_content" title="tests.unit.endpoints.test_content.test_get_content"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_content</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_content.test_get_content_error" title="tests.unit.endpoints.test_content.test_get_content_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_content_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_content.test_get_content">
+<span class="sig-name descname"><span class="pre">test_get_content</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_content.test_get_content" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_content.test_get_content_error">
+<span class="sig-name descname"><span class="pre">test_get_content_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_content.test_get_content_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_crosshair">
+<span id="tests-unit-endpoints-test-crosshair-module"></span><h2>tests.unit.endpoints.test_crosshair module<a class="headerlink" href="#module-tests.unit.endpoints.test_crosshair" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_crosshair.test_get_crosshair_error" title="tests.unit.endpoints.test_crosshair.test_get_crosshair_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_crosshair_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_crosshair.test_get_crosshair_error">
+<span class="sig-name descname"><span class="pre">test_get_crosshair_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_crosshair.test_get_crosshair_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_leaderboard">
+<span id="tests-unit-endpoints-test-leaderboard-module"></span><h2>tests.unit.endpoints.test_leaderboard module<a class="headerlink" href="#module-tests.unit.endpoints.test_leaderboard" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_leaderboard.test_get_leaderboard" title="tests.unit.endpoints.test_leaderboard.test_get_leaderboard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_leaderboard</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_leaderboard.test_get_leaderboard_error" title="tests.unit.endpoints.test_leaderboard.test_get_leaderboard_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_leaderboard_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_leaderboard.test_get_leaderboard">
+<span class="sig-name descname"><span class="pre">test_get_leaderboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_leaderboard.test_get_leaderboard" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_leaderboard.test_get_leaderboard_error">
+<span class="sig-name descname"><span class="pre">test_get_leaderboard_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_leaderboard.test_get_leaderboard_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_lifetime_matches">
+<span id="tests-unit-endpoints-test-lifetime-matches-module"></span><h2>tests.unit.endpoints.test_lifetime_matches module<a class="headerlink" href="#module-tests.unit.endpoints.test_lifetime_matches" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_name" title="tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_lifetime_matches_by_name</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_name_error" title="tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_name_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_lifetime_matches_by_name_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_puuid" title="tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_puuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_lifetime_matches_by_puuid</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_puuid_error" title="tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_puuid_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_lifetime_matches_by_puuid_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_name">
+<span class="sig-name descname"><span class="pre">test_get_lifetime_matches_by_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_name" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_name_error">
+<span class="sig-name descname"><span class="pre">test_get_lifetime_matches_by_name_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_name_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_puuid">
+<span class="sig-name descname"><span class="pre">test_get_lifetime_matches_by_puuid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_puuid" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_puuid_error">
+<span class="sig-name descname"><span class="pre">test_get_lifetime_matches_by_puuid_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_lifetime_matches.test_get_lifetime_matches_by_puuid_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_match_details">
+<span id="tests-unit-endpoints-test-match-details-module"></span><h2>tests.unit.endpoints.test_match_details module<a class="headerlink" href="#module-tests.unit.endpoints.test_match_details" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_match_details.test_get_match_details" title="tests.unit.endpoints.test_match_details.test_get_match_details"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_match_details</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_match_details.test_get_match_details_error" title="tests.unit.endpoints.test_match_details.test_get_match_details_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_match_details_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_match_details.test_get_match_details">
+<span class="sig-name descname"><span class="pre">test_get_match_details</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_match_details.test_get_match_details" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_match_details.test_get_match_details_error">
+<span class="sig-name descname"><span class="pre">test_get_match_details_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_match_details.test_get_match_details_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_match_history">
+<span id="tests-unit-endpoints-test-match-history-module"></span><h2>tests.unit.endpoints.test_match_history module<a class="headerlink" href="#module-tests.unit.endpoints.test_match_history" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_match_history.test_get_match_history_by_name" title="tests.unit.endpoints.test_match_history.test_get_match_history_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_match_history_by_name</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_match_history.test_get_match_history_by_name_error" title="tests.unit.endpoints.test_match_history.test_get_match_history_by_name_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_match_history_by_name_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_match_history.test_get_match_history_by_puuid" title="tests.unit.endpoints.test_match_history.test_get_match_history_by_puuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_match_history_by_puuid</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_match_history.test_get_match_history_by_puuid_error" title="tests.unit.endpoints.test_match_history.test_get_match_history_by_puuid_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_match_history_by_puuid_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_match_history.test_get_match_history_by_name">
+<span class="sig-name descname"><span class="pre">test_get_match_history_by_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_match_history.test_get_match_history_by_name" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_match_history.test_get_match_history_by_name_error">
+<span class="sig-name descname"><span class="pre">test_get_match_history_by_name_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_match_history.test_get_match_history_by_name_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_match_history.test_get_match_history_by_puuid">
+<span class="sig-name descname"><span class="pre">test_get_match_history_by_puuid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_match_history.test_get_match_history_by_puuid" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_match_history.test_get_match_history_by_puuid_error">
+<span class="sig-name descname"><span class="pre">test_get_match_history_by_puuid_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_match_history.test_get_match_history_by_puuid_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_mmr_details">
+<span id="tests-unit-endpoints-test-mmr-details-module"></span><h2>tests.unit.endpoints.test_mmr_details module<a class="headerlink" href="#module-tests.unit.endpoints.test_mmr_details" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_name" title="tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_mmr_details_by_name</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_name_error" title="tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_name_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_mmr_details_by_name_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_puuid" title="tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_puuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_mmr_details_by_puuid</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_puuid_error" title="tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_puuid_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_mmr_details_by_puuid_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_name">
+<span class="sig-name descname"><span class="pre">test_get_mmr_details_by_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_name" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_name_error">
+<span class="sig-name descname"><span class="pre">test_get_mmr_details_by_name_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_name_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_puuid">
+<span class="sig-name descname"><span class="pre">test_get_mmr_details_by_puuid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_puuid" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_puuid_error">
+<span class="sig-name descname"><span class="pre">test_get_mmr_details_by_puuid_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_mmr_details.test_get_mmr_details_by_puuid_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_mmr_history">
+<span id="tests-unit-endpoints-test-mmr-history-module"></span><h2>tests.unit.endpoints.test_mmr_history module<a class="headerlink" href="#module-tests.unit.endpoints.test_mmr_history" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_name" title="tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_mmr_history_by_name</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_name_error" title="tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_name_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_mmr_history_by_name_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_puuid" title="tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_puuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_mmr_history_by_puuid</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_puuid_error" title="tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_puuid_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_mmr_history_by_puuid_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_name">
+<span class="sig-name descname"><span class="pre">test_get_mmr_history_by_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_name" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_name_error">
+<span class="sig-name descname"><span class="pre">test_get_mmr_history_by_name_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_name_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_puuid">
+<span class="sig-name descname"><span class="pre">test_get_mmr_history_by_puuid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_puuid" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_puuid_error">
+<span class="sig-name descname"><span class="pre">test_get_mmr_history_by_puuid_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_mmr_history.test_get_mmr_history_by_puuid_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_raw_competitiveupdates">
+<span id="tests-unit-endpoints-test-raw-competitiveupdates-module"></span><h2>tests.unit.endpoints.test_raw_competitiveupdates module<a class="headerlink" href="#module-tests.unit.endpoints.test_raw_competitiveupdates" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_raw_competitiveupdates.test_get_raw_competitiveupdates" title="tests.unit.endpoints.test_raw_competitiveupdates.test_get_raw_competitiveupdates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_raw_competitiveupdates</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_raw_competitiveupdates.test_get_raw_competitiveupdates">
+<span class="sig-name descname"><span class="pre">test_get_raw_competitiveupdates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_raw_competitiveupdates.test_get_raw_competitiveupdates" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_raw_matchdetails">
+<span id="tests-unit-endpoints-test-raw-matchdetails-module"></span><h2>tests.unit.endpoints.test_raw_matchdetails module<a class="headerlink" href="#module-tests.unit.endpoints.test_raw_matchdetails" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_raw_matchdetails.test_get_raw_matchdetails" title="tests.unit.endpoints.test_raw_matchdetails.test_get_raw_matchdetails"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_raw_matchdetails</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_raw_matchdetails.test_get_raw_matchdetails">
+<span class="sig-name descname"><span class="pre">test_get_raw_matchdetails</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_raw_matchdetails.test_get_raw_matchdetails" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_raw_matchhistory">
+<span id="tests-unit-endpoints-test-raw-matchhistory-module"></span><h2>tests.unit.endpoints.test_raw_matchhistory module<a class="headerlink" href="#module-tests.unit.endpoints.test_raw_matchhistory" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_raw_matchhistory.test_get_raw_matchhistory" title="tests.unit.endpoints.test_raw_matchhistory.test_get_raw_matchhistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_raw_matchhistory</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_raw_matchhistory.test_get_raw_matchhistory">
+<span class="sig-name descname"><span class="pre">test_get_raw_matchhistory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_raw_matchhistory.test_get_raw_matchhistory" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_raw_mmr">
+<span id="tests-unit-endpoints-test-raw-mmr-module"></span><h2>tests.unit.endpoints.test_raw_mmr module<a class="headerlink" href="#module-tests.unit.endpoints.test_raw_mmr" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_raw_mmr.test_get_raw_mmr" title="tests.unit.endpoints.test_raw_mmr.test_get_raw_mmr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_raw_mmr</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_raw_mmr.test_get_raw_mmr">
+<span class="sig-name descname"><span class="pre">test_get_raw_mmr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_raw_mmr.test_get_raw_mmr" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_status">
+<span id="tests-unit-endpoints-test-status-module"></span><h2>tests.unit.endpoints.test_status module<a class="headerlink" href="#module-tests.unit.endpoints.test_status" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_status.test_get_status" title="tests.unit.endpoints.test_status.test_get_status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_status</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_status.test_get_status_error" title="tests.unit.endpoints.test_status.test_get_status_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_status_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_status.test_get_status">
+<span class="sig-name descname"><span class="pre">test_get_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_status.test_get_status" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_status.test_get_status_error">
+<span class="sig-name descname"><span class="pre">test_get_status_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_status.test_get_status_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_store_featured">
+<span id="tests-unit-endpoints-test-store-featured-module"></span><h2>tests.unit.endpoints.test_store_featured module<a class="headerlink" href="#module-tests.unit.endpoints.test_store_featured" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_store_featured.test_get_store_featured" title="tests.unit.endpoints.test_store_featured.test_get_store_featured"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_store_featured</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_store_featured.test_get_store_featured_error" title="tests.unit.endpoints.test_store_featured.test_get_store_featured_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_store_featured_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_store_featured.test_get_store_featured">
+<span class="sig-name descname"><span class="pre">test_get_store_featured</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_store_featured.test_get_store_featured" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_store_featured.test_get_store_featured_error">
+<span class="sig-name descname"><span class="pre">test_get_store_featured_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_store_featured.test_get_store_featured_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_store_offers">
+<span id="tests-unit-endpoints-test-store-offers-module"></span><h2>tests.unit.endpoints.test_store_offers module<a class="headerlink" href="#module-tests.unit.endpoints.test_store_offers" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_store_offers.test_get_store_offers" title="tests.unit.endpoints.test_store_offers.test_get_store_offers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_store_offers</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_store_offers.test_get_store_offers_error" title="tests.unit.endpoints.test_store_offers.test_get_store_offers_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_store_offers_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_store_offers.test_get_store_offers">
+<span class="sig-name descname"><span class="pre">test_get_store_offers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_store_offers.test_get_store_offers" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_store_offers.test_get_store_offers_error">
+<span class="sig-name descname"><span class="pre">test_get_store_offers_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_store_offers.test_get_store_offers_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_version_info">
+<span id="tests-unit-endpoints-test-version-info-module"></span><h2>tests.unit.endpoints.test_version_info module<a class="headerlink" href="#module-tests.unit.endpoints.test_version_info" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_version_info.test_get_version_info" title="tests.unit.endpoints.test_version_info.test_get_version_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_version_info</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_version_info.test_get_version_info_error" title="tests.unit.endpoints.test_version_info.test_get_version_info_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_version_info_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_version_info.test_get_version_info">
+<span class="sig-name descname"><span class="pre">test_get_version_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_version_info.test_get_version_info" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_version_info.test_get_version_info_error">
+<span class="sig-name descname"><span class="pre">test_get_version_info_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_version_info.test_get_version_info_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.test_website">
+<span id="tests-unit-endpoints-test-website-module"></span><h2>tests.unit.endpoints.test_website module<a class="headerlink" href="#module-tests.unit.endpoints.test_website" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_website.test_get_website" title="tests.unit.endpoints.test_website.test_get_website"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_website</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.test_website.test_get_website_error" title="tests.unit.endpoints.test_website.test_get_website_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_get_website_error</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_website.test_get_website">
+<span class="sig-name descname"><span class="pre">test_get_website</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_website.test_get_website" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.test_website.test_get_website_error">
+<span class="sig-name descname"><span class="pre">test_get_website_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.test_website.test_get_website_error" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints.utils">
+<span id="tests-unit-endpoints-utils-module"></span><h2>tests.unit.endpoints.utils module<a class="headerlink" href="#module-tests.unit.endpoints.utils" title="Link to this heading"></a></h2>
+<p><strong>Functions:</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.utils.get_mock_response" title="tests.unit.endpoints.utils.get_mock_response"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_mock_response</span></code></a>(filename)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tests.unit.endpoints.utils.get_error_responses" title="tests.unit.endpoints.utils.get_error_responses"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_error_responses</span></code></a>(endpoint)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tests.unit.endpoints.utils.validate_exception" title="tests.unit.endpoints.utils.validate_exception"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_exception</span></code></a>(error_response, excinfo)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.utils.get_mock_response">
+<span class="sig-name descname"><span class="pre">get_mock_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.utils.get_mock_response" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.utils.get_error_responses">
+<span class="sig-name descname"><span class="pre">get_error_responses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.utils.get_error_responses" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.unit.endpoints.utils.validate_exception">
+<span class="sig-name descname"><span class="pre">validate_exception</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excinfo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.unit.endpoints.utils.validate_exception" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-tests.unit.endpoints">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tests.unit.endpoints" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Valorant API Wrappr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

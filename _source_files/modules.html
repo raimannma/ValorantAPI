@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ValorantAPI &mdash; Valorant API Wrapper 1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=292eb321"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Valorant API Wrapper
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Python Packages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.endpoints.html">valo_api.endpoints package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.exceptions.html">valo_api.exceptions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.responses.html">valo_api.responses package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.utils.html">valo_api.utils package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Valorant API Wrapper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ValorantAPI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_source_files/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="valorantapi">
+<h1>ValorantAPI<a class="headerlink" href="#valorantapi" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.e2e.html">tests.e2e package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_account_details">tests.e2e.test_account_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_content">tests.e2e.test_content module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_crosshair">tests.e2e.test_crosshair module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_leaderboard">tests.e2e.test_leaderboard module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_lifetime_matches">tests.e2e.test_lifetime_matches module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_match_details">tests.e2e.test_match_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_match_history">tests.e2e.test_match_history module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_mmr_details">tests.e2e.test_mmr_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_mmr_history">tests.e2e.test_mmr_history module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_status">tests.e2e.test_status module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_store_featured">tests.e2e.test_store_featured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_store_offers">tests.e2e.test_store_offers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_version_info">tests.e2e.test_version_info module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e.test_website">tests.e2e.test_website module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.e2e.html#module-tests.e2e">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.unit.html">tests.unit package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.unit.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.unit.html#module-tests.unit">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="valo_api.html">valo_api package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.endpoints.html">valo_api.endpoints package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.endpoints.html#module-valo_api.endpoints">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.exceptions.html">valo_api.exceptions package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.exceptions.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.exceptions.html#module-valo_api.exceptions.rate_limit">valo_api.exceptions.rate_limit module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.exceptions.html#module-valo_api.exceptions.valo_api_exception">valo_api.exceptions.valo_api_exception module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.exceptions.html#module-valo_api.exceptions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.responses.html">valo_api.responses package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.account_details">valo_api.responses.account_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.competitive_updates_raw">valo_api.responses.competitive_updates_raw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.content">valo_api.responses.content module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.error_response">valo_api.responses.error_response module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.leaderboard">valo_api.responses.leaderboard module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.lifetime_match">valo_api.responses.lifetime_match module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.match_details_raw">valo_api.responses.match_details_raw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.match_history">valo_api.responses.match_history module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.match_history_raw">valo_api.responses.match_history_raw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.mmr_details">valo_api.responses.mmr_details module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.mmr_history">valo_api.responses.mmr_history module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.mmr_raw">valo_api.responses.mmr_raw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.status">valo_api.responses.status module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.store_featured">valo_api.responses.store_featured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.store_offers">valo_api.responses.store_offers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.version_info">valo_api.responses.version_info module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses.website">valo_api.responses.website module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.responses.html#module-valo_api.responses">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.utils.html">valo_api.utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.utils.html#module-valo_api.utils.dict_struct">valo_api.utils.dict_struct module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.utils.html#module-valo_api.utils.fetch_endpoint">valo_api.utils.fetch_endpoint module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.utils.html#module-valo_api.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.html#module-valo_api.config">valo_api.config module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.html#valo_api.config.Config"><code class="docutils literal notranslate"><span class="pre">Config</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.config.Config.USER_AGENT"><code class="docutils literal notranslate"><span class="pre">Config.USER_AGENT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.config.Config.BASE_URL"><code class="docutils literal notranslate"><span class="pre">Config.BASE_URL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.config.Config.ALL_REGIONS"><code class="docutils literal notranslate"><span class="pre">Config.ALL_REGIONS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.config.Config.ALL_COUNTRY_CODES"><code class="docutils literal notranslate"><span class="pre">Config.ALL_COUNTRY_CODES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.config.Config.ALL_LOCALS"><code class="docutils literal notranslate"><span class="pre">Config.ALL_LOCALS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.html#module-valo_api.endpoint">valo_api.endpoint module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.html#valo_api.endpoint.response_type"><code class="docutils literal notranslate"><span class="pre">response_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint"><code class="docutils literal notranslate"><span class="pre">Endpoint</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.path"><code class="docutils literal notranslate"><span class="pre">Endpoint.path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.f_name"><code class="docutils literal notranslate"><span class="pre">Endpoint.f_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.return_type"><code class="docutils literal notranslate"><span class="pre">Endpoint.return_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.versions"><code class="docutils literal notranslate"><span class="pre">Endpoint.versions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.method"><code class="docutils literal notranslate"><span class="pre">Endpoint.method</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.kwargs"><code class="docutils literal notranslate"><span class="pre">Endpoint.kwargs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.query_args"><code class="docutils literal notranslate"><span class="pre">Endpoint.query_args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.data_response"><code class="docutils literal notranslate"><span class="pre">Endpoint.data_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.endpoint_wrappers"><code class="docutils literal notranslate"><span class="pre">Endpoint.endpoint_wrappers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint._get_endpoint_wrapper"><code class="docutils literal notranslate"><span class="pre">Endpoint._get_endpoint_wrapper()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.recursive_typing_get_args"><code class="docutils literal notranslate"><span class="pre">Endpoint.recursive_typing_get_args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.build_query_args"><code class="docutils literal notranslate"><span class="pre">Endpoint.build_query_args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint._get_endpoint"><code class="docutils literal notranslate"><span class="pre">Endpoint._get_endpoint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint._get_endpoint_async"><code class="docutils literal notranslate"><span class="pre">Endpoint._get_endpoint_async()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoint.Endpoint.parse_response"><code class="docutils literal notranslate"><span class="pre">Endpoint.parse_response()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.html#module-valo_api.endpoints_config">valo_api.endpoints_config module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.RAW_MATCH_DETAILS"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.RAW_MATCH_DETAILS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.RAW_MATCH_HISTORY"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.RAW_MATCH_HISTORY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.RAW_MMR"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.RAW_MMR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.RAW_COMPETITIVE_UPDATES"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.RAW_COMPETITIVE_UPDATES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.CONTENT"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.CONTENT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.STORE_FEATURED"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.STORE_FEATURED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.STORE_OFFERS"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.STORE_OFFERS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.STATUS"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.STATUS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.VERSION_INFO"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.VERSION_INFO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.WEBSITE"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.WEBSITE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.LEADERBOARD"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.LEADERBOARD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.ACCOUNT_BY_NAME"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.ACCOUNT_BY_NAME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.ACCOUNT_BY_PUUID"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.ACCOUNT_BY_PUUID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.MATCH_DETAILS"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.MATCH_DETAILS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.MMR_DETAILS_BY_PUUID"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.MMR_DETAILS_BY_PUUID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.MMR_DETAILS_BY_NAME"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.MMR_DETAILS_BY_NAME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.MMR_HISTORY_BY_PUUID"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.MMR_HISTORY_BY_PUUID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.MMR_HISTORY_BY_NAME"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.MMR_HISTORY_BY_NAME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.MATCH_HISTORY_BY_PUUID"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.MATCH_HISTORY_BY_PUUID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.MATCH_HISTORY_BY_NAME"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.MATCH_HISTORY_BY_NAME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.LIFETIME_MATCHES_BY_PUUID"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.LIFETIME_MATCHES_BY_PUUID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.LIFETIME_MATCHES_BY_NAME"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.LIFETIME_MATCHES_BY_NAME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valo_api.html#valo_api.endpoints_config.EndpointsConfig.CROSSHAIR"><code class="docutils literal notranslate"><span class="pre">EndpointsConfig.CROSSHAIR</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="valo_api.html#module-valo_api">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="valo_api.html#valo_api.set_api_key"><code class="docutils literal notranslate"><span class="pre">set_api_key()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Valorant API Wrappr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
