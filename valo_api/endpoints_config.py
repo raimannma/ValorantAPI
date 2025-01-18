@@ -179,7 +179,6 @@ class EndpointsConfig(Enum):
         ),
         query_args=OrderedDict(
             [
-                
                 ("puuid", "{puuid}"),
                 ("name", "{name}"),
                 ("tag", "{tag}"),
