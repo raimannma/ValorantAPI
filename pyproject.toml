@@ -30,7 +30,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
 requests = "^2.32.3"
-Pillow = ">=9.2,<11.0"
+Pillow = ">=9.2,<12.0"
 msgspec = ">=0.12,<0.19"
 asyncio = {version = "^3.4.3", optional = true, extras = ["speedups"]}
 aiohttp = {version = "^3.11.11", optional = true}
