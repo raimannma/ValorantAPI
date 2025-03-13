@@ -19,7 +19,6 @@ from valo_api.responses.mmr_history import MMRHistoryPointV1
 from valo_api.responses.mmr_raw import MMRRawV1
 from valo_api.responses.status import StatusV1
 from valo_api.responses.store_featured import BundleV2, StoreFeaturedV1
-from valo_api.responses.store_offers import StoreOffersV2
 from valo_api.responses.version_info import VersionInfoV1
 from valo_api.responses.website import WebsiteBannerV1
 
@@ -130,13 +129,6 @@ class EndpointsConfig(Enum):
         f_name="get_store_featured",
         versions=["v1", "v2"],
         return_type=Union[StoreFeaturedV1, List[BundleV2]],
-        kwargs=OrderedDict([("version", str)]),
-    )
-    STORE_OFFERS = Endpoint(
-        path="/valorant/{version}/store-offers",
-        f_name="get_store_offers",
-        versions=["v2"],
-        return_type=StoreOffersV2,
         kwargs=OrderedDict([("version", str)]),
     )
     STATUS = Endpoint(
