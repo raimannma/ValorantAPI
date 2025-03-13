@@ -14,7 +14,7 @@ class BundleItemV1(DictStruct):
     BasePrice: int
     CurrencyID: str
     DiscountPercent: float
-    DiscountedPrice: int
+    DiscountedPrice: float
     IsPromoItem: bool
 
 
@@ -25,7 +25,7 @@ class BundleItemV2(DictStruct):
     amount: int
     discount_percent: float
     base_price: int
-    discounted_price: int
+    discounted_price: float
     promo_item: bool
     image: Optional[str] = None
 

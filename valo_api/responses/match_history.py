@@ -259,8 +259,8 @@ class MatchRoundV3(DictStruct):
 
 
 class MatchHistoryPointV3(DictStruct):
-    metadata: MatchMetadataV3
-    players: MatchPlayersV3
-    teams: MatchTeamsV3
-    rounds: List[MatchRoundV3]
-    kills: List[MatchRoundKillEventV3]
+    players: Optional[MatchPlayersV3] = None
+    teams: Optional[MatchTeamsV3] = None
+    rounds: Optional[List[MatchRoundV3]] = None
+    kills: Optional[List[MatchRoundKillEventV3]] = None
+    metadata: Optional[MatchMetadataV3] = None

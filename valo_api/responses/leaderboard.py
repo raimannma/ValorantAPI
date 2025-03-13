@@ -8,13 +8,13 @@ class LeaderboardPlayerV1(DictStruct):
     TitleID: str
     IsBanned: bool
     IsAnonymized: bool
-    puuid: str
-    gameName: str
-    tagLine: str
     leaderboardRank: int
     rankedRating: int
     numberOfWins: int
     competitiveTier: int
+    puuid: Optional[str] = None
+    gameName: Optional[str] = None
+    tagLine: Optional[str] = None
 
 
 class LeaderboardPlayerV2(DictStruct):
@@ -22,21 +22,21 @@ class LeaderboardPlayerV2(DictStruct):
     TitleID: str
     IsBanned: bool
     IsAnonymized: bool
-    puuid: str
-    gameName: str
-    tagLine: str
     leaderboardRank: int
     rankedRating: int
     numberOfWins: int
     competitiveTier: int
+    puuid: Optional[str] = None
+    gameName: Optional[str] = None
+    tagLine: Optional[str] = None
 
 
 class LeaderboardV2(DictStruct):
-    total_players: int
-    radiant_threshold: int
-    immortal_3_threshold: int
-    immortal_2_threshold: int
-    immortal_1_threshold: int
-    players: List[Optional[LeaderboardPlayerV2]]
+    radiant_threshold: Optional[int] = None
+    immortal_3_threshold: Optional[int] = None
+    immortal_2_threshold: Optional[int] = None
+    immortal_1_threshold: Optional[int] = None
+    players: Optional[List[Optional[LeaderboardPlayerV2]]] = None
+    total_players: Optional[int] = None
     last_update: Optional[int] = None
     next_update: Optional[int] = None
