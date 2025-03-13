@@ -1,0 +1,8 @@
+ValorantAPI
+===========
+
+.. toctree::
+   :maxdepth: 4
+
+   tests
+   valo_api
