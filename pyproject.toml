@@ -30,43 +30,42 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
 requests = "^2.32.3"
-Pillow = ">=9.2,<11.0"
-msgspec = ">=0.12,<0.19"
+Pillow = "^11.1.0"
+msgspec = "^0.19.0"
 asyncio = {version = "^3.4.3", optional = true, extras = ["speedups"]}
-aiohttp = {version = "^3.11.11", optional = true}
+aiohttp = {version = "^3.11.13", optional = true}
 
 [tool.poetry.group.dev.dependencies]
-bandit = "^1.8.2"
-black = {version = ">=23.3,<25.0", allow-prereleases = true}
+bandit = "^1.8.3"
+black = {version = "^23.12.1", allow-prereleases = true}
 isort = "^5.13.2"
-mypy = ">=0.991,<1.9"
-mypy-extensions = ">=0.4.3,<1.1.0"
+mypy = "^0.991"
+mypy-extensions = "^0.4.4"
 pre-commit = "^3.8.0"
 pydocstyle = "^6.3.0"
-pylint = ">=2.17.2,<4.0.0"
-pytest = ">=7.3.1,<9.0.0"
-hypothesis = "^6.124.1"
+pylint = "^2.17.7"
+pytest = "^7.3.1,<9.0.0"
+hypothesis = "^6.129.0"
 pyupgrade = "^3.19.1"
-safety = ">=2.3.5,<4.0.0"
+safety = "^2.4.0b2"
 pytest-html = "^3.2.0"
-pytest-cov = ">=4,<6"
-Sphinx = ">=5.3,<8.0"
+pytest-cov = "^4.1.0"
+Sphinx = "^5.3.0"
 sphinxcontrib-applehelp = "^1.0.8"
 sphinxcontrib-devhelp = "^1.0.6"
 sphinxcontrib-htmlhelp = "^2.1.0"
 sphinxcontrib-jsmath = "^1.0.1"
 sphinxcontrib-qthelp = "^1.0.8"
 sphinxcontrib-serializinghtml = "^1.1.10"
-sphinx-rtd-theme = ">=1.1.1,<3.0.0"
-sphinx-autodoc-typehints = ">=1.19.5,<3.0.0"
-autodocsumm = "^0.2.12"
-responses = ">=0.22,<0.26"
+sphinx-rtd-theme = "^1.3.0"
+autodocsumm = "^0.2.14"
+responses = "^0.22,<0.26"
 pytest-parallel = "^0.1.1"
 pytest-split = "^0.8.2"
-tomlkit = "<0.13.1"
+tomlkit = "^0.13.2"
 colorama = "^0.4.6"
-aioresponses = "^0.7.6"
-pytest-asyncio = ">=0.20.3,<0.24.0"
+aioresponses = "^0.7.8"
+pytest-asyncio = "^0.20.3"
 
 [tool.poetry.extras]
 async = [
